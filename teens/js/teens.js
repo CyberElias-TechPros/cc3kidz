@@ -24,7 +24,7 @@ function renderChrome() {
             ${NAV_LINKS.map(l => `<a href="${l.href}" class="${l.key === pageKey ? 'is-active' : ''}">${l.label}</a>`).join('')}
           </nav>
           <div class="t-header__actions">
-            <a class="btn btn--ghost btn--sm" href="../index.html" title="Switch to Children's Church">Kids Church</a>
+            <a class="btn btn--ghost btn--sm" href="../kids/index.html" title="Switch to Children's Church">Kids Church</a>
             <a class="btn btn--primary btn--sm" href="connect.html">Get Connected</a>
             <button class="t-burger" type="button" aria-label="Toggle menu" aria-expanded="false" data-burger>☰</button>
           </div>
@@ -36,7 +36,7 @@ function renderChrome() {
         <a href="life-purpose.html">Life & Purpose</a>
         <a href="devotionals.html">Devotionals</a>
         <a href="parents.html">Parents' Corner</a>
-        <a href="../index.html">← Children's Church</a>
+        <a href="../kids/index.html">← Children's Church</a>
       </div>
     `;
     const burger = headerEl.querySelector('[data-burger]');
@@ -85,7 +85,7 @@ function renderChrome() {
                 <li><a href="connect.html">Teens Connect</a></li>
                 <li><a href="parents.html">Parents' Corner</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="../index.html">Children's Church (0–12)</a></li>
+                <li><a href="../kids/index.html">Children's Church (0–12)</a></li>
               </ul>
             </div>
           </div>

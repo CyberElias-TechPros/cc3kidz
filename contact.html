@@ -1,161 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact Us | Christ Embassy Kids, Central Church 3</title>
-  <meta name="description" content="Contact Christ Embassy Central Church 3 Children's Church in Port Harcourt — plan a visit, ask a question or enquire about a class or event." />
-  <meta name="theme-color" content="#FFF9EC" />
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/components.css" />
-  <link rel="stylesheet" href="css/animations.css" />
-  <link rel="stylesheet" href="css/responsive.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us | Christ Embassy Port Harcourt</title>
+  <meta name="description" content="Address, directions, prayer requests, and pastoral enquiries for Christ Embassy Port Harcourt.">
+  <meta name="theme-color" content="#10172B">
+  <link rel="icon" href="kids/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body data-page="contact">
-  <div data-header></div>
-
-  <main id="main">
-    <section class="page-hero page-hero--blue">
-      <div class="container page-hero__inner">
-        <div>
-          <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="index.html">Home</a>
-            <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-chevron-right"></use></svg>
-            <span>Contact Us</span>
-          </nav>
-          <h1>We'd love to <span class="hl hl--yellow">hear from you</span></h1>
-          <p>Planning a visit, asking about a class or wondering about an event? Send us a message or come and see us on Sunday — you will be warmly welcomed.</p>
-        </div>
-        <div class="page-hero__art" aria-hidden="true">✉️</div>
-      </div>
-    </section>
-
-    <section class="section section--white">
+  <div data-main-header></div>
+  <main>
+    <section class="page-hero">
       <div class="container">
-        <div class="contact-layout">
-          <div>
-            <div class="contact-cards">
-              <div class="contact-card accent-yellow reveal">
-                <div class="contact-card__icon" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.svg#i-map-pin"></use></svg></div>
-                <div>
-                  <h3>Visit Us</h3>
-                  <p>Christ Embassy Central Church 3 Group<br />PH Zone 3, Port Harcourt<br />Rivers State, Nigeria</p>
-                </div>
-              </div>
-
-              <div class="contact-card accent-pink reveal" style="--reveal-delay:70ms">
-                <div class="contact-card__icon" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.svg#i-clock"></use></svg></div>
-                <div>
-                  <h3>Service Times</h3>
-                  <p>Children's church holds on Sundays during the main service. Check-in opens before the service begins.</p>
-                </div>
-              </div>
-
-              <div class="contact-card accent-blue reveal" style="--reveal-delay:140ms">
-                <div class="contact-card__icon" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.svg#i-mail"></use></svg></div>
-                <div>
-                  <h3>Email &amp; Phone</h3>
-                  <p>Official contact details are being confirmed. For now, please use the enquiry form or visit the children's church desk on Sunday.</p>
-                </div>
-              </div>
-
-              <div class="contact-card accent-green reveal" style="--reveal-delay:210ms">
-                <div class="contact-card__icon" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.svg#i-users"></use></svg></div>
-                <div>
-                  <h3>Children's Church Office</h3>
-                  <p>Speak with a team member on Sunday or <a href="parents.html">browse the Parents' Corner</a> for answers to common questions.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="map-card reveal mt-3">
-              <div>
-                <div class="map-card__pin" aria-hidden="true">📍</div>
-                <p>Christ Embassy Central Church 3 Group<br />PH Zone 3, Port Harcourt</p>
-                <p style="font-size:.72rem;color:var(--ink-faint);margin-top:.4rem">Map and exact street address will be published once confirmed.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="contact-form reveal reveal--right">
-            <h2>Send an enquiry</h2>
-            <p>Fill in the form below and we will get back to you. Please do not include children's full names, dates of birth or medical details.</p>
-
-            <form data-contact-form novalidate>
-              <div class="form-grid">
-                <div class="field">
-                  <label for="parentName">Parent / guardian name *</label>
-                  <input class="input" id="parentName" name="parentName" type="text" autocomplete="name" required placeholder="Your full name" />
-                </div>
-                <div class="field">
-                  <label for="email">Email address *</label>
-                  <input class="input" id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
-                </div>
-                <div class="field">
-                  <label for="phone">Phone number <span class="hint">(optional)</span></label>
-                  <input class="input" id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+234 ..." />
-                </div>
-                <div class="field">
-                  <label for="ageGroup">Child's age group</label>
-                  <select class="select" id="ageGroup" name="ageGroup">
-                    <option value="Not sure yet">Not sure yet</option>
-                    <option value="0–2 years (Creche)">0–2 years (Creche)</option>
-                    <option value="3–5 years (Pre-school)">3–5 years (Pre-school)</option>
-                    <option value="6–8 years (Primary)">6–8 years (Primary)</option>
-                    <option value="9–12 years (Pre-teens)">9–12 years (Pre-teens)</option>
-                  </select>
-                </div>
-                <div class="field full">
-                  <label for="message">Your message *</label>
-                  <textarea class="textarea" id="message" name="message" required placeholder="Tell us how we can help — a question about a class, an event or planning your first visit."></textarea>
-                </div>
-                <div class="full">
-                  <label class="checkbox">
-                    <input type="checkbox" name="consent" required />
-                    <span>I am the parent or guardian of the child and I agree to be contacted about this enquiry. *</span>
-                  </label>
-                </div>
-              </div>
-
-              <div class="form-actions">
-                <button class="btn btn--primary" type="submit">
-                  <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-send"></use></svg> Prepare my enquiry
-                </button>
-                <span class="form-note">For your privacy, this form prepares your message on your device. Nothing is sent automatically.</span>
-              </div>
-            </form>
-
-            <div class="form-success" data-form-success aria-live="polite"></div>
-          </div>
-        </div>
-
-        <div class="notice notice--yellow mt-4 reveal">
-          <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-shield"></use></svg>
-          <span><strong>Child safety:</strong> please never send a child's full name, date of birth, school, home address or medical information through this website. For urgent safeguarding concerns, contact the church office directly.</span>
-        </div>
+        <span class="eyebrow">Contact Us</span>
+        <h1>Connect With <span class="gold-text">Christ Embassy</span></h1>
+        <p class="lead">30B Rumuokwuta/NTA Road, Opposite Patcoin Filling Station, Port Harcourt, Rivers State, Nigeria.</p>
       </div>
     </section>
 
     <section class="section">
-      <div class="container">
-        <div class="final-cta reveal">
-          <span class="pill pill--white">Come and say hello</span>
-          <h2>Sunday is better with you here</h2>
-          <p>Whether you are new to church or looking for a children's ministry for your family, we would love to meet you. Come as you are.</p>
-          <div class="btn-row">
-            <a class="btn btn--yellow btn--lg" href="classes.html">Explore our classes <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-arrow-right"></use></svg></a>
-            <a class="btn btn--ghost-light btn--lg" href="about.html">About our church</a>
-          </div>
+      <div class="container grid-2">
+        <div class="card">
+          <h3>Church Address &amp; Directions</h3>
+          <p><strong style="color:var(--white);">Christ Embassy Port Harcourt</strong><br>30B Rumuokwuta/NTA Road, Opposite Patcoin Filling Station, Port Harcourt, Rivers State, Nigeria.</p>
+          <a class="btn btn--gold" href="https://maps.google.com/?q=30B+Rumuokwuta+NTA+Road+Port+Harcourt" target="_blank" rel="noopener">Open in Google Maps ↗</a>
+        </div>
+        <div class="card">
+          <h3>Enquiries &amp; Prayer Requests</h3>
+          <form class="form-grid" data-m-form>
+            <input class="input" type="text" required placeholder="Full name">
+            <input class="input" type="tel" required placeholder="Phone / WhatsApp number">
+            <textarea rows="4" required placeholder="Your message or confidential prayer request..."></textarea>
+            <button class="btn btn--gold" type="submit">Send Message</button>
+          </form>
+          <div class="form-success">Thank you! Your message has been received by our church administration team.</div>
         </div>
       </div>
     </section>
   </main>
-
-  <div data-footer></div>
-  <script type="module" src="js/main.js"></script>
+  <div data-main-footer></div>
+  <script src="js/main.js"></script>
 </body>
 </html>

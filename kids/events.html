@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Events &amp; Activities | Christ Embassy Kids, Central Church 3</title>
+  <meta name="description" content="Upcoming children's church events at Christ Embassy Central Church 3 — praise services, Bible quizzes, celebrations and special programmes in Port Harcourt." />
+  <meta name="theme-color" content="#FFF9EC" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body data-page="events">
+  <div data-header></div>
+
+  <main id="main">
+    <section class="page-hero page-hero--pink">
+      <div class="container page-hero__inner">
+        <div>
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-chevron-right"></use></svg>
+            <span>Events &amp; Activities</span>
+          </nav>
+          <h1>Mark your calendar for <span class="hl hl--yellow">something special</span></h1>
+          <p>Praise services, Bible quizzes, celebrations and family days — these are the moments our children look forward to all year.</p>
+        </div>
+        <div class="page-hero__art" aria-hidden="true">📅</div>
+      </div>
+    </section>
+
+    <section class="section section--white" id="upcoming">
+      <div class="container">
+        <div class="section-head section-head--split reveal">
+          <div>
+            <span class="eyebrow eyebrow--pink">What's coming up</span>
+            <h2>Upcoming events</h2>
+            <p>Everyone is welcome — children, parents, grandparents and friends. Invite someone along!</p>
+          </div>
+          <a class="btn btn--secondary" href="contact.html">Ask about an event <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-arrow-right"></use></svg></a>
+        </div>
+
+        <div class="event-list" data-upcoming-events>
+          <div class="empty-state">
+            <span class="emoji">📅</span>
+            <h3>Loading upcoming events…</h3>
+            <p>One moment while we check the calendar.</p>
+          </div>
+        </div>
+
+        <div class="notice notice--yellow mt-4 reveal">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-info"></use></svg>
+          <span>Programme dates and times are confirmed each week in the children's church bulletin. Please check with the church office before inviting guests.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--cream" id="past">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow eyebrow--blue">Looking back</span>
+          <h2>Stories from past events</h2>
+          <p>A few of the beautiful moments we have shared together. Thank you to every parent, teacher and volunteer who made them possible.</p>
+        </div>
+
+        <div class="past-grid" data-past-events>
+          <div class="empty-state" style="grid-column:1/-1">
+            <span class="emoji">📸</span>
+            <h3>Loading memories…</h3>
+            <p>One moment while we find the photo album.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="final-cta reveal">
+          <span class="pill pill--white">Be our guest</span>
+          <h2>There is always room for one more!</h2>
+          <p>Come along to our next event. Bring your children, bring a friend and come expecting a joyful time in God's presence.</p>
+          <div class="btn-row">
+            <a class="btn btn--yellow btn--lg" href="contact.html">Plan Your Visit <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-arrow-right"></use></svg></a>
+            <a class="btn btn--ghost-light btn--lg" href="gallery.html">See the gallery</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-footer></div>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

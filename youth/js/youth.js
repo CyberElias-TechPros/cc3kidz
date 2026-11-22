@@ -33,7 +33,7 @@ function renderYouthChrome() {
       <div class="y-mobile" data-y-mobile>
         ${Y_LINKS.map(l => `<a href="${l.href}">${l.label}</a>`).join('')}
         <a href="../teens/index.html">Teens Church (13–19)</a>
-        <a href="../index.html">Children's Church (0–12)</a>
+        <a href="../kids/index.html">Children's Church (0–12)</a>
       </div>
     `;
     const burger = h.querySelector('[data-y-burger]');
@@ -79,7 +79,7 @@ function renderYouthChrome() {
             <div>
               <h4>Church Family</h4>
               <ul>
-                <li><a href="../index.html">Children's Church (0–12)</a></li>
+                <li><a href="../kids/index.html">Children's Church (0–12)</a></li>
                 <li><a href="../teens/index.html">Teens Church (13–19)</a></li>
                 <li><a href="contact.html">WhatsApp &amp; Directions</a></li>
               </ul>

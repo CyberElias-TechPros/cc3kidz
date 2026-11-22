@@ -51,9 +51,9 @@ export function renderHeader() {
     <a class="skip-link" href="#main">Skip to content</a>
     <div style="background:#10172B;color:#fff;font-size:0.82rem;padding:0.45rem 1rem;display:flex;justify-content:center;align-items:center;gap:0.65rem;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,0.12);position:relative;z-index:60;">
       <span style="color:#C6A04A;font-weight:700;letter-spacing:0.04em;">CE CENTRAL CHURCH 3:</span>
-      <a href="main/index.html" style="color:#fff;padding:0.2rem 0.65rem;border-radius:999px;background:rgba(198,160,74,0.22);border:1px solid rgba(198,160,74,0.55);font-weight:600;">Main Church</a>
-      <a href="youth/index.html" style="color:#fff;padding:0.2rem 0.65rem;border-radius:999px;background:rgba(255,255,255,0.08);font-weight:600;">Youth Church</a>
-      <a href="teens/index.html" style="color:#fff;padding:0.2rem 0.65rem;border-radius:999px;background:rgba(255,255,255,0.08);font-weight:600;">Teens Church</a>
+      <a href="../index.html" style="color:#fff;padding:0.2rem 0.65rem;border-radius:999px;background:rgba(198,160,74,0.22);border:1px solid rgba(198,160,74,0.55);font-weight:600;">Main Church</a>
+      <a href="../youth/index.html" style="color:#fff;padding:0.2rem 0.65rem;border-radius:999px;background:rgba(255,255,255,0.08);font-weight:600;">Youth Church</a>
+      <a href="../teens/index.html" style="color:#fff;padding:0.2rem 0.65rem;border-radius:999px;background:rgba(255,255,255,0.08);font-weight:600;">Teens Church</a>
       <a href="index.html" style="color:#10172B;padding:0.2rem 0.65rem;border-radius:999px;background:#FFB703;font-weight:700;">Children's Church</a>
     </div>
     <header class="site-header" id="site-header">
@@ -138,9 +138,9 @@ export function renderFooter() {
               <li><a href="events.html">Events</a></li>
               <li><a href="gallery.html">Gallery</a></li>
               <li><a href="kids-corner.html">Kids Corner</a></li>
-              <li><a href="teens/index.html">Teens Church (13–19)</a></li>
-              <li><a href="youth/index.html">Youth Church</a></li>
-              <li><a href="main/index.html">Main Church</a></li>
+              <li><a href="../teens/index.html">Teens Church (13–19)</a></li>
+              <li><a href="../youth/index.html">Youth Church</a></li>
+              <li><a href="../index.html">Main Church</a></li>
             </ul>
           </div>
 
