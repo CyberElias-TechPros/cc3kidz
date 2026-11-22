@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kids Corner | Christ Embassy Kids, Central Church 3</title>
+  <meta name="description" content="Play Bible games with Christ Embassy Kids — a Bible quiz, memory verse challenge, Who Am I character game, printable colouring pages and achievement badges." />
+  <meta name="theme-color" content="#FFF9EC" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body data-page="kids">
+  <div data-header></div>
+
+  <main id="main">
+    <section class="page-hero page-hero--blue">
+      <div class="container page-hero__inner">
+        <div>
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-chevron-right"></use></svg>
+            <span>Kids Corner</span>
+          </nav>
+          <h1>Ready to <span class="hl hl--yellow">play and learn?</span></h1>
+          <p>Quizzes, memory verses, character clues and colouring pages — a cheerful corner of the internet made just for you. No sign-up, no personal details, just good clean fun.</p>
+        </div>
+        <div class="page-hero__art" aria-hidden="true">🎮</div>
+      </div>
+    </section>
+
+    <section class="section section--yellow" id="badges">
+      <div class="container">
+        <div class="section-head section-head--split reveal">
+          <div>
+            <span class="eyebrow eyebrow--yellow">Your achievements</span>
+            <h2>Collect them all!</h2>
+            <p>Play the games below to earn badges. Your progress is saved safely on this device only — we never collect names or personal information.</p>
+          </div>
+          <div class="quiz-meta" style="margin:0" data-badge-summary>0 of 5 badges earned</div>
+        </div>
+        <div class="badge-wall" data-badge-wall></div>
+      </div>
+    </section>
+
+    <section class="section section--white">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow eyebrow--pink">Game time</span>
+          <h2>Pick a game and have a go!</h2>
+          <p>You can play as many times as you like. Every game is a little Bible adventure.</p>
+        </div>
+
+        <div class="game-grid">
+          <div class="game-panel game-panel--wide accent-pink reveal">
+            <div class="game-panel__head">
+              <div class="game-panel__icon" aria-hidden="true">🎯</div>
+              <div>
+                <h2>Bible Quiz</h2>
+                <p>Ten questions, instant answers and a shiny score at the end. How well do you know God's Word?</p>
+              </div>
+            </div>
+            <div data-quiz>
+              <div class="empty-state">
+                <span class="emoji">🎯</span>
+                <h3>Loading the quiz…</h3>
+                <p>One moment while we set up the game.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="game-panel accent-purple reveal">
+            <div class="game-panel__head">
+              <div class="game-panel__icon" aria-hidden="true">⭐</div>
+              <div>
+                <h2>Memory Verse Challenge</h2>
+                <p>Fill in the missing words from well-loved Bible verses.</p>
+              </div>
+            </div>
+            <div data-verse-game>
+              <div class="empty-state">
+                <span class="emoji">⭐</span>
+                <h3>Loading verses…</h3>
+                <p>One moment while we find the right words.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="game-panel accent-blue reveal" style="--reveal-delay:100ms">
+            <div class="game-panel__head">
+              <div class="game-panel__icon" aria-hidden="true">🔎</div>
+              <div>
+                <h2>Who Am I?</h2>
+                <p>Read the clues and guess the Bible character.</p>
+              </div>
+            </div>
+            <div data-whoami>
+              <div class="empty-state">
+                <span class="emoji">🔎</span>
+                <h3>Loading clues…</h3>
+                <p>One moment while we gather the clues.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--cream" id="verse">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow eyebrow--purple">A verse for today</span>
+          <h2>Hide it in your heart</h2>
+          <p>Read today's verse out loud, then try to say it again without looking.</p>
+        </div>
+
+        <div class="verse-block reveal" data-daily-verse style="max-width:820px;margin:0 auto">
+          <div class="verse-block__label"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-star"></use></svg> Today's Bible verse</div>
+          <blockquote>“Your word is a lamp for my feet, a light on my path.”</blockquote>
+          <cite>— Psalm 119:105</cite>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--white" id="colouring">
+      <div class="container">
+        <div class="section-head section-head--split reveal">
+          <div>
+            <span class="eyebrow eyebrow--green">Colouring Corner</span>
+            <h2>Print and colour!</h2>
+            <p>Choose a Bible colouring page, print it at home and bring it to church on Sunday. We would love to see your masterpiece!</p>
+          </div>
+          <span class="sticker sticker--pink">🖍️ Free printables</span>
+        </div>
+
+        <div class="colour-grid">
+          <article class="colour-card reveal">
+            <div class="colour-card__preview">
+              <img src="assets/images/colouring/noahs-ark.svg" alt="Colouring page outline of Noah's ark with animals and a rainbow" width="800" height="1000" loading="lazy" />
+            </div>
+            <div class="colour-card__body">
+              <h3>Noah's Ark</h3>
+              <p>The animals came two by two — and God kept every promise.</p>
+              <div class="colour-actions">
+                <button class="btn btn--primary btn--sm" type="button" data-print-src="assets/images/colouring/noahs-ark.svg" data-title="Noah's Ark">
+                  <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-printer"></use></svg> Print
+                </button>
+                <button class="btn btn--ghost btn--sm" type="button" data-download-src="assets/images/colouring/noahs-ark.svg" data-title="noahs-ark">
+                  <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-download"></use></svg> Save
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="colour-card reveal" style="--reveal-delay:80ms">
+            <div class="colour-card__preview">
+              <img src="assets/images/colouring/daniel-lion.svg" alt="Colouring page outline of Daniel praying beside a friendly lion in a den" width="800" height="1000" loading="lazy" />
+            </div>
+            <div class="colour-card__body">
+              <h3>Daniel &amp; the Lions</h3>
+              <p>Daniel kept praying, and God kept him safe.</p>
+              <div class="colour-actions">
+                <button class="btn btn--primary btn--sm" type="button" data-print-src="assets/images/colouring/daniel-lion.svg" data-title="Daniel and the Lions">
+                  <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-printer"></use></svg> Print
+                </button>
+                <button class="btn btn--ghost btn--sm" type="button" data-download-src="assets/images/colouring/daniel-lion.svg" data-title="daniel-and-the-lions">
+                  <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-download"></use></svg> Save
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="colour-card reveal" style="--reveal-delay:160ms">
+            <div class="colour-card__preview">
+              <img src="assets/images/colouring/lost-sheep.svg" alt="Colouring page outline of a shepherd carrying a sheep on his shoulders" width="800" height="1000" loading="lazy" />
+            </div>
+            <div class="colour-card__body">
+              <h3>The Lost Sheep</h3>
+              <p>Every child is precious to God — He never gives up on us.</p>
+              <div class="colour-actions">
+                <button class="btn btn--primary btn--sm" type="button" data-print-src="assets/images/colouring/lost-sheep.svg" data-title="The Lost Sheep">
+                  <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-printer"></use></svg> Print
+                </button>
+                <button class="btn btn--ghost btn--sm" type="button" data-download-src="assets/images/colouring/lost-sheep.svg" data-title="the-lost-sheep">
+                  <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-download"></use></svg> Save
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="notice notice--yellow mt-3 reveal" data-colour-status>
+          <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-info"></use></svg>
+          <span>Tip: print in black and white on A4 paper. Colouring pages are free for personal, family and church use.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="final-cta reveal">
+          <span class="pill pill--white">Keep growing</span>
+          <h2>Every game, every verse, every story</h2>
+          <p>We hope Kids Corner makes you smile — and helps you fall more in love with God's Word. Come back tomorrow for a new verse!</p>
+          <div class="btn-row">
+            <a class="btn btn--yellow btn--lg" href="lessons.html">Read a Bible lesson <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-arrow-right"></use></svg></a>
+            <a class="btn btn--ghost-light btn--lg" href="parents.html">For grown-ups</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-footer></div>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

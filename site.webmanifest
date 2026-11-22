@@ -1,0 +1,17 @@
+{
+  "name": "Christ Embassy Kids — Central Church 3",
+  "short_name": "CE Kids",
+  "description": "Raising champions for Christ in Port Harcourt. Bible lessons, games and resources for children and parents.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#FFF9EC",
+  "theme_color": "#FFF9EC",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

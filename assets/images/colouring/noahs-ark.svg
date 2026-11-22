@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Noah's ark colouring page">
+  <rect width="800" height="1000" fill="#ffffff"/>
+  <rect x="28" y="28" width="744" height="944" rx="38" fill="none" stroke="#1a1a1a" stroke-width="7"/>
+  <g fill="none" stroke="#1a1a1a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Sun -->
+    <circle cx="125" cy="135" r="48"/>
+    <path d="M125 62v22M125 186v22M52 135h22M176 135h22M73 83l16 16M161 171l16 16M73 187l16-16M161 99l16-16"/>
+    <circle cx="110" cy="128" r="4" fill="#1a1a1a" stroke="none"/>
+    <circle cx="140" cy="128" r="4" fill="#1a1a1a" stroke="none"/>
+    <path d="M110 146q15 12 30 0"/>
+
+    <!-- Cloud -->
+    <path d="M560 190c-18 0-32-14-32-32 0-16 12-29 27-31 5-20 23-35 45-35 22 0 40 15 45 35 15 2 27 15 27 31 0 18-14 32-32 32z"/>
+
+    <!-- Rainbow -->
+    <path d="M500 350a150 150 0 0 1 300 0"/>
+    <path d="M535 350a115 115 0 0 1 230 0"/>
+    <path d="M570 350a80 80 0 0 1 160 0"/>
+
+    <!-- Dove -->
+    <path d="M360 245q22-30 48-8 20-24 44-4 10-28 34-20 4 26-18 40 12 18-6 32-26 14-48-4-28 14-54-36z"/>
+    <circle cx="462" cy="236" r="3.5" fill="#1a1a1a" stroke="none"/>
+    <path d="M446 248q-14 14-34 10M452 256q-16 22-40 22"/>
+    <path d="M400 282q-26 12-54 2M392 292q-20 14-44 10"/>
+
+    <!-- Ark hull -->
+    <path d="M120 590c8 130 118 200 280 200s272-70 280-200l-42-52H162z"/>
+    <path d="M162 590h476"/>
+    <path d="M180 650q220 30 440 0"/>
+
+    <!-- Cabin -->
+    <path d="M300 405h200v140H300z"/>
+    <path d="M268 405 400 322l132 83z"/>
+    <path d="M384 545v-62a16 16 0 0 1 32 0v62"/>
+    <circle cx="342" cy="448" r="18"/>
+    <circle cx="458" cy="448" r="18"/>
+    <path d="M330 405v-22M470 405v-22"/>
+
+    <!-- Elephant -->
+    <circle cx="232" cy="500" r="40"/>
+    <circle cx="196" cy="492" r="26"/>
+    <circle cx="268" cy="492" r="26"/>
+    <circle cx="220" cy="494" r="4" fill="#1a1a1a" stroke="none"/>
+    <circle cx="246" cy="494" r="4" fill="#1a1a1a" stroke="none"/>
+    <path d="M232 534c0 26-20 30-26 52M220 552q-10 6-6 14"/>
+
+    <!-- Giraffe -->
+    <path d="M556 545l26-128 34 6-18 126"/>
+    <ellipse cx="602" cy="402" rx="34" ry="26"/>
+    <path d="M590 380l-4-24M614 380l6-24"/>
+    <circle cx="592" cy="398" r="4" fill="#1a1a1a" stroke="none"/>
+    <circle cx="612" cy="398" r="4" fill="#1a1a1a" stroke="none"/>
+    <path d="M626 414q16 2 18 14"/>
+    <path d="M574 430l-16-12M580 460l-18-8"/>
+
+    <!-- Gangplank -->
+    <path d="M640 640l86 118M612 646l86 118M612 646l28-6M698 764l28-6"/>
+
+    <!-- Waves -->
+    <path d="M70 842q30-26 60 0t60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0"/>
+    <path d="M70 892q30-24 60 0t60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0"/>
+    <path d="M110 940q30-22 60 0t60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0"/>
+
+    <!-- Little stars -->
+    <path d="M210 250l6 16 16 6-16 6-6 16-6-16-16-6 16-6zM690 500l5 13 13 5-13 5-5 13-5-13-13-5 13-5zM120 430l5 13 13 5-13 5-5 13-5-13-13-5 13-5z"/>
+  </g>
+</svg>

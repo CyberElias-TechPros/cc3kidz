@@ -1,0 +1,88 @@
+{
+  "characters": [
+    {
+      "id": "noah",
+      "name": "Noah",
+      "emoji": "⛵",
+      "clues": [
+        "I built a giant boat even though it had never rained.",
+        "Animals came to me two by two.",
+        "I sent out a dove to look for dry land."
+      ],
+      "options": ["Noah", "Moses", "David", "Jonah"],
+      "answer": 0,
+      "funFact": "Noah's ark was about 135 metres long — longer than a football field!",
+      "reference": "Genesis 6–9"
+    },
+    {
+      "id": "david",
+      "name": "David",
+      "emoji": "🪨",
+      "clues": [
+        "I was a shepherd boy with a sling and five smooth stones.",
+        "I defeated a giant everyone else was afraid of.",
+        "I became the king of Israel."
+      ],
+      "options": ["Joseph", "David", "Daniel", "Peter"],
+      "answer": 1,
+      "funFact": "David wrote many of the Psalms — songs and prayers that people still pray today.",
+      "reference": "1 Samuel 17"
+    },
+    {
+      "id": "daniel",
+      "name": "Daniel",
+      "emoji": "🦁",
+      "clues": [
+        "I prayed three times a day, no matter what.",
+        "I was thrown into a den of hungry lions.",
+        "God sent an angel to shut the lions' mouths."
+      ],
+      "options": ["Daniel", "Joseph", "Elijah", "Noah"],
+      "answer": 0,
+      "funFact": "Daniel served God faithfully from his youth right into old age.",
+      "reference": "Daniel 6"
+    },
+    {
+      "id": "esther",
+      "name": "Esther",
+      "emoji": "👑",
+      "clues": [
+        "I became queen of a great nation.",
+        "I was brave enough to speak up for my people.",
+        "I prayed and fasted before I went to see the king."
+      ],
+      "options": ["Ruth", "Mary", "Esther", "Deborah"],
+      "answer": 2,
+      "funFact": "Esther was chosen as queen for her beauty, but her courage saved a whole nation.",
+      "reference": "Esther 4–5"
+    },
+    {
+      "id": "jonah",
+      "name": "Jonah",
+      "emoji": "🐟",
+      "clues": [
+        "I tried to run away from God on a boat.",
+        "A great fish swallowed me.",
+        "I preached in the city of Nineveh."
+      ],
+      "options": ["Jonah", "Peter", "Paul", "Noah"],
+      "answer": 0,
+      "funFact": "Jonah spent three days inside the fish before God gave him a second chance.",
+      "reference": "Jonah 1–3"
+    },
+    {
+      "id": "moses",
+      "name": "Moses",
+      "emoji": "🌿",
+      "clues": [
+        "I was found in a basket floating on a river.",
+        "God spoke to me from a burning bush.",
+        "I led God's people out of Egypt."
+      ],
+      "options": ["Aaron", "Moses", "Joshua", "Jacob"],
+      "answer": 1,
+      "funFact": "God used Moses' ordinary staff to do extraordinary miracles.",
+      "reference": "Exodus 2–14"
+    }
+  ]
+}
