@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="The lost sheep colouring page">
+  <rect width="800" height="1000" fill="#ffffff"/>
+  <rect x="28" y="28" width="744" height="944" rx="38" fill="none" stroke="#1a1a1a" stroke-width="7"/>
+  <g fill="none" stroke="#1a1a1a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Sun -->
+    <circle cx="668" cy="140" r="52"/>
+    <path d="M668 62v22M668 196v22M590 140h22M724 140h22M613 85l16 16M707 179l16 16M613 195l16-16M707 101l16-16"/>
+    <circle cx="652" cy="132" r="4" fill="#1a1a1a" stroke="none"/>
+    <circle cx="684" cy="132" r="4" fill="#1a1a1a" stroke="none"/>
+    <path d="M650 152q18 14 36 0"/>
+
+    <!-- Birds -->
+    <path d="M150 170q14-16 28 0 14-16 28 0M260 220q11-13 22 0 11-13 22 0"/>
+
+    <!-- Hills -->
+    <path d="M40 820q150-150 300-30 160-140 420 10v150H40z"/>
+
+    <!-- Sheep on the shepherd's shoulders -->
+    <path d="M300 382q-26-4-32-28-28-2-32-28-22-12-16-36-16-20 0-38-2-28 22-38 6-26 32-26 16-20 40-10 24-10 40 10 26 0 32 26 24 10 22 38 16 18 0 38 6 24-16 36-4 26-32 28-6 24-32 28-8 20-28 16-14 16-30 4z"/>
+    <ellipse cx="400" cy="330" rx="34" ry="27"/>
+    <circle cx="390" cy="326" r="4" fill="#1a1a1a" stroke="none"/>
+    <circle cx="412" cy="326" r="4" fill="#1a1a1a" stroke="none"/>
+    <path d="M396 342q8 6 16 0"/>
+    <path d="M372 310l-16-16M428 310l16-16"/>
+    <path d="M350 390v34M430 390v34M366 396v30M414 396v30"/>
+
+    <!-- Shepherd -->
+    <circle cx="318" cy="560" r="44"/>
+    <path d="M276 548q12-26 42-26t42 26"/>
+    <circle cx="306" cy="562" r="4" fill="#1a1a1a" stroke="none"/>
+    <circle cx="332" cy="562" r="4" fill="#1a1a1a" stroke="none"/>
+    <path d="M310 580q9 8 18 0"/>
+    <path d="M278 604q40-16 80 0l22 112q-62 24-124 0z"/>
+    <path d="M282 620q-34 14-50 44l24 14M354 620q30 12 46 40l-22 18"/>
+    <path d="M286 716q-8 42-4 74l40 2 6-62M346 716q8 42 4 74l-40 2-6-62"/>
+    <path d="M270 792h52M342 794h48"/>
+    <path d="M410 520q54 8 64 70 8 54-22 84"/>
+
+    <!-- Sheep in the field -->
+    <path d="M594 728q-20-4-24-22-22-2-24-22-18-10-12-28-12-16 0-30-2-22 18-30 4-20 24-20 12-16 30-8 18-8 30 8 20 0 24 20 18 8 16 28 12 14 0 30 4 20-12 28-2 20-24 22-4 18-24 22-6 16-24 12-10 12-24 2z"/>
+    <ellipse cx="686" cy="684" rx="26" ry="21"/>
+    <circle cx="678" cy="680" r="3.5" fill="#1a1a1a" stroke="none"/>
+    <circle cx="696" cy="680" r="3.5" fill="#1a1a1a" stroke="none"/>
+    <path d="M682 694q6 5 12 0"/>
+    <path d="M664 738v28M708 738v28"/>
+
+    <path d="M120 772q-16-4-20-18-18-2-20-18-14-8-10-22-10-12 0-24-2-18 14-24 4-16 20-16 10-12 24-6 14-6 24 6 16 0 20 16 14 6 12 22 10 12 0 24 4 16-10 22-2 16-20 18-4 14-20 18-6 14-20 10-8 10-20 2z"/>
+    <ellipse cx="196" cy="736" rx="22" ry="18"/>
+    <circle cx="190" cy="733" r="3" fill="#1a1a1a" stroke="none"/>
+    <circle cx="204" cy="733" r="3" fill="#1a1a1a" stroke="none"/>
+
+    <!-- Flowers -->
+    <path d="M110 880v-26M110 854q-14-14-4-22 10-8 18 2 12-6 16 4 4 10-8 16M96 880h28M110 866v14"/>
+    <path d="M700 900v-24M700 876q-12-12-4-20 8-6 16 2 10-6 14 4 4 10-6 14M688 900h24M700 888v12"/>
+    <path d="M520 890q8-24 16 0M548 898q8-20 16 0"/>
+  </g>
+</svg>

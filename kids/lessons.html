@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bible Lessons | Christ Embassy Kids, Central Church 3</title>
+  <meta name="description" content="Browse Bible lessons for children — Bible stories, memory verses, teaching points, questions and activities from Christ Embassy Kids." />
+  <meta name="theme-color" content="#FFF9EC" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body data-page="lessons">
+  <div data-header></div>
+
+  <main id="main">
+    <section class="page-hero page-hero--purple">
+      <div class="container page-hero__inner">
+        <div>
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-chevron-right"></use></svg>
+            <span>Bible Lessons</span>
+          </nav>
+          <h1>Stories that <span class="hl hl--yellow">shape a lifetime</span></h1>
+          <p>A little library of Bible lessons for children and parents — each one with a story, a memory verse, things to talk about and a simple activity to try at home.</p>
+        </div>
+        <div class="page-hero__art" aria-hidden="true">📖</div>
+      </div>
+    </section>
+
+    <section class="section section--white">
+      <div class="container">
+        <div class="library-toolbar reveal">
+          <div class="search-field">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-search"></use></svg>
+            <input class="input" type="search" placeholder="Search lessons, verses, stories…" data-lesson-search aria-label="Search Bible lessons" />
+          </div>
+          <div class="filter-chips" data-lesson-filters></div>
+        </div>
+
+        <div class="quiz-meta" style="margin-bottom:1.25rem">
+          <span data-lesson-count>Loading lessons…</span>
+          <span>Read together · talk together · pray together</span>
+        </div>
+
+        <div class="lesson-grid" data-lesson-grid>
+          <div class="empty-state" style="grid-column:1/-1">
+            <span class="emoji">📖</span>
+            <h3>Loading the lesson library…</h3>
+            <p>One moment while we gather the stories.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--cream">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow eyebrow--pink">How lessons work</span>
+          <h2>Four simple steps</h2>
+          <p>Every lesson follows the same gentle rhythm, so children know what to expect and parents can join in with confidence.</p>
+        </div>
+
+        <div class="grid-4">
+          <div class="info-card accent-blue reveal">
+            <div class="info-card__icon" aria-hidden="true">📖</div>
+            <h3>1. Read the story</h3>
+            <p>Read or listen to the Bible story together. Let children ask questions and wonder out loud.</p>
+          </div>
+          <div class="info-card accent-pink reveal" style="--reveal-delay:80ms">
+            <div class="info-card__icon" aria-hidden="true">💬</div>
+            <h3>2. Talk about it</h3>
+            <p>Use the questions to spark conversation. There are no wrong answers — just honest thinking.</p>
+          </div>
+          <div class="info-card accent-yellow reveal" style="--reveal-delay:160ms">
+            <div class="info-card__icon" aria-hidden="true">🎨</div>
+            <h3>3. Try the activity</h3>
+            <p>A simple craft, game or challenge helps the lesson move from the head to the heart.</p>
+          </div>
+          <div class="info-card accent-green reveal" style="--reveal-delay:240ms">
+            <div class="info-card__icon" aria-hidden="true">🙏</div>
+            <h3>4. Pray together</h3>
+            <p>Close with a short prayer. Let your child pray too — even one sentence is enough.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="final-cta reveal">
+          <span class="pill pill--white">Keep learning</span>
+          <h2>Hide God's Word in your heart!</h2>
+          <p>Choose a lesson, read it together this week and try the activity. Small moments around God's Word make a big difference over time.</p>
+          <div class="btn-row">
+            <a class="btn btn--yellow btn--lg" href="kids-corner.html">Play a Bible game <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#i-arrow-right"></use></svg></a>
+            <a class="btn btn--ghost-light btn--lg" href="resources.html">Get printable resources</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-footer></div>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+{
+  "upcoming": [
+    {
+      "slug": "childrens-praise-sunday",
+      "title": "Children's Praise Sunday",
+      "date": "2026-12-06",
+      "time": "10:00 AM",
+      "endTime": "12:00 PM",
+      "venue": "Main Auditorium, CE Central Church 3",
+      "emoji": "🎶",
+      "color": "pink",
+      "tag": "Praise & Worship",
+      "description": "A joyful morning of praise led by our children. Come and worship with songs, dance, tambourines and lots of joy as our kids lift up the name of Jesus."
+    },
+    {
+      "slug": "bible-quiz-competition",
+      "title": "Bible Quiz Competition",
+      "date": "2026-12-13",
+      "time": "12:30 PM",
+      "endTime": "2:30 PM",
+      "venue": "Children's Church Hall",
+      "emoji": "🏆",
+      "color": "purple",
+      "tag": "Competition",
+      "description": "Classes go head-to-head in a friendly Bible quiz! Teams will answer questions from the lessons we have studied this term. Bring your family and cheer for your class."
+    },
+    {
+      "slug": "christmas-family-celebration",
+      "title": "Christmas Family Celebration",
+      "date": "2026-12-20",
+      "time": "10:00 AM",
+      "endTime": "1:00 PM",
+      "venue": "Main Auditorium",
+      "emoji": "🎄",
+      "color": "green",
+      "tag": "Celebration",
+      "description": "Carols, a Christmas drama, games and a special family lunch. Children are invited to come dressed in their Christmas best as we celebrate the birth of Jesus together."
+    },
+    {
+      "slug": "end-of-year-thanksgiving",
+      "title": "End-of-Year Thanksgiving & Party",
+      "date": "2026-12-27",
+      "time": "11:00 AM",
+      "endTime": "2:00 PM",
+      "venue": "Church Compound",
+      "emoji": "🎆",
+      "color": "yellow",
+      "tag": "Thanksgiving",
+      "description": "We close the year with gratitude! Join us for thanksgiving, class presentations, awards, food and fun as we remember all God has done in 2026."
+    },
+    {
+      "slug": "new-year-praise-dedication",
+      "title": "New Year Praise & Dedication",
+      "date": "2027-01-10",
+      "time": "10:00 AM",
+      "endTime": "12:00 PM",
+      "venue": "Main Auditorium",
+      "emoji": "✨",
+      "color": "blue",
+      "tag": "Special Service",
+      "description": "We begin the new year by dedicating our children to God and asking for His wisdom, protection and favour over the year ahead."
+    }
+  ],
+  "past": [
+    {
+      "title": "Children's Day Celebration",
+      "date": "2026-05-27",
+      "image": "assets/images/gallery/celebration.webp",
+      "summary": "Balloons, bunting and big smiles! Our Children's Day celebration was a beautiful morning of games, prizes, cake and thanksgiving for every child in our church family."
+    },
+    {
+      "title": "Vacation Bible School",
+      "date": "2026-08-17",
+      "image": "assets/images/gallery/worship.webp",
+      "summary": "One whole week of Bible stories, songs, crafts and quizzes. Thank you to every teacher and volunteer who made VBS 2026 unforgettable."
+    },
+    {
+      "title": "Easter Praise & Drama",
+      "date": "2026-04-05",
+      "image": "assets/images/gallery/drama.webp",
+      "summary": "Our children brought the Easter story to life through drama, music and a powerful testimony of Jesus' resurrection."
+    },
+    {
+      "title": "Community Outreach Day",
+      "date": "2026-09-26",
+      "image": "assets/images/hero-children.webp",
+      "summary": "Our children and volunteers packed gift boxes and food items for families in our community. It was a joyful day of sharing God's love."
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Daniel in the lions' den colouring page">
+  <rect width="800" height="1000" fill="#ffffff"/>
+  <rect x="28" y="28" width="744" height="944" rx="38" fill="none" stroke="#1a1a1a" stroke-width="7"/>
+  <g fill="none" stroke="#1a1a1a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Moon and stars -->
+    <path d="M672 92a58 58 0 1 0 26 110 48 48 0 0 1-26-110z"/>
+    <path d="M560 150l6 16 16 6-16 6-6 16-6-16-16-6 16-6zM700 260l5 13 13 5-13 5-5 13-5-13-13-5 13-5zM600 300l4 11 11 4-11 4-4 11-4-11-11-4 11-4z"/>
+
+    <!-- Den arch -->
+    <path d="M96 840V400q304-250 608 0v440"/>
+    <path d="M140 840V420q264-210 520 0v420"/>
+
+    <!-- Rocks -->
+    <path d="M70 840l30-54 48 20 26-36 44 30 30-24 40 36 34-18 30 46z"/>
+    <path d="M500 840l26-44 42 16 24-30 38 26 30-20 34 52z"/>
+
+    <!-- Daniel kneeling -->
+    <circle cx="286" cy="520" r="46"/>
+    <path d="M250 505q10-22 36-22t36 22"/>
+    <circle cx="272" cy="522" r="4" fill="#1a1a1a" stroke="none"/>
+    <circle cx="300" cy="522" r="4" fill="#1a1a1a" stroke="none"/>
+    <path d="M276 540q10 8 20 0"/>
+    <path d="M244 566q42-18 84 0l16 104q-58 22-116 0z"/>
+    <path d="M244 586q-34 24-42 66l22 18M328 586q30 22 38 62l-20 20"/>
+    <path d="M238 700q-24 24-18 56l104 2q10-34-14-58"/>
+    <path d="M220 756q26-14 44 0M342 758q20-14 40 0"/>
+    <path d="M280 620v44M292 620v44"/>
+
+    <!-- Lion -->
+    <path d="M520 620q-46-6-74-52 40-6 58-30-8-44 30-62 26 30 62 24 20-38 62-24 2 44 32 62 40 8 46 50-30 24-34 58 26 30 14 62-40-2-62 22-18 34-56 26-14-28-48-30-34 0-50 26-32-16-30-54 34-18 30-58z"/>
+    <circle cx="612" cy="612" r="72"/>
+    <path d="M558 556l-16-30 38 6M666 556l16-30-38 6"/>
+    <circle cx="588" cy="600" r="5" fill="#1a1a1a" stroke="none"/>
+    <circle cx="636" cy="600" r="5" fill="#1a1a1a" stroke="none"/>
+    <path d="M606 620q6-10 12 0l-6 10z" fill="#1a1a1a" stroke="none"/>
+    <path d="M612 630v12M612 642q-14 14-26 0M612 642q14 14 26 0"/>
+    <path d="M556 690q-34 34-26 74 40 26 112 16 54-10 74-44-30-20-38-46"/>
+    <path d="M486 764q-26 6-38 30M712 738q30 4 38 28"/>
+    <path d="M700 760q44 10 50 44l-24 18M724 800q22 8 18 26"/>
+    <path d="M520 690q-10 24-2 44M700 690q10 22 2 42"/>
+
+    <!-- Grass -->
+    <path d="M120 900q8-30 16 0M148 908q8-26 16 0M654 900q8-30 16 0M682 908q8-26 16 0"/>
+  </g>
+</svg>

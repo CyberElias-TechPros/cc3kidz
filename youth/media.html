@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Media Centre | Christ Embassy Youth Church Port Harcourt</title>
+  <meta name="description" content="Sermon videos, worship sessions, galleries, testimonies, and livestream access.">
+  <meta name="theme-color" content="#10172B">
+  <link rel="icon" href="../kids/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/youth.css">
+</head>
+<body data-page="media">
+  <div data-youth-header></div>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Media Centre</span>
+        <h1>Watch, Listen &amp; <span class="gold-text">Be Inspired</span></h1>
+        <p class="lead">Sermon messages, worship moments, photo galleries, and testimonies.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div style="display:flex;gap:0.65rem;flex-wrap:wrap;margin-bottom:1.75rem;" data-y-filters>
+          <button class="btn btn--sm btn--gold" type="button" data-filter="all">All</button>
+          <button class="btn btn--sm btn--ghost" type="button" data-filter="sermons">Sermons</button>
+          <button class="btn btn--sm btn--ghost" type="button" data-filter="worship">Worship</button>
+          <button class="btn btn--sm btn--ghost" type="button" data-filter="gallery">Gallery</button>
+        </div>
+        <div class="grid-3">
+          <article class="card" data-y-cat="sermons">
+            <img src="assets/images/youth-word.webp" alt="Word teaching" style="border-radius:12px;margin-bottom:1rem;aspect-ratio:16/10;object-fit:cover;width:100%;">
+            <span class="tag">Sermon</span>
+            <h3>Walking in Dominion</h3>
+            <p>Understanding your authority in Christ and living victoriously every day.</p>
+          </article>
+          <article class="card" data-y-cat="worship">
+            <img src="assets/images/hero-youth.webp" alt="Worship session" style="border-radius:12px;margin-bottom:1rem;aspect-ratio:16/10;object-fit:cover;width:100%;">
+            <span class="tag tag--emerald">Worship</span>
+            <h3>Sunday Praise &amp; Worship</h3>
+            <p>Highlights from our Youth Worship Team leading the congregation.</p>
+          </article>
+          <article class="card" data-y-cat="gallery">
+            <img src="assets/images/youth-community.webp" alt="Youth fellowship" style="border-radius:12px;margin-bottom:1rem;aspect-ratio:16/10;object-fit:cover;width:100%;">
+            <span class="tag">Gallery</span>
+            <h3>Youth Fellowship Moments</h3>
+            <p>Connecting, growing, and celebrating together in Port Harcourt.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div data-youth-footer></div>
+  <script src="js/youth.js"></script>
+</body>
+</html>
