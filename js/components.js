@@ -131,6 +131,7 @@ export function renderFooter() {
               <li><a href="events.html">Events</a></li>
               <li><a href="gallery.html">Gallery</a></li>
               <li><a href="kids-corner.html">Kids Corner</a></li>
+              <li><a href="teens/index.html">Teens Church (13–19)</a></li>
             </ul>
           </div>
 

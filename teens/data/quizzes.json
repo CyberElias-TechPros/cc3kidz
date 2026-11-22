@@ -1,0 +1,60 @@
+{
+  "questions": [
+    {
+      "q": "Which verse says, 'Therefore, if anyone is in Christ, the new creation has come'?",
+      "options": ["2 Corinthians 5:17", "John 3:16", "Romans 8:28", "Ephesians 2:8"],
+      "answer": 0,
+      "difficulty": "Easy",
+      "ref": "2 Corinthians 5:17"
+    },
+    {
+      "q": "Who wrote to Timothy, 'Don't let anyone look down on you because you are young'?",
+      "options": ["Peter", "Paul", "John", "James"],
+      "answer": 1,
+      "difficulty": "Easy",
+      "ref": "1 Timothy 4:12"
+    },
+    {
+      "q": "In Daniel 6:3, why did Daniel distinguish himself above the other administrators?",
+      "options": ["His wealth", "An extraordinary/excellent spirit", "His age", "His army"],
+      "answer": 1,
+      "difficulty": "Medium",
+      "ref": "Daniel 6:3"
+    },
+    {
+      "q": "Which book contains 'For I know the plans I have for you, declares the Lord'?",
+      "options": ["Isaiah", "Psalms", "Jeremiah", "Proverbs"],
+      "answer": 2,
+      "difficulty": "Easy",
+      "ref": "Jeremiah 29:11"
+    },
+    {
+      "q": "According to Romans 1:16, what is the Gospel?",
+      "options": ["A good philosophy", "The power of God that brings salvation", "A historical record", "A set of rules"],
+      "answer": 1,
+      "difficulty": "Medium",
+      "ref": "Romans 1:16"
+    },
+    {
+      "q": "Who did Jesus say would teach us all things and remind us of everything He said?",
+      "options": ["The Angels", "The Holy Spirit", "The Prophets", "The Elders"],
+      "answer": 1,
+      "difficulty": "Easy",
+      "ref": "John 14:26"
+    },
+    {
+      "q": "Complete Proverbs 13:20: 'Walk with the wise and become wise, for a companion of fools...'",
+      "options": ["grows rich", "suffers harm", "finds peace", "gains honour"],
+      "answer": 1,
+      "difficulty": "Hard",
+      "ref": "Proverbs 13:20"
+    },
+    {
+      "q": "Which scripture encourages us to 'pray continually'?",
+      "options": ["1 Thessalonians 5:17", "Hebrews 11:1", "Galatians 5:22", "Colossians 3:2"],
+      "answer": 0,
+      "difficulty": "Medium",
+      "ref": "1 Thessalonians 5:17"
+    }
+  ]
+}

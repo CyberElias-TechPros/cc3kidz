@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Events | CE Central 3 Teens</title>
+  <meta name="description" content="Upcoming programmes, live countdown, and past event recaps at CE Central 3 Teens.">
+  <meta name="theme-color" content="#101126">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/teens.css">
+</head>
+<body data-page="events">
+  <div data-teens-header></div>
+  <main>
+    <section class="page-hero">
+      <div class="container section-head" style="margin-bottom:0;">
+        <div>
+          <span class="eyebrow">Events &amp; Programmes</span>
+          <h1>What's Coming <span class="gradient-text">Next</span></h1>
+          <p class="lead">Worship experiences, word conferences, hangouts, and leadership summits.</p>
+        </div>
+        <div>
+          <span style="font-size:0.8rem;color:var(--blue);text-transform:uppercase;letter-spacing:0.08em;">Countdown to Teens Worship Experience</span>
+          <div class="countdown" data-countdown="2026-12-06T10:00:00"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Upcoming Events</h2>
+        <div class="grid-2" style="margin-top:1.25rem;" data-teens-events></div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <h2>Past Highlights</h2>
+        <div class="grid-2" style="margin-top:1.25rem;" data-teens-past></div>
+      </div>
+    </section>
+  </main>
+  <div data-teens-footer></div>
+  <script src="js/teens.js"></script>
+</body>
+</html>

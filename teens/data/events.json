@@ -1,0 +1,60 @@
+{
+  "upcoming": [
+    {
+      "id": "teens-worship-experience",
+      "title": "Teens Worship Experience",
+      "date": "2026-12-06",
+      "displayDate": "Dec 6, 2026",
+      "time": "10:00 AM – 12:30 PM",
+      "venue": "CE Central Church 3 Teens Hall, PH Zone 3",
+      "type": "Worship",
+      "description": "An electrifying morning of praise, prophetic worship, and the Word led by the CE Central 3 Teens Worship Team."
+    },
+    {
+      "id": "word-conference",
+      "title": "Unashamed Word Conference",
+      "date": "2026-12-13",
+      "displayDate": "Dec 13, 2026",
+      "time": "9:30 AM – 1:30 PM",
+      "venue": "Main Auditorium, CE Central Church 3",
+      "type": "Conference",
+      "description": "Deep-dive Bible sessions, Q&A panels, and impartation for teenagers ready to dominate their world."
+    },
+    {
+      "id": "teens-hangout",
+      "title": "Teens Hangout & Games Night",
+      "date": "2026-12-20",
+      "displayDate": "Dec 20, 2026",
+      "time": "4:00 PM – 6:30 PM",
+      "venue": "Church Courtyard, Port Harcourt",
+      "type": "Fellowship",
+      "description": "Food, music, team games, spoken word, and real conversations with friends in a safe, fun environment."
+    },
+    {
+      "id": "talent-showcase",
+      "title": "Generation of Champions Talent Showcase",
+      "date": "2027-01-10",
+      "displayDate": "Jan 10, 2027",
+      "time": "11:00 AM – 1:30 PM",
+      "venue": "CE Central Church 3 Teens Hall",
+      "type": "Creative",
+      "description": "Celebrating music, drama, spoken word, graphic design, and tech projects created by our teens."
+    }
+  ],
+  "past": [
+    {
+      "id": "leadership-summit-2026",
+      "title": "Teens Leadership Summit 2026",
+      "displayDate": "Oct 18, 2026",
+      "summary": "Over 120 teenagers equipped on purpose, excellence, and campus influence.",
+      "highlights": "3 workshops • 18 new cell leaders commissioned"
+    },
+    {
+      "id": "bible-quiz-marathon",
+      "title": "Bible Study & Quiz Marathon",
+      "displayDate": "Sep 27, 2026",
+      "summary": "An intense, joyful afternoon of scripture mastery across Junior and Senior Teens.",
+      "highlights": "4 teams • 120+ scriptures answered"
+    }
+  ]
+}
