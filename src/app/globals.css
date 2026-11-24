@@ -37,24 +37,19 @@ body {
   color: var(--ink);
   font-family: var(--font-text), system-ui, sans-serif;
   font-weight: 500;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.011em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  font-feature-settings: "ss01" 1;
 }
 
-/* Bolder, rounded, official — headings tighter, heavier; body slightly heavier */
-h1, h2, h3, h4, .font-display {
+/* Main church — bolder, rounded, official. Scoped to .font-display only so Kids (.kids-scope) keeps Fredoka/Poppins */
+.font-display {
   font-family: var(--font-display), system-ui, sans-serif;
   font-weight: 800;
-  letter-spacing: -0.025em;
-  line-height: 0.98;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
 }
-h1 { font-weight: 800; letter-spacing: -0.03em; }
-h2 { font-weight: 800; }
-h3 { font-weight: 700; }
-p, li, dd { font-weight: 500; }
 strong, b { font-weight: 700; }
 
 /* Focus */
