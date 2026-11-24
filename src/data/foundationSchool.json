@@ -1,0 +1,37 @@
+{
+  "intro": "Perfected in Foundation School — compulsory for every new convert and new member. 6 classes over 6 weeks + graduation exam, prerequisite for leadership in the house of God. You are taught our Vision, sound doctrine, and how to live the Word daily — established in righteousness, walking in divine health, prosperity, and excellence. Hallelujah!",
+  "duration": "6 weeks + Graduation Week",
+  "classes": [
+    {
+      "id": 1,
+      "title": "The New Creation",
+      "summary": "Who the new creation is in Christ — your rights, righteousness, and recreated life. Regenerated spirit, renewed mind, disciplined body; functioning in dominion."
+    },
+    {
+      "id": 2,
+      "title": "The Holy Spirit",
+      "summary": "The Person and ministry of the Holy Spirit — being filled with the Spirit, fellowship of the Spirit, gifts of the Spirit, and divine enablement to minister with power."
+    },
+    {
+      "id": 3,
+      "title": "Christian Doctrine",
+      "summary": "Foundational doctrines of Christ: righteousness, sanctification, holiness, living faith, and deliverance — built on the infallible, efficacious Word."
+    },
+    {
+      "id": 4,
+      "title": "Evangelism & Cell Ministry",
+      "summary": "Soul-winning as your lifestyle and chariot — winning every man's world to Christ; the cell system as the Church's missionary and pastoral care structure."
+    },
+    {
+      "id": 5,
+      "title": "Christian Character & Prosperity",
+      "summary": "Character formation, prosperity principles, stewardship — succeeding God's way."
+    },
+    {
+      "id": 6,
+      "title": "The Local Assembly & Believers' LoveWorld",
+      "summary": "Universal vs local church, and Believers' LoveWorld order — LoveWorld Nation -> Zone -> Group -> Church -> Cell — your place in the Vision, fulfilling your divine assignment with excellence."
+    }
+  ],
+  "certificationNote": "Teachers are hand-picked by the Pastor, verified by Zonal office, and recertified every 6 months. Attendance must be consistent — an interruption >3 months restarts the cycle."
+}

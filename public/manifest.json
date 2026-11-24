@@ -1,0 +1,19 @@
+{
+  "name": "Christ Embassy Central Church 3",
+  "short_name": "CE Central 3",
+  "description": "God's Word. God's Presence. A Life of Impact. — Port Harcourt Zone 3",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFBF5",
+  "theme_color": "#10172B",
+  "icons": [
+    { "src": "/assets/images/loveworld-logo.png", "sizes": "any", "type": "image/png" },
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ],
+  "shortcuts": [
+    { "name": "Plan Your Visit", "url": "/new-here" },
+    { "name": "Watch Live", "url": "/online" },
+    { "name": "Cell Finder", "url": "/cells" },
+    { "name": "Kids Church", "url": "/kids" }
+  ]
+}

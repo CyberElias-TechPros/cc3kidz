@@ -1,0 +1,13 @@
+[
+  { "id": "sat", "name": "LoveWorld SAT", "region": "Africa & Global", "lang": "English", "icon": "📡" },
+  { "id": "usa", "name": "LoveWorld USA", "region": "Americas", "lang": "English", "icon": "🇺🇸" },
+  { "id": "uk", "name": "LoveWorld UK", "region": "Europe", "lang": "English", "icon": "🇬🇧" },
+  { "id": "canada", "name": "LoveWorld Canada", "region": "North America", "lang": "English", "icon": "🇨🇦" },
+  { "id": "xp", "name": "LoveWorld XP", "region": "Youth", "lang": "English", "icon": "✧" },
+  { "id": "mena", "name": "LoveWorld MENA", "region": "Middle East/North Africa", "lang": "Arabic", "icon": "🌙" },
+  { "id": "euro", "name": "LoveWorld Euro", "region": "Europe", "lang": "Multilingual", "icon": "🇪🇺" },
+  { "id": "asia", "name": "LoveWorld Asia", "region": "Asia-Pacific", "lang": "English/Asian", "icon": "🌏" },
+  { "id": "casa", "name": "LoveWorld CASA", "region": "Southern Africa", "lang": "English", "icon": "🇿🇦" },
+  { "id": "pacific", "name": "LoveWorld Pacifics", "region": "Pacific", "lang": "English", "icon": "🌊" },
+  { "id": "india", "name": "LoveWorld India", "region": "India", "lang": "English/Hindi", "icon": "🇮🇳" }
+]

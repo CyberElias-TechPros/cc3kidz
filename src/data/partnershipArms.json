@@ -1,0 +1,62 @@
+[
+  {
+    "id": "rhapsody",
+    "slug": "partnership-rhapsody",
+    "name": "Rhapsody of Realities Partnership",
+    "category": "Rhapsody of Realities",
+    "desc": "Sponsor print & translation — ReachOut World in 8,300+ languages. The world's most translated daily devotional by Pastor Chris.",
+    "link": "https://rhapsodyofrealities.org",
+    "cta": "Partner with Rhapsody",
+    "icon": "📖"
+  },
+  {
+    "id": "healing",
+    "slug": "healing-streams",
+    "name": "Healing Streams Partnership",
+    "category": "Healing School",
+    "desc": "Host viewing centres & sponsor broadcast for Live Healing Services with Pastor Chris — miracles in 100+ nations.",
+    "link": "https://healingstreams.tv",
+    "cta": "Sponsor Healing Streams",
+    "icon": "✦"
+  },
+  {
+    "id": "innercity",
+    "slug": "innercity",
+    "name": "InnerCity Mission Partnership",
+    "category": "InnerCity Mission",
+    "desc": "1M+ households, Loveworld Schools, 13B+ meals — sponsor a child, a classroom, a school via InnerCity Mission for Children.",
+    "link": "https://theinnercitymission.ngo",
+    "cta": "Give to InnerCity",
+    "icon": "❤"
+  },
+  {
+    "id": "loveworld-tv",
+    "slug": "loveWorld-tv",
+    "name": "LoveWorld Television Ministry",
+    "category": "LoveWorld TV",
+    "desc": "Sponsor airtime on LoveWorld networks (11 channels) — Your LoveWorld Specials, Global Services live to the world.",
+    "link": "https://loveworldtelevisionministry.org",
+    "cta": "Sponsor Airtime",
+    "icon": "📡"
+  },
+  {
+    "id": "ism",
+    "slug": "missions",
+    "name": "Missions & Church Planting",
+    "category": "Missions",
+    "desc": "Philippines & Rural Rivers — Cavite, Pampanga, Trans-Amadi. Plant churches, sponsor evangelism transports and outreaches.",
+    "link": "https://christembassy.org",
+    "cta": "Plant a Church",
+    "icon": "🌍"
+  },
+  {
+    "id": "tithe-offering",
+    "slug": "tithe",
+    "name": "Tithe & Offering",
+    "category": "Worship & Giving",
+    "desc": "Honour God with firstfruits (Mal 3:10) — covenant giving for increase and house-support.",
+    "link": "/give",
+    "cta": "Give Tithe",
+    "icon": "🙌"
+  }
+]

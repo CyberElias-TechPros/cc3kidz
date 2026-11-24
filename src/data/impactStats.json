@@ -1,0 +1,24 @@
+{
+  "group": {
+    "householdsReached": "12.4k",
+    "soulsWon": "4,820",
+    "cells": 92,
+    "rhapsodyCopies": "18,500",
+    "label": "CC3 Group (PH Zone 3) — 2025/2026"
+  },
+  "zone": {
+    "householdsReached": "118k",
+    "churches": 32,
+    "missions": {
+      "philippinesSouls": 1250,
+      "churchesPlanted": 2,
+      "locations": ["Cavite", "Pampanga"]
+    }
+  },
+  "global": {
+    "households": "1M+",
+    "meals": "13B+",
+    "countries": "100+",
+    "languages": "8,300+"
+  }
+}

@@ -1,0 +1,91 @@
+[
+  {
+    "id": "choir",
+    "slug": "choir-music",
+    "name": "Choir & Music Ministry",
+    "group": "Worship",
+    "purpose": "Ministering in psalms, hymns and spiritual songs — ushering the presence of God in excellence. Glory! Hallelujah!",
+    "activities": ["Sunday worship", "Special ministrations", "Praise nights", "Rehearsals Sat 10AM"],
+    "leader": "Ministry Coordinator — Choir",
+    "href": "/ministries/choir-music",
+    "image": "/assets/images/cc3/service-congregation.jpg"
+  },
+  {
+    "id": "ushering",
+    "slug": "ushering-hospitality",
+    "name": "Ushering & Hospitality",
+    "group": "Services",
+    "purpose": "Receiving every soul with the love of Christ — order, joy and excellence, so all may hear the Word unhindered. You are most welcome!",
+    "activities": ["Guest welcome", "Seating & order", "First-time visitor care"],
+    "leader": "Head of Ushers",
+    "href": "/ministries/ushering-hospitality",
+    "image": "/assets/images/main-family.webp"
+  },
+  {
+    "id": "media",
+    "slug": "media-technical",
+    "name": "Media & Technical",
+    "group": "Services",
+    "purpose": "Conveying every meeting beyond these walls — sound, sight and livestream with spiritual precision and excellence for an ever-increasing audience.",
+    "activities": ["Audio/visual", "Photography", "Livestream", "Content"],
+    "leader": "Media Coordinator",
+    "href": "/ministries/media-technical",
+    "image": "/assets/images/cc3/service-chairs.jpg"
+  },
+  {
+    "id": "evangelism",
+    "slug": "evangelism-outreach",
+    "name": "Evangelism & Outreach",
+    "group": "Missions",
+    "purpose": "Taking the Gospel to every man’s world — winning, nurturing and perfecting souls with Rhapsody and the power of the Spirit.",
+    "activities": ["Street outreaches", "Campus evangelism", "Follow-up", "Rhapsody distribution"],
+    "leader": "Outreach Coordinator",
+    "href": "/outreach",
+    "image": "/assets/images/cc3/reachout-world.webp"
+  },
+  {
+    "id": "prayer",
+    "slug": "prayer-intercession",
+    "name": "Prayer & Intercession",
+    "group": "Spiritual",
+    "purpose": "Prevailing in prayer for the Church, our city and nations — enforcing the will of the Father, releasing grace and gathering harvest. Blessed be God!",
+    "activities": ["Prayer meetings", "Intercession chains", "Prayer schools"],
+    "leader": "Prayer Coordinator",
+    "href": "/prayer",
+    "image": "/assets/images/cc3/prayer-request.jpg"
+  },
+  {
+    "id": "cells",
+    "slug": "cell-ministry",
+    "name": "Cell Ministry",
+    "group": "Fellowship",
+    "purpose": "Vibrant cells where the Word lives richly — care abounds, none is left behind, and every member is perfected to reign as a champion.",
+    "activities": ["Weekly cell meetings", "Outreach", "Discipleship"],
+    "leader": "Cell Ministry Coordinator",
+    "href": "/cells",
+    "image": "/assets/images/main-family.webp"
+  },
+  {
+    "id": "teens",
+    "slug": "teens-church",
+    "name": "Teens Church",
+    "group": "Next Gen",
+    "purpose": "Raising vibrant, Word-grounded champions (13–19) — bold in righteousness, excellent in all things, ever-joyful in the Spirit.",
+    "activities": ["Teens services", "TEEVO Club", "Camps & conferences"],
+    "leader": "Teens Coordinator",
+    "href": "/kids",
+    "image": "/assets/images/cc3/service-congregation.jpg",
+    "note": "Children & Teens expression: CC3 Kids (0–12) lives at /kids"
+  },
+  {
+    "id": "foundation",
+    "slug": "foundation-school",
+    "name": "Foundation School",
+    "group": "Growth",
+    "purpose": "Established in the realities of the new creation — rooted, built up and fortified to reign in life as more than conquerors.",
+    "activities": ["Classes", "Graduations", "Discipleship tracks"],
+    "leader": "Foundation School Principal",
+    "href": "/foundation-school",
+    "image": "/assets/images/main-sermon.webp"
+  }
+]

@@ -61,20 +61,32 @@ export function initContact() {
 
     success.querySelector("[data-copy-enquiry]")?.addEventListener("click", async (event) => {
       const button = event.currentTarget;
+      let copied = false;
       try {
-        await navigator.clipboard.writeText(summary);
-        button.innerHTML = `${icon("check")} Copied!`;
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(summary);
+          copied = true;
+        }
       } catch {
-        const textarea = document.createElement("textarea");
-        textarea.value = summary;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand("copy");
-        textarea.remove();
-        button.innerHTML = `${icon("check")} Copied!`;
+        copied = false;
       }
+      if (!copied) {
+        try {
+          const textarea = document.createElement("textarea");
+          textarea.value = summary;
+          textarea.setAttribute("readonly", "");
+          textarea.style.position = "fixed";
+          textarea.style.opacity = "0";
+          document.body.appendChild(textarea);
+          textarea.select();
+          document.execCommand("copy");
+          textarea.remove();
+          copied = true;
+        } catch {}
+      }
+      button.innerHTML = `${icon("check")} ${copied ? "Copied!" : "Ready to copy"}`;
       window.setTimeout(() => {
-        button.innerHTML = `${icon("check")} Copy my enquiry`;
+        button.innerHTML = `${icon("copy")} Copy my enquiry`;
       }, 2200);
     });
 

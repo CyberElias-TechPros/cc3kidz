@@ -1,0 +1,13 @@
+{
+  "notice": "Replace with real bank details in Admin → Giving. POP submissions are stored pending verification.",
+  "accounts": [
+    { "fundSlug": "tithe", "bankName": "Zenith Bank", "accountName": "Christ Embassy Central Church 3", "accountNo": "0000000000", "currency": "NGN", "active": false },
+    { "fundSlug": "offering", "bankName": "Zenith Bank", "accountName": "Christ Embassy Central Church 3", "accountNo": "0000000000", "currency": "NGN", "active": false },
+    { "fundSlug": "partnership-rhapsody", "bankName": "GTBank", "accountName": "CE PH Zone 3 Partnership", "accountNo": "0000000000", "currency": "NGN", "active": false },
+    { "fundSlug": "healing-streams", "bankName": "GTBank", "accountName": "CE PH Zone 3 Healing Streams", "accountNo": "0000000000", "currency": "NGN", "active": false },
+    { "fundSlug": "building", "bankName": "Access Bank", "accountName": "CE Central Church 3 Building", "accountNo": "0000000000", "currency": "NGN", "active": false },
+    { "fundSlug": "missions", "bankName": "Access Bank", "accountName": "CE Central Church 3 Missions", "accountNo": "0000000000", "currency": "NGN", "active": false },
+    { "fundSlug": "welfare", "bankName": "First Bank", "accountName": "CE Central Church 3 Welfare", "accountNo": "0000000000", "currency": "NGN", "active": false },
+    { "fundSlug": "loveWorld-tv", "bankName": "GTBank", "accountName": "CE PH Zone 3 LoveWorld TV", "accountNo": "0000000000", "currency": "NGN", "active": false }
+  ]
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "president",
+    "name": "Rev. Dr. Chris Oyakhilome DSc DSc DD",
+    "title": "President — LoveWorld Inc.",
+    "zone": "LoveWorld Nation",
+    "bio": "Born Dec 7, 1963 Edo State — Founder of Youth For Christ (1987), Christ Embassy (1989/1990), LoveWorldSAT (first 24/7 Christian TV from Africa), Rhapsody of Realities (8,300+ languages), Healing School, International School of Ministry & InnerCity Mission. Our Man of God.",
+    "image": "/assets/images/leaders/pastor-chris-oyakhilome.jpg"
+  },
+  {
+    "id": "zonal",
+    "name": "Pastor Linda Okocha",
+    "title": "Zonal Pastor — Port Harcourt Zone 3",
+    "zone": "Port Harcourt Zone 3",
+    "bio": "Zonal Pastor, Christ Embassy Port Harcourt Zone 3. Providing spiritual oversight, vision and excellence for 32+ churches across the zone, with a passion for soul-winning and leadership development.",
+    "image": "/assets/images/leaders/pastor-linda-okocha.jpg"
+  },
+  {
+    "id": "group",
+    "name": "Pastor Kelson Onoriode",
+    "title": "Group Pastor — CC3 Group",
+    "group": "CC3 Group (Central Church 3 Group)",
+    "bio": "Group Pastor, Christ Embassy Central Church 3 Group. Coordinating 7 churches, nurturing cell growth, ministry impact and pastoral care across Rumuokwuta, Orazi, Ada-George, Trans-Amadi and GRA.",
+    "image": "/assets/images/leaders/pastor-kelson-onoriode.jpg"
+  },
+  {
+    "id": "resident",
+    "name": "Pastor Daniel & Pastor Joy M.",
+    "title": "Resident Pastors — CE Central Church 3",
+    "church": "Central Church 3",
+    "bio": "Resident pastors shepherding the Central Church 3 congregation — leading Sunday & midweek services, departments, cells and community outreach with love and excellence.",
+    "image": "/assets/images/hero-main.webp"
+  },
+  {
+    "id": "associate",
+    "name": "Pastor Michael S.",
+    "title": "Assistant Pastor",
+    "church": "Central Church 3",
+    "bio": "Supporting pastoral care, visitation, and member follow-up at Central Church 3.",
+    "image": "/assets/images/main-sermon.webp"
+  }
+]

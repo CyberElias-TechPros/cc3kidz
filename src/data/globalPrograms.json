@@ -1,0 +1,64 @@
+[
+  {
+    "id": "healing-streams",
+    "title": "Healing Streams Live Healing Services",
+    "badge": "Healing Streams",
+    "date": "2026-03-13",
+    "endDate": "2026-03-15",
+    "time": "2:00 PM GMT+1",
+    "venue": "Online + Viewing Centres (30B Rumuokwuta)",
+    "cta": "Register & Host Centre",
+    "href": "/events/special-miracle-service",
+    "featured": true,
+    "icon": "✦"
+  },
+  {
+    "id": "global-communion",
+    "title": "Global Communion Service",
+    "badge": "Monthly",
+    "date": "2026-02-01",
+    "time": "4:00 PM GMT+1",
+    "venue": "Live on Loveworld Networks + 30B Rumuokwuta",
+    "cta": "Join Service",
+    "href": "/online",
+    "funded": 91,
+    "icon": "◈"
+  },
+  {
+    "id": "prayer-day",
+    "title": "Global Day of Prayer",
+    "badge": "Prayer Network",
+    "date": "2026-03-27",
+    "time": "6:00 PM GMT+1",
+    "venue": "Online (KingsChat) + Zonal Prayer Centre",
+    "cta": "Join Prayer",
+    "href": "/prayer",
+    "funded": 45,
+    "icon": "🙏"
+  },
+  {
+    "id": "your-loveworld",
+    "title": "Your LoveWorld Specials",
+    "badge": "Season 11 Phase 3",
+    "date": "2026-02-18",
+    "endDate": "2026-02-22",
+    "time": "7:00 PM GMT+1",
+    "venue": "Loveworld TV & Radio + Online",
+    "cta": "Watch Live",
+    "href": "/online",
+    "funded": 68,
+    "icon": "📡"
+  },
+  {
+    "id": "praise-night",
+    "title": "Praise Night Service",
+    "badge": "Zonal",
+    "date": "2026-02-28",
+    "time": "9:00 PM GMT+1",
+    "venue": "Zonal Church, Peter Odili Road",
+    "cta": "Sponsor Airtime",
+    "href": "/give",
+    "funded": 52,
+    "icon": "🎶"
+  }
+]

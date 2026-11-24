@@ -1,0 +1,8 @@
+import Link from 'next/link'
+export default function Page(){
+  const classes=[{id:'creche',name:'Crèche',age:'0 – 3 years',img:'/kids/assets/images/classes/creche.webp',desc:'Warm, gentle space for littlest ones — soft toys, songs and tender care.'},{id:'preschool',name:'Preschool',age:'3 – 5 years',img:'/kids/assets/images/classes/preschool.webp',desc:'Curiosity, colour and Bible stories come alive through play and craft.'},{id:'primary',name:'Primary',age:'6 – 8 years',img:'/kids/assets/images/classes/primary.webp',desc:'Bible basics, memorise verses and live out faith every day.'},{id:'preteens',name:'Pre-teens',age:'9 – 12 years',img:'/kids/assets/images/classes/preteens.webp',desc:'Big questions, real friendships and honest conversations about faith.'}]
+  return <>
+    <section className="page-hero page-hero--yellow"><div className="container page-hero__inner"><div><nav className="breadcrumb"><Link href="/kids">Home</Link> › <span>Classes</span></nav><h1>Four places to <span className="hl hl--pink">belong</span></h1><p>Every class led by caring teachers who know what makes each age special.</p></div><div className="page-hero__art">🏫</div></div></section>
+    <section className="section"><div className="container"><div className="class-grid">{classes.map(c=><article key={c.id} id={c.id} className="class-card"><div className="class-card__media"><img src={c.img} alt={c.name}/><span className="class-card__age">{c.age}</span></div><div className="class-card__body"><h3>{c.name}</h3><p>{c.desc}</p><Link className="btn btn--secondary btn--sm" href="/kids/contact">Join us</Link></div></article>)}</div></div></section>
+  </>
+}

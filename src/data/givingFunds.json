@@ -1,0 +1,10 @@
+[
+  { "slug": "tithe", "name": "Tithe", "desc": "Tithe — honouring God with firstfruits (Mal 3:10)", "purpose": "Covenant partnership with God for increase" },
+  { "slug": "offering", "name": "Offering / Thanksgiving", "desc": "General offering, thanksgiving, seed", "purpose": "Support of church works and thanksgiving" },
+  { "slug": "partnership-rhapsody", "name": "Rhapsody Partnership", "desc": "Reach Every Home with Rhapsody of Realities", "purpose": "Print, translation, distribution across PH Zone 3" },
+  { "slug": "healing-streams", "name": "Healing Streams", "desc": "Live Healing Services with Pastor Chris", "purpose": "Global healing outreaches" },
+  { "slug": "building", "name": "Building Project", "desc": "CC3 Permanent Site & Expansion", "purpose": "Land, construction, fittings" },
+  { "slug": "missions", "name": "Missions & Outreach", "desc": "Evangelism, cell outreaches, LoveWorld missions", "purpose": "Soul-winning across Rivers State and beyond" },
+  { "slug": "welfare", "name": "Welfare & Benevolence", "desc": "Support for members in need", "purpose": "Benevolence fund" },
+  { "slug": "loveWorld-tv", "name": "LoveWorld TV / Media", "desc": "Broadcast & media partnership", "purpose": "Airtime, production, distribution" }
+]
