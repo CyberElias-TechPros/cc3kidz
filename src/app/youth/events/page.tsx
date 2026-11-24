@@ -2,7 +2,7 @@ import Link from 'next/link'
 export const metadata = { title: 'Events — CC3 Youth | Conferences, Workshops & Calendar' }
 export default function YouthEventsPage(){
   const upcoming = [
-    { title: 'Youth Church Service', date: 'Sundays (TBC)', place: 'CC3 Group Secretariat', tag: 'Weekly' },
+    { title: 'Youth Church Service', date: 'Sundays (TBC)', place: 'CC3 Group Church', tag: 'Weekly' },
     { title: 'Leadership Workshop', date: 'Quarterly (TBC)', place: 'As announced', tag: 'Leadership' },
     { title: 'YOU R.I.S.E. Campaign', date: 'As announced', place: 'Port Harcourt — streets & campuses', tag: 'Outreach' },
   ]

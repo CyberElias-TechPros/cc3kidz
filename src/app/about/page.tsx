@@ -209,7 +209,7 @@ export default function AboutPage() {
             <div className="card p-6">
               <h3 className="font-display font-extrabold text-navy">Visit us</h3>
               <div className="mt-2 text-sm leading-6 text-slate-600">
-                Group Secretariat: <b className="text-navy">30B Rumuokwuta/NTA Road</b>
+                Group Church: <b className="text-navy">30B Rumuokwuta/NTA Road</b>
                 <br />
                 Zonal Church: Jessy &amp; Jenny Rd, Peter Odili Rd<br />
                 Sunday 8AM · Wednesday 5:30PM · Friday Prayer 5:30PM

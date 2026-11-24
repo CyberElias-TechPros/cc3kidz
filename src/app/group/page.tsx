@@ -19,7 +19,7 @@ export default function GroupPage() {
           <p className="text-slate-200 mt-3 max-w-3xl leading-7">LoveWorld Nation → Port Harcourt Zone 3 (Zonal Church, Jessy & Jenny St, Peter Odili Rd) → CC3 Group (Secretariat 30B Rumuokwuta/NTA Road) → 7 Churches → Cells. Each church is a full expression with its own pastor, service times, and cells — united in vision.</p>
           <div className="mt-4 flex flex-wrap gap-2 text-xs">
             <span className="rounded-full bg-white/10 border border-white/15 px-3 py-1">Zonal Land: Jessy & Jenny St, Peter Odili Rd</span>
-            <span className="rounded-full bg-gold text-navy px-3 py-1 font-bold">Group Secretariat: 30B Rumuokwuta</span>
+            <span className="rounded-full bg-gold text-navy px-3 py-1 font-bold">Group Church: 30B Rumuokwuta</span>
           </div>
         </div>
       </section>
