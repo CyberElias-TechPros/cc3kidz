@@ -5,8 +5,8 @@ import churches from '@/data/groupChurches.json'
 function suggestChurch(area: string) {
   const a = area.toLowerCase()
   const map: Record<string, string> = {
-    rumuokwuta: 'secretariat',
-    rumuepirikom: 'secretariat',
+    rumuokwuta: 'central-church-3',
+    rumuepirikom: 'central-church-3',
     rumuola: 'central-3-orazi',
     orazi: 'central-3-orazi',
     gbalajam: 'central-3-orazi',

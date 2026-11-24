@@ -10,6 +10,11 @@ const nextConfig = {
       { protocol: 'https', hostname: 'platform-lookaside.fbsbx.com' },
     ],
   },
+  async redirects() {
+    return [
+      { source: '/group/secretariat', destination: '/group/central-church-3', permanent: true },
+    ]
+  },
   // Allow preview iframe — do not set X-Frame-Options here; handle per-route if needed
   async headers() {
     return [

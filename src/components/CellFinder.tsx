@@ -8,9 +8,9 @@ function autoChurch(area: string): (typeof churches)[number] | null {
   const a = area.toLowerCase()
   if (!a.trim()) return null
   const map: Record<string, string> = {
-    rumuokwuta: 'secretariat',
-    rumuepirikom: 'secretariat',
-    'port harcourt (young adults)': 'secretariat',
+    rumuokwuta: 'central-church-3',
+    rumuepirikom: 'central-church-3',
+    'port harcourt (young adults)': 'central-church-3',
     rumuola: 'central-3-orazi',
     orazi: 'central-3-orazi',
     gbalajam: 'central-3-orazi',
@@ -123,7 +123,7 @@ export default function CellFinder() {
             </div>
             <div className="mt-2 flex gap-2">
               <span className="inline-flex rounded-full bg-navy text-white px-3 py-1 text-xs font-bold">{c.members} members</span>
-              <Link href={`/group/${(churches as any[]).find((ch: any) => ch.id === c.churchId)?.slug || 'secretariat'}`} className="rounded-full border border-black/10 px-3 py-1 text-xs">View church →</Link>
+              <Link href={`/group/${(churches as any[]).find((ch: any) => ch.id === c.churchId)?.slug || 'central-church-3'}`} className="rounded-full border border-black/10 px-3 py-1 text-xs">View church →</Link>
             </div>
             <div className="mt-4 grid grid-cols-2 gap-2">
               <Link href="/contact" className="btn btn--navy !py-2 text-xs justify-center">

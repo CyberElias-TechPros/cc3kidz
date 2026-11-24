@@ -8,7 +8,7 @@ export function GroupSwitcher({ activeSlug }: { activeSlug?: string }) {
         <h2 className="font-display font-extrabold text-xl">7 Churches · One Group Family</h2>
         <Link href="/group" className="btn btn--ghost !py-2 text-sm hidden sm:inline-flex">View Group Directory →</Link>
       </div>
-      <p className="text-sm text-muted mt-2 max-w-2xl">Christ Embassy Central Church 3 Group — Secretariat at 30B Rumuokwuta · 6 churches + headquarters. Each church led by a resident pastor, vibrant cells, and a shared mission to take God's presence to Port Harcourt and the nations.</p>
+      <p className="text-sm text-muted mt-2 max-w-2xl">Christ Embassy Central Church 3 Group — Headquarters: Christ Embassy Central Church 3 at 30B Rumuokwuta/NTA Road (Pastor Kelson Onoriode, Group Pastor & Pastor of Central Church 3 — the only Pastor at the Group Church). 6 additional churches + Headquarters family of 7, vibrant cells, one mission.</p>
       <div className="mt-6 grid md:grid-cols-3 lg:grid-cols-4 gap-4">
         {(churches as any[]).map(c => (
           <Link key={c.id} href={`/group/${c.slug}`} className={`card p-5 hover:shadow-card transition ${activeSlug === c.slug ? 'ring-2 ring-gold' : ''}`}>

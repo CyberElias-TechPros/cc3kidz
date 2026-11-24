@@ -8,8 +8,6 @@ export default function PastorsPage() {
   const president = leaders.find((l: any) => l.id === 'president')
   const zonal = leaders.find((l: any) => l.id === 'zonal')
   const group = leaders.find((l: any) => l.id === 'group')
-  const resident = leaders.find((l: any) => l.id === 'resident')
-  const associate = leaders.find((l: any) => l.id === 'associate')
 
   return (
     <>
@@ -62,7 +60,7 @@ export default function PastorsPage() {
               <div className="p-6 flex-1">
                 <div className="text-xs font-bold tracking-widest uppercase text-gold">{l.title}</div>
                 <h3 className="font-display font-extrabold text-xl leading-tight mt-1 text-navy">{l.name}</h3>
-                <div className="text-xs font-semibold text-muted mt-1">{l.zone || l.group}</div>
+                <div className="text-xs font-semibold text-muted mt-1">{l.zone || l.group}{l.church ? ` · ${l.church}` : ''}</div>
                 <p className="text-sm leading-6 text-slate-600 mt-3">{l.bio}</p>
               </div>
             </div>
@@ -70,32 +68,23 @@ export default function PastorsPage() {
         </div>
       </section>
 
-      {/* Resident + Associate — compact */}
+      {/* Central Church 3 — Group Church, pastored solely by Kelson */}
       <section className="section bg-white">
         <div className="container-cc">
           <div className="max-w-2xl">
-            <h2 className="font-display font-extrabold text-2xl tracking-tight text-navy">Central Church 3</h2>
-            <p className="text-sm text-muted mt-1">Your pastors in Christ — present, prevailing in prayer by the Spirit, and close to home. You are most welcome!</p>
-          </div>
-          <div className="mt-8 grid md:grid-cols-2 gap-6">
-            {[resident, associate].map((l: any) => (
-              <div key={l.id} className="flex gap-4 border border-black/5 rounded-xl p-5 bg-white">
-                <div className="relative h-20 w-20 rounded-xl overflow-hidden shrink-0 bg-haze border border-black/5">
-                  <Image src={l.image} alt={l.name} fill className="object-cover object-top" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="font-display font-extrabold leading-tight text-navy">{l.name}</h3>
-                  <div className="text-xs font-semibold tracking-wide text-gold mt-0.5">{l.title}</div>
-                  <div className="text-xs text-muted mt-0.5">{l.church || ''}</div>
-                  <p className="text-sm leading-6 text-slate-600 mt-2">{l.bio}</p>
-                </div>
-              </div>
-            ))}
+            <h2 className="font-display font-extrabold text-2xl tracking-tight text-navy">Christ Embassy Central Church 3</h2>
+            <p className="text-sm text-muted mt-1">Group Headquarters at 30B Rumuokwuta/NTA Road — the only Pastor at the Group Church is Pastor Kelson Onoriode. Welcome home!</p>
+            <div className="mt-4 rounded-xl bg-navy text-white p-5">
+              <div className="text-xs font-bold tracking-widest uppercase text-gold">Pastor, Central Church 3 &amp; Group Pastor, CC3 Group</div>
+              <div className="font-display font-extrabold text-lg mt-1">Pastor Kelson Onoriode</div>
+              <p className="text-sm leading-6 text-white/80 mt-2">Shepherding the Central Church 3 congregation and providing pastoral oversight for the 7 churches in the CC3 Group Family — with excellence, prayer and the Word.</p>
+              <div className="mt-3 text-xs text-white/60">30B Rumuokwuta/NTA Road, Opposite Patcoin Filling Station · Sundays 8AM · Pastoral care, cells & outreach</div>
+            </div>
           </div>
 
           <div className="mt-10 bg-white border border-black/5 rounded-xl p-6 md:p-8">
             <h3 className="font-display font-extrabold text-navy">Leadership structure</h3>
-            <p className="text-sm leading-6 text-slate-600 mt-2 max-w-3xl">Zonal Pastor → Group Pastor → Resident Pastors → Assistant Pastor → Department Heads → Cell Leaders → Coordinators</p>
+            <p className="text-sm leading-6 text-slate-600 mt-2 max-w-3xl">Zonal Pastor → Group Pastor (Pastor Kelson Onoriode, also Pastor of Central Church 3) → Church Pastors (6 churches) → Department Heads → Cell Leaders → Coordinators</p>
             <p className="text-xs text-muted mt-2">Only publicly authorised information is displayed. Department leaders listed on their ministry pages.</p>
             <div className="mt-5 flex flex-wrap gap-3">
               <Link href="/ministries" className="btn btn--navy !py-2 text-sm">

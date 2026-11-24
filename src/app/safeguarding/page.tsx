@@ -18,7 +18,7 @@ export default function SafeguardingPage() {
           </div>
           <div className="card p-6">
             <h2 className="text-xl">Reporting concerns</h2>
-            <p>Speak to Resident Pastors or Lead Safeguarding Coordinator immediately. All concerns documented and escalated per church procedure. Contact via Contact page → Safeguarding category.</p>
+            <p>Speak to Pastor Kelson Onoriode (Group Pastor & Pastor, Central Church 3) or Lead Safeguarding Coordinator immediately. All concerns documented and escalated per church procedure. Contact via Contact page → Safeguarding category.</p>
           </div>
           <div className="card p-6">
             <h2 className="text-xl">Media consent & privacy</h2>

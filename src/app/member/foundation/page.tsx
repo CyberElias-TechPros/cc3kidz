@@ -73,7 +73,7 @@ export default function FoundationPortal(){
 
       <div className="card p-6 bg-navy text-white">
         <h3 className="font-display font-extrabold">Cohort info</h3>
-        <p className="text-sm text-white/80 mt-1">Cohort B — Dec 2026 · Saturdays 9AM · Secretariat Annex · Instructor: Pastor Victor</p>
+        <p className="text-sm text-white/80 mt-1">Cohort B — Dec 2026 · Saturdays 9AM · Central Church 3 Annex · Instructor: Pastor Kelson Onoriode</p>
         <p className="text-xs text-white/60 mt-2">Your progress is visible to Group Pastor on admin dashboard. Need help? Contact Foundation School.</p>
       </div>
     </div>

@@ -94,7 +94,7 @@ export function ZoneMap() {
               </Link>
             ))}
           </div>
-          <a href="https://maps.google.com/?q=4.8427161194266155,6.984262611031861" target="_blank" className="mt-4 btn btn--ghost w-full justify-center">Open Secretariat in Google Maps</a>
+          <a href="https://maps.google.com/?q=4.8427161194266155,6.984262611031861" target="_blank" className="mt-4 btn btn--ghost w-full justify-center">Open Central Church 3 in Google Maps</a>
         </div>
       </div>
     </div>

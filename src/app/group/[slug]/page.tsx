@@ -108,8 +108,8 @@ export default async function ChurchPage({ params }: { params: Promise<{ slug: s
             <div className="card p-6">
               <h3 className="font-display font-extrabold">CC3 Group Info</h3>
               <div className="text-sm leading-7 text-slate-600 mt-2">
-                <div><span className="font-semibold">Group Pastor:</span> Pastor Victor & Grace Okoro</div>
-                <div><span className="font-semibold">Secretariat:</span> 30B Rumuokwuta/NTA Road</div>
+                <div><span className="font-semibold">Group Pastor:</span> Pastor Kelson Onoriode</div>
+                <div><span className="font-semibold">Headquarters:</span> Christ Embassy Central Church 3 — 30B Rumuokwuta/NTA Road</div>
                 <div><span className="font-semibold">Zone:</span> PH Zone 3 · Zonal HQ Peter Odili Rd</div>
                 <div><span className="font-semibold">Zonal Land:</span> Jessy & Jenny St</div>
               </div>

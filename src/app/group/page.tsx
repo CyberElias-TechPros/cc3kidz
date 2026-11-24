@@ -16,10 +16,10 @@ export default function GroupPage() {
         <div className="container-cc py-10">
           <div className="eyebrow !text-gold">PH Zone 3 · Zonal Church HQ</div>
           <h1 className="font-display font-black text-[2.4rem] leading-none mt-2">CC3 Group — One Family · 7 Expressions</h1>
-          <p className="text-slate-200 mt-3 max-w-3xl leading-7">LoveWorld Nation → Port Harcourt Zone 3 (Zonal Church, Jessy & Jenny St, Peter Odili Rd) → CC3 Group (Secretariat 30B Rumuokwuta/NTA Road) → 7 Churches → Cells. Each church is a full expression with its own pastor, service times, and cells — united in vision.</p>
+          <p className="text-slate-200 mt-3 max-w-3xl leading-7">LoveWorld Nation → Port Harcourt Zone 3 (Zonal Church, Jessy & Jenny St, Peter Odili Rd) → Christ Embassy Central Church 3 (Group Headquarters, 30B Rumuokwuta/NTA Road) → 7 Churches → Cells. The only Pastor at the Group Church is Pastor Kelson Onoriode — also Group Pastor of the CC3 Group Family.</p>
           <div className="mt-4 flex flex-wrap gap-2 text-xs">
             <span className="rounded-full bg-white/10 border border-white/15 px-3 py-1">Zonal Land: Jessy & Jenny St, Peter Odili Rd</span>
-            <span className="rounded-full bg-gold text-navy px-3 py-1 font-bold">Group Church: 30B Rumuokwuta</span>
+            <span className="rounded-full bg-gold text-navy px-3 py-1 font-bold">Central Church 3 (Group HQ): 30B Rumuokwuta · Pastor Kelson Onoriode</span>
           </div>
         </div>
       </section>
