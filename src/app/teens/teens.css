@@ -1,5 +1,6 @@
 /* ============================================================
    CC3 Teens Church — shares Main Church kl-* system for identical feel
+   Uses Main Church fonts: Nunito Sans ( --font-display / --font-text )
    Teens palette accents: #172B76 #315BFF #7954E8 #FF8C70
    Overrides tint Main components into Teens without breaking feel
    ============================================================ */
@@ -10,10 +11,17 @@
   --teens-coral: #FF8C70;
   --teens-cloud: #F5F6FC;
   --teens-ink: #151B2D;
+  /* Align typography to Main Church */
+  --font-teens-display: var(--font-display);
+  --font-teens-heading: var(--font-display);
+  --font-teens-body: var(--font-text);
   /* kl tints — subtle teens within same cathedral component language */
   --kl-navy: #172B76;
   --kl-navy-ink: #0f1d4d;
+  font-family: var(--font-text), system-ui, sans-serif;
 }
 .teens-scope .kl-hero { background: linear-gradient(180deg,#fff 0%, #F5F6FC 100%); }
 .teens-scope .kl-lesson { background: radial-gradient(900px 520px at 92% 4%, rgba(121,84,232,0.14), transparent 62%), linear-gradient(135deg,#0f1d4d 0%,#172B76 55%,#1e2f8a 100%); }
 .teens-scope .kl-final { background: radial-gradient(600px 380px at 88% 88%, rgba(121,84,232,0.16), transparent 60%), linear-gradient(135deg,#0f1d4d 0%, #172B76 55%, #1e2f8a 100%); }
+.teens-scope .font-teens-display,
+.teens-scope .font-teens-heading { font-family: var(--font-display), system-ui, sans-serif; }
