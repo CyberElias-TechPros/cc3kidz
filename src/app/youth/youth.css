@@ -1,67 +1,95 @@
-/* ============================================================
-   CC3 Youth Church — Final Visual Identity v1.0
-   Spec: Part B §4.2–4.5
-   Palette: Midnight Navy #101A2B / Slate Blue #263B55
-            Muted Gold #C6A66B / Warm Stone #E9E4DA
-            Ivory #F7F6F2 / Graphite #252B33
-   Type: DM Serif Display (editorial headlines) / Manrope (sections) / Inter (body)
-   Graphic: cinematic, editorial, light/dark contrast, restrained gold
-   ============================================================ */
+/* Youth Swiss — Midnight Navy editorial, restrained gold, Swiss grid */
 .youth-scope {
-  --youth-navy: #101A2B;
-  --youth-slate: #263B55;
+  --youth-navy: #0F172A;
   --youth-gold: #C6A66B;
-  --youth-stone: #E9E4DA;
   --youth-ivory: #F7F6F2;
-  --youth-graphite: #252B33;
-  --youth-muted: #6B7280;
-  --youth-paper: #F7F6F2;
-  --font-youth-display: 'DM Serif Display', Georgia, serif;
-  --font-youth-heading: 'Manrope', system-ui, sans-serif;
-  --font-youth-body: 'Inter', system-ui, sans-serif;
+  font-family: var(--font-text), system-ui, sans-serif;
   background: var(--youth-ivory);
-  color: var(--youth-graphite);
 }
-.youth-scope .font-youth-display { font-family: var(--font-youth-display); }
-.youth-scope .font-youth-heading { font-family: var(--font-youth-heading); }
 
-.youth-hero {
-  background:
-    radial-gradient(820px 480px at 14% 0%, rgba(198,166,107,0.14) 0%, transparent 58%),
-    radial-gradient(640px 380px at 88% 100%, rgba(38,59,85,0.08) 0%, transparent 60%),
-    linear-gradient(180deg, #F7F6F2 0%, #F1EFEA 100%);
-  border-bottom: 1px solid rgba(16,26,43,0.06);
+/* Swiss Hero */
+.youth-swiss-hero {
   position: relative;
+  background: #0F172A;
+  color: #fff;
   overflow: hidden;
+  min-height: 460px;
 }
-.youth-kicker {
-  display: inline-flex; align-items: center; gap: 8px;
-  border: 1px solid rgba(16,26,43,0.10); background: #FFFFFF; padding: 6px 12px; border-radius: 999px;
-  font: 800 10px/1 var(--font-youth-body); letter-spacing: 0.14em; text-transform: uppercase; color: var(--youth-navy);
+.youth-swiss-hero__bg {
+  position: absolute; inset: 0;
 }
-.youth-title {
-  font-family: var(--font-youth-display);
-  font-weight: 400; line-height: 0.88; letter-spacing: -0.03em;
-  font-size: clamp(2.6rem, 6.2vw, 4.6rem);
-  color: var(--youth-navy);
+.youth-swiss-hero__bg img {
+  width: 100%; height: 100%; object-fit: cover; opacity: 0.95;
+  object-position: 65% center;
 }
-.youth-title em { font-style: italic; color: var(--youth-gold); font-weight: 400; }
-.youth-subtitle {
-  font: 400 15px/1.7 var(--font-youth-body);
-  color: var(--youth-muted);
-  max-width: 56ch;
+.youth-swiss-hero__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, #0F172A 0%, #0F172A 38%, rgba(15,23,42,0.15) 70%, transparent 100%);
 }
-.youth-card {
-  background: #FFFFFF; border: 1px solid rgba(16,26,43,0.06); border-radius: 16px;
-  overflow: hidden; transition: all 0.22s ease;
+.youth-swiss-hero__inner {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: 1fr 80px;
+  padding: 3rem 0 2.2rem;
 }
-.youth-card:hover { border-color: rgba(198,166,107,0.28); box-shadow: 0 14px 28px -12px rgba(16,26,43,0.12); transform: translateY(-1px); }
-.youth-rule { height: 1px; background: linear-gradient(90deg, #C6A66B, transparent); }
-.youth-dark { background: #101A2B; color: #F7F6F2; }
-.youth-dark .youth-card { background: #18243A; border-color: rgba(255,255,255,0.08); color: #F7F6F2; }
-.youth-eyebrow {
-  font: 800 11px/1 var(--font-youth-body); letter-spacing: 0.12em; text-transform: uppercase; color: var(--youth-navy);
+.youth-swiss-kicker { font-size: 10px; letter-spacing: 0.18em; font-weight: 700; color: rgba(255,255,255,0.6); }
+.youth-swiss-title {
+  margin-top: 0.5rem;
+  font-family: 'DM Serif Display', Georgia, serif;
+  line-height: 0.9; font-weight: 400;
+  font-size: clamp(2.8rem, 6vw, 4.4rem);
 }
-.youth-quote {
-  font-family: var(--font-youth-display); font-size: 1.45rem; line-height: 1.25; font-style: italic; color: var(--youth-navy);
+.youth-swiss-title span { display: block; }
+.youth-swiss-title .gold { color: #C6A66B; font-style: italic; }
+.youth-swiss-sub { margin-top: 0.7rem; font-size: 0.85rem; line-height: 1.6; color: rgba(255,255,255,0.75); max-width: 36ch; }
+.youth-swiss-cta { display: flex; gap: 10px; margin-top: 1.2rem; }
+.youth-swiss-cta .btn-gold { background: #C6A66B; color: #0F172A; border-radius: 6px; padding: 10px 16px; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; }
+.youth-swiss-cta .btn-ghost { border: 1px solid rgba(255,255,255,0.3); color: #fff; border-radius: 6px; padding: 10px 16px; font-size: 11px; font-weight: 700; }
+.youth-swiss-meta {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 1.6rem;
+  border-top: 1px solid rgba(255,255,255,0.15); padding-top: 12px;
+  font-size: 10px; letter-spacing: 0.08em; line-height: 1.4;
 }
+.youth-swiss-meta b { color: #fff; }
+.youth-swiss-meta span { color: rgba(255,255,255,0.5); }
+.youth-swiss-hero__right { display: grid; place-items: center; }
+.youth-swiss-rail { display: flex; flex-direction: column; gap: 6px; writing-mode: vertical-rl; text-orientation: mixed; font-size: 9px; letter-spacing: 0.18em; color: rgba(255,255,255,0.45); border-left: 1px solid rgba(255,255,255,0.2); padding-left: 10px; }
+.youth-swiss-hero__nav {
+  position: absolute; bottom: 12px; right: 16px; z-index: 2;
+  display: flex; align-items: center; gap: 12px; font-size: 11px; color: rgba(255,255,255,0.7);
+}
+.youth-swiss-hero__nav button { width: 22px; height: 22px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.3); display: grid; place-items: center; }
+
+/* Events */
+.youth-swiss-events { background: #F7F6F2; }
+.youth-swiss-eyebrow { font-size: 10px; letter-spacing: 0.16em; font-weight: 700; color: #C6A66B; }
+.youth-swiss-h2 { font-family: 'DM Serif Display', Georgia, serif; font-size: 2rem; line-height: 0.95; color: #0F172A; margin-top: 6px; }
+.youth-swiss-h2 .gold { color: #C6A66B; font-style: italic; }
+.youth-swiss-event { background: #fff; border: 1px solid rgba(0,0,0,0.06); border-radius: 4px; overflow: hidden; }
+.youth-swiss-event__img { aspect-ratio: 16 / 9; background: #E9E4DA; overflow: hidden; }
+.youth-swiss-event__img img { width: 100%; height: 100%; object-fit: cover; }
+.youth-swiss-event__body { display: grid; grid-template-columns: 44px 1fr 24px; gap: 10px; padding: 10px 12px; align-items: center; }
+.youth-swiss-event__body .date { text-align: center; border-right: 1px solid #E2E8F0; padding-right: 10px; }
+.youth-swiss-event__body .date .m { font-size: 9px; font-weight: 800; letter-spacing: 0.08em; color: #64748B; display: block; }
+.youth-swiss-event__body .date .d { font-size: 18px; font-weight: 900; color: #0F172A; line-height: 1; }
+.youth-swiss-event__body .meta .t { font-size: 12px; font-weight: 800; color: #0F172A; }
+.youth-swiss-event__body .meta .sub { font-size: 9px; letter-spacing: 0.06em; color: #94A3B8; margin-top: 2px; }
+.youth-swiss-event__body .arrow { color: #0F172A; font-size: 14px; }
+
+/* Heart */
+.youth-swiss-heart {
+  display: grid; grid-template-columns: 0.9fr 1.1fr 0.8fr; gap: 24px; align-items: center;
+}
+@media (max-width: 860px) { .youth-swiss-heart { grid-template-columns: 1fr; } }
+.youth-swiss-heart__img { position: relative; border-radius: 4px; overflow: hidden; aspect-ratio: 4/3; background: #000; }
+.youth-swiss-heart__img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.05); opacity: 0.9; }
+.youth-swiss-heart__img .caption { position: absolute; left: 0; top: 0; bottom: 0; width: 36%; background: rgba(255,255,255,0.96); display: grid; place-items: center; padding: 12px; }
+.youth-swiss-heart__copy .eyebrow { font-size: 10px; letter-spacing: 0.16em; font-weight: 700; color: #C6A66B; }
+.youth-swiss-heart__copy h3 { font-family: 'DM Serif Display', Georgia, serif; font-size: 1.6rem; line-height: 1; color: #0F172A; margin-top: 6px; }
+.youth-swiss-heart__copy h3 .gold { color: #C6A66B; font-style: italic; }
+.youth-swiss-heart__copy p { font-size: 0.85rem; line-height: 1.6; color: #475569; margin-top: 10px; }
+.youth-swiss-heart__copy .link { display: inline-flex; gap: 6px; margin-top: 10px; font-size: 11px; font-weight: 800; letter-spacing: 0.08em; border-bottom: 1px solid #0F172A; padding-bottom: 2px; }
+.youth-swiss-heart__values { border-left: 1px solid #E2E8F0; padding-left: 20px; display: flex; flex-direction: column; gap: 18px; }
+.youth-swiss-heart__values .val { display: flex; gap: 12px; align-items: center; border-bottom: 1px solid #F1F5F9; padding-bottom: 14px; }
+.youth-swiss-heart__values .val .icon { width: 32px; height: 32px; border-radius: 50%; border: 1px solid #C6A66B; display: grid; place-items: center; font-size: 12px; color: #0F172A; flex-shrink: 0; }
+.youth-swiss-heart__values .val .t { font-size: 11px; font-weight: 800; letter-spacing: 0.06em; color: #0F172A; }
+.youth-swiss-heart__values .val .d { font-size: 11px; color: #64748B; margin-top: 2px; }
