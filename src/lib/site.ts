@@ -50,10 +50,9 @@ export const site = {
     { label: 'Prayer', href: '/prayer', variant: 'ghost' as const }
   ],
   serviceTimes: [
-    { name: 'Sunday Celebration Service', day: 'Sunday', time: '8:00 AM', duration: '3 hrs' },
+    { name: 'Sunday Service', day: 'Sunday', time: '8:00 AM', duration: '3 hrs' },
     { name: 'Prayer & Prophecy Service', day: 'Monday', time: '6:00 PM', duration: '1 hr' },
     { name: 'Midweek Service', day: 'Wednesday', time: '5:30 PM', duration: '2 hrs' },
-    { name: 'Prayer Meeting', day: 'Friday', time: '5:30 PM', duration: '1.5 hrs' },
     { name: "Children's Church", day: 'Sunday', time: '8:00 AM', duration: 'During main service', href: '/kids' }
   ],
   footerLinks: {

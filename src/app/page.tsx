@@ -74,7 +74,7 @@ export default function Home() {
           </div>
           <div className="kl-feature-grid">
             {[
-              {t:'The Word',d:'The infallible Word that builds your spirit, fortifies your faith and causes you to reign in life — Sunday Celebration, Midweek & Monday Prophecy, Foundation School. Hallelujah!',a:'gold', icon: (
+              {t:'The Word',d:'The infallible Word that builds your spirit, fortifies your faith and causes you to reign in life — Sunday Service, Midweek & Monday Prayer & Prophecy, Foundation School. Hallelujah!',a:'gold', icon: (
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M8 7h8"/><path d="M8 11h8"/></svg>
               )},
               {t:'Fellowship',d:'92 vibrant cells in 7 churches — one family in Christ where no one walks alone; every life counts for the Gospel. Glory!',a:'vermilion', icon: (
@@ -112,7 +112,7 @@ export default function Home() {
             <Link href="/services" style={{display:'inline-flex',marginTop:'1.2rem',fontSize:'0.82rem',fontWeight:700,color:'#0E1B33',borderBottom:'1.5px solid #0E1B33',paddingBottom:'2px',textDecoration:'none'}}>View full schedule →</Link>
             <div className="kl-services__image">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={sundayServiceUrl} alt="CC3 Sunday Celebration — Port Harcourt Zone 3" referrerPolicy="no-referrer" />
+              <img src={sundayServiceUrl} alt="CC3 Sunday Service — Port Harcourt Zone 3" referrerPolicy="no-referrer" />
             </div>
           </div>
           <div className="kl-services__list">
@@ -136,10 +136,10 @@ export default function Home() {
           <div className="kl-lesson">
             <div className="kl-lesson__media">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={worshipEncounterUrl} alt="CC3 Worship Encounter — Sunday Celebration" referrerPolicy="no-referrer" />
+              <img src={worshipEncounterUrl} alt="CC3 Worship Encounter — Sunday Service" referrerPolicy="no-referrer" />
             </div>
             <div>
-              <span className="eyebrow" style={{background:'rgba(255,255,255,0.1)',borderColor:'rgba(255,255,255,0.2)',color:'#C6A04A',borderRadius:'999px',padding:'0.35rem 0.7rem'}}>Sunday Celebration · 8AM</span>
+              <span className="eyebrow" style={{background:'rgba(255,255,255,0.1)',borderColor:'rgba(255,255,255,0.2)',color:'#C6A04A',borderRadius:'999px',padding:'0.35rem 0.7rem'}}>Sunday Service · 8AM</span>
               <h2 style={{fontFamily:'var(--font-display),serif',fontWeight:800,color:'#fff',fontSize:'clamp(1.6rem,3vw,2.3rem)',lineHeight:1,marginTop:'0.7rem'}}>Faith That Prevails</h2>
               <p style={{color:'rgba(255,255,255,0.78)',marginTop:'0.5rem',fontSize:'0.9rem'}}>Faith is not a mystery — it is the lifestyle of the new creation. Learn how the Word builds prevailing, ever-increasing faith that reigns. Glory!</p>
               <div style={{background:'rgba(255,255,255,0.1)',border:'1px solid rgba(255,255,255,0.15)',borderRadius:'14px',padding:'0.8rem 0.9rem',marginTop:'0.9rem'}}>

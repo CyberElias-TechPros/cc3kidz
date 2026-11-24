@@ -15,7 +15,7 @@ export default function ServicesPage() {
             <div>
               <div className="text-xs font-semibold tracking-wide text-muted">Weekly Schedule · 30B Rumuokwuta/NTA Road</div>
               <h1 className="font-display font-extrabold text-[2.4rem] md:text-[2.8rem] leading-none tracking-tight mt-2 text-navy">Church Services</h1>
-              <p className="mt-3 text-[1.02rem] leading-7 text-slate-600">Join us in person at Rumuokwuta or via our Live Stream — one rhythm in the Word: Sunday Celebration, Midweek Charge, and Prevailing Prayer.</p>
+              <p className="mt-3 text-[1.02rem] leading-7 text-slate-600">Join us in person at Rumuokwuta or via our Live Stream — one rhythm in the Word: Sunday Service, Midweek & Monday Prayer & Prophecy.</p>
             </div>
           </div>
         </div>

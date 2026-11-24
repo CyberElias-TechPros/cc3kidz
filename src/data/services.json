@@ -1,14 +1,14 @@
 [
   {
-    "id": "sunday-celebration",
-    "name": "Sunday Celebration Service",
-    "slug": "sunday-celebration",
+    "id": "sunday-service",
+    "name": "Sunday Service",
+    "slug": "sunday-service",
     "day": "Sunday",
     "time": "8:00 AM",
     "duration": "3 hours",
     "venue": "30B Rumuokwuta/NTA Road, Port Harcourt",
     "type": "physical",
-    "description": "Our main weekly celebration — vibrant worship with joy unspeakable, the Word in demonstration, and glorious fellowship. Come early for prevailing intercession and function in dominion.",
+    "description": "Our main weekly service — vibrant worship with joy unspeakable, the Word in demonstration, and glorious fellowship. Come early for prevailing intercession and function in dominion.",
     "isOnline": true,
     "onlineUrl": "/online",
     "sortOrder": 1
@@ -42,20 +42,6 @@
     "sortOrder": 3
   },
   {
-    "id": "prayer",
-    "name": "Prayer Meeting",
-    "slug": "prayer-meeting",
-    "day": "Friday",
-    "time": "5:30 PM",
-    "duration": "1.5 hours",
-    "venue": "30B Rumuokwuta/NTA Road, Port Harcourt",
-    "type": "physical",
-    "description": "Prevailing corporate prayer — intercession for the church, for Port Harcourt, and for nations. Where grace reigns and testimonies abound.",
-    "isOnline": false,
-    "onlineUrl": null,
-    "sortOrder": 4
-  },
-  {
     "id": "communion",
     "name": "Communion Service",
     "slug": "communion-service",
@@ -67,7 +53,7 @@
     "description": "Holy Communion — in remembrance of the Lord, we proclaim divine health, superabundant prosperity and covenant blessings in Christ. Hallelujah!",
     "isOnline": true,
     "onlineUrl": "/online",
-    "sortOrder": 5
+    "sortOrder": 4
   },
   {
     "id": "childrens",
@@ -81,7 +67,7 @@
     "description": "Champions for Christ — raising children established in the Word and the love of the Spirit, bold, excellent and ever-joyous.",
     "isOnline": false,
     "onlineUrl": "/kids/index.html",
-    "sortOrder": 6,
+    "sortOrder": 5,
     "href": "/kids/index.html"
   }
 ]

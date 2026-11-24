@@ -18,7 +18,7 @@ export default function PrayerPage() {
           <div className="space-y-6">
             <div id="meeting" className="card p-6">
               <h3 className="font-display font-extrabold">Prayer meetings</h3>
-              <p className="text-sm text-muted mt-2">Monday Prayer &amp; Prophecy 6PM · Friday Prevailing Prayer 5:30PM · Cell prayer chains · Special programmes as announced. We make power available!</p>
+              <p className="text-sm text-muted mt-2">Monday Prayer &amp; Prophecy 6PM · Cell prayer chains · Special programmes as announced. We make power available!</p>
               <button className="btn btn--ghost mt-3">Join a Prayer Group</button>
             </div>
             <div className="card p-6">

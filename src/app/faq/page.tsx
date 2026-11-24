@@ -2,7 +2,7 @@
 import { useState } from 'react'
 
 const FAQS = [
-  { q: 'What time are your services?', a: 'Sunday Celebration 8AM (3 hrs), Wednesday Midweek 5:30PM, Friday Prayer 5:30PM. Children’s Church runs during Sunday service.', cat: 'Visiting' },
+  { q: 'What time are your services?', a: 'Sunday Service 8AM (3 hrs), Monday Prayer & Prophecy 6PM, Wednesday Midweek 5:30PM. Children’s Church runs during Sunday service.', cat: 'Visiting' },
   { q: 'Where are you located?', a: '30B Rumuokwuta/NTA Road, Opposite Patcoin Filling Station, Port Harcourt. Landmark: NTA Road. Maps link on Contact.', cat: 'Visiting' },
   { q: 'Can I attend if I’m not a member?', a: 'Yes — all are welcome. No membership required. Plan Your Visit for a hosted welcome.', cat: 'Visiting' },
   { q: 'What happens during a service?', a: 'Vibrant worship, prayer, teaching of the Word, testimonies, and fellowship. First-time visitors are hosted personally.', cat: 'Visiting' },

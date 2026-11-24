@@ -7,7 +7,7 @@
     "pastor": "Pastor Kelson Onoriode",
     "title": "Group Pastor & Pastor, Central Church 3",
     "address": "30B Rumuokwuta/NTA Road, Opposite Patcoin Filling Station",
-    "area": "Rumuokwuta · NTA Road — Group Headquarters",
+    "area": "Rumuokwuta \u00b7 NTA Road \u2014 Group Headquarters",
     "city": "Port Harcourt",
     "phone": "+234 803 000 3000",
     "whatsapp": "+234 803 000 3000",
@@ -15,17 +15,17 @@
       {
         "day": "Sunday",
         "time": "8:00 AM",
-        "label": "Celebration Service"
+        "label": "Sunday Service"
+      },
+      {
+        "day": "Monday",
+        "time": "6:00 PM",
+        "label": "Prayer & Prophecy Service"
       },
       {
         "day": "Wednesday",
         "time": "5:30 PM",
         "label": "Midweek Service"
-      },
-      {
-        "day": "Friday",
-        "time": "5:30 PM",
-        "label": "Prayer Meeting"
       }
     ],
     "cells": 28,
@@ -39,12 +39,12 @@
   {
     "id": "central-3-orazi",
     "slug": "central-church-3-orazi",
-    "name": "Central Church 3 — Orazi",
+    "name": "Central Church 3 \u2014 Orazi",
     "shortName": "Orazi",
     "pastor": "Pastor Kenneth Adebayo",
     "title": "Church Pastor",
     "address": "11 Haastrup Street, Opposite Bosom Hospital, Orazi",
-    "area": "Orazi · Gbalajam",
+    "area": "Orazi \u00b7 Gbalajam",
     "city": "Port Harcourt",
     "phone": "+234 803 000 3001",
     "whatsapp": "+234 803 000 3001",
@@ -52,7 +52,7 @@
       {
         "day": "Sunday",
         "time": "8:00 AM",
-        "label": "Celebration Service"
+        "label": "Sunday Service"
       },
       {
         "day": "Wednesday",
@@ -82,7 +82,7 @@
       {
         "day": "Sunday",
         "time": "8:00 AM",
-        "label": "Celebration Service"
+        "label": "Sunday Service"
       },
       {
         "day": "Thursday",
@@ -112,7 +112,7 @@
       {
         "day": "Sunday",
         "time": "8:00 AM",
-        "label": "Celebration Service"
+        "label": "Sunday Service"
       },
       {
         "day": "Wednesday",
@@ -142,7 +142,7 @@
       {
         "day": "Sunday",
         "time": "8:00 AM",
-        "label": "Celebration Service"
+        "label": "Sunday Service"
       },
       {
         "day": "Wednesday",
@@ -172,7 +172,7 @@
       {
         "day": "Sunday",
         "time": "7:30 AM",
-        "label": "Celebration Service"
+        "label": "Sunday Service"
       },
       {
         "day": "Wednesday",
@@ -202,7 +202,7 @@
       {
         "day": "Sunday",
         "time": "8:00 AM",
-        "label": "Celebration Service"
+        "label": "Sunday Service"
       },
       {
         "day": "Thursday",

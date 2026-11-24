@@ -15,6 +15,9 @@ const nextConfig = {
       // Preserve old /group/* — redirect to canonical /churches/*
       { source: '/group/secretariat', destination: '/churches/central-church-3', permanent: true },
       { source: '/group/:slug', destination: '/churches/:slug', permanent: true },
+      // Old service slugs → canonical
+      { source: '/services/sunday-celebration', destination: '/services/sunday-service', permanent: true },
+      { source: '/services/prayer-meeting', destination: '/services/prayer-prophecy-service', permanent: true },
     ]
   },
   // Allow preview iframe — do not set X-Frame-Options here; handle per-route if needed

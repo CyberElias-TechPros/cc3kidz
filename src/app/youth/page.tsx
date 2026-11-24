@@ -121,7 +121,7 @@ export default function YouthPage() {
         <div className="container-cc flex flex-col md:flex-row items-center justify-between gap-4">
           <div>
             <h3 className="text-lg font-black">Find your community — 20 to 35</h3>
-            <p className="text-sm text-white/70">30B Rumuokwuta / NTA Road • Sunday Celebration + midweek cells</p>
+            <p className="text-sm text-white/70">30B Rumuokwuta / NTA Road • Sunday Service + midweek cells</p>
           </div>
           <div className="flex gap-2">
             <Link href="/youth/connect" className="rounded-full bg-[#C6A66B] text-[#0F172A] px-5 py-2.5 text-sm font-black">Plan a Visit →</Link>

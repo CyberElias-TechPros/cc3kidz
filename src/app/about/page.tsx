@@ -212,7 +212,7 @@ export default function AboutPage() {
                 Central Church 3 (Group HQ): <b className="text-navy">30B Rumuokwuta/NTA Road</b> — Pastor Kelson Onoriode
                 <br />
                 Zonal Church: Jessy &amp; Jenny Rd, Peter Odili Rd<br />
-                Sunday 8AM · Wednesday 5:30PM · Friday Prayer 5:30PM
+                Sunday 8AM · Monday 6PM · Wednesday 5:30PM
               </div>
               <Link href="/new-here" className="mt-4 btn btn--navy w-full justify-center">
                 Plan Your Visit

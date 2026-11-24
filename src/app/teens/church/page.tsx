@@ -21,7 +21,7 @@ export default function TeensChurchPage() {
             <div className="card p-6">
               <div className="text-xs font-bold tracking-widest uppercase text-gold">Sundays · 8AM · During Main Service</div>
               <h2 className="font-display font-extrabold text-xl mt-1 text-navy">Service Information</h2>
-              <p className="text-sm leading-7 text-slate-600 mt-2">Teens meet during the Main Celebration Service at the CC3 Group Church, 30B Rumuokwuta/NTA Road. Check the church notice for room allocation. Visitors register at the welcome desk.</p>
+              <p className="text-sm leading-7 text-slate-600 mt-2">Teens meet during the Sunday Service at the CC3 Group Church, 30B Rumuokwuta/NTA Road. Check the church notice for room allocation. Visitors register at the welcome desk.</p>
               <div className="mt-4 grid grid-cols-3 gap-2 text-center">
                 <div className="rounded-xl bg-haze p-3"><div className="text-xs font-bold text-muted">Day</div><div className="font-extrabold text-navy">Sunday</div></div>
                 <div className="rounded-xl bg-haze p-3"><div className="text-xs font-bold text-muted">Time</div><div className="font-extrabold text-navy">8AM</div></div>
