@@ -47,7 +47,7 @@ export default function Home() {
               Christ Embassy —<br/>Giving your life a meaning
             </h1>
             <p className="kl-hero__text">A LoveWorld family at Rumuokwuta — raised in the efficacious Word, led by the Spirit, manifesting the grace and glory of God in righteousness. Glory!</p>
-            <p className="text-gold font-bold tracking-[0.12em] uppercase text-[0.70rem] mt-3 italic">God&apos;s Word. His Presence. The Glorious Life.</p>
+            <p className="text-gold font-extrabold tracking-[0.10em] uppercase text-[0.88rem] mt-3 italic">God&apos;s Word. His Presence. The Glorious Life.</p>
             <div className="kl-hero__cta">
               <Link href="/new-here" className="btn btn--navy">Experience the Word this Sunday</Link>
               <Link href="/online" className="btn btn--ghost">Join Our Live Stream →</Link>
