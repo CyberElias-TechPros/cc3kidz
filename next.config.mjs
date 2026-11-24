@@ -12,7 +12,9 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      { source: '/group/secretariat', destination: '/group/central-church-3', permanent: true },
+      // Preserve old /group/* — redirect to canonical /churches/*
+      { source: '/group/secretariat', destination: '/churches/central-church-3', permanent: true },
+      { source: '/group/:slug', destination: '/churches/:slug', permanent: true },
     ]
   },
   // Allow preview iframe — do not set X-Frame-Options here; handle per-route if needed
