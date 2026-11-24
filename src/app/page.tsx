@@ -44,7 +44,7 @@ export default function Home() {
           <div>
             <span className="kl-hero__kicker"><i /> Port Harcourt · 30B Rumuokwuta · Sunday 8AM</span>
             <h1 className="kl-hero__title" style={{marginTop:'1.4rem'}}>
-              Christ Embassy —<br/>Giving your life a meaning
+              Christ Embassy:<br/>Giving your life a meaning
             </h1>
             <p className="kl-hero__text">A LoveWorld family at Rumuokwuta — raised in the efficacious Word, led by the Spirit, manifesting the grace and glory of God in righteousness. Glory!</p>
             <p className="text-gold font-extrabold tracking-[0.10em] uppercase text-[0.88rem] mt-3 italic">God&apos;s Word. His Presence. The Glorious Life.</p>
