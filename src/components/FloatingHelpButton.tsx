@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { site } from '@/lib/site'
 
 function toWaLink(phone: string, text?: string) {
@@ -12,10 +12,91 @@ function toWaLink(phone: string, text?: string) {
 
 const DEFAULT_MSG = 'Hello CE Central Church 3, I have a question.'
 
+function isDarkBg(bg: string): boolean {
+  // bg like "rgb(14, 27, 51)" or "rgba(14, 27, 51, 1)" or "#0E1B33" (computed is rgb)
+  const m = bg.match(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/)
+  if (!m) return false
+  const r = parseInt(m[1], 10), g = parseInt(m[2], 10), b = parseInt(m[3], 10)
+  // luminance approx; navy #0E1B33 => 14,27,51 => dark. Threshold ~85
+  const lum = 0.2126 * r + 0.7152 * g + 0.0722 * b
+  // also ensure not white-ish even if lum low but need to treat navy/haze dark only
+  // EAF0F7 light => lum ~239, white => 255
+  return lum < 85
+}
+
+function bgBehindElement(x: number, y: number): string | null {
+  let el = document.elementFromPoint(x, y) as HTMLElement | null
+  while (el && el !== document.documentElement) {
+    const bg = getComputedStyle(el).backgroundColor
+    if (bg && bg !== 'rgba(0, 0, 0, 0)' && bg !== 'transparent') {
+      // ignore fully transparent
+      const m = bg.match(/rgba?\(.*\)/)
+      if (m) {
+        // if rgba with alpha 0, skip
+        const aMatch = bg.match(/rgba\(.*,\s*([\d.]+)\s*\)/)
+        if (aMatch && parseFloat(aMatch[1]) < 0.01) {
+          el = el.parentElement as HTMLElement | null
+          continue
+        }
+      }
+      return bg
+    }
+    el = el.parentElement as HTMLElement | null
+  }
+  return null
+}
+
 export default function FloatingHelpButton() {
   const [open, setOpen] = useState(false)
+  const [isOverNavy, setIsOverNavy] = useState(false)
+  const btnRef = useRef<HTMLButtonElement>(null)
   const numbers: readonly string[] = (site as any).phones || [site.phone, site.whatsapp].filter(Boolean)
   const primary = numbers[0] || site.phone
+
+  useEffect(() => {
+    if (open) {
+      setIsOverNavy(false)
+      return
+    }
+    let raf = 0
+    let ticking = false
+    const check = () => {
+      const btn = btnRef.current
+      if (!btn) return
+      const rect = btn.getBoundingClientRect()
+      const x = rect.left + rect.width / 2
+      const y = rect.top + rect.height / 2
+      // temporarily hide button to sample behind it
+      const prevVis = btn.style.visibility
+      btn.style.visibility = 'hidden'
+      const bg = bgBehindElement(x, y)
+      btn.style.visibility = prevVis
+      if (!bg) {
+        setIsOverNavy(false)
+        return
+      }
+      setIsOverNavy(isDarkBg(bg))
+    }
+    const onScroll = () => {
+      if (ticking) return
+      ticking = true
+      raf = requestAnimationFrame(() => {
+        check()
+        ticking = false
+      })
+    }
+    check()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
+    // also re-check periodically for initial layout shifts
+    const id = setInterval(check, 600)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+      clearInterval(id)
+      cancelAnimationFrame(raf)
+    }
+  }, [open])
 
   return (
     <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3" aria-live="polite">
@@ -97,21 +178,22 @@ export default function FloatingHelpButton() {
       )}
 
       <button
+        ref={btnRef}
         onClick={() => setOpen(v => !v)}
         aria-expanded={open}
         aria-label={open ? 'Close help' : 'Ask a question — contact help'}
-        className={`group inline-flex items-center gap-3 rounded-full border shadow-[0_12px_32px_-12px_rgba(14,27,51,0.35)] transition-all ${
-          open ? 'bg-white border-black/10 text-navy px-5 py-3' : 'bg-navy border-navy text-white px-5 py-3 hover:bg-navy-800'
+        className={`group inline-flex items-center gap-3 rounded-full border shadow-[0_12px_32px_-12px_rgba(14,27,51,0.35)] transition-all duration-300 ${
+          open ? 'bg-white border-black/10 text-navy px-5 py-3' : isOverNavy ? 'bg-white border-black/10 text-navy px-5 py-3 shadow-[0_12px_32px_-12px_rgba(14,27,51,0.22)]' : 'bg-navy border-navy text-white px-5 py-3 hover:bg-navy-800'
         }`}
       >
-        <span className={`h-9 w-9 grid place-items-center rounded-full border text-sm shrink-0 transition ${open ? 'bg-haze border-black/10 text-navy' : 'bg-white/10 border-white/15 text-white group-hover:bg-white/15'}`}>
+        <span className={`h-9 w-9 grid place-items-center rounded-full border text-sm shrink-0 transition duration-300 ${open ? 'bg-haze border-black/10 text-navy' : isOverNavy ? 'bg-haze border-black/10 text-navy' : 'bg-white/10 border-white/15 text-white group-hover:bg-white/15'}`}>
           {open ? '✕' : '？'}
         </span>
         <span className="text-left leading-tight">
-          <span className={`block text-[0.82rem] font-extrabold tracking-tight ${open ? 'text-navy' : 'text-white'}`}>
+          <span className={`block text-[0.82rem] font-extrabold tracking-tight ${open || isOverNavy ? 'text-navy' : 'text-white'}`}>
             {open ? 'Close' : 'Ask a Question'}
           </span>
-          <span className={`block text-[0.62rem] font-semibold tracking-wide uppercase ${open ? 'text-muted' : 'text-white/75'}`}>
+          <span className={`block text-[0.62rem] font-semibold tracking-wide uppercase ${open || isOverNavy ? 'text-muted' : 'text-white/75'}`}>
             {open ? 'Hide contacts' : 'Need help? Chat with us'}
           </span>
         </span>
