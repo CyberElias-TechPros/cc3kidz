@@ -24,15 +24,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        {/* Church Main — Nunito Sans: bold rounded, official + soothing */}
+        {/* Church Main — Plus Jakarta Sans: bolder, rounded, official — 500 body / 700-800 headings */}
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700;6..12,800;6..12,900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap"
           rel="stylesheet"
         />
         <style
           dangerouslySetInnerHTML={{
-            __html: `:root{--font-display:'Nunito Sans',system-ui,sans-serif;--font-text:'Nunito Sans',system-ui,sans-serif;--font-sans:'Nunito Sans',system-ui,sans-serif}`
+            __html: `:root{--font-display:'Plus Jakarta Sans',system-ui,sans-serif;--font-text:'Plus Jakarta Sans',system-ui,sans-serif;--font-sans:'Plus Jakarta Sans',system-ui,sans-serif}`
           }}
         />
       </head>
