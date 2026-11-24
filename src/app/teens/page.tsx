@@ -1,548 +1,398 @@
 import Link from 'next/link'
+import Image from 'next/image'
+import '../kids-layout.css'
 import './teens.css'
+import { site } from '@/lib/site'
+import { SectionHeading } from '@/components/Section'
+import NewsletterForm from '@/components/forms/NewsletterForm'
+import services from '@/data/services.json'
+import ministries from '@/data/ministries.json'
+import events from '@/data/events.json'
+import { ZoneBreadcrumb } from '@/components/group/ZoneBreadcrumb'
 
 export const metadata = { title: 'CC3 Teens Church — A Generation Set Apart | 13–19' }
 
-/* Spec reference: Screen T01 — Homepage (Highest priority)
-   Palette: #172B76 #315BFF #7954E8 #FF8C70 #F5F6FC #151B2D
-   Type: Space Grotesk / Plus Jakarta Sans / Inter
-   Content is placeholder-verified: no invented CC3 leadership/stats used as fact
-*/
+// Teens mirrors Main Church component system (kl-* from kids-layout.css)
+// Palette accents mapped to Teens via .teens-scope overrides, but structure/feeling = Main
 export default function TeensPage() {
+  const coverUrl = '/assets/images/cc3/service-congregation.jpg'
+  const familyUrl = '/assets/images/main-family.webp'
+  const outreachUrl = '/assets/images/cc3/reachout-world.webp'
+
+  const galleryItems = [
+    { src: coverUrl, cap: 'Worship & Word', href: '/teens/resources' },
+    { src: familyUrl, cap: 'Teens Family', href: '/teens/resources' },
+    { src: outreachUrl, cap: 'TITHE Outreach', href: '/teens/resources' },
+  ]
+
   return (
     <div className="teens-scope">
-      {/* ========== HERO — Spec: large editorial headline + intro + real photography ========== */}
-      <section className="teens-hero">
-        <div className="container-cc relative py-7 md:py-10">
-          <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-8 items-center">
-            <div>
-              <div className="teens-kicker">
-                <span className="h-2 w-2 rounded-full bg-[#FF8C70] animate-pulse" />
-                CC3 Teens Church · Port Harcourt Zone 3
-                <span className="hidden sm:inline-flex ml-2 rounded-full bg-[#172B76] text-white px-2.5 py-0.5 text-[10px] font-black tracking-widest">13–19</span>
-              </div>
-
-              <h1 className="teens-title mt-5 font-teens-display">
-                A Generation
-                <br />
-                <em>Set Apart.</em>
-              </h1>
-
-              <p className="teens-subtitle mt-4 font-teens-body">
-                Discover a place to grow in the Word, develop your gifts, build meaningful friendships and make a positive difference. CC3 Teens Church — a local expression of Christ Embassy, raised in the Word and the Spirit.
-              </p>
-
-              <div className="mt-6 flex flex-wrap gap-3">
-                <Link href="/teens/church" className="inline-flex items-center gap-2 rounded-full bg-[#172B76] text-white px-6 py-3 text-sm font-bold hover:bg-[#12205e] transition">
-                  Discover Teens Church <span>→</span>
-                </Link>
-                <Link href="/teens/word" className="inline-flex items-center gap-2 rounded-full bg-white border border-[#172B76]/10 text-[#151B2D] px-6 py-3 text-sm font-bold hover:border-[#7954E8]/30 transition">
-                  Explore the Word Centre
-                </Link>
-              </div>
-
-              {/* Trust stats — verifiable only */}
-              <div className="mt-7 grid grid-cols-3 gap-3 max-w-[560px]">
-                {[
-                  { k: '13–19', v: 'Teenagers', sub: 'JSS · SS · University entry' },
-                  { k: 'TeeVo', v: 'Daily devotional', sub: 'Link to official resource' },
-                  { k: 'TITHE', v: 'Teens evangelism', sub: 'Every teen a soul winner' },
-                ].map(s => (
-                  <div key={s.k} className="teens-stat">
-                    <div className="text-xs font-black tracking-wide text-[#151B2D] font-teens-heading">{s.k}</div>
-                    <div className="text-[11px] font-bold text-[#315BFF]">{s.v}</div>
-                    <div className="text-[10px] text-slate-500 leading-tight">{s.sub}</div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-5 flex flex-wrap gap-2 text-[11px] font-semibold text-slate-500">
-                <span className="inline-flex items-center gap-1.5">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#172B76]" /> Sundays 8AM · During Main Celebration
-                </span>
-                <span className="hidden sm:inline text-black/10">·</span>
-                <span>30B Rumuokwuta / NTA Road, Port Harcourt</span>
-                <span className="hidden sm:inline text-black/10">·</span>
-                <Link href="/teens/connect" className="underline decoration-[#7954E8]/30 underline-offset-4 hover:text-[#172B76]">
-                  Parent info →
-                </Link>
-              </div>
+      {/* HERO — same kl-hero as Main: kicker, title, text, gold line, dual CTA, slider art */}
+      <section className="kl-hero">
+        <div className="container-cc kl-hero__inner">
+          <div>
+            <span className="kl-hero__kicker"><i /> Port Harcourt · 30B Rumuokwuta · Sunday 8AM</span>
+            <h1 className="kl-hero__title" style={{ marginTop: '1.4rem' }}>
+              A Generation<br />Set Apart.
+            </h1>
+            <p className="kl-hero__text">
+              Discover a place to grow in the Word, develop your gifts, build meaningful friendships and make a positive difference — a teenage expression of Christ Embassy Central Church 3, Port Harcourt Zone 3.
+            </p>
+            <p className="text-gold font-extrabold tracking-[0.10em] uppercase text-[0.82rem] mt-3 italic">Growing in the Word. Living with Purpose. Influencing Our World.</p>
+            <div className="kl-hero__cta">
+              <Link href="/teens/church" className="btn btn--navy">Discover Teens Church</Link>
+              <Link href="/teens/word" className="btn btn--ghost">Explore the Word Centre →</Link>
             </div>
-
-            {/* Right — editorial photo composition (real CC3 where available, stock marked as exploration only) */}
-            <div className="relative">
-              <div className="rounded-[22px] overflow-hidden border border-[#172B76]/10 bg-white p-3 shadow-[0_20px_40px_-18px_rgba(23,43,118,0.2)]">
-                <div className="grid grid-cols-[1.25fr_0.8fr] gap-3">
-                  <div className="rounded-[16px] overflow-hidden bg-[#F5F6FC] aspect-[4/3] relative">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/assets/images/cc3/service-congregation.jpg" alt="CC3 Teens — worship and Word (placeholder: replace with verified CC3 Teens photo)" className="absolute inset-0 h-full w-full object-cover" />
-                    <div className="absolute bottom-2 left-2 rounded-full bg-[#172B76] text-white px-3 py-1 text-[10px] font-black tracking-wide">WORSHIP · WORD · PRAYER</div>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="rounded-[14px] bg-white border border-[#7954E8]/10 p-4">
-                      <div className="text-[10px] font-black tracking-widest uppercase text-[#7954E8]">TeeVo today</div>
-                      <div className="text-xs font-extrabold leading-tight text-[#151B2D] mt-1">You&apos;re God&apos;s Chosen & Set Apart</div>
-                      <div className="text-[11px] leading-5 text-slate-500 mt-1">“You are a chosen generation…” — 1 Peter 2:9</div>
-                      <a href="https://teevo.org" target="_blank" rel="noreferrer" className="mt-2 inline-flex rounded-full bg-[#315BFF] text-white px-3 py-1 text-[11px] font-bold">
-                        Read on TeeVo →
-                      </a>
-                    </div>
-                    <div className="rounded-[14px] p-4 text-white" style={{ background: '#172B76' }}>
-                      <div className="text-[11px] font-black uppercase tracking-wide text-white/80">Next gathering</div>
-                      <div className="text-sm font-black leading-tight mt-1">Teens Church — Sunday 8AM</div>
-                      <div className="text-[11px] text-white/70">Check-in at welcome desk · Supervised</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-3 grid grid-cols-3 gap-3">
-                  {[
-                    { n: 'TeeVo Clubs', a: 'Schools', c: '#7954E8' },
-                    { n: 'TITHE', a: 'Outreach', c: '#FF8C70' },
-                    { n: 'Creative', a: 'Gifts & Teams', c: '#315BFF' },
-                  ].map(b => (
-                    <div key={b.n} className="rounded-xl bg-[#F5F6FC] border border-black/5 p-3 text-center">
-                      <div className="mx-auto h-8 w-8 rounded-full grid place-items-center text-white font-black text-xs" style={{ background: b.c }}>
-                        ✦
-                      </div>
-                      <div className="text-[11px] font-black text-[#151B2D] mt-1">{b.n}</div>
-                      <div className="text-[10px] text-slate-500">{b.a}</div>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-3 rounded-xl bg-[#FFF4F0] border border-[#FF8C70]/15 px-3 py-2 flex items-center justify-between">
-                  <span className="text-[11px] font-semibold text-[#151B2D]">Photography: placeholders — replace with verified CC3 Teens media</span>
-                  <span className="text-[10px] font-black tracking-widest uppercase text-[#FF8C70]">Verified only</span>
-                </div>
-              </div>
-              <div className="absolute -bottom-3 -right-2 hidden md:flex items-center gap-2 rounded-full bg-white shadow-xl border border-black/5 px-4 py-2">
-                <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-xs font-bold text-[#151B2D]">Safe · Supervised · Parent-aware</span>
-              </div>
+            <div className="kl-hero__hairline" />
+            <div className="mt-4 flex flex-wrap gap-2 text-[11px] font-semibold text-muted">
+              <span className="inline-flex items-center gap-1.5"><span className="h-1.5 w-1.5 rounded-full bg-[var(--kl-navy)]" /> Sundays 8AM · During Main Celebration</span>
+              <span className="hidden sm:inline text-black/10">·</span>
+              <span>30B Rumuokwuta — Group Church</span>
+              <span className="hidden sm:inline text-black/10">·</span>
+              <Link href="/teens/connect" className="underline decoration-gold/30 underline-offset-4 hover:text-navy">Parent info →</Link>
             </div>
           </div>
+          <div className="kl-hero__art">
+            {/* Teens hero art — same card shape as Main, with Teens collage inside */}
+            <div className="kl-hero__slider">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={coverUrl} alt="Teens worship — placeholder, replace with verified CC3 Teens photo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div className="kl-hero__slide-caption" style={{ background: 'linear-gradient(transparent, rgba(8,15,31,0.78))' }}>
+                <div className="kl-hero__slide-name">CC3 Teens Church — Worship & Word</div>
+                <div className="kl-hero__slide-title">Sundays 8AM · Supervised · Parent-aware</div>
+              </div>
+              <div className="kl-hero__dots"><span className="kl-hero__dot is-active" /><span className="kl-hero__dot" /><span className="kl-hero__dot" /></div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          {/* Meeting info strip — spec: small meeting information strip */}
-          <div className="mt-8 grid grid-cols-3 divide-x divide-black/5 rounded-2xl bg-white border border-[#172B76]/10 overflow-hidden max-w-[720px]">
+      {/* WELCOME — same centered + kl-feature-grid + stat bar as Main */}
+      <section className="section" style={{ background: '#fff' }}>
+        <div className="container-cc">
+          <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 2.2rem' }}>
+            <span className="eyebrow" style={{ background:'#fff', border:'1.5px solid rgba(14,27,51,0.08)', borderRadius:'999px', padding:'0.4rem 0.9rem', display:'inline-flex', gap:'0.5rem' }}>
+              <span style={{ width:8, height:8, borderRadius:'50%', background:'#C6A04A', boxShadow:'0 0 0 4px #EAF0F7', display:'inline-block' }} /> Welcome — You Belong Here
+            </span>
+            <h2 style={{ fontFamily:'var(--font-display),serif', fontWeight:800, fontSize:'clamp(1.8rem,3.5vw,2.6rem)', lineHeight:1.05, marginTop:'0.9rem', color:'#0E1B33' }}>
+              There&apos;s a Place for You to Belong — and Become.
+            </h2>
+            <p style={{ color:'#64748B', marginTop:'0.6rem' }}>
+              Not a side programme. CC3 Teens Church is a local expression of Christ Embassy — teenagers growing spiritually, finding purpose and influencing their generation. LoveWorld Nation → Port Harcourt Zone 3 → CC3 Group Church → Teens Church.
+            </p>
+          </div>
+          <div className="kl-feature-grid">
             {[
-              { k: 'Sundays', v: '8:00 AM · Teens Church' },
-              { k: 'Venue', v: '30B Rumuokwuta — Group Church' },
-              { k: 'First time?', v: 'Welcome desk · New Here →' },
-            ].map(s => (
-              <div key={s.k} className="px-4 py-3 text-center">
-                <div className="text-[10px] font-black tracking-widest uppercase text-[#7954E8]">{s.k}</div>
-                <div className="text-xs font-bold text-[#151B2D] mt-1">{s.v}</div>
+              { t:'Know the Word', d:'TeeVo-rooted teaching on identity, faith & character — every week. Official TeeVo via teevo.org, never copied.', a:'gold', icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M8 7h8"/><path d="M8 11h8"/></svg> },
+              { t:'Find Your People', d:'Real friendships — small groups, not crowds. Safe, supervised, parent-aware fellowship.', a:'vermilion', icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> },
+              { t:'Use Your Gifts', d:'Music, media, drama, dance, tech — your talent has a place now. Creativity with excellence.', a:'navy', icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v8"/><path d="M8 12h8"/></svg> },
+            ].map(c=>(
+              <article key={c.t} className="kl-feature-card">
+                <div className={`kl-feature-card__icon kl-feature-card__icon--${c.a}`}>{c.icon}</div>
+                <h3 style={{ fontFamily:'var(--font-display),serif', fontWeight:800, color:'#0E1B33', letterSpacing:'-0.01em' }}>{c.t}</h3>
+                <p style={{ fontSize:'0.9rem', color:'#64748B', marginTop:'0.4rem', lineHeight:1.6 }}>{c.d}</p>
+              </article>
+            ))}
+          </div>
+          <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:'0.5rem', marginTop:'1.6rem', background:'#0E1B33', borderRadius:'16px', padding:'1rem 0.6rem', color:'#fff', boxShadow:'0 12px 32px -12px rgba(14,27,51,0.25)' }}>
+            {[{ n:'13–19', l:'teenagers' },{ n:'TeeVo', l:'daily devotional' },{ n:'TITHE', l:'each one reach one' },{ n:'100%', l:'LoveWorld family' }].map(s=>(
+              <div key={s.l} style={{ textAlign:'center', padding:'0.3rem', borderRight:'1px solid rgba(255,255,255,0.1)' }}>
+                <div style={{ fontFamily:'var(--font-display),serif', fontWeight:800, color:'#C6A04A', fontSize:'1.5rem' }}>{s.n}</div>
+                <div style={{ fontSize:'0.58rem', fontWeight:700, letterSpacing:'0.08em', textTransform:'uppercase', color:'rgba(255,255,255,0.6)' }}>{s.l}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ========== WELCOME — What CC3 Teens Church is ========== */}
-      <section className="section bg-white">
-        <div className="container-cc">
-          <div className="grid lg:grid-cols-[0.9fr_1.15fr] gap-8 items-start">
-            <div>
-              <div className="teens-pill bg-[#315BFF]/10 text-[#172B76] border border-[#315BFF]/15">Welcome</div>
-              <h2 className="font-teens-heading font-extrabold text-[2rem] leading-none tracking-tight mt-3 text-[#151B2D]">There&apos;s a place for you to belong — and become.</h2>
-              <p className="text-sm leading-7 text-slate-600 mt-3">
-                Not a side programme. CC3 Teens Church is the teenage expression of Christ Embassy Central Church 3 — teenagers growing spiritually, finding purpose and influencing their generation. LoveWorld Nation → Port Harcourt Zone 3 → CC3 Group Church → Teens Church.
-              </p>
-              <div className="mt-5 flex flex-wrap gap-2">
-                <Link href="/teens/about" className="rounded-full bg-[#151B2D] text-white px-5 py-2.5 text-xs font-bold">
-                  Our Identity →
-                </Link>
-                <Link href="/about" className="rounded-full border border-black/10 bg-white px-5 py-2.5 text-xs font-bold hover:border-[#7954E8]/30">
-                  Christ Embassy Vision
-                </Link>
-              </div>
-              <p className="mt-4 text-[11px] leading-5 text-slate-500 border-l-2 border-[#FF8C70]/30 pl-3">
-                Content status: placeholder — vision, history, leadership and activities to be verified by Teens Church Pastor / Group Pastor before launch.
-              </p>
-            </div>
-            <div className="grid sm:grid-cols-3 gap-3">
-              {[
-                { t: 'Know the Word', d: 'TeeVo-rooted teaching on identity, faith & character — every week.', icon: '✦' },
-                { t: 'Find Your People', d: 'Real friendships — small groups, not crowds. Safe, supervised.', icon: '◐' },
-                { t: 'Use Your Gifts', d: 'Music, media, drama, dance, tech — your talent has a place now.', icon: '✺' },
-              ].map(c => (
-                <div key={c.t} className="teens-card p-5">
-                  <div className="h-9 w-9 rounded-xl bg-[#7954E8]/10 border border-[#7954E8]/15 grid place-items-center text-[#7954E8] font-black">{c.icon}</div>
-                  <div className="text-sm font-black text-[#151B2D] mt-3 font-teens-heading">{c.t}</div>
-                  <div className="text-xs leading-5 text-slate-600 mt-1">{c.d}</div>
-                </div>
-              ))}
+      {/* SERVICES — same sticky + list pattern as Main: “Our Week in the Word” */}
+      <section className="section" style={{ background:'#fff', borderTop:'1px solid rgba(14,27,51,0.06)' }}>
+        <div className="container-cc kl-services">
+          <div className="kl-services__sticky">
+            <span className="eyebrow" style={{ background:'#fff', border:'1.5px solid rgba(14,27,51,0.06)', borderRadius:'999px', padding:'0.35rem 0.8rem' }}>Our Week in the Word</span>
+            <h2 style={{ fontFamily:'var(--font-display),serif', fontWeight:800, color:'#0E1B33', fontSize:'clamp(1.8rem,3vw,2.4rem)', lineHeight:0.95, marginTop:'0.7rem' }}>Appointed Times<br />in His Presence</h2>
+            <p style={{ color:'#64748B', fontSize:'0.92rem', marginTop:'0.6rem', maxWidth:'32ch' }}>Appointed times for Teens to receive the Word — during Main Celebration and through weekly TeeVo Clubs & fellowship. Come early for prayer.</p>
+            <Link href="/teens/events" style={{ display:'inline-flex', marginTop:'1.2rem', fontSize:'0.82rem', fontWeight:700, color:'#0E1B33', borderBottom:'1.5px solid #0E1B33', paddingBottom:'2px', textDecoration:'none' }}>View full Teens calendar →</Link>
+            <div className="kl-services__image">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={coverUrl} alt="Teens gathering — Sunday Celebration" referrerPolicy="no-referrer" />
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ========== IDENTITY — Vision / Mission / Values ========== */}
-      <section className="section" style={{ background: '#F5F6FC' }}>
-        <div className="container-cc">
-          <div className="flex items-baseline justify-between gap-4">
-            <div className="teens-pill bg-white border border-black/5 text-[#151B2D]">Identity</div>
-            <Link href="/teens/about" className="hidden sm:inline-flex text-xs font-bold text-[#315BFF]">
-              Vision & Beliefs →
-            </Link>
-          </div>
-          <div className="mt-6 grid md:grid-cols-3 gap-4">
+          <div className="kl-services__list">
             {[
-              { k: 'Vision', t: 'A Generation Set Apart', d: 'Raising teenagers established in the Word, filled with the Spirit, conscious of identity in Christ.', c: '#172B76' },
-              { k: 'Mission', t: 'Grow, Equip, Send', d: 'Nurture through the Word, fellowship, mentorship, creative expression & evangelism.', c: '#7954E8' },
-              { k: 'Beliefs', t: 'Same Foundation', d: 'One faith — Bible as infallible Word, New Creation, Holy Spirit, faith & soul-winning.', c: '#FF8C70' },
-            ].map(b => (
-              <div key={b.k} className="teens-card p-6 relative overflow-hidden">
-                <div className="absolute top-0 left-0 h-1 w-full" style={{ background: b.c }} />
-                <div className="text-[10px] font-black tracking-widest uppercase" style={{ color: b.c }}>
-                  {b.k}
+              { day: 'Sunday', time:'8:00 AM', name:'Teens Church — Celebration', description:'Worship, Word & fellowship during Main Service. Welcome desk from 7:30AM. Supervised.', slug:'sunday-celebration' },
+              { day: 'Weekly', time:'Schools', name:'TeeVo Clubs', description:'Weekly Bible study in schools & zones — supervised, authorised. No student lists published without consent.', slug:'teevo-clubs' },
+              { day: 'As announced', time:'Quarterly', name:'TITHE & Outreach', description:'Evangelism thrust — teens reaching teens. Via authorised coordinators only.', slug:'tithe' },
+              { day: 'As announced', time:'Monthly', name:'Creative Rehearsals', description:'Choir, media, drama, dance — excellence for service and outreaches.', slug:'creative' },
+            ].map(s=>(
+              <Link key={s.slug} href={`/teens/events`} className="kl-service-row" style={{ textDecoration:'none' }}>
+                <span className="kl-service-row__time"><i />{s.day} · {s.time}</span>
+                <div>
+                  <div className="kl-service-row__title">{s.name}</div>
+                  <div className="kl-service-row__desc">{s.description}</div>
                 </div>
-                <div className="font-teens-heading font-extrabold text-lg mt-1 text-[#151B2D]">{b.t}</div>
-                <div className="text-sm leading-6 text-slate-600 mt-2">{b.d}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Curved organic divider — Teens graphic language */}
-      <div className="teens-organic-divider" aria-hidden>
-        <svg viewBox="0 0 1440 36" preserveAspectRatio="none">
-          <path d="M0 36 Q 360 0 720 18 T 1440 36 L 1440 0 L 0 0 Z" fill="#FFFFFF" />
-        </svg>
-      </div>
-
-      {/* ========== WORD CENTRE — TeeVo / Bible study / Scripture challenges ========== */}
-      <section className="section bg-white">
-        <div className="container-cc">
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <div className="teens-pill bg-[#FF8C70]/10 text-[#7a2b1a] border border-[#FF8C70]/15">Word Centre</div>
-              <h2 className="font-teens-heading font-extrabold text-2xl tracking-tight mt-3 text-[#151B2D]">TeeVo, Bible study & Scripture challenges — daily, not just Sunday.</h2>
-              <p className="text-sm text-slate-600 mt-1 max-w-2xl">Official LoveWorld resources, locally nurtured. Link, don&apos;t republish — build a daily habit. Searchable resource categories.</p>
-            </div>
-            <Link href="/search" className="hidden md:inline-flex items-center gap-2 rounded-full bg-[#F5F6FC] border border-black/5 px-4 py-2 text-xs font-bold text-[#172B76]">
-              ⌕ Search Word Centre
-            </Link>
-          </div>
-
-          <div className="mt-6 grid lg:grid-cols-[1.15fr_0.85fr] gap-4">
-            <Link href="/teens/word" className="teens-card p-6 text-white relative overflow-hidden block hover:border-[#7954E8]/20" style={{ background: '#172B76' }}>
-              <div className="absolute inset-0 opacity-25" style={{ background: 'radial-gradient(420px 220px at 18% 0%, #7954E8, transparent)' }} />
-              <div className="relative">
-                <div className="inline-flex rounded-full bg-white text-[#151B2D] px-3 py-1 text-[10px] font-black tracking-widest">TEEVO TODAY — OFFICIAL LINK</div>
-                <div className="font-teens-display font-extrabold text-xl mt-3 leading-tight">Your daily devotional — Scripture, message, prayer & confession.</div>
-                <div className="text-sm leading-6 text-white/75 mt-2">1 Peter 2:9 · Read on teevo.org — we link to the official resource, never copy copyrighted content.</div>
-                <div className="mt-4 inline-flex rounded-full bg-[#FF8C70] text-white px-4 py-2 text-xs font-black">Open TeeVo →</div>
-              </div>
-            </Link>
-
-            <div className="grid grid-rows-3 gap-3">
-              {[
-                { t: 'Bible Study Centre', d: 'Identity · Faith · Holy Spirit · Purpose — topical studies.', href: '/teens/word' },
-                { t: 'Reading Plans', d: '30 Days in the Word — progress stored locally, private.', href: '/teens/word' },
-                { t: 'Quizzes & Challenges', d: 'Memory verse, Bible quiz, application tasks — with friends.', href: '/teens/word' },
-              ].map(c => (
-                <Link key={c.t} href={c.href} className="teens-card p-4 flex items-center justify-between gap-3 hover:border-[#315BFF]/15">
-                  <div>
-                    <div className="text-sm font-black text-[#151B2D] font-teens-heading">{c.t}</div>
-                    <div className="text-xs text-slate-600 mt-0.5">{c.d}</div>
-                  </div>
-                  <span className="h-8 w-8 rounded-full bg-[#315BFF]/10 grid place-items-center text-[#315BFF] shrink-0">→</span>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Resource detail affordance */}
-          <div className="mt-4 grid md:grid-cols-4 gap-3 text-xs">
-            {[
-              'Devotionals · Bible studies · Scripture memory',
-              'Bible reading plans · Teachings · Quizzes',
-              'Search + categories — no login required to read',
-              'Related resources · Attribution · Date — on every page',
-            ].map(t => (
-              <div key={t} className="rounded-full bg-[#F5F6FC] border border-black/5 px-4 py-2 text-center font-semibold text-[#151B2D]">
-                {t}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ========== MINISTRY ACTIVITIES — TeeVo Clubs (T09) + TITHE (T10) ========== */}
-      <section className="section" style={{ background: '#FFF7F2' }}>
-        <div className="container-cc">
-          <div className="teens-pill bg-white border border-black/5 text-[#151B2D]">Ministry activities</div>
-          <h2 className="font-teens-heading font-extrabold text-2xl mt-3 text-[#151B2D]">TeeVo Clubs, TITHE & real ministry.</h2>
-          <p className="text-sm text-slate-600 mt-1">Global TeeVo Clubs & TITHE concepts, with CC3 local expression clearly distinguished. Verified clubs only.</p>
-
-          <div className="mt-6 grid lg:grid-cols-2 gap-4">
-            <div className="teens-card p-6 relative overflow-hidden">
-              <div className="absolute top-4 right-4 rounded-full bg-[#7954E8] text-white px-3 py-1 text-[10px] font-black tracking-widest">GLOBAL · LOCAL</div>
-              <div className="text-[10px] font-black tracking-widest uppercase text-[#7954E8]">TeeVo Clubs — Screen T09</div>
-              <h3 className="font-teens-heading font-extrabold text-xl mt-1 text-[#151B2D]">Take TeeVo to your school.</h3>
-              <p className="text-sm leading-6 text-slate-600 mt-2">
-                Weekly Bible study & discussion right where you are — schools and neighbourhoods. Supervised, authorised. No school names or student identities published without approval.
-              </p>
-              <ul className="mt-3 space-y-1 text-xs leading-5 text-slate-600">
-                <li>• How clubs operate · Official LoveWorld context</li>
-                <li>• Approved CC3 club directory (verified only) · Activity reports</li>
-                <li>• Enquiry process — routed to authorised coordinator</li>
-              </ul>
-              <div className="mt-4 flex flex-wrap gap-2">
-                <Link href="/teens/activities" className="rounded-full bg-[#151B2D] text-white px-4 py-2 text-xs font-bold">
-                  How TeeVo Clubs Work →
-                </Link>
-                <Link href="/teens/connect" className="rounded-full border border-black/10 bg-white px-4 py-2 text-xs font-bold">
-                  Find a Club
-                </Link>
-              </div>
-              <div className="mt-4 rounded-xl bg-[#F5F6FC] border border-[#7954E8]/10 p-3 flex items-center gap-3">
-                <span className="h-2 w-2 rounded-full bg-[#7954E8] animate-pulse" />
-                <span className="text-xs font-bold text-[#151B2D]">Zone 3 historical reference: 108 TeeVo Clubs (June 2019) — not current CC3 count</span>
-              </div>
-            </div>
-
-            <div className="teens-card p-6 border-[#FF8C70]/20">
-              <div className="text-[10px] font-black tracking-widest uppercase text-[#FF8C70]">TITHE & Outreach — Screen T10</div>
-              <h3 className="font-teens-heading font-extrabold text-xl mt-1 text-[#151B2D]">Every teenager a soul winner.</h3>
-              <p className="text-sm leading-6 text-slate-600 mt-2">Global Teens Ministry evangelism — teens reaching teens in streets and schools with the Gospel. Local outreaches distinguished from global initiative.</p>
-              <ul className="mt-3 space-y-1 text-xs leading-5 text-slate-600">
-                <li>• Initiative intro · LoveWorld official info · CC3 local records</li>
-                <li>• Upcoming outreaches · Media · Reports · Participation route</li>
-              </ul>
-              <div className="mt-4 flex flex-wrap gap-2">
-                <Link href="/teens/activities" className="rounded-full bg-[#FF8C70] text-white px-4 py-2 text-xs font-bold">
-                  TITHE →
-                </Link>
-                <Link href="/outreach" className="rounded-full border border-black/10 bg-white px-4 py-2 text-xs font-bold">
-                  Outreach Reports
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ========== EVENTS — T12/T13 — 3 featured + numbered identities ========== */}
-      <section className="section" style={{ background: '#F5F6FC' }}>
-        <div className="container-cc">
-          <div className="flex items-baseline justify-between gap-4">
-            <div>
-              <div className="teens-pill bg-white border border-black/5 text-[#151B2D]">Events</div>
-              <h2 className="font-teens-heading font-extrabold text-2xl mt-3 text-[#151B2D]">What&apos;s happening?</h2>
-            </div>
-            <Link href="/teens/events" className="rounded-full bg-[#172B76] text-white px-4 py-2 text-xs font-bold hidden sm:inline-flex">
-              All events →
-            </Link>
-          </div>
-
-          {/* Empty state handling — if no published events, show welcoming intro (spec T01) */}
-          <div className="mt-6 grid md:grid-cols-3 gap-4">
-            {[
-              { n: '01', t: 'Teens Church — Sunday', d: 'Worship, Word & fellowship · Every Sunday 8AM', badge: 'Weekly', c: '#315BFF', href: '/teens/events' },
-              { n: '02', t: 'TeeVo Club Rally', d: 'Schools gathering — Bible challenge & outreach (TBC, verified date required)', badge: 'Monthly', c: '#7954E8', href: '/teens/events' },
-              { n: '03', t: 'TITHE Campaign', d: 'Street & school evangelism — teams + follow-up · Authorised coordinator only', badge: 'As announced', c: '#FF8C70', href: '/teens/events' },
-            ].map(e => (
-              <div key={e.t} className="teens-card p-5 relative">
-                <div className="flex items-start justify-between gap-3">
-                  <div className="inline-flex rounded-full text-white px-3 py-1 text-[10px] font-black tracking-widest uppercase" style={{ background: e.c }}>
-                    {e.badge}
-                  </div>
-                  <div className="teens-event-num">{e.n}</div>
-                </div>
-                <div className="font-teens-heading font-black text-[#151B2D] mt-2 leading-tight">{e.t}</div>
-                <div className="text-xs leading-5 text-slate-600 mt-1">{e.d}</div>
-                <Link href={e.href} className="mt-3 inline-flex text-xs font-black" style={{ color: e.c }}>
-                  View details →
-                </Link>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-4 rounded-xl bg-white border border-black/5 p-4 flex flex-wrap items-center justify-between gap-3">
-            <div className="text-xs text-slate-600">
-              <b className="text-[#151B2D]">No upcoming events?</b> We show a welcoming ministry introduction instead of an empty grid — registration only when required, guardian-aware, no public attendee lists.
-            </div>
-            <Link href="/teens/events" className="rounded-full border border-black/10 bg-white px-4 py-2 text-xs font-bold">
-              Past events archive
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ========== CREATIVE DISCOVERY — T11 — Departments ========== */}
-      <section className="section bg-white">
-        <div className="container-cc">
-          <div className="teens-pill text-white" style={{ background: '#172B76' }}>
-            Creative discovery
-          </div>
-          <h2 className="font-teens-heading font-extrabold text-2xl mt-3 text-[#151B2D]">Discover your gifts — serve, create, lead.</h2>
-          <p className="text-sm text-slate-600 mt-1">Proposed departments, verified before shown as active. Each has purpose, activities, leader contact route, requirements.</p>
-          <div className="mt-6 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
-            {[
-              { n: 'Music & Worship', s: 'Choir · Instruments' },
-              { n: 'Media', s: 'Photo · Sound · Stream' },
-              { n: 'Graphics', s: 'Design · Slides' },
-              { n: 'Drama & Arts', s: 'Skits · Spoken · Dance' },
-              { n: 'Technical', s: 'Support · Setup' },
-              { n: 'Hospitality', s: 'Ushering · Welcome' },
-              { n: 'Evangelism', s: 'TITHE Teams' },
-              { n: 'Prayer', s: 'Intercession · Follow-up' },
-            ].map(c => (
-              <div key={c.n} className="teens-card p-4 text-center">
-                <div className="mx-auto h-10 w-10 rounded-xl text-white grid place-items-center font-black" style={{ background: '#315BFF' }}>
-                  ✦
-                </div>
-                <div className="text-[11px] font-black text-[#151B2D] mt-2 font-teens-heading">{c.n}</div>
-                <div className="text-[10px] leading-tight text-slate-500">{c.s}</div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-6 rounded-[16px] text-white p-5 flex flex-col md:flex-row items-center justify-between gap-4" style={{ background: '#151B2D' }}>
-            <div>
-              <div className="font-teens-heading font-black">Showcase your gift</div>
-              <div className="text-sm text-white/70">Talent showcases, services & outreaches — parent-invited, consent-published.</div>
-            </div>
-            <Link href="/teens/gifts" className="rounded-full bg-white text-[#151B2D] px-5 py-2.5 text-xs font-black shrink-0">
-              Explore Departments →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ========== MEDIA — T14 ========== */}
-      <section className="section" style={{ background: '#F5F6FC' }}>
-        <div className="container-cc">
-          <div className="flex items-baseline justify-between gap-4">
-            <div>
-              <div className="teens-pill bg-white border border-black/5 text-[#151B2D]">Media library</div>
-              <h2 className="font-teens-heading font-extrabold text-2xl mt-3 text-[#151B2D]">Teaching, worship & ministry media</h2>
-            </div>
-            <Link href="/teens/resources" className="hidden sm:inline-flex rounded-full bg-white border border-black/10 px-4 py-2 text-xs font-bold">
-              All media →
-            </Link>
-          </div>
-          <div className="mt-6 grid md:grid-cols-3 gap-4">
-            {[
-              { k: 'Teaching', t: 'Faith & Identity — Pastor (TBC)', d: 'Approved teaching preview · T15–20 min · With transcript' },
-              { k: 'Worship', t: 'Teens Choir — “We Are Set Apart”', d: 'Ministry media · Photography only with consent' },
-              { k: 'Event report', t: 'TITHE Outreach — February (sample)', d: 'Sample report card · Will show verified CC3 reports only' },
-            ].map(m => (
-              <div key={m.t} className="teens-card p-5">
-                <div className="text-[10px] font-black tracking-widest uppercase" style={{ color: '#7954E8' }}>
-                  {m.k}
-                </div>
-                <div className="font-teens-heading font-bold text-[#151B2D] mt-1 leading-tight">{m.t}</div>
-                <div className="text-xs leading-5 text-slate-600 mt-1">{m.d}</div>
-                <div className="mt-3 text-xs font-bold text-[#315BFF]">Watch / Listen →</div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-3 text-center text-[11px] text-slate-500">Search · Category filtering · Featured · Video/audio playback · Related content — only with ownership & consent.</div>
-        </div>
-      </section>
-
-      {/* ========== PARENTS & GUARDIANS — T18 — Prominent, not footer link ========== */}
-      <section className="section bg-white">
-        <div className="container-cc">
-          <div className="rounded-[20px] text-white p-6 md:p-8 grid md:grid-cols-[1.1fr_0.9fr] gap-6 items-center" style={{ background: '#151B2D' }}>
-            <div>
-              <div className="teens-pill bg-white/10 border border-white/15 text-white">Parents & Guardians — Screen T18</div>
-              <h2 className="font-teens-heading font-extrabold text-2xl mt-3 leading-tight">We take trust seriously.</h2>
-              <p className="text-sm leading-6 text-white/70 mt-2">
-                A dedicated section for parents: ministry vision, leadership & accountability, meeting arrangements, FAQs, media consent, safeguarding, event arrangements and a monitored enquiry channel.
-              </p>
-              <ul className="mt-3 space-y-1 text-xs leading-5 text-white/70">
-                <li>• Supervised rooms · Vetted volunteers · No private DMs</li>
-                <li>• Media/events only with consent · Concerns → Group Pastor → Zonal office</li>
-              </ul>
-              <div className="mt-4 flex flex-wrap gap-2">
-                <Link href="/teens/connect" className="rounded-full bg-white text-[#151B2D] px-5 py-2.5 text-xs font-black">
-                  Parent Information
-                </Link>
-                <Link href="/safeguarding" className="rounded-full border border-white/20 text-white px-5 py-2.5 text-xs font-bold">
-                  Safeguarding
-                </Link>
-              </div>
-            </div>
-            <div className="rounded-[16px] bg-white p-5 text-[#151B2D]">
-              <div className="text-xs font-black tracking-widest uppercase text-[#315BFF]">At a glance for parents</div>
-              <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-600">
-                <li>
-                  • <b className="text-[#151B2D]">Teachings:</b> Identity, faith, purpose — TeeVo & Bible, Christ Embassy doctrine
-                </li>
-                <li>
-                  • <b className="text-[#151B2D]">Leaders:</b> Appointed, trained, supervised — no private contact
-                </li>
-                <li>
-                  • <b className="text-[#151B2D]">Meets:</b> Sundays 8AM during Main Service — 30B Rumuokwuta (Group Church)
-                </li>
-                <li>
-                  • <b className="text-[#151B2D]">Enquiry:</b> Moderated form → authorised coordinator (monitored)
-                </li>
-                <li>
-                  • <b className="text-[#151B2D]">Safeguarding:</b> Restricted-access process · Escalation documented
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ========== VISIT CTA — T19 ========== */}
-      <section className="section" style={{ background: '#F5F6FC' }}>
-        <div className="container-cc">
-          <div className="rounded-[20px] bg-white border border-black/5 p-6 md:p-7 grid md:grid-cols-[1.1fr_0.9fr] gap-6 items-center">
-            <div>
-              <div className="text-[10px] font-black tracking-widest uppercase text-[#172B76]">Visit & Contact — Screen T19</div>
-              <h2 className="font-teens-heading font-extrabold text-2xl mt-2 text-[#151B2D]">Plan your first visit</h2>
-              <p className="text-sm leading-6 text-slate-600 mt-2">Come this Sunday — welcome desk from 7:30AM. First-time teenagers and parents: start at New Here, then check meeting info, visitor arrangements and FAQs.</p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                <Link href="/teens/church" className="rounded-full bg-[#172B76] text-white px-5 py-2.5 text-xs font-bold">
-                  New Here? Start here →
-                </Link>
-                <Link href="/teens/connect" className="rounded-full border border-black/10 bg-white px-5 py-2.5 text-xs font-bold">
-                  Contact & Directions
-                </Link>
-                <a href="https://maps.google.com/?q=4.8396,6.9848" target="_blank" rel="noreferrer" className="rounded-full bg-[#FF8C70] text-white px-5 py-2.5 text-xs font-bold">
-                  Open Map
-                </a>
-              </div>
-            </div>
-            <div className="rounded-2xl overflow-hidden border border-black/5 bg-[#F5F6FC] p-4">
-              <div className="text-xs font-black text-[#151B2D]">Contact (verified before launch)</div>
-              <div className="text-xs leading-5 text-slate-600 mt-1">CC3 Group Church · 30B Rumuokwuta/NTA Road · PH Zone 3 · Phones/emails to be confirmed by secretariat.</div>
-              <div className="mt-3 text-[11px] text-slate-500">Enquiry form: minimal fields, guardian-aware, appropriate consent — no public attendee lists.</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ========== GENERATION MESH ========== */}
-      <section className="section" style={{ background: '#FFF7F2' }}>
-        <div className="container-cc">
-          <h3 className="font-teens-heading font-black text-center text-[#151B2D]">One Church — Every Generation</h3>
-          <p className="text-sm text-center text-slate-600 mt-1">Teens is one expression — find your family. Shared affiliation signature, distinct identities.</p>
-          <div className="mt-6 grid md:grid-cols-4 gap-3">
-            {[
-              { h: 'Main Church', p: 'Sunday 8AM Celebration — the home hub', href: '/' },
-              { h: 'Youth Church', p: '20–35 · Established, empowered, positioned', href: '/youth' },
-              { h: 'Kids Church', p: '4–12 · Champions for Christ', href: '/kids' },
-              { h: 'Cells & Foundation', p: 'Weekly fellowship & discipleship', href: '/cells' },
-            ].map(b => (
-              <Link key={b.h} href={b.href} className="teens-card p-4 block">
-                <div className="text-sm font-black text-[#151B2D] font-teens-heading">{b.h}</div>
-                <div className="text-xs leading-5 text-slate-600 mt-1">{b.p}</div>
-                <div className="text-xs font-black mt-2" style={{ color: '#315BFF' }}>
-                  Visit →
-                </div>
+                <span className="kl-service-row__arrow">→</span>
               </Link>
             ))}
           </div>
-          <div className="mt-6 text-center text-[11px] text-slate-500">CC3 / Christ Embassy Port Harcourt Zone 3 · LoveWorld affiliation · Content collection: 0/14 — placeholders until verified.</div>
         </div>
       </section>
+
+      {/* FEATURED — same dark kl-lesson as Main: “Faith That Prevails” → TeeVo focus */}
+      <section className="section" style={{ background:'#EAF0F7' }}>
+        <div className="container-cc">
+          <div className="kl-lesson">
+            <div className="kl-lesson__media">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={coverUrl} alt="Teens Word Encounter" referrerPolicy="no-referrer" />
+            </div>
+            <div>
+              <span className="eyebrow" style={{ background:'rgba(255,255,255,0.1)', borderColor:'rgba(255,255,255,0.2)', color:'#C6A04A', borderRadius:'999px', padding:'0.35rem 0.7rem' }}>TeeVo Daily · Official</span>
+              <h2 style={{ fontFamily:'var(--font-display),serif', fontWeight:800, color:'#fff', fontSize:'clamp(1.6rem,3vw,2.3rem)', lineHeight:1, marginTop:'0.7rem' }}>You&apos;re God&apos;s Chosen & Set Apart</h2>
+              <p style={{ color:'rgba(255,255,255,0.78)', marginTop:'0.5rem', fontSize:'0.9rem' }}>Your daily devotional — Scripture, message, prayer & confession from TeeVo. We link to the official resource at teevo.org, never republishing copyrighted content.</p>
+              <div style={{ background:'rgba(255,255,255,0.1)', border:'1px solid rgba(255,255,255,0.15)', borderRadius:'14px', padding:'0.8rem 0.9rem', marginTop:'0.9rem' }}>
+                <div style={{ fontSize:'0.58rem', fontWeight:700, letterSpacing:'0.1em', textTransform:'uppercase', color:'#C6A04A' }}>Scripture</div>
+                <blockquote style={{ fontFamily:'var(--font-display),serif', fontWeight:700, marginTop:'0.2rem' }}>“You are a chosen generation, a royal priesthood…”</blockquote>
+                <cite style={{ fontStyle:'normal', fontSize:'0.66rem', color:'rgba(255,255,255,0.6)' }}>1 Peter 2:9 · TeeVo.org</cite>
+              </div>
+              <div style={{ display:'flex', gap:'0.6rem', marginTop:'1rem' }}>
+                <a href="https://teevo.org" target="_blank" rel="noreferrer" className="btn" style={{ background:'#C6A04A', color:'#0E1B33', borderRadius:'999px', fontWeight:800, boxShadow:'4px 4px 0 #080f1f' }}>Read on TeeVo</a>
+                <Link href="/teens/word" className="btn" style={{ background:'transparent', color:'#fff', border:'1.5px solid rgba(255,255,255,0.4)', borderRadius:'999px' }}>Word Centre</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* EVENTS — same “Current & Upcoming: Current dark card + editorial rows” as Main */}
+      <section className="section" style={{ background:'#fff' }}>
+        <div className="container-cc">
+          <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-end', gap:'1rem', flexWrap:'wrap', marginBottom:'1.2rem' }}>
+            <SectionHeading eyebrow="Current & Upcoming" title="Your Week Set in Glory" desc="One current focus, then blessed appointments ahead — all for your increase." />
+            <Link href="/teens/events" className="btn btn--navy" style={{ borderRadius:'999px' }}>View all events →</Link>
+          </div>
+          {/* Map main events data into Teens-flavoured Current + rows — reuses same markup */}
+          {(() => {
+            const teensCurrent = { title:'Teens Church — Sunday Celebration', category:'Weekly', excerpt:'Worship, Word & fellowship every Sunday 8AM during Main Service. New teens register at the welcome desk. Parents check signage for rooms.', date:'Every Sunday', time:'8:00 AM', venue:'30B Rumuokwuta — Group Church', image: coverUrl, slug:'teens-sunday' }
+            const teensUpcoming = [
+              { id:'t1', title:'TeeVo Club Rally — Schools Gathering', excerpt:'Bible challenge & outreach rehearsal. Verified date to be announced by coordinator.', date:'2026-03-15', time:'3:00 PM', venue:'As announced', category:'TeeVo Clubs', image: outreachUrl, slug:'teevo-rally' },
+              { id:'t2', title:'TITHE Campaign — Street & School Evangelism', excerpt:'Teens reaching teens with the Gospel — teams + follow-up via authorised coordinators.', date:'2026-03-22', time:'10:00 AM', venue:'City zones', category:'TITHE', image: outreachUrl, slug:'tithe-campaign' },
+              { id:'t3', title:'Creative Showcase — Music, Dance & Spoken Word', excerpt:'Talent for ministry — parent-invited, consent-published. Excellence in service.', date:'2026-04-05', time:'4:00 PM', venue:'Group Church', category:'Creative', image: familyUrl, slug:'creative-showcase' },
+            ]
+            return (
+              <>
+                <Link href={`/teens/events`} style={{ textDecoration:'none', display:'block', marginBottom:'1.2rem' }}>
+                  <div style={{ display:'grid', gridTemplateColumns:'1.2fr 0.8fr', gap:'1.2rem', background:'#0E1B33', border:'1.5px solid #080f1f', borderRadius:'24px', overflow:'hidden', boxShadow:'6px 6px 0 #080f1f' }}>
+                    <div style={{ padding:'1.6rem' }}>
+                      <div style={{ display:'inline-flex', gap:'0.5rem', alignItems:'center' }}>
+                        <span style={{ background:'#C6A04A', color:'#0E1B33', borderRadius:'999px', padding:'0.25rem 0.6rem', fontSize:'0.62rem', fontWeight:800, letterSpacing:'0.08em', textTransform:'uppercase' }}>Current</span>
+                        <span style={{ background:'rgba(255,255,255,0.1)', color:'#fff', border:'1px solid rgba(255,255,255,0.15)', borderRadius:'999px', padding:'0.25rem 0.6rem', fontSize:'0.62rem', fontWeight:700 }}>{teensCurrent.category}</span>
+                      </div>
+                      <h3 style={{ fontFamily:'var(--font-display),serif', fontWeight:800, color:'#fff', fontSize:'clamp(1.4rem,2.5vw,1.9rem)', lineHeight:1.05, marginTop:'0.8rem' }}>{teensCurrent.title}</h3>
+                      <p style={{ color:'rgba(255,255,255,0.78)', fontSize:'0.88rem', marginTop:'0.5rem', lineHeight:1.6 }}>{teensCurrent.excerpt}</p>
+                      <div style={{ display:'flex', gap:'0.6rem', marginTop:'0.9rem', flexWrap:'wrap', alignItems:'center' }}>
+                        <span style={{ background:'#fff', color:'#0E1B33', borderRadius:'999px', padding:'0.4rem 0.7rem', fontSize:'0.72rem', fontWeight:700 }}>{teensCurrent.date} · {teensCurrent.time}</span>
+                        <span style={{ color:'rgba(255,255,255,0.7)', fontSize:'0.72rem' }}>{teensCurrent.venue}</span>
+                      </div>
+                      <div style={{ marginTop:'1rem' }}>
+                        <span style={{ display:'inline-flex', alignItems:'center', gap:'0.4rem', background:'#C6A04A', color:'#0E1B33', borderRadius:'999px', padding:'0.6rem 1rem', fontSize:'0.8rem', fontWeight:800 }}>View details →</span>
+                      </div>
+                    </div>
+                    <div style={{ position:'relative', minHeight:'260px', background:'#fff' }}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={teensCurrent.image} alt={teensCurrent.title} referrerPolicy="no-referrer" style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover' }} />
+                    </div>
+                  </div>
+                </Link>
+                <div className="kl-event-editorial">
+                  {teensUpcoming.map(e=>(
+                    <Link key={e.id} href={`/teens/events`} className="kl-event-row kl-event-row--withImg" style={{ textDecoration:'none', color:'inherit' }}>
+                      <div className="kl-event-row__date"><div className="kl-event-row__day">{(e.date as string).slice(8,10)}</div><div className="kl-event-row__month">{(e.date as string).slice(5,7)}/26</div></div>
+                      <div className="kl-event-row__thumb">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={e.image} alt={e.title} referrerPolicy="no-referrer" />
+                      </div>
+                      <div>
+                        <div className="kl-event-row__cat">{e.category}</div>
+                        <div className="kl-event-row__title">{e.title}</div>
+                        <div className="kl-event-row__excerpt">{e.excerpt}</div>
+                        <div className="kl-event-row__meta"><span>{e.time}</span><span>·</span><span>{e.venue}</span></div>
+                      </div>
+                      <span className="kl-event-row__arrow">→</span>
+                    </Link>
+                  ))}
+                </div>
+              </>
+            )
+          })()}
+        </div>
+      </section>
+
+      {/* MINISTRIES + GALLERY — same kl-bento as Main */}
+      <section className="section" style={{ background:'#fff', borderTop:'1px solid rgba(14,27,51,0.06)' }}>
+        <div className="container-cc">
+          <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-end', gap:'1rem', flexWrap:'wrap', marginBottom:'1.5rem' }}>
+            <SectionHeading eyebrow="Life at Teens" title="Fulfil Your Calling" desc="Take your place and function in your divine assignment — with joy, excellence and the power of the Spirit. Verified departments only." />
+            <Link href="/teens/gifts" className="btn" style={{ background:'#fff', border:'1.5px solid #0E1B33', borderRadius:'999px' }}>Departments →</Link>
+          </div>
+          <div className="kl-bento">
+            <div className="kl-bento__ministries">
+              {[
+                { name:'TeeVo Clubs', purpose:'Weekly Bible study in schools — supervised, authorised. No lists without consent.', group:'TeeVo / Schools', href:'/teens/activities', image: coverUrl },
+                { name:'TITHE Outreach', purpose:'Every teen a soul winner — streets & schools, follow-up via coordinators.', group:'Evangelism', href:'/teens/activities', image: outreachUrl },
+                { name:'Music & Worship', purpose:'Choir, instruments, worship — excellence for Celebration and outreaches.', group:'Creative / Choir', href:'/teens/gifts', image: coverUrl },
+                { name:'Media & Tech', purpose:'Photography, sound, livestream — skill with excellence.', group:'Media / Tech', href:'/teens/gifts', image: familyUrl },
+              ].map(m=>(
+                <Link key={m.name} href={m.href} className="kl-class-card" style={{ textDecoration:'none' }}>
+                  <div className="kl-class-card__media"><Image src={m.image} alt={m.name} width={400} height={300} style={{ width:'100%', height:'100%', objectFit:'cover' }} /></div>
+                  <div className="kl-class-card__body">
+                    <div style={{ fontSize:'0.58rem', fontWeight:700, letterSpacing:'0.08em', textTransform:'uppercase', color:'#64748B' }}>{m.group}</div>
+                    <h3>{m.name}</h3>
+                    <p style={{ fontSize:'0.78rem', color:'#64748B' }}>{m.purpose}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <div className="kl-bento__gallery">
+              {galleryItems.map((g,i)=>(
+                <Link key={i} href={g.href} className="kl-bento__gallery-item">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={g.src} alt={g.cap} referrerPolicy="no-referrer" />
+                  <span className="kl-bento__gallery-cap">{g.cap}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div style={{ textAlign:'center', marginTop:'1.2rem' }}>
+            <Link href="/teens/resources" style={{ fontSize:'0.82rem', fontWeight:700, color:'#0E1B33', borderBottom:'1.5px solid #0E1B33', paddingBottom:'2px', textDecoration:'none' }}>View full Teens gallery →</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* NEXT STEPS — same kl-panel as Main */}
+      <section className="section" style={{ background:'#EAF0F7' }}>
+        <div className="container-cc">
+          <div className="kl-panel">
+            <div className="kl-panel__content">
+              <span className="eyebrow" style={{ background:'#fff', border:'1.5px solid rgba(14,27,51,0.06)', borderRadius:'999px', padding:'0.35rem 0.7rem', display:'inline-flex', gap:'0.4rem' }}>
+                <span style={{ width:7, height:7, borderRadius:'50%', background:'#C6A04A', boxShadow:'0 0 0 4px #fff', display:'inline-block' }} /> Your Journey in Teens
+              </span>
+              <h2 style={{ fontFamily:'var(--font-display),serif', fontWeight:800, color:'#0E1B33', fontSize:'1.9rem', lineHeight:1, marginTop:'0.6rem' }}>Be Nurtured. Serve. Shine.</h2>
+              <p style={{ color:'#64748B', fontSize:'0.9rem', marginTop:'0.5rem' }}>From first welcome to family — nurtured in the Word via TeeVo & Foundation School, perfected for ministry, established to shine ever brighter.</p>
+              <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'0.5rem', margin:'1rem 0' }}>
+                {[
+                  { l:'New Here?', h:'/teens/church', c:'#fff', i:'◼' },
+                  { l:'Word Centre', h:'/teens/word', c:'#fff', i:'⬢' },
+                  { l:'Foundation School', h:'/foundation-school', c:'#FEF2F0', i:'⬣' },
+                  { l:'Departments', h:'/teens/gifts', c:'#fff', i:'✦' },
+                ].map(a=>(
+                  <Link key={a.l} href={a.h} style={{ display:'flex', gap:'0.5rem', alignItems:'center', padding:'0.55rem 0.65rem', background:'#fff', border:'1px solid rgba(14,27,51,0.06)', borderRadius:'12px', fontSize:'0.8rem', fontWeight:600, color:'#0E1B33', textDecoration:'none' }}>
+                    <span style={{ width:26, height:26, borderRadius:'8px', background:a.c, border:'1px solid rgba(14,27,51,0.06)', display:'grid', placeItems:'center', fontSize:'0.65rem' }}>{a.i}</span>{a.l}
+                  </Link>
+                ))}
+              </div>
+              <Link href="/teens/church" className="btn btn--navy" style={{ borderRadius:'999px', boxShadow:'4px 4px 0 #080f1f' }}>Plan your first visit →</Link>
+            </div>
+            <div className="kl-panel__media">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={familyUrl} alt="Teens family — placeholder" referrerPolicy="no-referrer" />
+              <span style={{ position:'absolute', bottom:'1rem', left:'1rem', background:'#0E1B33', color:'#fff', border:'1px solid #fff', borderRadius:'10px', padding:'0.35rem 0.6rem', fontSize:'0.68rem', fontWeight:700, boxShadow:'3px 3px 0 #fff' }}>◆ Sunday 8AM · Supervised</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PARENTS — same kl-parents as Main */}
+      <section className="section" style={{ background:'#fff' }}>
+        <div className="container-cc">
+          <div className="kl-parents">
+            <div>
+              <span className="eyebrow" style={{ background:'#fff', border:'1px solid rgba(14,27,51,0.06)', borderRadius:'999px', padding:'0.35rem 0.7rem' }}>Parents, you&apos;re welcome</span>
+              <h2 style={{ fontFamily:'var(--font-display),serif', fontWeight:800, color:'#0E1B33', fontSize:'1.7rem', lineHeight:1, marginTop:'0.6rem' }}>We Take Trust Seriously.</h2>
+              <p style={{ color:'#64748B', fontSize:'0.9rem', marginTop:'0.5rem', maxWidth:'48ch' }}>Supervised rooms, vetted volunteers, no private DMs, media and events only with consent. Concerns → Group Pastor → Zonal office. You&apos;ll know who leads, when, where and how to reach us.</p>
+              <div style={{ display:'flex', gap:'0.6rem', marginTop:'1rem', flexWrap:'wrap' }}>
+                <Link href="/teens/connect" className="btn btn--navy" style={{ borderRadius:'999px', boxShadow:'4px 4px 0 #080f1f' }}>Parent Information</Link>
+                <Link href="/safeguarding" className="btn" style={{ background:'#fff', border:'1px solid #0E1B33', borderRadius:'999px' }}>Safeguarding</Link>
+              </div>
+            </div>
+            <div className="kl-parents__note">
+              <h3 style={{ fontFamily:'var(--font-display),serif', fontWeight:800, color:'#0E1B33' }}>What you&apos;ll find</h3>
+              <ul style={{ marginTop:'0.5rem', display:'flex', flexDirection:'column', gap:'0.3rem' }}>
+                {[
+                  'Appointed, trained, supervised leaders — no private contact.',
+                  'Teaching: Identity, faith, purpose — TeeVo & Bible, Christ Embassy doctrine.',
+                  'Meets Sundays 8AM during Main Service — 30B Rumuokwuta (Group Church).',
+                  'Monitored enquiry form → authorised coordinator.',
+                ].map(li=>(
+                  <li key={li} style={{ display:'flex', gap:'0.5rem', fontSize:'0.82rem', color:'#4a3a5c', padding:'0.2rem 0' }}><span style={{ color:'#C6A04A' }}>✓</span>{li}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIES — same light editorial as Main */}
+      <section className="section" style={{ background:'#EAF0F7' }}>
+        <div className="container-cc">
+          <div style={{ background:'#fff', border:'1px solid rgba(14,27,51,0.08)', borderRadius:'24px', padding:'2.2rem', position:'relative', overflow:'hidden' }}>
+            <div style={{ width:40, height:2, background:'#C6A04A', borderRadius:999 }} />
+            <p style={{ fontFamily:'var(--font-display),serif', fontWeight:800, fontSize:'clamp(1.3rem,2.8vw,1.8rem)', lineHeight:1.2, marginTop:'0.8rem', color:'#0E1B33' }}>“TeeVo taught me who I am in Christ — now I help friends study the Word too.”</p>
+            <div style={{ marginTop:'0.6rem', fontSize:'0.8rem', fontWeight:700, color:'#64748B' }}>J. — CC3 Teens · Sample testimony (verified testimonies only at launch)</div>
+            <div style={{ display:'flex', gap:'0.5rem', marginTop:'1rem' }}>
+              <Link href="/teens/resources" className="btn btn--navy" style={{ borderRadius:'999px' }}>Explore Teens resources</Link>
+              <Link href="/teens/connect" className="btn" style={{ background:'#fff', border:'1.5px solid #0E1B33', borderRadius:'999px' }}>Contact & Visit</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FINAL CTA — same kl-final as Main */}
+      <section className="section" style={{ background:'#fff' }}>
+        <div className="container-cc">
+          <div className="kl-final">
+            <div style={{ position:'relative', zIndex:1 }}>
+              <span style={{ background:'rgba(255,255,255,0.12)', border:'1px solid rgba(255,255,255,0.25)', color:'#fff', borderRadius:'999px', padding:'0.35rem 0.8rem', fontSize:'0.68rem', fontWeight:700 }}>Plan your visit</span>
+              <h2 style={{ fontFamily:'var(--font-display),serif', fontWeight:800, fontSize:'clamp(1.8rem,3.5vw,2.8rem)', lineHeight:1, marginTop:'0.8rem', maxWidth:'18ch', marginInline:'auto' }}>A Generation Set Apart — Shining Ever Brighter.</h2>
+              <p style={{ color:'rgba(255,255,255,0.8)', maxWidth:'52ch', margin:'0.6rem auto 0', fontSize:'0.92rem' }}>Come this Sunday — bring a friend, bring family. Grow in the Word, discover purpose and take your world for Jesus! Blessed be God!</p>
+              <div style={{ display:'flex', gap:'0.6rem', justifyContent:'center', marginTop:'1.2rem', flexWrap:'wrap' }}>
+                <Link href="/teens/church" className="btn" style={{ background:'#C6A04A', color:'#0E1B33', borderRadius:'999px', fontWeight:800, boxShadow:'4px 4px 0 #080f1f', padding:'0.9rem 1.4rem' }}>Plan Your Visit</Link>
+                <Link href="/teens/connect" className="btn" style={{ background:'transparent', color:'#fff', border:'1.5px solid rgba(255,255,255,0.4)', borderRadius:'999px' }}>Contact us</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact & Location — same two-col + map as Main */}
+      <section className="section" style={{ background:'#fff' }}>
+        <div className="container-cc" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'1.8rem' }}>
+          <div>
+            <div style={{ fontSize:'0.62rem', fontWeight:700, letterSpacing:'0.12em', textTransform:'uppercase', color:'#C6A04A' }}>Contact & Location</div>
+            <h2 style={{ fontFamily:'var(--font-display),serif', fontWeight:800, color:'#0E1B33', fontSize:'1.6rem', marginTop:'0.4rem' }}>Find us in Port Harcourt</h2>
+            <p style={{ color:'#64748B', marginTop:'0.4rem', fontSize:'0.9rem' }}>{site.address} · Teens check-in at welcome desk. Content to be verified before launch.</p>
+            <div style={{ display:'flex', gap:'0.5rem', marginTop:'0.9rem' }}>
+              <Link href="/teens/connect" className="btn btn--navy" style={{ borderRadius:'999px' }}>Get directions</Link>
+              <a href={`https://maps.google.com/?q=${site.lat},${site.lng}`} target="_blank" rel="noreferrer" className="btn" style={{ background:'#fff', border:'1.5px solid #0E1B33', borderRadius:'999px' }}>Open in maps</a>
+            </div>
+          </div>
+          <div style={{ border:'1px solid rgba(14,27,51,0.08)', borderRadius:'16px', overflow:'hidden', height:'280px', position:'relative', boxShadow:'0 8px 24px -12px rgba(14,27,51,0.12)' }}>
+            <iframe title="Map" src={`https://maps.google.com/maps?q=${site.lat},${site.lng}&z=17&t=&ie=UTF8&iwloc=&output=embed`} style={{ position:'absolute', inset:0, width:'100%', height:'100%', border:0 }} loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <section className="section" style={{ background:'#EAF0F7' }}>
+        <div className="container-cc" style={{ background:'#fff', border:'1px solid rgba(14,27,51,0.06)', borderRadius:'16px', padding:'1.5rem', display:'flex', justifyContent:'space-between', gap:'1rem', flexWrap:'wrap', alignItems:'center' }}>
+          <div>
+            <h3 style={{ fontFamily:'var(--font-display),serif', fontWeight:800, color:'#0E1B33' }}>Stay updated — Teens news & events</h3>
+            <p style={{ fontSize:'0.8rem', color:'#64748B', marginTop:'0.2rem' }}>Reminders for special programmes, not spam.</p>
+          </div>
+          <NewsletterForm />
+        </div>
+      </section>
+
+      <div className="container-cc" style={{ padding:'1rem 0 0', textAlign:'center', fontSize:'11px', color:'#94A3B8' }}>CC3 Teens Church · Port Harcourt Zone 3 · Affiliate of Christ Embassy · Content collection 0/14 — placeholders until verified.</div>
     </div>
   )
 }

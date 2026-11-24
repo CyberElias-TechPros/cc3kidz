@@ -1,11 +1,7 @@
 /* ============================================================
-   CC3 Teens Church — Final Visual Identity v1.0
-   Spec: Part A §2.2–2.5
-   Palette: Deep Indigo #172B76 / Electric Blue #315BFF
-            Violet #7954E8 / Coral #FF8C70
-            Cloud White #F5F6FC / Ink #151B2D
-   Type: Space Grotesk (headlines) / Plus Jakarta Sans (sections) / Inter (body)
-   Graphic: geometric, editorial, organic dividers, numbered events
+   CC3 Teens Church — shares Main Church kl-* system for identical feel
+   Teens palette accents: #172B76 #315BFF #7954E8 #FF8C70
+   Overrides tint Main components into Teens without breaking feel
    ============================================================ */
 .teens-scope {
   --teens-indigo: #172B76;
@@ -14,83 +10,10 @@
   --teens-coral: #FF8C70;
   --teens-cloud: #F5F6FC;
   --teens-ink: #151B2D;
-  --teens-muted: #5B6280;
-  /* alias legacy */
-  --teens-paper: #F5F6FC;
-  /* fonts — injected via layout, fallbacks */
-  --font-teens-display: 'Space Grotesk', system-ui, sans-serif;
-  --font-teens-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-teens-body: 'Inter', system-ui, sans-serif;
-  background: var(--teens-cloud);
-  color: var(--teens-ink);
+  /* kl tints — subtle teens within same cathedral component language */
+  --kl-navy: #172B76;
+  --kl-navy-ink: #0f1d4d;
 }
-
-/* Fonts loader — teens hero/numbers use Space Grotesk */
-.teens-scope .font-teens-display { font-family: var(--font-teens-display); }
-.teens-scope .font-teens-heading { font-family: var(--font-teens-heading); }
-
-/* Hero — editorial asymmetric, light neutral with controlled indigo accent */
-.teens-hero {
-  background:
-    radial-gradient(900px 520px at 10% 0%, rgba(121,84,232,0.14) 0%, transparent 58%),
-    radial-gradient(700px 420px at 92% 12%, rgba(255,140,112,0.10) 0%, transparent 55%),
-    radial-gradient(600px 380px at 45% 100%, rgba(49,91,255,0.07) 0%, transparent 60%),
-    linear-gradient(180deg, #FFFFFF 0%, #F5F6FC 100%);
-  border-bottom: 1px solid rgba(23,43,118,0.06);
-  position: relative;
-  overflow: hidden;
-}
-.teens-hero::after {
-  content: "";
-  position: absolute; inset: 0;
-  background:
-    radial-gradient(1.4px 1.4px at 18% 22%, rgba(23,43,118,0.12) 0, transparent 1.4px),
-    radial-gradient(1px 1px at 74% 38%, rgba(121,84,232,0.14) 0, transparent 1px);
-  pointer-events: none;
-}
-.teens-kicker {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: #FFFFFF; border: 1px solid rgba(23,43,118,0.10);
-  padding: 6px 12px; border-radius: 999px;
-  font: 800 10px/1 var(--font-teens-body); letter-spacing: 0.14em; text-transform: uppercase; color: var(--teens-indigo);
-}
-.teens-title {
-  font-family: var(--font-teens-display);
-  font-weight: 800; line-height: 0.88; letter-spacing: -0.04em;
-  font-size: clamp(2.8rem, 6.6vw, 5rem);
-  color: var(--teens-ink);
-}
-.teens-title em { font-style: normal; color: var(--teens-blue); }
-.teens-title .accent-violet { color: var(--teens-violet); }
-.teens-subtitle {
-  font: 500 14px/1.7 var(--font-teens-body);
-  color: var(--teens-muted);
-  max-width: 54ch;
-}
-.teens-stat {
-  background: #FFFFFF; border: 1px solid rgba(23,43,118,0.08);
-  border-radius: 14px; padding: 12px 14px;
-}
-.teens-pill {
-  display: inline-flex; align-items: center; gap: 6px;
-  border-radius: 999px; padding: 5px 11px;
-  font: 800 10px/1 var(--font-teens-body); letter-spacing: 0.08em; text-transform: uppercase;
-}
-.teens-card {
-  background: #FFFFFF; border: 1px solid rgba(21,27,45,0.06); border-radius: 18px;
-  overflow: hidden; transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
-}
-.teens-card:hover { transform: translateY(-2px); box-shadow: 0 18px 36px -14px rgba(23,43,118,0.18); border-color: rgba(121,84,232,0.18); }
-.teens-rule { height: 1px; background: linear-gradient(90deg, var(--teens-violet), transparent); }
-.teens-section-label {
-  font: 800 11px/1 var(--font-teens-body); letter-spacing: 0.12em; text-transform: uppercase; color: var(--teens-indigo);
-}
-.teens-event-num {
-  font-family: var(--font-teens-display); font-weight: 800; font-size: 2.2rem; line-height: 0.9; letter-spacing: -0.03em;
-  color: rgba(23,43,118,0.08);
-}
-.teens-organic-divider { height: 36px; background: #F5F6FC; }
-.teens-organic-divider svg { width: 100%; height: 36px; display: block; }
-/* bento asymmetry helper */
-.teens-bento { display: grid; grid-template-columns: 1.35fr 0.9fr; gap: 14px; }
-@media (max-width: 900px){ .teens-bento{ grid-template-columns: 1fr; } }
+.teens-scope .kl-hero { background: linear-gradient(180deg,#fff 0%, #F5F6FC 100%); }
+.teens-scope .kl-lesson { background: radial-gradient(900px 520px at 92% 4%, rgba(121,84,232,0.14), transparent 62%), linear-gradient(135deg,#0f1d4d 0%,#172B76 55%,#1e2f8a 100%); }
+.teens-scope .kl-final { background: radial-gradient(600px 380px at 88% 88%, rgba(121,84,232,0.16), transparent 60%), linear-gradient(135deg,#0f1d4d 0%, #172B76 55%, #1e2f8a 100%); }
