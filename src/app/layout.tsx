@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description: site.description,
     type: 'website'
   },
-  icons: { icon: '/assets/images/loveworld-logo.png' }
+  icons: { icon: '/assets/images/loveworld-logo.png?v=2' }
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

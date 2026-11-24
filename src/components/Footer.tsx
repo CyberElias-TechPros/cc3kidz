@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid lg:grid-cols-[1.2fr_1fr_1fr_1fr] gap-10">
           <div>
             <div className="flex items-center gap-3">
-              <img src="/assets/images/loveworld-logo.png" alt="Christ Embassy LoveWorld" width={56} height={56} className="h-12 w-12 md:h-14 md:w-14 object-contain flex-shrink-0" />
+              <img src="/assets/images/loveworld-logo.png?v=2" alt="Christ Embassy LoveWorld" width={56} height={56} className="h-12 w-12 md:h-14 md:w-14 object-contain flex-shrink-0" />
               <div>
                 <div className="font-display font-extrabold leading-none">Central Church 3</div>
                 <div className="text-xs tracking-widest uppercase text-gold">Port Harcourt Zone 3</div>

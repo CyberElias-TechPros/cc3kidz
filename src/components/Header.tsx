@@ -26,7 +26,7 @@ export default function Header() {
     >
       <div className="container-cc flex items-center justify-between gap-4 py-3">
         <Link href="/" className="flex items-center gap-3">
-          <img src="/assets/images/loveworld-logo.png" alt="Christ Embassy LoveWorld" width={56} height={56} className="h-12 w-12 md:h-14 md:w-14 object-contain flex-shrink-0" style={{ filter: 'drop-shadow(0 1px 2px rgba(14,27,51,0.12))' }} />
+          <img src="/assets/images/loveworld-logo.png?v=2" alt="Christ Embassy LoveWorld" width={56} height={56} className="h-12 w-12 md:h-14 md:w-14 object-contain flex-shrink-0" style={{ filter: 'drop-shadow(0 1px 2px rgba(14,27,51,0.12))' }} />
           <div className="leading-tight">
             <div className="font-display font-extrabold text-[0.95rem] tracking-tight text-navy">
               Central Church 3
