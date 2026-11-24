@@ -1,35 +1,67 @@
-/* Youth — Mature, purposeful, confident — Deep navy / charcoal / restrained gold */
+/* ============================================================
+   CC3 Youth Church — Final Visual Identity v1.0
+   Spec: Part B §4.2–4.5
+   Palette: Midnight Navy #101A2B / Slate Blue #263B55
+            Muted Gold #C6A66B / Warm Stone #E9E4DA
+            Ivory #F7F6F2 / Graphite #252B33
+   Type: DM Serif Display (editorial headlines) / Manrope (sections) / Inter (body)
+   Graphic: cinematic, editorial, light/dark contrast, restrained gold
+   ============================================================ */
 .youth-scope {
-  --youth-navy: #0E1B33;
-  --youth-charcoal: #1F2937;
-  --youth-gold: #C6A04A;
-  --youth-stone: #F5F1EB;
-  --youth-ink: #0F172A;
-  --youth-paper: #FFFBF5;
+  --youth-navy: #101A2B;
+  --youth-slate: #263B55;
+  --youth-gold: #C6A66B;
+  --youth-stone: #E9E4DA;
+  --youth-ivory: #F7F6F2;
+  --youth-graphite: #252B33;
+  --youth-muted: #6B7280;
+  --youth-paper: #F7F6F2;
+  --font-youth-display: 'DM Serif Display', Georgia, serif;
+  --font-youth-heading: 'Manrope', system-ui, sans-serif;
+  --font-youth-body: 'Inter', system-ui, sans-serif;
+  background: var(--youth-ivory);
+  color: var(--youth-graphite);
 }
+.youth-scope .font-youth-display { font-family: var(--font-youth-display); }
+.youth-scope .font-youth-heading { font-family: var(--font-youth-heading); }
+
 .youth-hero {
   background:
-    radial-gradient(700px 400px at 15% 0%, rgba(198,160,74,0.12) 0%, transparent 60%),
-    radial-gradient(600px 300px at 90% 100%, rgba(14,27,51,0.15) 0%, transparent 60%),
-    linear-gradient(180deg, #FFFBF5 0%, #F5F1EB 100%);
-  border-bottom: 1px solid rgba(14,27,51,0.06);
+    radial-gradient(820px 480px at 14% 0%, rgba(198,166,107,0.14) 0%, transparent 58%),
+    radial-gradient(640px 380px at 88% 100%, rgba(38,59,85,0.08) 0%, transparent 60%),
+    linear-gradient(180deg, #F7F6F2 0%, #F1EFEA 100%);
+  border-bottom: 1px solid rgba(16,26,43,0.06);
+  position: relative;
+  overflow: hidden;
 }
 .youth-kicker {
-  display:inline-flex; align-items:center; gap:8px;
-  border: 1px solid rgba(14,27,51,0.10); background: white; padding: 6px 12px; border-radius: 999px;
-  font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #0E1B33;
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid rgba(16,26,43,0.10); background: #FFFFFF; padding: 6px 12px; border-radius: 999px;
+  font: 800 10px/1 var(--font-youth-body); letter-spacing: 0.14em; text-transform: uppercase; color: var(--youth-navy);
 }
 .youth-title {
-  font-family: var(--font-display), system-ui, serif;
-  font-weight: 900; line-height: 0.88; letter-spacing: -0.03em;
-  font-size: clamp(2.4rem, 6vw, 4.2rem);
-  color: #0E1B33;
+  font-family: var(--font-youth-display);
+  font-weight: 400; line-height: 0.88; letter-spacing: -0.03em;
+  font-size: clamp(2.6rem, 6.2vw, 4.6rem);
+  color: var(--youth-navy);
 }
-.youth-title em { font-style: normal; color: #C6A04A; }
+.youth-title em { font-style: italic; color: var(--youth-gold); font-weight: 400; }
+.youth-subtitle {
+  font: 400 15px/1.7 var(--font-youth-body);
+  color: var(--youth-muted);
+  max-width: 56ch;
+}
 .youth-card {
-  background: white; border: 1px solid rgba(14,27,51,0.06); border-radius: 16px;
-  overflow: hidden; transition: all 0.2s;
+  background: #FFFFFF; border: 1px solid rgba(16,26,43,0.06); border-radius: 16px;
+  overflow: hidden; transition: all 0.22s ease;
 }
-.youth-card:hover { border-color: rgba(198,160,74,0.25); box-shadow: 0 12px 24px -12px rgba(14,27,51,0.12); transform: translateY(-1px); }
-.youth-rule { height:1px; background: linear-gradient(90deg, #C6A04A, transparent); }
-.youth-dark { background: #0E1B33; color: white; }
+.youth-card:hover { border-color: rgba(198,166,107,0.28); box-shadow: 0 14px 28px -12px rgba(16,26,43,0.12); transform: translateY(-1px); }
+.youth-rule { height: 1px; background: linear-gradient(90deg, #C6A66B, transparent); }
+.youth-dark { background: #101A2B; color: #F7F6F2; }
+.youth-dark .youth-card { background: #18243A; border-color: rgba(255,255,255,0.08); color: #F7F6F2; }
+.youth-eyebrow {
+  font: 800 11px/1 var(--font-youth-body); letter-spacing: 0.12em; text-transform: uppercase; color: var(--youth-navy);
+}
+.youth-quote {
+  font-family: var(--font-youth-display); font-size: 1.45rem; line-height: 1.25; font-style: italic; color: var(--youth-navy);
+}
