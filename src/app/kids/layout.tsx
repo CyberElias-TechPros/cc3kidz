@@ -6,7 +6,7 @@ import KidsNav from './KidsNav'
 import KidsFooter from './KidsFooter'
 
 export const metadata = {
-  title: 'Kids Church | Christ Embassy Central Church 3',
+  title: "CE Central Church 3 Children's Church | Christ Embassy Central Church 3",
 }
 
 export default function KidsLayout({ children }: { children: React.ReactNode }) {

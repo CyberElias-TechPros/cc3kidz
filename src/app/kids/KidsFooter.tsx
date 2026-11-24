@@ -9,7 +9,7 @@ export default function KidsFooter() {
             <Link className="brand" href="/kids">
               <img className="brand__mark" src="/kids/assets/images/logo.svg" alt="" width={46} height={46} />
               <span className="brand__text">
-                <span className="brand__name">Christ Embassy Kids</span>
+                <span className="brand__name">CE Central Church 3 Children&apos;s Church</span>
                 <span className="brand__sub">Central Church 3 · PH Zone 3</span>
               </span>
             </Link>
@@ -44,7 +44,7 @@ export default function KidsFooter() {
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Christ Embassy Kids, Central Church 3. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} CE Central Church 3 Children&apos;s Church. All rights reserved.</span>
           <span className="mt-2 flex flex-wrap gap-2 justify-center text-xs"><a href="/teens" className="underline">Teens Church</a> · <a href="/youth" className="underline">Youth Church</a> · <a href="/" className="underline">Main Church</a></span>
           <span>Back to <Link href="/">Main Church</Link></span>
         </div>

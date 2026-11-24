@@ -33,10 +33,10 @@ export default function KidsNav() {
       <header className={`site-header ${open ? 'is-scrolled' : ''}`} id="site-header">
         <div className="container">
           <div className="nav-shell">
-            <Link className="brand" href="/kids" aria-label="Christ Embassy Kids — home">
+            <Link className="brand" href="/kids" aria-label="CE Central Church 3 Children's Church — home">
               <img className="brand__mark" src="/kids/assets/images/logo.svg" alt="" width={46} height={46} />
               <span className="brand__text">
-                <span className="brand__name">Christ Embassy Kids</span>
+                <span className="brand__name">CE Central Church 3 Children&apos;s Church</span>
                 <span className="brand__sub">Central Church 3 · PH Zone 3</span>
               </span>
             </Link>
