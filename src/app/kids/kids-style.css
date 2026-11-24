@@ -45,7 +45,7 @@
 
   /* Type */
   --font-display: "Fredoka", "Baloo 2", "Trebuchet MS", system-ui, sans-serif;
-  --font-.kids-scope: "Poppins", "Nunito", "Segoe UI", system-ui, sans-serif;
+  --font-kids: "Poppins", "Nunito", "Segoe UI", system-ui, sans-serif;
 
   /* Layout */
   --container: 1200px;
@@ -57,13 +57,13 @@
 /* --------------------------------------------------------------------------
    Reset
    -------------------------------------------------------------------------- */
-*,
-*::before,
-*::after {
+.kids-scope *,
+.kids-scope *::before,
+.kids-scope *::after {
   box-sizing: border-box;
 }
 
-* {
+.kids-scope * {
   margin: 0;
 }
 
@@ -75,7 +75,7 @@
 }
 
 .kids-scope {
-  font-family: var(--font-.kids-scope);
+  font-family: var(--font-kids);
   font-size: 1rem;
   line-height: 1.7;
   color: var(--ink);
@@ -85,45 +85,45 @@
   overflow-x: hidden;
 }
 
-img,
-picture,
-svg,
-video {
+.kids-scope img,
+.kids-scope picture,
+.kids-scope svg,
+.kids-scope video {
   display: block;
   max-width: 100%;
 }
 
-input,
-button,
-textarea,
-select {
+.kids-scope input,
+.kids-scope button,
+.kids-scope textarea,
+.kids-scope select {
   font: inherit;
   color: inherit;
 }
 
-button {
+.kids-scope button {
   cursor: pointer;
   background: none;
   border: none;
 }
 
-a {
+.kids-scope a {
   color: inherit;
   text-decoration: none;
 }
 
-ul,
-ol {
+.kids-scope ul,
+.kids-scope ol {
   padding: 0;
   list-style: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.kids-scope h1,
+.kids-scope h2,
+.kids-scope h3,
+.kids-scope h4,
+.kids-scope h5,
+.kids-scope h6 {
   font-family: var(--font-display);
   font-weight: 600;
   line-height: 1.08;
@@ -131,20 +131,20 @@ h6 {
   text-wrap: balance;
 }
 
-p {
+.kids-scope p {
   text-wrap: pretty;
 }
 
-strong {
+.kids-scope strong {
   font-weight: 600;
 }
 
-::selection {
+.kids-scope ::selection {
   background: var(--yellow);
   color: var(--ink);
 }
 
-:focus-visible {
+.kids-scope :focus-visible {
   outline: 3px solid var(--blue);
   outline-offset: 3px;
   border-radius: 6px;
@@ -153,29 +153,29 @@ strong {
 /* --------------------------------------------------------------------------
    Typography helpers
    -------------------------------------------------------------------------- */
-h1 {
+.kids-scope h1 {
   font-size: clamp(2.6rem, 5.4vw, 4.5rem);
 }
 
-h2 {
+.kids-scope h2 {
   font-size: clamp(2rem, 3.8vw, 3.15rem);
 }
 
-h3 {
+.kids-scope h3 {
   font-size: clamp(1.25rem, 2vw, 1.55rem);
 }
 
-h4 {
+.kids-scope h4 {
   font-size: 1.1rem;
 }
 
-.lead {
+.kids-scope .lead {
   font-size: clamp(1.02rem, 1.3vw, 1.16rem);
   color: var(--ink-soft);
   line-height: 1.75;
 }
 
-.eyebrow {
+.kids-scope .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
@@ -191,7 +191,7 @@ h4 {
   box-shadow: var(--shadow-xs);
 }
 
-.eyebrow::before {
+.kids-scope .eyebrow::before {
   content: "";
   width: 8px;
   height: 8px;
@@ -200,22 +200,22 @@ h4 {
   box-shadow: 0 0 0 4px var(--pink-soft);
 }
 
-.eyebrow--yellow::before {
+.kids-scope .eyebrow--yellow::before {
   background: var(--yellow);
   box-shadow: 0 0 0 4px var(--yellow-soft);
 }
 
-.eyebrow--blue::before {
+.kids-scope .eyebrow--blue::before {
   background: var(--blue);
   box-shadow: 0 0 0 4px var(--blue-soft);
 }
 
-.eyebrow--green::before {
+.kids-scope .eyebrow--green::before {
   background: var(--green);
   box-shadow: 0 0 0 4px var(--green-soft);
 }
 
-.text-gradient {
+.kids-scope .text-gradient {
   background: linear-gradient(100deg, var(--pink) 10%, var(--purple) 60%, var(--blue) 110%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -223,13 +223,13 @@ h4 {
 }
 
 /* Hand-drawn highlight behind key words */
-.hl {
+.kids-scope .hl {
   position: relative;
   z-index: 0;
   white-space: nowrap;
 }
 
-.hl::after {
+.kids-scope .hl::after {
   content: "";
   position: absolute;
   z-index: -1;
@@ -242,21 +242,21 @@ h4 {
   opacity: 0.85;
 }
 
-.hl--yellow::after {
+.kids-scope .hl--yellow::after {
   background: var(--yellow);
 }
 
-.hl--pink::after {
+.kids-scope .hl--pink::after {
   background: var(--pink);
   opacity: 0.55;
 }
 
-.hl--blue::after {
+.kids-scope .hl--blue::after {
   background: var(--blue);
   opacity: 0.45;
 }
 
-.hl--green::after {
+.kids-scope .hl--green::after {
   background: var(--green);
   opacity: 0.4;
 }
@@ -264,93 +264,93 @@ h4 {
 /* --------------------------------------------------------------------------
    Layout utilities
    -------------------------------------------------------------------------- */
-.container {
+.kids-scope .container {
   width: min(100% - 2.5rem, var(--container));
   margin-inline: auto;
 }
 
-.container--wide {
+.kids-scope .container--wide {
   width: min(100% - 2.5rem, var(--container-wide));
   margin-inline: auto;
 }
 
-.section {
+.kids-scope .section {
   position: relative;
   padding-block: var(--section-y);
 }
 
-.section--tight {
+.kids-scope .section--tight {
   padding-block: clamp(2.75rem, 5vw, 4.25rem);
 }
 
-.section--white {
+.kids-scope .section--white {
   background: var(--white);
 }
 
-.section--cream {
+.kids-scope .section--cream {
   background: var(--cream);
 }
 
-.section--blue {
+.kids-scope .section--blue {
   background: linear-gradient(180deg, var(--blue-soft), #f2fbfd 70%);
 }
 
-.section--pink {
+.kids-scope .section--pink {
   background: linear-gradient(180deg, #fff6f8, var(--pink-soft));
 }
 
-.section--yellow {
+.kids-scope .section--yellow {
   background: linear-gradient(180deg, #fffaf0, var(--yellow-soft));
 }
 
-.section--green {
+.kids-scope .section--green {
   background: linear-gradient(180deg, #f7fdf3, var(--green-soft));
 }
 
-.section--purple {
+.kids-scope .section--purple {
   background: linear-gradient(180deg, #fbf6ff, var(--purple-soft));
 }
 
-.section--dark {
+.kids-scope .section--dark {
   background: radial-gradient(1200px 600px at 85% 0%, rgba(155, 77, 214, 0.45), transparent 60%),
     linear-gradient(140deg, #2c1150, #4a1d7a 55%, #7b2cbf);
   color: #fff;
 }
 
-.section--dark h2,
-.section--dark h3 {
+.kids-scope .section--dark h2,
+.kids-scope .section--dark h3 {
   color: #fff;
 }
 
-.section--dark .lead {
+.section--dark .kids-scope .lead {
   color: rgba(255, 255, 255, 0.78);
 }
 
-.section-head {
+.kids-scope .section-head {
   max-width: 780px;
   margin-bottom: clamp(2.25rem, 4.5vw, 3.75rem);
 }
 
-.section-head h2 {
+.kids-scope .section-head h2 {
   margin: 1.05rem 0 0.85rem;
 }
 
-.section-head p {
+.kids-scope .section-head p {
   color: var(--ink-soft);
   font-size: 1.04rem;
   max-width: 62ch;
 }
 
-.section-head--center {
+.kids-scope .section-head--center {
   margin-inline: auto;
   text-align: center;
 }
 
-.section-head--center p {
+.kids-scope .section-head--center p {
   margin-inline: auto;
 }
 
-.section-head--split {
+.kids-scope .section-head--split {
   max-width: none;
   display: flex;
   align-items: flex-end;
@@ -359,49 +359,49 @@ h4 {
   flex-wrap: wrap;
 }
 
-.section-head--split > div {
+.kids-scope .section-head--split > div {
   max-width: 620px;
 }
 
-.grid-2 {
+.kids-scope .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(1.25rem, 2.5vw, 2rem);
 }
 
-.grid-3 {
+.kids-scope .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(1.25rem, 2.5vw, 2rem);
 }
 
-.grid-4 {
+.kids-scope .grid-4 {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: clamp(1.1rem, 2vw, 1.75rem);
 }
 
-.stack-sm > * + * {
+.kids-scope .stack-sm > * + * {
   margin-top: 0.75rem;
 }
 
-.stack > * + * {
+.kids-scope .stack > * + * {
   margin-top: 1.25rem;
 }
 
-.center {
+.kids-scope .center {
   text-align: center;
 }
 
-.mt-2 { margin-top: 1.5rem; }
-.mt-3 { margin-top: 2rem; }
-.mt-4 { margin-top: 3rem; }
-.mb-0 { margin-bottom: 0; }
+.kids-scope .mt-2 { margin-top: 1.5rem; }
+.kids-scope .mt-3 { margin-top: 2rem; }
+.kids-scope .mt-4 { margin-top: 3rem; }
+.kids-scope .mb-0 { margin-bottom: 0; }
 
 /* --------------------------------------------------------------------------
    Buttons
    -------------------------------------------------------------------------- */
-.btn {
+.kids-scope .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -409,7 +409,7 @@ h4 {
   padding: 0.95rem 1.65rem;
   border: 2px solid transparent;
   border-radius: var(--radius-pill);
-  font-family: var(--font-.kids-scope);
+  font-family: var(--font-kids);
   font-weight: 600;
   font-size: 0.95rem;
   line-height: 1.2;
@@ -418,113 +418,113 @@ h4 {
     color 0.25s ease, border-color 0.25s ease;
 }
 
-.btn svg {
+.kids-scope .btn svg {
   width: 18px;
   height: 18px;
   flex: none;
   transition: transform 0.25s ease;
 }
 
-.btn:hover {
+.kids-scope .btn:hover {
   transform: translateY(-3px);
 }
 
-.btn:hover svg {
+.kids-scope .btn:hover svg {
   transform: translateX(3px);
 }
 
-.btn:active {
+.kids-scope .btn:active {
   transform: translateY(-1px);
 }
 
-.btn--primary {
+.kids-scope .btn--primary {
   background: var(--pink);
   color: #fff;
   box-shadow: var(--shadow-pink);
 }
 
-.btn--primary:hover {
+.kids-scope .btn--primary:hover {
   background: var(--pink-deep);
   box-shadow: 0 18px 34px -14px rgba(244, 63, 109, 0.85);
 }
 
-.btn--yellow {
+.kids-scope .btn--yellow {
   background: var(--yellow);
   color: var(--ink);
   box-shadow: 4px 4px 0 var(--ink);
 }
 
-.btn--yellow:hover {
+.kids-scope .btn--yellow:hover {
   background: #ffc42e;
   box-shadow: 6px 6px 0 var(--ink);
   transform: translate(-2px, -2px);
 }
 
-.btn--secondary {
+.kids-scope .btn--secondary {
   background: var(--white);
   color: var(--ink);
   border-color: var(--ink);
   box-shadow: 4px 4px 0 var(--yellow);
 }
 
-.btn--secondary:hover {
+.kids-scope .btn--secondary:hover {
   box-shadow: 6px 6px 0 var(--yellow);
   transform: translate(-2px, -2px);
 }
 
-.btn--purple {
+.kids-scope .btn--purple {
   background: var(--purple);
   color: #fff;
   box-shadow: 0 14px 28px -14px rgba(123, 44, 191, 0.8);
 }
 
-.btn--purple:hover {
+.kids-scope .btn--purple:hover {
   background: var(--purple-deep);
 }
 
-.btn--ghost-light {
+.kids-scope .btn--ghost-light {
   background: transparent;
   color: #fff;
   border-color: rgba(255, 255, 255, 0.55);
 }
 
-.btn--ghost-light:hover {
+.kids-scope .btn--ghost-light:hover {
   background: rgba(255, 255, 255, 0.12);
   border-color: #fff;
 }
 
-.btn--ghost {
+.kids-scope .btn--ghost {
   background: transparent;
   color: var(--ink);
   border-color: var(--border-strong);
 }
 
-.btn--ghost:hover {
+.kids-scope .btn--ghost:hover {
   border-color: var(--ink);
   background: var(--white);
 }
 
-.btn--sm {
+.kids-scope .btn--sm {
   padding: 0.68rem 1.2rem;
   font-size: 0.86rem;
 }
 
-.btn--lg {
+.kids-scope .btn--lg {
   padding: 1.15rem 2.1rem;
   font-size: 1.02rem;
 }
 
-.btn--block {
+.kids-scope .btn--block {
   width: 100%;
 }
 
-.btn-row {
+.kids-scope .btn-row {
   display: flex;
   flex-wrap: wrap;
   gap: 0.85rem;
 }
 
-.link-arrow {
+.kids-scope .link-arrow {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
@@ -534,18 +534,18 @@ h4 {
   transition: gap 0.25s ease, color 0.25s ease;
 }
 
-.link-arrow svg {
+.kids-scope .link-arrow svg {
   width: 17px;
   height: 17px;
   transition: transform 0.25s ease;
 }
 
-.link-arrow:hover {
+.kids-scope .link-arrow:hover {
   gap: 0.75rem;
   color: var(--pink-deep);
 }
 
-.icon-btn {
+.kids-scope .icon-btn {
   display: inline-grid;
   place-items: center;
   width: 44px;
@@ -557,13 +557,13 @@ h4 {
   transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 }
 
-.icon-btn:hover {
+.kids-scope .icon-btn:hover {
   background: var(--yellow-soft);
   border-color: var(--yellow);
   transform: translateY(-2px);
 }
 
-.icon-btn svg {
+.kids-scope .icon-btn svg {
   width: 20px;
   height: 20px;
 }
@@ -571,7 +571,7 @@ h4 {
 /* --------------------------------------------------------------------------
    Pills & tags
    -------------------------------------------------------------------------- */
-.pill {
+.kids-scope .pill {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -584,19 +584,19 @@ h4 {
   white-space: nowrap;
 }
 
-.pill svg {
+.kids-scope .pill svg {
   width: 14px;
   height: 14px;
 }
 
-.pill--yellow { background: var(--yellow-soft); color: #8a5a00; }
-.pill--pink { background: var(--pink-soft); color: #b31245; }
-.pill--blue { background: var(--blue-soft); color: #0b6d85; }
-.pill--purple { background: var(--purple-soft); color: #5b1a94; }
-.pill--green { background: var(--green-soft); color: #237a00; }
-.pill--white { background: rgba(255, 255, 255, 0.16); color: #fff; border: 1px solid rgba(255, 255, 255, 0.3); }
+.kids-scope .pill--yellow { background: var(--yellow-soft); color: #8a5a00; }
+.kids-scope .pill--pink { background: var(--pink-soft); color: #b31245; }
+.kids-scope .pill--blue { background: var(--blue-soft); color: #0b6d85; }
+.kids-scope .pill--purple { background: var(--purple-soft); color: #5b1a94; }
+.kids-scope .pill--green { background: var(--green-soft); color: #237a00; }
+.kids-scope .pill--white { background: rgba(255, 255, 255, 0.16); color: #fff; border: 1px solid rgba(255, 255, 255, 0.3); }
 
-.tag {
+.kids-scope .tag {
   display: inline-flex;
   align-items: center;
   padding: 0.3rem 0.7rem;
@@ -609,7 +609,7 @@ h4 {
 }
 
 /* Sticker — playful rotated label */
-.sticker {
+.kids-scope .sticker {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -626,12 +626,12 @@ h4 {
   transform: rotate(-3deg);
 }
 
-.sticker--pink { background: var(--pink); color: #fff; }
-.sticker--blue { background: var(--blue); color: #fff; }
-.sticker--green { background: var(--green); color: #fff; }
-.sticker--white { background: #fff; color: var(--ink); }
+.kids-scope .sticker--pink { background: var(--pink); color: #fff; }
+.kids-scope .sticker--blue { background: var(--blue); color: #fff; }
+.kids-scope .sticker--green { background: var(--green); color: #fff; }
+.kids-scope .sticker--white { background: #fff; color: var(--ink); }
 
-.sticker svg {
+.kids-scope .sticker svg {
   width: 16px;
   height: 16px;
 }
@@ -639,26 +639,26 @@ h4 {
 /* --------------------------------------------------------------------------
    Forms
    -------------------------------------------------------------------------- */
-.field {
+.kids-scope .field {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
 }
 
-.field label {
+.kids-scope .field label {
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.01em;
 }
 
-.field .hint {
+.kids-scope .field .hint {
   font-size: 0.75rem;
   color: var(--ink-faint);
 }
 
-.input,
-.select,
-.textarea {
+.kids-scope .input,
+.kids-scope .select,
+.kids-scope .kids-scope .textarea {
   width: 100%;
   padding: 0.85rem 1.05rem;
   border: 1.5px solid var(--border-strong);
@@ -669,25 +669,25 @@ h4 {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.input::placeholder,
-.textarea::placeholder {
+.kids-scope .input::placeholder,
+.kids-scope .textarea::placeholder {
   color: var(--ink-faint);
 }
 
-.input:focus,
-.select:focus,
-.textarea:focus {
+.kids-scope .input:focus,
+.kids-scope .select:focus,
+.kids-scope .textarea:focus {
   outline: none;
   border-color: var(--purple);
   box-shadow: 0 0 0 4px var(--purple-soft);
 }
 
-.textarea {
+.kids-scope .textarea {
   min-height: 130px;
   resize: vertical;
 }
 
-.select {
+.kids-scope .select {
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%236b5a7b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
@@ -695,7 +695,7 @@ h4 {
   padding-right: 2.6rem;
 }
 
-.checkbox {
+.kids-scope .checkbox {
   display: flex;
   align-items: flex-start;
   gap: 0.7rem;
@@ -704,7 +704,7 @@ h4 {
   line-height: 1.55;
 }
 
-.checkbox input {
+.kids-scope .checkbox input {
   width: 18px;
   height: 18px;
   margin-top: 2px;
@@ -712,7 +712,7 @@ h4 {
   flex: none;
 }
 
-.checkbox a {
+.kids-scope .checkbox a {
   color: var(--purple);
   text-decoration: underline;
   text-underline-offset: 2px;
@@ -721,7 +721,7 @@ h4 {
 /* --------------------------------------------------------------------------
    Misc
    -------------------------------------------------------------------------- */
-.divider-dot {
+.kids-scope .divider-dot {
   display: inline-block;
   width: 6px;
   height: 6px;
@@ -732,7 +732,7 @@ h4 {
   vertical-align: middle;
 }
 
-.sr-only {
+.kids-scope .sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -744,7 +744,7 @@ h4 {
   border: 0;
 }
 
-.skip-link {
+.kids-scope .skip-link {
   position: fixed;
   top: -100px;
   left: 1rem;
@@ -757,11 +757,11 @@ h4 {
   transition: top 0.2s ease;
 }
 
-.skip-link:focus {
+.kids-scope .skip-link:focus {
   top: 1rem;
 }
 
-.notice {
+.kids-scope .notice {
   display: flex;
   gap: 0.75rem;
   align-items: flex-start;
@@ -774,38 +774,38 @@ h4 {
   line-height: 1.6;
 }
 
-.notice svg {
+.kids-scope .notice svg {
   width: 18px;
   height: 18px;
   flex: none;
   margin-top: 2px;
 }
 
-.notice--yellow {
+.kids-scope .notice--yellow {
   background: var(--yellow-soft);
   border-color: rgba(245, 158, 11, 0.3);
   color: #7a5200;
 }
 
-.notice--pink {
+.kids-scope .notice--pink {
   background: var(--pink-soft);
   border-color: rgba(251, 111, 146, 0.3);
   color: #9c1c44;
 }
 
 /* Scrollbar (WebKit) */
-::-webkit-scrollbar {
+.kids-scope ::-webkit-scrollbar {
   width: 12px;
 }
-::-webkit-scrollbar-track {
+.kids-scope ::-webkit-scrollbar-track {
   background: var(--cream);
 }
-::-webkit-scrollbar-thumb {
+.kids-scope ::-webkit-scrollbar-thumb {
   background: #d9c9e8;
   border-radius: 99px;
   border: 3px solid var(--cream);
 }
-::-webkit-scrollbar-thumb:hover {
+.kids-scope ::-webkit-scrollbar-thumb:hover {
   background: var(--purple);
 }
 
@@ -837,18 +837,18 @@ h4 {
     display: none !important;
   }
 
-  .container {
+  .kids-scope .container {
     width: 100% !important;
     max-width: none !important;
   }
 
-  .section {
+  .kids-scope .section {
     padding: 0 !important;
   }
 
   .section--white,
   .section--cream,
-  .section--yellow {
+  .kids-scope .section--yellow {
     background: #fff !important;
   }
 
