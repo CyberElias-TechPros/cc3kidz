@@ -1,0 +1,55 @@
+/* Teens — Energetic, confident, welcoming — Electric blue / indigo / violet / coral */
+.teens-scope {
+  --teens-blue: #1D4ED8;
+  --teens-indigo: #1E1B4B;
+  --teens-violet: #7C3AED;
+  --teens-coral: #FF4D6A;
+  --teens-gold: #F59E0B;
+  --teens-ink: #0F172A;
+  --teens-paper: #F8FAFF;
+}
+
+.teens-hero {
+  background:
+    radial-gradient(900px 500px at 10% 0%, rgba(124,58,237,0.18) 0%, transparent 60%),
+    radial-gradient(800px 400px at 95% 20%, rgba(255,77,106,0.12) 0%, transparent 60%),
+    linear-gradient(180deg, #0F172A 0%, #1E1B4B 55%, #1D4ED8 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.teens-hero::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,0.35) 0, transparent 2px),
+              radial-gradient(2px 2px at 80% 60%, rgba(255,255,255,0.25) 0, transparent 2px),
+              radial-gradient(1px 1px at 45% 80%, rgba(255,255,255,0.3) 0, transparent 1px);
+  opacity: 0.6; pointer-events: none;
+}
+.teens-eyebrow {
+  display:inline-flex; align-items:center; gap:8px;
+  background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  padding: 6px 12px; border-radius: 999px;
+  font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+}
+.teens-title {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 900; line-height: 0.88; letter-spacing: -0.03em;
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+}
+.teens-title em { font-style: normal; color: #F59E0B; }
+.teens-title .accent-violet { color: #A78BFA; }
+.teens-stat {
+  background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px); border-radius: 14px; padding: 12px 14px;
+}
+.teens-card {
+  background: white; border: 1px solid rgba(15,23,42,0.06); border-radius: 18px;
+  overflow: hidden; transition: all 0.2s;
+}
+.teens-card:hover { transform: translateY(-2px); box-shadow: 0 16px 32px -12px rgba(29,78,216,0.18); border-color: rgba(124,58,237,0.15); }
+/* teens asymmetric grid */
+.teens-bento { display:grid; grid-template-columns: 1.4fr 0.9fr; gap: 14px; }
+@media (max-width: 900px){ .teens-bento{ grid-template-columns:1fr; } }
+.teens-pill { display:inline-flex; align-items:center; gap:6px; border-radius:999px; padding:5px 10px; font-size:11px; font-weight:800; letter-spacing:0.04em; }

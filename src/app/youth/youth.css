@@ -1,0 +1,35 @@
+/* Youth — Mature, purposeful, confident — Deep navy / charcoal / restrained gold */
+.youth-scope {
+  --youth-navy: #0E1B33;
+  --youth-charcoal: #1F2937;
+  --youth-gold: #C6A04A;
+  --youth-stone: #F5F1EB;
+  --youth-ink: #0F172A;
+  --youth-paper: #FFFBF5;
+}
+.youth-hero {
+  background:
+    radial-gradient(700px 400px at 15% 0%, rgba(198,160,74,0.12) 0%, transparent 60%),
+    radial-gradient(600px 300px at 90% 100%, rgba(14,27,51,0.15) 0%, transparent 60%),
+    linear-gradient(180deg, #FFFBF5 0%, #F5F1EB 100%);
+  border-bottom: 1px solid rgba(14,27,51,0.06);
+}
+.youth-kicker {
+  display:inline-flex; align-items:center; gap:8px;
+  border: 1px solid rgba(14,27,51,0.10); background: white; padding: 6px 12px; border-radius: 999px;
+  font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #0E1B33;
+}
+.youth-title {
+  font-family: var(--font-display), system-ui, serif;
+  font-weight: 900; line-height: 0.88; letter-spacing: -0.03em;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  color: #0E1B33;
+}
+.youth-title em { font-style: normal; color: #C6A04A; }
+.youth-card {
+  background: white; border: 1px solid rgba(14,27,51,0.06); border-radius: 16px;
+  overflow: hidden; transition: all 0.2s;
+}
+.youth-card:hover { border-color: rgba(198,160,74,0.25); box-shadow: 0 12px 24px -12px rgba(14,27,51,0.12); transform: translateY(-1px); }
+.youth-rule { height:1px; background: linear-gradient(90deg, #C6A04A, transparent); }
+.youth-dark { background: #0E1B33; color: white; }
