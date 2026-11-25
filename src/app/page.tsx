@@ -12,6 +12,7 @@ import cc3Photos from '@/data/cc3Photos.json'
 import { ZoneBreadcrumb } from '@/components/group/ZoneBreadcrumb'
 import HeroSlider from '@/components/HeroSlider'
 import { MinistryFamilyBar } from '@/components/ministry/MinistryFamilyBar'
+import ServiceCountdown from '@/components/ServiceCountdown'
 
 export default function Home() {
   const next = nextServiceDate('Sunday', '8:00 AM')
@@ -91,8 +92,8 @@ export default function Home() {
               </article>
             ))}
           </div>
-          <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:'0.5rem',marginTop:'1.6rem',background:'#0E1B33',borderRadius:'16px',padding:'1rem 0.6rem',color:'#fff',boxShadow:'0 12px 32px -12px rgba(14,27,51,0.25)'}}>
-            {[{n:'92',l:'cells city-wide'},{n:'7',l:'churches · one group'},{n:'3',l:'weekly gatherings'},{n:'100%',l:'LoveWorld family'}].map(s=>(
+          <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'0.5rem',marginTop:'1.6rem',background:'#0E1B33',borderRadius:'16px',padding:'1rem 0.6rem',color:'#fff',boxShadow:'0 12px 32px -12px rgba(14,27,51,0.25)'}}>
+            {[{n:'6',l:'churches · one group'},{n:'3',l:'weekly services'},{n:'100%',l:'LoveWorld family'}].map(s=>(
               <div key={s.l} style={{textAlign:'center',padding:'0.3rem',borderRight:'1px solid rgba(255,255,255,0.1)'}}>
                 <div style={{fontFamily:'var(--font-display),serif',fontWeight:800,color:'#C6A04A',fontSize:'1.5rem'}}>{s.n}</div>
                 <div style={{fontSize:'0.58rem',fontWeight:700,letterSpacing:'0.08em',textTransform:'uppercase',color:'rgba(255,255,255,0.6)'}}>{s.l}</div>
@@ -107,7 +108,7 @@ export default function Home() {
         <div className="container-cc kl-services">
           <div className="kl-services__sticky">
             <span className="eyebrow" style={{background:'#fff',border:'1.5px solid rgba(14,27,51,0.06)',borderRadius:'999px',padding:'0.35rem 0.8rem'}}>Our Week in the Word</span>
-            <h2 style={{fontFamily:'var(--font-display),serif',fontWeight:800,color:'#0E1B33',fontSize:'clamp(1.8rem,3vw,2.4rem)',lineHeight:0.95,marginTop:'0.7rem'}}>Appointed Times<br/>in His Presence</h2>
+            <h2 style={{fontFamily:'var(--font-display),serif',fontWeight:800,color:'#0E1B33',fontSize:'clamp(1.8rem,3vw,2.4rem)',lineHeight:0.95,marginTop:'0.7rem'}}>Service Times</h2>
             <p style={{color:'#64748B',fontSize:'0.92rem',marginTop:'0.6rem',maxWidth:'32ch'}}>Appointed times to receive the Word and impartation — at Rumuokwuta or online. Come early for prevailing intercession.</p>
             <Link href="/services" style={{display:'inline-flex',marginTop:'1.2rem',fontSize:'0.82rem',fontWeight:700,color:'#0E1B33',borderBottom:'1.5px solid #0E1B33',paddingBottom:'2px',textDecoration:'none'}}>View full schedule →</Link>
             <div className="kl-services__image">
@@ -156,9 +157,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CURRENT & UPCOMING — single current focus + upcoming list */}
+      {/* CURRENT & UPCOMING — service-aware: next service via live countdown */}
       <section className="section" style={{background:'#fff'}}>
         <div className="container-cc">
+          <div style={{marginBottom:'1.2rem'}}>
+            <ServiceCountdown />
+          </div>
           <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-end',gap:'1rem',flexWrap:'wrap',marginBottom:'1.2rem'}}>
             <SectionHeading eyebrow="Current & Upcoming" title="Your Week Set in Glory" desc="One current focus, then blessed appointments ahead — all for your increase." />
             <Link href="/events" className="btn btn--navy" style={{borderRadius:'999px'}}>View all events →</Link>
@@ -222,7 +226,7 @@ export default function Home() {
       <section className="section" style={{background:'#fff', borderTop:'1px solid rgba(14,27,51,0.06)'}}>
         <div className="container-cc">
           <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-end',gap:'1rem',flexWrap:'wrap',marginBottom:'1.5rem'}}>
-            <SectionHeading eyebrow="Life at CC3" title="Fulfil Your Calling" desc="Take your place and function in your divine assignment — with joy, excellence and the power of the Spirit." />
+            <SectionHeading eyebrow="Life at CC3" title="Join a Service Unit" desc="Take your place and function in your divine assignment — with joy, excellence and the power of the Spirit." />
             <Link href="/ministries" className="btn" style={{background:'#fff',border:'1.5px solid #0E1B33',borderRadius:'999px'}}>Directory →</Link>
           </div>
           <div className="kl-bento">
@@ -269,7 +273,7 @@ export default function Home() {
                   {l:'Plan a visit',h:'/new-here',c:'#fff',i:'◼'},
                   {l:'Join a cell',h:'/cells',c:'#fff',i:'⬢'},
                   {l:'Foundation School',h:'/foundation-school',c:'#FEF2F0',i:'⬣'},
-                  {l:'Serve in ministry',h:'/ministries',c:'#fff',i:'✦'},
+                  {l:'Serve in Church',h:'/ministries',c:'#fff',i:'✦'},
                 ].map(a=>(
                   <Link key={a.l} href={a.h} style={{display:'flex',gap:'0.5rem',alignItems:'center',padding:'0.55rem 0.65rem',background:'#fff',border:'1px solid rgba(14,27,51,0.06)',borderRadius:'12px',fontSize:'0.8rem',fontWeight:600,color:'#0E1B33',textDecoration:'none'}}>
                     <span style={{width:26,height:26,borderRadius:'8px',background:a.c,border:'1px solid rgba(14,27,51,0.06)',display:'grid',placeItems:'center',fontSize:'0.65rem'}}>{a.i}</span>{a.l}

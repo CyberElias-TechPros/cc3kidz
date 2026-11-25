@@ -8,7 +8,7 @@
     "activities": ["Sunday worship", "Special ministrations", "Praise nights", "Rehearsals Sat 10AM"],
     "leader": "Ministry Coordinator — Choir",
     "href": "/ministries/choir-music",
-    "image": "/assets/images/cc3/service-congregation.jpg"
+    "image": "/assets/images/ministries/choir-music.jpg"
   },
   {
     "id": "ushering",
@@ -19,7 +19,7 @@
     "activities": ["Guest welcome", "Seating & order", "First-time visitor care"],
     "leader": "Head of Ushers",
     "href": "/ministries/ushering-hospitality",
-    "image": "/assets/images/main-family.webp"
+    "image": "/assets/images/ministries/ushering-hospitality.jpg"
   },
   {
     "id": "media",
@@ -30,7 +30,7 @@
     "activities": ["Audio/visual", "Photography", "Livestream", "Content"],
     "leader": "Media Coordinator",
     "href": "/ministries/media-technical",
-    "image": "/assets/images/cc3/service-chairs.jpg"
+    "image": "/assets/images/ministries/media-technical.jpg"
   },
   {
     "id": "evangelism",
@@ -41,7 +41,7 @@
     "activities": ["Street outreaches", "Campus evangelism", "Follow-up", "Rhapsody distribution"],
     "leader": "Outreach Coordinator",
     "href": "/outreach",
-    "image": "/assets/images/cc3/reachout-world.webp"
+    "image": "/assets/images/ministries/evangelism-outreach.jpg"
   },
   {
     "id": "prayer",

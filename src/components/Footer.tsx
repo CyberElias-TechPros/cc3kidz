@@ -108,10 +108,11 @@ export default function Footer() {
           <div>
             <div className="font-semibold text-white">{site.addressShort}</div>
             <div className="text-slate-300">{site.address}</div>
+            <div className="text-slate-400 text-xs mt-2">Zonal HQ: <a href="https://cephzone3.org/" target="_blank" rel="noreferrer" className="underline hover:text-white">Jessy & Jenny St, Peter Odili Rd — cephzone3.org ↗</a></div>
           </div>
           <div>
             <div className="font-semibold text-white">Service Times</div>
-            <div className="text-slate-300">Sunday 8am · Monday 6pm Prayer & Prophecy · Wed 5:30pm · Fri 5:30pm</div>
+            <div className="text-slate-300">Sunday 8AM · Monday 6PM Prayer & Prophecy · Wednesday 5:30PM</div>
           </div>
           <div className="md:text-right">
             <div className="font-semibold text-white">Contact</div>
