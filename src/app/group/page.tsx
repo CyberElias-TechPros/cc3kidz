@@ -7,7 +7,7 @@ import { ZoneMap } from '@/components/group/ZoneMap'
 import { MinistryAppsBar } from '@/components/group/MinistryAppsBar'
 import { GlobalProgramsStrip } from '@/components/group/GlobalProgramsStrip'
 
-export const metadata = { title: 'CC3 Group — 7 Churches' }
+export const metadata = { title: 'CC3 Group — 6 Churches' }
 
 export default function GroupPage() {
   return (
@@ -16,7 +16,7 @@ export default function GroupPage() {
         <div className="container-cc py-10">
           <div className="eyebrow !text-gold">PH Zone 3 · Zonal Church HQ</div>
           <h1 className="font-display font-black text-[2.4rem] leading-none mt-2">CC3 Group — One Family · 7 Expressions</h1>
-          <p className="text-slate-200 mt-3 max-w-3xl leading-7">LoveWorld Nation → Port Harcourt Zone 3 (Zonal Church, Jessy & Jenny St, Peter Odili Rd) → Christ Embassy Central Church 3 (Group Headquarters, 30B Rumuokwuta/NTA Road) → 7 Churches → Cells. The only Pastor at the Group Church is Pastor Kelson Onoriode — also Group Pastor of the CC3 Group Family.</p>
+          <p className="text-slate-200 mt-3 max-w-3xl leading-7">LoveWorld Nation → Port Harcourt Zone 3 (Zonal Church, Jessy & Jenny St, Peter Odili Rd) → Christ Embassy Central Church 3 (Group Headquarters, 30B Rumuokwuta/NTA Road) → 6 Churches → Cells. The only Pastor at the Group Church is Pastor Kelson Onoriode — also Group Pastor of the CC3 Group Family.</p>
           <div className="mt-4 flex flex-wrap gap-2 text-xs">
             <span className="rounded-full bg-white/10 border border-white/15 px-3 py-1">Zonal Land: Jessy & Jenny St, Peter Odili Rd</span>
             <span className="rounded-full bg-gold text-navy px-3 py-1 font-bold">Central Church 3 (Group HQ): 30B Rumuokwuta · Pastor Kelson Onoriode</span>

@@ -14,7 +14,7 @@ export default function CellsPage() {
           <div className="flex gap-5 max-w-3xl">
             <div className="hidden sm:block ankara-rule w-[3px] self-stretch shrink-0" aria-hidden />
             <div>
-              <div className="text-xs font-semibold tracking-wide text-muted">Cell Ministry · 92 cells · 7 churches</div>
+              <div className="text-xs font-semibold tracking-wide text-muted">Cell Ministry · 92 cells · 6 churches</div>
               <h1 className="font-display font-extrabold text-[2.4rem] md:text-[2.8rem] leading-none tracking-tight mt-2 text-navy">Find a Cell Near You</h1>
               <p className="mt-3 text-[1.02rem] leading-7 text-slate-600 max-w-2xl">The Cell System is central to spiritual growth and fellowship — small families where you are known, nurtured, and sent.</p>
             </div>
@@ -27,7 +27,7 @@ export default function CellsPage() {
       <section className="section bg-white">
         <div className="container-cc">
           <ZoneMap />
-          <p className="text-xs text-muted mt-3 text-center">Each cell is auto-assigned to its nearest church (7 churches) — filter by church above to see cells. Tap a church on the map to view its cells.</p>
+          <p className="text-xs text-muted mt-3 text-center">Each cell is auto-assigned to its nearest church (6 churches) — filter by church above to see cells. Tap a church on the map to view its cells.</p>
         </div>
       </section>
       <section className="section bg-haze">

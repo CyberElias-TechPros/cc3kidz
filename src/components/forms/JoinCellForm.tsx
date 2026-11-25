@@ -7,15 +7,15 @@ function suggestChurch(area: string) {
   const map: Record<string, string> = {
     rumuokwuta: 'central-church-3',
     rumuepirikom: 'central-church-3',
-    rumuola: 'central-3-orazi',
-    orazi: 'central-3-orazi',
-    gbalajam: 'central-3-orazi',
-    eliozu: 'oasis',
-    rumuokoro: 'oasis',
-    'trans-amadi': 'glorious',
-    gra: 'limitless',
-    'ada-george': 'advantage',
-    wimpey: 'advantage',
+    ozuoba: 'ozuoba',
+    gbalajam: 'ozuoba',
+    rumuosi: 'rumuosi',
+    rumuekini: 'rumuekini',
+    'east-west': 'east-west-central',
+    'trans-amadi': 'east-west-central',
+    rumuokoro: 'higherlife',
+    eliozu: 'higherlife',
+    higherlife: 'higherlife',
   }
   for (const [k, v] of Object.entries(map)) if (a.includes(k)) return (churches as any[]).find((c: any) => c.id === v) || null
   return null
@@ -55,7 +55,7 @@ export default function JoinCellForm() {
       {suggestion ? (
         <div className="rounded-xl bg-gold/15 border border-gold/20 px-3 py-2 text-xs">Auto-assigned to <strong>{suggestion.name}</strong> — {suggestion.area} · {suggestion.serviceTimes[0].day} {suggestion.serviceTimes[0].time}</div>
       ) : s.area ? (
-        <div className="rounded-xl bg-sand px-3 py-2 text-xs text-muted">We’ll match your area to the nearest of our 7 churches.</div>
+        <div className="rounded-xl bg-sand px-3 py-2 text-xs text-muted">We’ll match your area to the nearest of our 6 churches.</div>
       ) : null}
       <textarea placeholder="Note (optional)" value={s.note} onChange={e => setS({ ...s, note: e.target.value })} rows={2} className="w-full rounded-xl border border-black/10 px-4 py-3 text-sm" />
       <button className="btn btn--navy w-full justify-center">Connect Me</button>

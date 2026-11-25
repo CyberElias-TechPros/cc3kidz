@@ -6,8 +6,9 @@ export default function sitemap() {
     '/teens', '/teens/about', '/teens/church', '/teens/word', '/teens/activities', '/teens/gifts', '/teens/events', '/teens/resources', '/teens/connect', '/youth', '/youth/about', '/youth/church', '/youth/word', '/youth/rise', '/youth/growth', '/youth/community', '/youth/media', '/youth/events', '/youth/connect', '/kids', '/kids/about', '/kids/classes', '/kids/lessons', '/kids/events', '/kids/gallery', '/kids/kids-corner', '/kids/parents', '/kids/resources', '/kids/contact',
     '/login', '/register', '/privacy', '/terms'
   ]
-  const churchSlugs = ['secretariat','central-church-3-orazi','glorious-church','limitless-church','advantage-church','oasis-church','trans-amadi-church']
+  const churchSlugs = ['central-church-3','ozuoba-church','rumuekini-church','rumuosi-church','higherlife-church','east-west-central-church']
   churchSlugs.forEach(s=>routes.push(`/group/${s}`))
+  churchSlugs.forEach(s=>routes.push(`/churches/${s}`))
   // also include dynamic slugs
   const lessonSlugs = ['noah-and-the-great-ark','david-and-goliath','daniel-in-the-lions-den','esther-the-brave-queen','joseph-the-dreamer','jonah-and-the-big-fish','the-good-samaritan','jesus-feeds-5000','the-prodigal-son','creation-story']
   lessonSlugs.forEach(s=>routes.push(`/kids/lessons/${s}`))

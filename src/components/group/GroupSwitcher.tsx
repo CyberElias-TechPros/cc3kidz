@@ -5,7 +5,7 @@ export function GroupSwitcher({ activeSlug }: { activeSlug?: string }) {
   return (
     <div>
       <div className="flex items-center justify-between gap-4">
-        <h2 className="font-display font-extrabold text-xl">7 Churches · One Group Family</h2>
+        <h2 className="font-display font-extrabold text-xl">6 Churches · One Group Family</h2>
         <Link href="/group" className="btn btn--ghost !py-2 text-sm hidden sm:inline-flex">View Group Directory →</Link>
       </div>
       <p className="text-sm text-muted mt-2 max-w-2xl">Christ Embassy Central Church 3 Group — Headquarters: Christ Embassy Central Church 3 at 30B Rumuokwuta/NTA Road (Pastor Kelson Onoriode, Group Pastor & Pastor of Central Church 3 — the only Pastor at the Group Church). 6 additional churches + Headquarters family of 7, vibrant cells, one mission.</p>

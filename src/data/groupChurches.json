@@ -7,213 +7,113 @@
     "pastor": "Pastor Kelson Onoriode",
     "title": "Group Pastor & Pastor, Central Church 3",
     "address": "30B Rumuokwuta/NTA Road, Opposite Patcoin Filling Station",
-    "area": "Rumuokwuta \u00b7 NTA Road \u2014 Group Headquarters",
+    "area": "Rumuokwuta · NTA Road — Group Headquarters",
     "city": "Port Harcourt",
-    "phone": "+234 803 000 3000",
-    "whatsapp": "+234 803 000 3000",
+    "phone": "+234 905 862 8386",
+    "whatsapp": "+2349058628386",
     "serviceTimes": [
-      {
-        "day": "Sunday",
-        "time": "8:00 AM",
-        "label": "Sunday Service"
-      },
-      {
-        "day": "Monday",
-        "time": "6:00 PM",
-        "label": "Prayer & Prophecy Service"
-      },
-      {
-        "day": "Wednesday",
-        "time": "5:30 PM",
-        "label": "Midweek Service"
-      }
+      { "day": "Sunday", "time": "8:00 AM", "label": "Sunday Service" },
+      { "day": "Monday", "time": "6:00 PM", "label": "Prayer & Prophecy Service" },
+      { "day": "Wednesday", "time": "5:30 PM", "label": "Midweek Service" }
     ],
     "cells": 28,
     "featured": true,
     "isHeadquarters": true,
-    "coords": {
-      "lat": 4.8427161194266155,
-      "lng": 6.984262611031861
-    }
+    "coords": { "lat": 4.8427161194266155, "lng": 6.984262611031861 }
   },
   {
-    "id": "central-3-orazi",
-    "slug": "central-church-3-orazi",
-    "name": "Central Church 3 \u2014 Orazi",
-    "shortName": "Orazi",
-    "pastor": "Pastor Kenneth Adebayo",
-    "title": "Church Pastor",
-    "address": "11 Haastrup Street, Opposite Bosom Hospital, Orazi",
-    "area": "Orazi \u00b7 Gbalajam",
+    "id": "ozuoba",
+    "slug": "ozuoba-church",
+    "name": "Christ Embassy Ozuoba",
+    "shortName": "Ozuoba",
+    "pastor": "Bro. Prince Precious",
+    "title": "Church Leader, Ozuoba",
+    "address": "Ozuoba Town, Along NTA Road, Port Harcourt",
+    "area": "Ozuoba · NTA Road",
     "city": "Port Harcourt",
-    "phone": "+234 803 000 3001",
-    "whatsapp": "+234 803 000 3001",
+    "phone": "",
+    "whatsapp": "",
     "serviceTimes": [
-      {
-        "day": "Sunday",
-        "time": "8:00 AM",
-        "label": "Sunday Service"
-      },
-      {
-        "day": "Wednesday",
-        "time": "5:00 PM",
-        "label": "Midweek Service"
-      }
+      { "day": "Sunday", "time": "8:00 AM", "label": "Sunday Service" },
+      { "day": "Wednesday", "time": "5:30 PM", "label": "Midweek Service" }
     ],
     "cells": 14,
-    "coords": {
-      "lat": 4.812,
-      "lng": 6.952
-    }
+    "coords": { "lat": 4.868, "lng": 6.955 }
   },
   {
-    "id": "glorious",
-    "slug": "glorious-church",
-    "name": "Glorious Church",
-    "shortName": "Glorious",
-    "pastor": "Pastor Samuel Ike",
-    "title": "Church Pastor",
-    "address": "Km 4 Trans-Amadi Industrial Layout, Near Schlumberger",
-    "area": "Trans-Amadi",
+    "id": "rumuekini",
+    "slug": "rumuekini-church",
+    "name": "Christ Embassy Rumuekini",
+    "shortName": "Rumuekini",
+    "pastor": "Bro. Jerry Uvo",
+    "title": "Church Leader, Rumuekini",
+    "address": "Rumuekini Junction, East-West Road, Port Harcourt",
+    "area": "Rumuekini · East-West Road",
     "city": "Port Harcourt",
-    "phone": "+234 803 000 3002",
-    "whatsapp": "+234 803 000 3002",
+    "phone": "",
+    "whatsapp": "",
     "serviceTimes": [
-      {
-        "day": "Sunday",
-        "time": "8:00 AM",
-        "label": "Sunday Service"
-      },
-      {
-        "day": "Thursday",
-        "time": "5:30 PM",
-        "label": "Midweek Service"
-      }
+      { "day": "Sunday", "time": "8:00 AM", "label": "Sunday Service" },
+      { "day": "Wednesday", "time": "5:30 PM", "label": "Midweek Service" }
     ],
     "cells": 12,
-    "coords": {
-      "lat": 4.771,
-      "lng": 7.012
-    }
+    "coords": { "lat": 4.875, "lng": 6.92 }
   },
   {
-    "id": "limitless",
-    "slug": "limitless-church",
-    "name": "Limitless Church",
-    "shortName": "Limitless",
-    "pastor": "Pastor David Okonkwo",
-    "title": "Church Pastor",
-    "address": "24B GRA Phase 2, Tombia Street",
-    "area": "GRA",
+    "id": "rumuosi",
+    "slug": "rumuosi-church",
+    "name": "Christ Embassy Rumuosi",
+    "shortName": "Rumuosi",
+    "pastor": "Bro. Cyril Kelechukwu",
+    "title": "Church Leader, Rumuosi",
+    "address": "Rumuosi Town, East-West Road, Port Harcourt",
+    "area": "Rumuosi · East-West Road",
     "city": "Port Harcourt",
-    "phone": "+234 803 000 3003",
-    "whatsapp": "+234 803 000 3003",
+    "phone": "",
+    "whatsapp": "",
     "serviceTimes": [
-      {
-        "day": "Sunday",
-        "time": "8:00 AM",
-        "label": "Sunday Service"
-      },
-      {
-        "day": "Wednesday",
-        "time": "5:30 PM",
-        "label": "Midweek Service"
-      }
+      { "day": "Sunday", "time": "8:00 AM", "label": "Sunday Service" },
+      { "day": "Wednesday", "time": "5:30 PM", "label": "Midweek Service" }
     ],
     "cells": 10,
-    "coords": {
-      "lat": 4.837,
-      "lng": 6.995
-    }
+    "coords": { "lat": 4.883, "lng": 6.945 }
   },
   {
-    "id": "advantage",
-    "slug": "advantage-church",
-    "name": "Advantage Church",
-    "shortName": "Advantage",
-    "pastor": "Pastor Faith Nwankwo",
-    "title": "Church Pastor",
-    "address": "8 Ada-George Road, By Wimpey Junction",
-    "area": "Ada-George",
+    "id": "higherlife",
+    "slug": "higherlife-church",
+    "name": "Christ Embassy HigherLife",
+    "shortName": "HigherLife",
+    "pastor": "Bro. Tonye Charles",
+    "title": "Church Leader, HigherLife",
+    "address": "Rumuokoro / HigherLife Axis, Port Harcourt",
+    "area": "Rumuokoro · HigherLife",
     "city": "Port Harcourt",
-    "phone": "+234 803 000 3004",
-    "whatsapp": "+234 803 000 3004",
+    "phone": "",
+    "whatsapp": "",
     "serviceTimes": [
-      {
-        "day": "Sunday",
-        "time": "8:00 AM",
-        "label": "Sunday Service"
-      },
-      {
-        "day": "Wednesday",
-        "time": "5:30 PM",
-        "label": "Midweek Service"
-      }
+      { "day": "Sunday", "time": "8:00 AM", "label": "Sunday Service" },
+      { "day": "Wednesday", "time": "5:30 PM", "label": "Midweek Service" }
     ],
     "cells": 9,
-    "coords": {
-      "lat": 4.87,
-      "lng": 6.955
-    }
+    "coords": { "lat": 4.87, "lng": 6.985 }
   },
   {
-    "id": "oasis",
-    "slug": "oasis-church",
-    "name": "Oasis Church",
-    "shortName": "Oasis",
-    "pastor": "Pastor Blessing Tamuno",
-    "title": "Church Pastor",
-    "address": "Plot 12 Rumuokoro Junction, Old Aba Road",
-    "area": "Rumuokoro",
+    "id": "east-west-central",
+    "slug": "east-west-central-church",
+    "name": "Christ Embassy East-West Central",
+    "shortName": "East-West Central",
+    "pastor": "Bro. Sam Onobun",
+    "title": "Church Leader, East-West Central",
+    "address": "East-West Road, Nkpolu — Rumuigbo Axis, Port Harcourt",
+    "area": "East-West · Nkpolu-Rumuigbo",
     "city": "Port Harcourt",
-    "phone": "+234 803 000 3005",
-    "whatsapp": "+234 803 000 3005",
+    "phone": "",
+    "whatsapp": "",
     "serviceTimes": [
-      {
-        "day": "Sunday",
-        "time": "7:30 AM",
-        "label": "Sunday Service"
-      },
-      {
-        "day": "Wednesday",
-        "time": "5:30 PM",
-        "label": "Midweek Service"
-      }
-    ],
-    "cells": 8,
-    "coords": {
-      "lat": 4.862,
-      "lng": 6.985
-    }
-  },
-  {
-    "id": "trans-amadi",
-    "slug": "trans-amadi-church",
-    "name": "Trans-Amadi Church",
-    "shortName": "Trans-Amadi",
-    "pastor": "Pastor Emeka Uche",
-    "title": "Church Pastor",
-    "address": "76 Trans-Amadi Road, Beside First Bank",
-    "area": "Trans-Amadi",
-    "city": "Port Harcourt",
-    "phone": "+234 803 000 3006",
-    "whatsapp": "+234 803 000 3006",
-    "serviceTimes": [
-      {
-        "day": "Sunday",
-        "time": "8:00 AM",
-        "label": "Sunday Service"
-      },
-      {
-        "day": "Thursday",
-        "time": "5:30 PM",
-        "label": "Midweek Service"
-      }
+      { "day": "Sunday", "time": "8:00 AM", "label": "Sunday Service" },
+      { "day": "Wednesday", "time": "5:30 PM", "label": "Midweek Service" }
     ],
     "cells": 11,
-    "coords": {
-      "lat": 4.774,
-      "lng": 7.005
-    }
+    "coords": { "lat": 4.86, "lng": 6.96 }
   }
 ]

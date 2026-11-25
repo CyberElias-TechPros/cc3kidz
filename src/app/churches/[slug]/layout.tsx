@@ -55,7 +55,7 @@ export default async function ChurchLayout({ children, params }: { children: Rea
           <div>
             <div className="text-xs font-bold tracking-widest uppercase text-white/50">CC3 Group Family</div>
             <ul className="mt-3 space-y-2 text-sm">
-              <li><a href="/group" className="text-white/80 hover:text-white hover:underline">Group Directory (7 Churches)</a></li>
+              <li><a href="/group" className="text-white/80 hover:text-white hover:underline">Group Directory (6 Churches)</a></li>
               <li><a href="/pastors" className="text-white/80 hover:text-white hover:underline">Pastors & Leadership</a></li>
               <li><a href="/cells" className="text-white/80 hover:text-white hover:underline">Cell Finder</a></li>
               <li><a href="/" className="text-white/80 hover:text-white hover:underline">Central Church 3 Home</a></li>

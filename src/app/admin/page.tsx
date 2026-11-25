@@ -35,7 +35,7 @@ export default function AdminOverview() {
           { k: 'Prayer requests', v: stats ? stats.prayer : '—', sub: 'Restricted to Prayer Team', href: '/admin/prayer' },
           { k: 'Pending testimonies', v: stats ? stats.pending : '—', sub: `${stats?.testimony || 0} total`, href: '/admin/media' },
           { k: 'Volunteer apps', v: stats ? stats.volunteer : '—', sub: 'All departments', href: '/admin/volunteers' },
-          { k: 'Cell attendance reports', v: stats ? stats.attendance : '—', sub: '7 churches · 15 cells', href: '/admin/cells' },
+          { k: 'Cell attendance reports', v: stats ? stats.attendance : '—', sub: '6 churches · 15 cells', href: '/admin/cells' },
           { k: 'Dept attendance', v: stats ? stats.deptAttendance : '—', sub: '8 departments', href: '/admin/cells' },
           { k: 'Foundation grad-ready', v: stats ? Math.round(stats.foundationEligible/6) : '—', sub: 'Complete 6 modules', href: '/admin/foundation' },
           { k: 'Announcements', v: '2', sub: 'Expiry-controlled', href: '/admin/cms' }

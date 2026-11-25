@@ -77,7 +77,7 @@ export default function PastorsPage() {
             <div className="mt-4 rounded-xl bg-navy text-white p-5">
               <div className="text-xs font-bold tracking-widest uppercase text-gold">Pastor, Central Church 3 &amp; Group Pastor, CC3 Group</div>
               <div className="font-display font-extrabold text-lg mt-1">Pastor Kelson Onoriode</div>
-              <p className="text-sm leading-6 text-white/80 mt-2">Shepherding the Central Church 3 congregation and providing pastoral oversight for the 7 churches in the CC3 Group Family — with excellence, prayer and the Word.</p>
+              <p className="text-sm leading-6 text-white/80 mt-2">Shepherding the Central Church 3 congregation and providing pastoral oversight for the 6 churches in the CC3 Group Family — with excellence, prayer and the Word.</p>
               <div className="mt-3 text-xs text-white/60">30B Rumuokwuta/NTA Road, Opposite Patcoin Filling Station · Sundays 8AM · Pastoral care, cells & outreach</div>
             </div>
           </div>

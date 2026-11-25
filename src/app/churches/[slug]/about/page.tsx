@@ -48,7 +48,7 @@ export default async function ChurchAbout({ params }: { params: Promise<{ slug: 
             </div>
             <div className="card p-5 bg-navy text-white">
               <div className="text-xs font-bold tracking-widest uppercase text-gold">CC3 Group</div>
-              <div className="font-display font-extrabold mt-1">7 Churches · One Vision</div>
+              <div className="font-display font-extrabold mt-1">6 Churches · One Vision</div>
               <div className="text-sm text-white/70 mt-1">Part of the CC3 Group Family — headquartered at Christ Embassy Central Church 3 (30B Rumuokwuta, Pastor Kelson Onoriode).</div>
               <Link href="/group" className="mt-3 btn btn--gold !py-2 text-xs inline-flex">Meet the Family →</Link>
             </div>

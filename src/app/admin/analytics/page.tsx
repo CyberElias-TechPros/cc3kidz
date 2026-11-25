@@ -35,7 +35,7 @@ export default function AnalyticsPage() {
           { k: 'Prayer requests', v: V(s?.prayer), d: 'Confidential pipeline' },
           { k: 'Testimonies', v: V(s?.testimony), d: `${V(s?.pending)} pending → moderation` },
           { k: 'Volunteers', v: V(s?.volunteer), d: 'By department' },
-          { k: 'Cell attendance reports', v: V(s?.attendance), d: '7 churches · cells' },
+          { k: 'Cell attendance reports', v: V(s?.attendance), d: '6 churches · cells' },
           { k: 'Dept attendance', v: V(s?.deptAttendance), d: '8 departments' },
           { k: 'Newsletter', v: V(s?.newsletter), d: 'Subscribers' },
         ].map(c => (

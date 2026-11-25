@@ -13,7 +13,7 @@ export function ImpactStrip() {
           <div className="card !bg-white/5 !border-white/10 p-6 text-white">
             <div className="text-xs tracking-widest uppercase font-bold text-gold">Cells / Fellowships</div>
             <div className="font-display font-black text-3xl mt-1">{stats.group.cells}</div>
-            <div className="text-xs text-white/70 mt-1">Across 7 churches · {stats.zone.householdsReached} zone households</div>
+            <div className="text-xs text-white/70 mt-1">Across 6 churches · {stats.zone.householdsReached} zone households</div>
           </div>
           <div className="card !bg-white/5 !border-white/10 p-6 text-white">
             <div className="text-xs tracking-widest uppercase font-bold text-gold">Souls Won (Missions)</div>

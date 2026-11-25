@@ -67,7 +67,7 @@ export function ZoneMap() {
     <div className="card overflow-hidden p-0">
       <div className="p-4 flex items-center justify-between">
         <h3 className="font-display font-extrabold">Zone Map — PH Zone 3 · CC3 Group</h3>
-        <span className="hidden sm:inline-flex rounded-full bg-gold/15 border border-gold/20 px-3 py-1 text-xs font-bold">7 churches + Zonal HQ</span>
+        <span className="hidden sm:inline-flex rounded-full bg-gold/15 border border-gold/20 px-3 py-1 text-xs font-bold">6 churches + Zonal HQ</span>
       </div>
       <div className="grid lg:grid-cols-[1.15fr_0.85fr]">
         <div className="h-[360px] lg:h-[420px] bg-sand relative">

@@ -25,7 +25,7 @@ export function ChurchHeader({ church }: { church: any }) {
               {church.name}
             </h1>
             <p className="text-white/70 text-sm mt-2 max-w-2xl">
-              {church.address} · {church.city} · {church.isHeadquarters ? 'Home of the CC3 Group Family — 7 churches, one Vision.' : `A vibrant LoveWorld church raising champions for Christ in ${church.area.split('·')[0].trim()}.`}
+              {church.address} · {church.city} · {church.isHeadquarters ? 'Home of the CC3 Group Family — 6 churches, one Vision.' : `A vibrant LoveWorld church raising champions for Christ in ${church.area.split('·')[0].trim()}.`}
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
               <span className="inline-flex items-center gap-2 rounded-full bg-white text-navy px-3 py-1.5 text-xs font-bold">
@@ -41,9 +41,15 @@ export function ChurchHeader({ church }: { church: any }) {
             </div>
           </div>
           <div className="flex flex-col gap-2 shrink-0">
-            <a href={`https://wa.me/${church.whatsapp?.replace(/\D/g, '')}`} target="_blank" rel="noreferrer" className="btn btn--gold !py-2.5 text-sm justify-center">
-              WhatsApp Pastor →
-            </a>
+            {church.whatsapp ? (
+              <a href={`https://wa.me/${church.whatsapp?.replace(/\D/g, '')}`} target="_blank" rel="noreferrer" className="btn btn--gold !py-2.5 text-sm justify-center">
+                WhatsApp Pastor →
+              </a>
+            ) : (
+              <Link href={`/churches/${church.slug}/contact`} className="btn btn--gold !py-2.5 text-sm justify-center">
+                Contact This Church →
+              </Link>
+            )}
             <Link href={`/churches/${church.slug}/contact`} className="btn btn--ghost !bg-white/10 !border-white/15 !text-white !py-2.5 text-sm justify-center">
               Visit Us · Directions
             </Link>
@@ -82,7 +88,7 @@ export function ChurchSiblings({ currentSlug }: { currentSlug: string }) {
   return (
     <div className="card p-5">
       <h3 className="font-display font-extrabold text-navy">Other CC3 Group Churches</h3>
-      <p className="text-xs text-muted mt-1">One Vision — 7 expressions across Port Harcourt</p>
+      <p className="text-xs text-muted mt-1">One Vision — 6 expressions across Port Harcourt</p>
       <div className="mt-4 space-y-2">
         {siblings.map((s: any) => (
           <Link key={s.id} href={`/churches/${s.slug}`} className="flex justify-between items-center rounded-xl border border-black/10 px-4 py-3 hover:bg-sand transition group">

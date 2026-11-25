@@ -163,7 +163,7 @@ export default async function ChurchHome({ params }: { params: Promise<{ slug: s
         <div className="container-cc grid lg:grid-cols-[1.1fr_0.9fr] gap-6">
           <div className="card p-6 bg-navy text-white">
             <div className="text-xs font-bold tracking-widest uppercase text-gold">CC3 Group Family</div>
-            <h3 className="font-display font-black text-xl mt-1">7 Churches · One Vision</h3>
+            <h3 className="font-display font-black text-xl mt-1">6 Churches · One Vision</h3>
             <p className="text-sm leading-6 text-white/70 mt-2">From {church.name} to our sister churches across Port Harcourt — one Vision expressed locally, taking the divine presence to nations. You worship locally, yet partner globally.</p>
             <div className="mt-4 grid grid-cols-3 gap-2 text-center text-xs">
               <div className="rounded-lg bg-white/10 border border-white/10 p-2"><div className="font-black text-gold">7</div><div className="text-white/60">Churches</div></div>

@@ -43,7 +43,7 @@ export default function AdminCells() {
         <div className="flex items-center justify-between gap-4">
           <div>
             <div className="eyebrow !text-gold">Pastor Dashboard · CC3 Group</div>
-            <h1 className="font-display font-black text-2xl mt-1">Cells — 7 Churches · Zone Map Linked</h1>
+            <h1 className="font-display font-black text-2xl mt-1">Cells — 6 Churches · Zone Map Linked</h1>
             <p className="text-sm text-slate-200 mt-1">Group Pastor view: each cell auto-assigned to nearest church. Attendance flows from member portal → this dashboard.</p>
           </div>
           <div className="hidden lg:block rounded-xl bg-white/10 border border-white/15 px-4 py-3 text-center">
