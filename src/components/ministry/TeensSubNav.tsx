@@ -55,9 +55,10 @@ export function YouthAnnouncement() {
 
 export function TeensSubNav() {
   const pathname = usePathname()
+  const isHome = pathname === '/teens'
   return (
     <>
-      <TeensAnnouncement />
+      {!isHome && <TeensAnnouncement />}
       <div className="sticky top-[64px] z-30 border-b border-black/5 bg-white/95 backdrop-blur-xl">
         <div className="container-cc flex items-center gap-1 overflow-x-auto no-scrollbar py-2">
           <Link href="/teens" className="shrink-0 hidden sm:inline-flex items-center gap-2 mr-2 rounded-full px-3 py-1 text-[0.62rem] font-black tracking-widest uppercase text-white" style={{ background: '#172B76' }}>
@@ -81,9 +82,10 @@ export function TeensSubNav() {
 
 export function YouthSubNav() {
   const pathname = usePathname()
+  const isHome = pathname === '/youth'
   return (
     <>
-      <YouthAnnouncement />
+      {!isHome && <YouthAnnouncement />}
       <div className="sticky top-[64px] z-30 border-b border-black/5 bg-white/95 backdrop-blur-xl">
         <div className="container-cc flex items-center gap-1 overflow-x-auto no-scrollbar py-2">
           <Link href="/youth" className="shrink-0 hidden sm:inline-flex items-center gap-2 mr-2 rounded-full bg-[#101A2B] text-white px-3 py-1 text-[0.62rem] font-black tracking-widest uppercase">

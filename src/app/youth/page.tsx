@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import './youth.css'
+import { YouthAnnouncement } from '@/components/ministry/TeensSubNav'
 
 export const metadata = { title: 'CC3 Youth Church — Made for Purpose | 20–35' }
 
@@ -43,6 +44,7 @@ export default function YouthPage() {
           <button aria-label="Next">›</button>
         </div>
       </section>
+      <YouthAnnouncement />
 
       {/* ===== UPCOMING EVENTS — Swiss grid ===== */}
       <section className="section youth-swiss-events">
