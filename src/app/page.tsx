@@ -124,8 +124,8 @@ export default function Home() {
           <div className="kl-services__list">
             {services.slice(0,4).map((s:any)=>(
               <Link key={s.id} href={`/services/${s.slug}`} className="kl-service-row" style={{textDecoration:'none'}}>
-                <span className="kl-service-row__time"><i />{s.day} · {s.time}</span>
-                <div>
+                <span className="kl-service-row__time"><i aria-hidden />{s.day} · {s.time}</span>
+                <div style={{minWidth:0}}>
                   <div className="kl-service-row__title">{s.name}</div>
                   <div className="kl-service-row__desc">{s.description}</div>
                 </div>
