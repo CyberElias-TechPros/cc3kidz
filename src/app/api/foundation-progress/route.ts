@@ -16,9 +16,13 @@ export async function GET(req: Request){
   const userId = searchParams.get('userId')
   const all = searchParams.get('all')
   const user = sessionFromReq(req)
-  if (all && user && (user.role==='admin' || user.role==='superadmin')) return Response.json({ progress: store.foundationProgress })
-  const effectiveUserId = userId || user?.id
-  if (!effectiveUserId) return Response.json({ progress: [] })
+  if (!user) return jsonError('Unauthorized',401)
+  if (all) {
+    if (!['admin','superadmin'].includes(user.role)) return jsonError('Forbidden',403)
+    return Response.json({ progress: store.foundationProgress })
+  }
+  if (userId && userId !== user.id && !['admin','superadmin'].includes(user.role)) return jsonError('Forbidden — cannot view other users progress',403)
+  const effectiveUserId = userId || user.id
   const list = store.foundationProgress.filter(p=>p.userId===effectiveUserId)
   return Response.json({ progress: list, count: list.length })
 }

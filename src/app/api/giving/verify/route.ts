@@ -13,9 +13,16 @@ export async function POST(req: Request){
   const tx: any = (store.giving as any[]).find(g=>g.id===id)
   if (!tx) return jsonError('Not found',404)
   if (action==='verify'){
+    if (receiptNo) {
+      const dup = (store.giving as any[]).find(g=>g.receiptNo===receiptNo && g.id!==tx.id)
+      if (dup) return jsonError('Receipt number already used',409)
+    }
     tx.status = 'verified'
     tx.verifiedAt = new Date().toISOString()
-    tx.receiptNo = receiptNo || `RCPT-${Date.now().toString().slice(-6)}`
+    let rn = receiptNo || `RCPT-${Date.now().toString().slice(-6)}-${Math.random().toString(36).slice(2,4).toUpperCase()}`
+    // ensure uniqueness loop
+    while ((store.giving as any[]).some(g=>g.receiptNo===rn)) rn = `RCPT-${Date.now().toString().slice(-6)}-${Math.random().toString(36).slice(2,4).toUpperCase()}`
+    tx.receiptNo = rn
     tx.verifiedBy = user.id
     // notify member who gave
     if (tx.userId){

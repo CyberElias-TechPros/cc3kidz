@@ -29,7 +29,7 @@ export default function AnnouncementBar({ items }: { items: Ann[] }) {
   if (!current) return null
 
   return (
-    <div className="bg-navy text-white text-[0.82rem] relative z-50 border-b border-white/10">
+    <div role="status" aria-live="polite" aria-label="Announcement" className="bg-navy text-white text-[0.82rem] relative z-50 border-b border-white/10">
       <div className="container-cc flex items-center justify-between gap-3 py-[0.55rem]">
         <div className="flex items-center gap-3 min-w-0 flex-1 justify-center">
           <span className="hidden sm:inline-flex items-center rounded-full bg-white/10 border border-white/15 px-2.5 py-1 text-[0.68rem] font-bold tracking-widest uppercase">
