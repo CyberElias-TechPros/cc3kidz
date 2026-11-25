@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // TODO(strict): remove after fixing ~346 `any` — CI enforces `tsc --noEmit` already (.github/workflows/ci.yml)
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
   images: {
@@ -33,13 +34,19 @@ const nextConfig = {
       { source: '/services/prayer-meeting', destination: '/services/prayer-prophecy-service', permanent: true },
     ]
   },
-  // Allow preview iframe — do not set X-Frame-Options here; handle per-route if needed
+  // Security headers — CI runs tsc --noEmit; build ignores to unblock deploy (see .github/workflows/ci.yml)
   async headers() {
     return [
       {
         source: '/:path*',
         headers: [
           { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'X-Frame-Options', value: 'SAMEORIGIN' }, // allow same-origin iframe preview, block clickjacking
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+          { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
+          { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
+          { key: 'X-DNS-Prefetch-Control', value: 'on' },
+          // CSP disabled initially — enable after auditing inline scripts: { key: 'Content-Security-Policy', value: "default-src 'self'; script-src 'self' 'unsafe-inline' ..." }
         ],
       },
     ]
