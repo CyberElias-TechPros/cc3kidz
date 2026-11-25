@@ -19,9 +19,9 @@ export default async function ChurchContact({ params }: { params: Promise<{ slug
               <div className="text-xs font-bold tracking-widest uppercase text-gold">{church.name}</div>
               <div className="font-display font-extrabold text-lg mt-1 text-navy">{church.address}</div>
               <div className="text-sm text-slate-600 mt-1">{church.city}</div>
-              <div className="mt-4 grid grid-cols-1 gap-2 text-sm">
-                <a href={`tel:${church.phone?.replace(/\s/g,'')}`} className="font-semibold text-navy hover:underline">📞 {church.phone}</a>
-                <a href={`https://wa.me/${church.whatsapp?.replace(/\D/g,'')}`} target="_blank" className="font-semibold text-green-700 hover:underline">💬 WhatsApp {church.name}</a>
+                <div className="mt-4 grid grid-cols-1 gap-2 text-sm">
+                {church.phone ? <a href={`tel:${church.phone?.replace(/\s/g,'')}`} className="font-semibold text-navy hover:underline">📞 {church.phone}</a> : null}
+                {church.whatsapp ? <a href={`https://wa.me/${church.whatsapp?.replace(/\D/g,'')}`} target="_blank" className="font-semibold text-green-700 hover:underline">💬 WhatsApp {church.name}</a> : <span className="text-sm text-muted">Contact via Central Church 3 — 30B Rumuokwuta/NTA Road</span>}
               </div>
               <div className="mt-4 rounded-lg bg-haze border border-black/5 p-3">
                 <div className="text-xs font-bold tracking-wide text-muted">Service Times</div>
@@ -41,8 +41,12 @@ export default async function ChurchContact({ params }: { params: Promise<{ slug
             <input className="mt-1 w-full rounded-xl border border-black/10 px-3 py-2.5 text-sm outline-none focus:border-gold" placeholder="080…" />
             <label className="mt-3 block text-xs font-bold tracking-wide text-slate-700">Message</label>
             <textarea rows={4} className="mt-1 w-full rounded-xl border border-black/10 px-3 py-2.5 text-sm outline-none focus:border-gold" placeholder={`Hi ${church.name} — I’d love to visit…`} />
-            <a href={`https://wa.me/${church.whatsapp?.replace(/\D/g,'')}?text=${encodeURIComponent(`Hi ${church.name} — I found you on cc3kids/`)}`} target="_blank" className="mt-4 btn btn--gold w-full justify-center !py-2.5 text-sm">Send via WhatsApp →</a>
-            <div className="mt-3 text-xs text-muted text-center">Form routes to WhatsApp · {church.shortName}</div>
+            {church.whatsapp ? (
+              <a href={`https://wa.me/${church.whatsapp?.replace(/\D/g,'')}?text=${encodeURIComponent(`Hi ${church.name} — I found you on cc3kids/`)}`} target="_blank" className="mt-4 btn btn--gold w-full justify-center !py-2.5 text-sm">Send via WhatsApp →</a>
+            ) : (
+              <a href="/contact" className="mt-4 btn btn--gold w-full justify-center !py-2.5 text-sm">Send via Central Church →</a>
+            )}
+            <div className="mt-3 text-xs text-muted text-center">Form routes to {church.whatsapp ? 'WhatsApp' : 'Central'} · {church.shortName}</div>
           </form>
         </div>
       </section>
