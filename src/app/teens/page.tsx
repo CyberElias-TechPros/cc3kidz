@@ -1,158 +1,197 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import './teens.css'
 
-export const metadata = { title: 'CC3 Teens Church — A Generation Set Apart | 13–19' }
+export const metadata = { title: 'LoveWorld Teens — Christ Embassy Teens Church | 13–19 • CC3 PH Zone 3' }
 
 export default function TeensPage() {
   return (
     <div className="teens-scope">
-      {/* ===== TASTE HERO — expressive indigo wave + oversized editorial ===== */}
-      <section className="teens-taste-hero">
-        <div className="teens-taste-hero__bg" aria-hidden />
-        <div className="container-cc teens-taste-hero__inner">
-          <div className="teens-taste-hero__left">
-            <div className="teens-taste-kicker">
-              <span className="h-2 w-2 rounded-full bg-[#FF8C70]" /> CC3 Teens Church • Port Harcourt Zone 3
+      {/* HERO — Christ Embassy: LoveWorld Teens, effect change */}
+      <section className="lw-hero">
+        <div className="container-cc lw-hero__inner">
+          <div>
+            <span className="lw-kicker"><i /> LoveWorld Teens • Christ Embassy • CC3 Group • PH Zone 3</span>
+            <h1 className="lw-title">EQUIPPED<br />TO <span className="gold">EFFECT</span><br />CHANGE.</h1>
+            <p className="lw-sub">
+              LoveWorld Teens Ministry — the vibrant teens church of Christ Embassy (Believers&apos; Loveworld).
+              For teenagers 13–19: authentic worship, relevant Word, thriving community, mentorship &amp; fun —
+              raising a generation who take the Gospel to their world.
+            </p>
+            <div className="lw-cta">
+              <Link href="/teens/word" className="btn-lw btn-gold">TeeVo Daily →</Link>
+              <Link href="/teens/church" className="btn-lw btn-ghost">Join Teens Church</Link>
             </div>
-            <h1 className="teens-taste-title">
-              <span>A GENERATION</span>
-              <span className="accent">SET APART.</span>
-            </h1>
-            <p className="teens-taste-sub">Real faith. Real friends. Real purpose.<br />CC3 Teens Church — for teens 13 to 19</p>
-            <Link href="/teens/church" className="teens-taste-cta">
-              EXPLORE CC3 <span>→</span>
-            </Link>
-            <div className="teens-taste-meta">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/images/leaders/pastor-chris-oyakhilome.jpg" alt="" className="h-7 w-7 rounded-full object-cover border-2 border-white" />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/images/leaders/pastor-linda-okocha.jpg" alt="" className="h-7 w-7 rounded-full object-cover border-2 border-white -ml-2" />
-              <span className="text-xs font-bold text-[#0E1B33]">4.8K <span className="font-medium text-slate-500">Teens and counting</span></span>
+            <div className="lw-proof">
+              <Image src="/assets/images/leaders/pastor-chris-oyakhilome.jpg" alt="Pastor Chris Oyakhilome — President, Loveworld Inc." width={28} height={28} />
+              <span><b>TeeVo</b> by Pastor Chris Oyakhilome DSC DSC DD • President — Loveworld Inc.</span>
+            </div>
+            <div style={{ marginTop: '0.8rem', display: 'flex', gap: '.4rem', flexWrap: 'wrap' }}>
+              <span style={{ fontSize: '.62rem', fontWeight: 800, letterSpacing: '.08em', textTransform: 'uppercase', background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.14)', padding: '.32rem .55rem', borderRadius: 999, color: '#fff' }}>Sundays 8AM</span>
+              <span style={{ fontSize: '.62rem', fontWeight: 800, letterSpacing: '.08em', textTransform: 'uppercase', background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.14)', padding: '.32rem .55rem', borderRadius: 999, color: '#fff' }}>Wednesdays 6PM</span>
+              <span style={{ fontSize: '.62rem', fontWeight: 800, letterSpacing: '.08em', textTransform: 'uppercase', background: 'var(--ce-gold)', color: 'var(--ce-navy)', padding: '.32rem .55rem', borderRadius: 999 }}>Global Communion • 1st Sunday</span>
             </div>
           </div>
 
-          <div className="teens-taste-hero__right">
-            <div className="teens-taste-photo">
+          <div className="lw-photoWrap">
+            <div className="lw-photo">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/images/main-family.webp" alt="Teens fellowship — placeholder, verified photo to replace" />
-              {/* Floating TeeVo card */}
-              <div className="teens-taste-float">
-                <div className="text-[10px] font-black tracking-widest uppercase" style={{ color: '#315BFF' }}>● TEEVO</div>
-                <div className="text-sm font-black leading-tight mt-1 text-[#0E1B33]">TODAY&apos;S TEEN,<br />TOMORROW&apos;S<br />IMPACT.</div>
-                <div className="text-[11px] leading-4 text-slate-500 mt-2">You&apos;re not ordinary.<br />You&apos;re set apart.</div>
-                <a href="https://teevo.org" target="_blank" rel="noreferrer" className="mt-3 inline-flex text-[11px] font-bold text-[#172B76]">READ TEEVO →</a>
+              <img src="/assets/images/main-family.webp" alt="CC3 Teens worship — vibrant teens church" />
+              <div className="lw-float">
+                <b>Today&apos;s teen,<br />tomorrow&apos;s impact.</b>
+                <p>You&apos;re not ordinary — you&apos;re set apart to effect change.</p>
               </div>
-              <div className="teens-taste-badge">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.6" aria-hidden><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              </div>
+              <div className="lw-badge">✦</div>
+            </div>
+            <div className="lw-trust">
+              <div><b>In Christ <span>—</span> Excellence & Purpose</b><div style={{ fontSize: '.7rem', color: '#64748B' }}>Foundation School • Cell Ministry • Global Youth Leaders&apos; Forum</div></div>
+              <span>★ ★ ★</span>
             </div>
           </div>
-        </div>
-        {/* Decorative scribble + dots like mockup */}
-        <div className="teens-taste-scribble" aria-hidden>
-          <svg viewBox="0 0 200 100" fill="none" stroke="#7954E8" strokeWidth="2" opacity="0.5"><path d="M10 30 C40 5, 60 80, 90 30 S140 80, 170 20" strokeLinecap="round"/></svg>
         </div>
       </section>
 
-      {/* ===== UPCOMING EXPERIENCES — Gather. Grow. Go. ===== */}
-      <section className="section bg-white" style={{ paddingTop: '2.5rem', paddingBottom: '2rem' }}>
+      {/* WHAT WE DO — 4 pillars from Christ Embassy Teens offer */}
+      <section className="section bg-white" style={{ paddingTop: '1.6rem', paddingBottom: '1.2rem' }}>
         <div className="container-cc">
-          <div className="grid lg:grid-cols-[0.9fr_1fr_1fr_1fr] gap-4 items-start">
-            <div className="pr-4">
-              <div className="text-[10px] font-black tracking-[0.14em] uppercase" style={{ color: '#7954E8' }}>UPCOMING EXPERIENCES</div>
-              <h2 className="text-[2rem] font-black leading-none tracking-tight mt-2" style={{ fontFamily: 'var(--font-display), sans-serif', color: '#0E1B33' }}>
-                Gather.<br />Grow. Go.
-              </h2>
-              <div className="mt-3 h-1 w-12 rounded-full" style={{ background: '#7954E8' }} />
-            </div>
+          <span className="lw-pill">What we offer — Christ Embassy Teens Church</span>
+          <h2 className="lw-h2">Authentic. Relevant. <span className="gold">Thriving.</span></h2>
+          <p style={{ color: '#64748B', fontSize: '.88rem', marginTop: '.4rem', maxWidth: '60ch' }}>
+            In Teens LoveWorld, every week is contemporary worship, Rhapsody (TeeVo) devotion, offering &amp; the Word — plus mentorship for real life.
+          </p>
 
+          <div style={{ marginTop: '1rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: '.8rem' }}>
             {[
-              {
-                n: '01',
-                t: 'IGNITE NIGHTS',
-                d: 'Worship. Word. Fire. Once a month, we gather and go deeper.',
-                img: '/assets/images/cc3/service-congregation.jpg',
-              },
-              {
-                n: '02',
-                t: 'GROWTH HUB',
-                d: 'Bible studies, mentorship & real talk for real life.',
-                img: '/assets/images/cc3/service-chairs.jpg',
-              },
-              {
-                n: '03',
-                t: 'CITY REACH',
-                d: 'Outreach. Impact. Changing lives in our city.',
-                img: '/assets/images/main-family.webp',
-              },
-            ].map(card => (
-              <article key={card.n} className="teens-taste-card">
-                <div className="teens-taste-card__num">
-                  <span className="num">{card.n}</span>
-                  <span className="rule" />
-                </div>
-                <h3>{card.t}</h3>
-                <p>{card.d}</p>
-                <Link href="/teens/events" className="teens-taste-card__link">DETAILS <span>→</span></Link>
-                <div className="teens-taste-card__img">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={card.img} alt={card.t} />
+              { t: 'Authentic Worship', d: 'Electrifying praise led by our teens choir — faith-building, Spirit-filled, Christ Embassy sound.', icon: '♪' },
+              { t: 'Relevant Teaching', d: 'Bible truth for today: identity, purpose, divine health & spiritual effectiveness via TeeVo.', icon: '📖' },
+              { t: 'Thriving Community', d: 'Cells, TeeVo Clubs in schools & small groups — no junior Holy Ghost. Real talk, real faith.', icon: '◉' },
+              { t: 'Mentorship & Fun', d: 'Youth pastors & leaders walk with you — plus events, outreaches & campus influence.', icon: '★' },
+            ].map(c => (
+              <article key={c.t} className="lw-card">
+                <div className="lw-card__icon">{c.icon}</div>
+                <h3>{c.t}</h3>
+                <p>{c.d}</p>
+                <Link href="/teens/activities" className="lw-link">Learn more <i>→</i></Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TEEVO DAILY — cornerstone Christ Embassy teens product */}
+      <section className="section" style={{ background: '#F8FAFF', paddingTop: '1.2rem', paddingBottom: '1.2rem' }}>
+        <div className="container-cc">
+          <div className="lw-teevo">
+            <div>
+              <span className="lw-teevo__badge">Rhapsody TeeVo • Pastor Chris Oyakhilome • 8,300+ languages</span>
+              <h3>TeeVo Daily — your Word for today</h3>
+              <p>Designed to inspire teenagers with answers from God&apos;s Word. We link to the official TeeVo — we do not republish Pastor Chris&apos;s devotional; visit the source.</p>
+              <div style={{ display: 'flex', gap: '.5rem', marginTop: '.7rem', flexWrap: 'wrap' }}>
+                <a href="https://www.teevotogo.org/" target="_blank" rel="noreferrer" className="btn-lw btn-gold" style={{ padding: '.6rem .9rem', fontSize: '.78rem' }}>Read TeeVo →</a>
+                <Link href="/teens/word" className="btn-lw btn-ghost" style={{ borderColor: 'rgba(255,255,255,.2)', padding: '.6rem .9rem', fontSize: '.78rem' }}>TeeVo Centre</Link>
+              </div>
+              <div style={{ marginTop: '.6rem', fontSize: '.68rem', opacity: .8 }}>TeeVo Club: teen-led outreach in secondary schools — leader + assistant + executives, guided by your Pastor.</div>
+            </div>
+            <div className="lw-teevo__art">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=600&auto=format&fit=crop" alt="Teen reading TeeVo" />
+              <div className="lw-teevo__caption">
+                <b>Wonders Conference</b> — annual Teens Rhapsody Wonders: miracles, Word &amp; joy. <a href="https://www.teevotogo.org/trwc/" target="_blank" rel="noreferrer" style={{ color: 'var(--ce-navy)', fontWeight: 800, textDecoration: 'underline' }}>teevotogo.org</a>
+              </div>
+            </div>
+          </div>
+
+          <div style={{ marginTop: '.8rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: '.6rem' }}>
+            <Link href="https://www.teevotogo.org/teevo-club/" target="_blank" rel="noreferrer" className="lw-card" style={{ flexDirection: 'row', alignItems: 'center', gap: '.6rem', padding: '.7rem .8rem' }}>
+              <span className="lw-card__icon" style={{ background: 'var(--ce-teal)' }}>◉</span>
+              <div><b style={{ fontSize: '.82rem', color: 'var(--ce-navy)' }}>Start a TeeVo Club</b><div style={{ fontSize: '.72rem', color: '#64748B' }}>In your school — reach every teenager</div></div>
+              <span style={{ marginLeft: 'auto', fontWeight: 900 }}>→</span>
+            </Link>
+            <Link href="/teens/resources" className="lw-card" style={{ flexDirection: 'row', alignItems: 'center', gap: '.6rem', padding: '.7rem .8rem' }}>
+              <span className="lw-card__icon" style={{ background: 'var(--ce-violet)' }}>♦</span>
+              <div><b style={{ fontSize: '.82rem', color: 'var(--ce-navy)' }}>Teens Bible (TeeVo Bible)</b><div style={{ fontSize: '.72rem', color: '#64748B' }}>Study help, engaging design for young minds</div></div>
+              <span style={{ marginLeft: 'auto', fontWeight: 900 }}>→</span>
+            </Link>
+            <Link href="/teens/gifts" className="lw-card" style={{ flexDirection: 'row', alignItems: 'center', gap: '.6rem', padding: '.7rem .8rem' }}>
+              <span className="lw-card__icon" style={{ background: 'var(--ce-coral)' }}>✦</span>
+              <div><b style={{ fontSize: '.82rem', color: 'var(--ce-navy)' }}>Foundation School (6 weeks)</b><div style={{ fontSize: '.72rem', color: '#64748B' }}>New Creation • Holy Spirit • Cell Ministry • Graduation</div></div>
+              <span style={{ marginLeft: 'auto', fontWeight: 900 }}>→</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* UPCOMING — Christ Embassy teens cadence */}
+      <section className="section bg-white" style={{ paddingTop: '1.2rem', paddingBottom: '1.2rem' }}>
+        <div className="container-cc">
+          <div style={{ display: 'flex', justifyContent: 'space-between', gap: '.8rem', flexWrap: 'wrap', alignItems: 'end' }}>
+            <div>
+              <span className="lw-pill" style={{ color: '#FF7A59', background: 'rgba(255,122,89,.08)', borderColor: 'rgba(255,122,89,.18)' }}>Upcoming • Global • Zonal</span>
+              <h2 className="lw-h2" style={{ fontSize: 'clamp(1.4rem,3vw,1.9rem)' }}>Gather. Grow. <span className="gold">Go.</span></h2>
+            </div>
+            <Link href="/teens/events" className="btn-lw" style={{ background: '#fff', border: '1px solid rgba(14,27,51,.08)', color: 'var(--ce-navy)', fontSize: '.74rem' }}>All events →</Link>
+          </div>
+
+          <div style={{ marginTop: '.8rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: '.7rem' }}>
+            {[
+              { cat: 'Global • Pastor Chris', t: 'Global Communion Service', d: 'First Sunday of every month — millions connected. Healing, Word & impartation.', img: 'https://images.unsplash.com/photo-15116327648-9bca21baa7a0?q=80&w=600&auto=format&fit=crop', href: '/pastors' },
+              { cat: 'Wonders • Annual', t: 'Rhapsody TeeVo Wonders', d: 'Day of miracles, music & Word — 2,000+ teens. Register via teevotogo.org.', img: 'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=600&auto=format&fit=crop', href: 'https://www.teevotogo.org/trwc/' },
+              { cat: 'Youth • Zonal', t: 'Teens Fire Conference', d: 'Youth Fellowship, campus invasion & GYLF — equipping global leaders.', img: 'https://images.unsplash.com/photo-1540574163026-643ea20ade25?q=80&w=600&auto=format&fit=crop', href: '/teens/events' },
+            ].map(e => (
+              <article key={e.t} className="lw-event">
+                <div className="lw-event__img">{/* eslint-disable-next-line @next/next/no-img-element */}<img src={e.img} alt={e.t} /></div>
+                <div className="lw-event__body">
+                  <div className="lw-event__meta">{e.cat}</div>
+                  <div className="lw-event__title">{e.t}</div>
+                  <div className="lw-event__sub">{e.d}</div>
+                  <a href={e.href} target={e.href.startsWith('http') ? '_blank' : undefined} rel={e.href.startsWith('http') ? 'noreferrer' : undefined} className="lw-event__cta">Details →</a>
                 </div>
               </article>
             ))}
           </div>
+          <div style={{ marginTop: '.6rem', fontSize: '.68rem', color: '#64748B', textAlign: 'center' }}>Services: Sundays 10:00AM • Wednesdays 7:00PM • Nursery to Children (0–12) separate • Teens Church runs concurrently in every Christ Embassy location.</div>
+        </div>
+      </section>
 
-          {/* Bottom strip */}
-          <div className="mt-8 flex items-center justify-between rounded-2xl bg-[#0B1436] text-white px-5 py-3">
-            <div className="flex items-center gap-3">
-              <span className="h-8 w-8 rounded-full border border-white/20 grid place-items-center">→</span>
-              <p className="text-sm"><span className="font-bold">More than a youth group.</span> We&apos;re a <span className="text-[#FF8C70] font-bold">family on mission.</span></p>
-            </div>
-            <div className="hidden sm:flex items-center gap-2 text-right">
-              <div>
-                <div className="text-xs font-black tracking-widest">13–19 YEARS</div>
-                <div className="text-[10px] text-white/60">A Generation Set Apart</div>
+      {/* CELLS / CLUBS — Christ Embassy cell ministry */}
+      <section className="section" style={{ background: '#EAF0F7', paddingTop: '1.2rem', paddingBottom: '1.2rem' }}>
+        <div className="container-cc">
+          <div className="lw-clubs">
+            <div>
+              <span className="lw-pill">Cell Ministry • Groups Engine</span>
+              <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 900, color: 'var(--ce-navy)', fontSize: '1.15rem', marginTop: '.4rem' }}>No junior Holy Ghost — real cells, real impact.</h3>
+              <p style={{ fontSize: '.82rem', color: '#64748B', marginTop: '.3rem', lineHeight: 1.6 }}>
+                Christ Embassy cell ministry drives everything: 3+ months committed members are trained as cell leaders, fostering evangelism &amp; discipleship under pastoral supervision. Teens: your cell is your family.
+              </p>
+              <div className="lw-clubs__list">
+                {['Rumuokwuta Cell', 'TeeVo Club — CSS Port Harcourt', 'Girls Cell', 'Music/Drama', 'Prayer Team'].map(x => <span key={x} className="lw-chip">{x}</span>)}
               </div>
-              <span className="text-[#7954E8] text-xl">✦</span>
+              <Link href="/cells" className="btn-lw btn-gold" style={{ marginTop: '.7rem', fontSize: '.76rem' }}>Find a cell →</Link>
+            </div>
+            <div style={{ borderRadius: 16, overflow: 'hidden', background: '#fff', border: '1px solid rgba(14,27,51,.06)', padding: '.6rem' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=700&auto=format&fit=crop" alt="Teens small group" style={{ width: '100%', height: 150, objectFit: 'cover', borderRadius: 12 }} />
+              <div style={{ fontSize: '.72rem', color: '#64748B', marginTop: '.4rem', textAlign: 'center' }}>Ask Guest Services on Sunday — host will walk you to Teens Church (Dallas model, adapted for CC3).</div>
             </div>
           </div>
-
-          {/* Verified notice */}
-          <div className="mt-4 text-center text-[11px] text-slate-400">TeeVo Clubs • TITHE outreaches • Creative departments — verified CC3 activities only. Stock/placeholder imagery to be replaced with approved media.</div>
         </div>
       </section>
 
-      {/* ===== WORD & COMMUNITY STRIP — light ===== */}
-      <section className="section" style={{ background: '#F5F6FC', padding: '2rem 0' }}>
-        <div className="container-cc grid md:grid-cols-3 gap-4">
-          {[
-            { k: 'Word Centre', t: 'TeeVo daily — link, don’t republish', href: '/teens/word' },
-            { k: 'TeeVo Clubs', t: 'Weekly Bible study in schools', href: '/teens/activities' },
-            { k: 'Parents', t: 'Supervised, safeguarding, contact', href: '/teens/connect' },
-          ].map(b => (
-            <Link key={b.k} href={b.href} className="bg-white border border-black/5 rounded-2xl px-5 py-4 flex items-center justify-between hover:border-[#7954E8]/20 transition-colors">
-              <div>
-                <div className="text-xs font-black tracking-widest uppercase" style={{ color: '#7954E8' }}>{b.k}</div>
-                <div className="text-sm font-bold text-[#0E1B33] mt-1">{b.t}</div>
-              </div>
-              <span className="h-8 w-8 rounded-full bg-[#172B76] text-white grid place-items-center text-sm">→</span>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* ===== VISIT CTA ===== */}
-      <section className="section bg-white">
+      {/* VISIT / PARENTS TRUST */}
+      <section className="section bg-white" style={{ paddingTop: '1rem', paddingBottom: '1.2rem' }}>
         <div className="container-cc">
-          <div className="rounded-[24px] overflow-hidden text-white p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4" style={{ background: 'linear-gradient(135deg,#0f1d4d 0%,#172B76 55%,#315BFF 100%)' }}>
+          <div className="lw-final">
             <div>
-              <h3 className="text-xl font-black">Plan your first visit — Sundays 8AM</h3>
-              <p className="text-sm text-white/80 mt-1">30B Rumuokwuta / NTA Road, Port Harcourt • Welcome desk from 7:30AM</p>
+              <h3>Welcome, Parents — we take Teens seriously</h3>
+              <p>Supervised, pastoral oversight, transparent. Wednesdays 7PM Fellowship Hall • Sundays during main service. Spanish &amp; Russian available in some zones.</p>
             </div>
-            <div className="flex gap-2">
-              <Link href="/teens/church" className="rounded-full bg-white text-[#172B76] px-5 py-2.5 text-sm font-black">New Here? →</Link>
-              <Link href="/teens/connect" className="rounded-full border border-white/30 text-white px-5 py-2.5 text-sm font-bold">Contact</Link>
+            <div style={{ display: 'flex', gap: '.5rem', flexWrap: 'wrap' }}>
+              <Link href="/teens/connect" className="btn-lw" style={{ background: '#fff', color: 'var(--ce-navy)' }}>Talk to youth pastor →</Link>
+              <Link href="/teens/about" className="btn-lw btn-ghost" style={{ borderColor: 'rgba(255,255,255,.2)' }}>About Teens Ministry</Link>
             </div>
+          </div>
+          <div style={{ marginTop: '.6rem', fontSize: '.68rem', color: '#64748B', textAlign: 'center' }}>
+            Christ Embassy is Believers&apos; LoveWorld Incorporated — Pastor Chris Oyakhilome, President. CC3 Group is PH Zone 3 under Zonal Pastor Linda Okocha. Source: Christ Embassy “Our Church” &amp; LoveWorld Networks ministry arms.
           </div>
         </div>
       </section>
