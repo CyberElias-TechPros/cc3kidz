@@ -1,5 +1,6 @@
 import { cookies } from 'next/headers'
 import { env } from './env'
+import { createHmac, timingSafeEqual } from 'node:crypto'
 
 const COOKIE = 'cc3_session'
 
@@ -8,22 +9,35 @@ export async function getSessionId(): Promise<string | null> {
   return c || null
 }
 
-// signed cookie: value = userId.signature  (HMAC-like via simple secret check)
-// For now we store raw userId but set secure flags properly at response time.
-// If SESSION_SECRET set, we expect "userId.sig" and verify.
+function hmac(userId: string){
+  return createHmac('sha256', env.SESSION_SECRET).update(userId).digest('hex').slice(0, 32)
+}
+
+function safeEqual(a: string, b: string){
+  try {
+    const ba = Buffer.from(a)
+    const bb = Buffer.from(b)
+    if (ba.length !== bb.length) return false
+    return timingSafeEqual(ba, bb)
+  } catch { return a === b }
+}
+
 export function signUserId(userId: string){
-  if (!env.SESSION_SECRET) return userId
-  // tiny HMAC substitute without crypto dep: base64(secret+userId) slice
-  // In real prod replace with jose JWT; this is sufficient for demo integrity
-  const sig = Buffer.from(env.SESSION_SECRET + ':' + userId).toString('base64').slice(0, 16)
+  const sig = hmac(userId)
   return `${userId}.${sig}`
 }
 export function verifySessionCookie(raw: string): string | null {
   if (!raw) return null
-  if (!raw.includes('.')) return raw // legacy plain userId (dev migration)
-  const [id, sig] = raw.split('.')
-  const expected = Buffer.from(env.SESSION_SECRET + ':' + id).toString('base64').slice(0, 16)
-  if (sig !== expected) return null
+  const dot = raw.lastIndexOf('.')
+  if (dot === -1) {
+    // legacy plain userId — allow only in dev, reject in prod
+    if (process.env.NODE_ENV === 'production') return null
+    return raw
+  }
+  const id = raw.slice(0, dot)
+  const sig = raw.slice(dot + 1)
+  const expected = hmac(id)
+  if (!safeEqual(sig, expected)) return null
   return id
 }
 export function sessionCookieHeader(userId: string, opts?: { maxAge?: number }){
@@ -36,3 +50,4 @@ export function clearSessionCookieHeader(){
   const secure = process.env.NODE_ENV === 'production' ? '; Secure' : ''
   return `${COOKIE}=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0${secure}`
 }
+export { COOKIE }

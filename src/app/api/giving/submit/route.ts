@@ -23,14 +23,19 @@ export async function POST(req: Request){
     data.note = fd.get('note') as string
     const file = fd.get('pop') as File | null
     if (file && file.size > 0){
-      const maxMb = 8
+      const maxMb = Number(process.env.UPLOAD_MAX_MB || 8)
       if (file.size > maxMb * 1024 * 1024) return jsonError(`POP file too large (max ${maxMb}MB)`,400)
       const allowed = ['image/jpeg','image/png','image/webp','application/pdf']
       if (file.type && !allowed.includes(file.type)) return jsonError('POP must be JPG, PNG, WEBP or PDF',400)
-      const ext = file.name?.split('.').pop() || (file.type==='application/pdf'?'pdf':'jpg')
+      // sanitize extension — allow only safe list, fallback by mime
+      const rawExt = (file.name?.split('.').pop() || '').toLowerCase()
+      const extByMime: Record<string,string> = { 'image/jpeg':'jpg','image/png':'png','image/webp':'webp','application/pdf':'pdf' }
+      const safeExts = new Set(['jpg','jpeg','png','webp','pdf'])
+      let ext = safeExts.has(rawExt) ? rawExt : extByMime[file.type] || 'jpg'
+      if (ext === 'jpeg') ext = 'jpg'
       const dir = path.join(process.cwd(), 'public','uploads','pop')
       if (!fs.existsSync(dir)) fs.mkdirSync(dir,{recursive:true})
-      const fname = `${Date.now()}-${uid()}.${ext}`
+      const fname = `${Date.now()}-${uid()}.${ext}`.replace(/[^a-zA-Z0-9._-]/g, '_')
       const buf = Buffer.from(await file.arrayBuffer())
       fs.writeFileSync(path.join(dir,fname), buf)
       popUrl = `/uploads/pop/${fname}`
@@ -49,6 +54,12 @@ export async function POST(req: Request){
   const raw = cookie.match(/cc3_session=([^;]+)/)?.[1]
   const sid = raw ? verifySessionCookie(decodeURIComponent(raw)) : null
   const user = sid ? getUsers().find(u=>u.id===sid) : null
+
+  // idempotency: reject duplicate reference for same fund+amount within 10m
+  if (parsed.data.reference) {
+    const recent = store.giving.find(g => g.fundSlug === fund.slug && (g as any).reference === parsed.data.reference && g.amount === Number(parsed.data.amount) && Date.now() - new Date(g.createdAt).getTime() < 10*60*1000)
+    if (recent) return jsonError('Duplicate submission — this reference was already used recently', 409)
+  }
 
   const tx = {
     id: uid(),

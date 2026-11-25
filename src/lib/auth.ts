@@ -25,11 +25,17 @@ export function getUsers(): AppUser[] {
   const g: any = globalThis as any
   g.__cc3 = g.__cc3 || {}
   if (!g.__cc3.users) {
-    g.__cc3.users = [
-      { id: 'u1', name: 'Demo Member', email: 'member@cc3.local', password: hash('member123'), role: 'member', cellId: 'cell-1', department: 'Ushering & Hospitality', createdAt: new Date().toISOString() },
-      { id: 'u2', name: 'Cell Leader', email: 'leader@cc3.local', password: hash('leader123'), role: 'leader', cellId: 'cell-1', createdAt: new Date().toISOString() },
-      { id: 'admin1', name: 'Admin', email: 'admin@cc3.local', password: hash('admin123'), role: 'admin', createdAt: new Date().toISOString() }
-    ] as AppUser[]
+    const isProd = process.env.NODE_ENV === 'production' && !!process.env.DATABASE_URL
+    if (isProd) {
+      // In production with DB, do NOT seed demo accounts — rely on DB.
+      g.__cc3.users = [] as AppUser[]
+    } else {
+      g.__cc3.users = [
+        { id: 'u1', name: 'Demo Member', email: 'member@cc3.local', password: hash('member123'), role: 'member', cellId: 'cell-1', department: 'Ushering & Hospitality', createdAt: new Date().toISOString() },
+        { id: 'u2', name: 'Cell Leader', email: 'leader@cc3.local', password: hash('leader123'), role: 'leader', cellId: 'cell-1', createdAt: new Date().toISOString() },
+        { id: 'admin1', name: 'Admin', email: 'admin@cc3.local', password: hash('admin123'), role: 'admin', createdAt: new Date().toISOString() }
+      ] as AppUser[]
+    }
     g.__cc3.attendance = g.__cc3.attendance || []
     g.__cc3.deptAttendance = g.__cc3.deptAttendance || []
     g.__cc3.foundationProgress = g.__cc3.foundationProgress || []

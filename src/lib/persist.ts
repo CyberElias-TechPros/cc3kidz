@@ -17,7 +17,9 @@ export function loadPersist(): PersistShape {
 }
 export function savePersist(data: PersistShape){
   ensureDir()
-  fs.writeFileSync(FILE, JSON.stringify(data, null, 2), 'utf8')
+  const tmp = FILE + '.tmp'
+  fs.writeFileSync(tmp, JSON.stringify(data, null, 2), 'utf8')
+  fs.renameSync(tmp, FILE)
 }
 export function mergeIntoGlobal(key: string, fallback: any[]){
   const g: any = globalThis as any

@@ -14,9 +14,9 @@ export async function POST(req: Request){
   const user = findUserByEmail(email)
   // always return ok to prevent enumeration, but only create token if user exists
   if (user){
-    const token = uid()+uid()
-    g.__cc3.resetTokens[token]={ email: user.email, expires: new Date(Date.now()+60*60*1000).toISOString() }
-    // log token for demo (in prod send via RESEND_API_KEY)
+    const { randomBytes } = await import('node:crypto')
+    const token = randomBytes(32).toString('hex')
+    g.__cc3.resetTokens[token]={ email: user.email, expires: new Date(Date.now()+15*60*1000).toISOString() } // 15m expiry
     console.log(`[CC3] Password reset for ${user.email}: token=${token} — use POST /api/auth/reset-password {token, password}`)
     try{
       if (process.env.RESEND_API_KEY){

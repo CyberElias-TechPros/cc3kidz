@@ -27,6 +27,7 @@ export async function POST(req: Request) {
   const raw = sessionMatch?.[1] ? decodeURIComponent(sessionMatch[1]) : null
   const sessionId = raw ? verifySessionCookie(raw) : null
   const user = sessionId ? getUsers().find(u => u.id === sessionId) : null
+  if (!user) return jsonError('Unauthorized — please sign in to record attendance', 401)
 
   const b = await req.json().catch(()=>null)
   const parsed = schema.safeParse(b)
@@ -45,7 +46,7 @@ export async function POST(req: Request) {
     outreach: parsed.data.outreach || '',
     topic: parsed.data.topic || '',
     note: parsed.data.note || '',
-    leaderId: user?.id || 'anonymous',
+    leaderId: user.id,
     createdAt: new Date().toISOString()
   }
   store.attendance.push(r)
