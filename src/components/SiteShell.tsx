@@ -1,6 +1,6 @@
 'use client'
 import { usePathname } from 'next/navigation'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import AnnouncementBar from '@/components/AnnouncementBar'
@@ -24,6 +24,8 @@ function isKids(pathname: string | null) {
 export default function SiteShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const excluded = isExcluded(pathname)
+  const [mounted, setMounted] = React.useState(false)
+  React.useEffect(() => setMounted(true), [])
 
   // Suppress innocuous Clipboard API blocked errors in sandboxed iframe previews
   useEffect(() => {
@@ -67,6 +69,9 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
   }
 
   const isHome = pathname === '/'
+  // Hydration-safe: render the same on server + first client paint; hide
+  // top bar on home only after mount so server HTML matches initial client HTML.
+  const showTopBar = mounted ? !isHome : true
 
   return (
     <div suppressHydrationWarning>
@@ -76,7 +81,7 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
       >
         Skip to content
       </a>
-      {!isHome && <AnnouncementBar items={announcements as any} />}
+      {showTopBar && <AnnouncementBar items={announcements as any} />}
       <Header />
       <main id="main">{children}</main>
       <Footer />
