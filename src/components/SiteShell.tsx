@@ -66,6 +66,8 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
     )
   }
 
+  const isHome = pathname === '/'
+
   return (
     <div suppressHydrationWarning>
       <a
@@ -74,7 +76,7 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
       >
         Skip to content
       </a>
-      <AnnouncementBar items={announcements as any} />
+      {!isHome && <AnnouncementBar items={announcements as any} />}
       <Header />
       <main id="main">{children}</main>
       <Footer />

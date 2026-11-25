@@ -13,6 +13,8 @@ import { ZoneBreadcrumb } from '@/components/group/ZoneBreadcrumb'
 import HeroSlider from '@/components/HeroSlider'
 import { MinistryFamilyBar } from '@/components/ministry/MinistryFamilyBar'
 import ServiceCountdown from '@/components/ServiceCountdown'
+import AnnouncementBar from '@/components/AnnouncementBar'
+import { announcements } from '@/lib/site'
 
 export default function Home() {
   const next = nextServiceDate('Sunday', '8:00 AM')
@@ -60,6 +62,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Announcement — moved after hero per request (was site-top Upcoming bar) */}
+      <AnnouncementBar items={announcements as any} />
 
       {/* WELCOME — kept as cards per choice */}
       <section className="section" style={{background:'#fff'}}>
