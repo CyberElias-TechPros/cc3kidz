@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import events from '@/data/events.json'
+import { GlobalProgramsStrip } from '@/components/group/GlobalProgramsStrip'
 
 export const metadata = { title: 'Events & Programmes' }
 
@@ -23,6 +24,8 @@ export default function EventsPage() {
           </div>
         </div>
       </section>
+
+      <GlobalProgramsStrip />
 
       {/* Featured — editorial: large feature + companion, not equal 3-col SaaS grid */}
       <section className="section bg-white">

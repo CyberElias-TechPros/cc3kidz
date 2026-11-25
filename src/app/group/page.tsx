@@ -5,7 +5,6 @@ import { GroupSwitcher, MiniGroupStrip } from '@/components/group/GroupSwitcher'
 import { ImpactStrip } from '@/components/group/ImpactStrip'
 import { ZoneMap } from '@/components/group/ZoneMap'
 import { MinistryAppsBar } from '@/components/group/MinistryAppsBar'
-import { GlobalProgramsStrip } from '@/components/group/GlobalProgramsStrip'
 
 export const metadata = { title: 'CC3 Group — 6 Churches' }
 
@@ -29,7 +28,6 @@ export default function GroupPage() {
       </div>
 
       <MinistryAppsBar />
-      <GlobalProgramsStrip />
 
       <section className="section">
         <div className="container-cc">
