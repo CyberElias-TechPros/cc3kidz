@@ -1,18 +1,22 @@
-import { store, uid } from '@/lib/store'
+import { store } from '@/lib/store'
 import { visitSchema } from '@/lib/validation'
-import { jsonError, jsonOk, parseJson, enforceRate, logAudit } from '@/lib/api-helpers'
+import { jsonError, jsonOk, parseJson, enforceRate, enforceCsrf, logAudit } from '@/lib/api-helpers'
 import { requireRole } from '@/lib/rbac'
+import { createVisit, notifyUsers } from '@/lib/dal'
 
 export async function POST(req: Request) {
-  const rl = enforceRate(req, 'visit', 30); if (rl) return rl
+  const csrf = enforceCsrf(req); if (csrf) return csrf
+  const rl = enforceRate(req, 'visit'); if (rl) return rl
   const b = await req.json().catch(()=>null)
   const { error, data } = parseJson(b, visitSchema)
   if (error) return jsonError(error, 400)
-  const v: any = { id: uid(), name: data.name, phone: data.phone, email: data.email, date: data.date, visitors: Number(data.visitors||1), firstTime: data.firstTime, children: !!data.children, note: data.note, status:'new', createdAt: new Date().toISOString() }
-  store.visits.push(v)
-  try { require('@/lib/persist').scheduleFlush('visits') } catch {}
+  const v: any = await createVisit({ name: data.name, phone: data.phone, email: data.email, date: data.date, visitors: Number(data.visitors||1), firstTime: data.firstTime, children: !!data.children, note: data.note, status:'new', createdAt: new Date().toISOString() })
   await logAudit(req, 'visit.create', 'Visit', v.id, { name: v.name })
-  try{ const {getUsers}=await import('@/lib/auth'); for(const u of getUsers().filter((x:any)=>['admin','superadmin'].includes(x.role))){ store.notifications.push({ id: uid(), userId:u.id, title:`New visitor: ${v.name}`, body:`${v.phone} — ${v.date} — ${v.firstTime||''}`, href:'/admin/people', read:false, createdAt:new Date().toISOString()}); } require('@/lib/persist').scheduleFlush('notifications')}catch{}
+  try{
+    const {getUsers}=await import('@/lib/auth')
+    const ids = getUsers().filter((x:any)=>['admin','superadmin'].includes(x.role)).map((u:any)=>u.id)
+    await notifyUsers(ids, { title:`New visitor: ${v.name}`, body:`${v.phone} — ${v.date} — ${v.firstTime||''}`, href:'/admin/people' })
+  }catch{}
   return jsonOk({ id: v.id })
 }
 export async function GET(req: Request) {

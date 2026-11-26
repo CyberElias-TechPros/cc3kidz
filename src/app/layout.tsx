@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import './globals.css'
 import SiteShell from '@/components/SiteShell'
 import { site } from '@/lib/site'
+import { ChurchJsonLd } from '@/components/JsonLd'
+
+const BASE = process.env.APP_URL || process.env.NEXT_PUBLIC_APP_URL || 'https://cecentralchurch3.org'
 
 export const metadata: Metadata = {
   title: {
@@ -9,13 +12,18 @@ export const metadata: Metadata = {
     template: `%s · ${site.name}`
   },
   description: site.description,
-  metadataBase: new URL('https://cc3.example.com'),
+  metadataBase: new URL(BASE),
   openGraph: {
     title: site.name,
     description: site.description,
-    type: 'website'
+    type: 'website',
+    url: BASE,
+    siteName: site.name,
+    images: [{ url: '/assets/images/cc3/service-congregation.jpg', width: 1200, height: 630, alt: site.name }]
   },
-  icons: { icon: '/assets/images/loveworld-logo.png?v=2' }
+  twitter: { card: 'summary_large_image', title: site.name, description: site.description, images: ['/assets/images/cc3/service-congregation.jpg'] },
+  icons: { icon: '/assets/images/loveworld-logo.png?v=2' },
+  alternates: { canonical: BASE },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -37,6 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body suppressHydrationWarning>
+        <ChurchJsonLd />
         <SiteShell>{children}</SiteShell>
       </body>
     </html>

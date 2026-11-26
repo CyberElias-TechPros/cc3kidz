@@ -34,20 +34,41 @@ const nextConfig = {
       { source: '/services/prayer-meeting', destination: '/services/prayer-prophecy-service', permanent: true },
     ]
   },
-  // Security headers — CI runs tsc --noEmit; build ignores to unblock deploy (see .github/workflows/ci.yml)
+  // Security headers — also duplicated in middleware.ts for dynamic responses
   async headers() {
+    const csp = [
+      "default-src 'self'",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://maps.google.com https://*.fbcdn.net https://platform-lookaside.fbsbx.com",
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+      "font-src 'self' https://fonts.gstatic.com data:",
+      "img-src 'self' data: https: blob:",
+      "media-src 'self' https:",
+      "frame-src 'self' https://maps.google.com https://www.google.com https://www.youtube.com",
+      "connect-src 'self' https:",
+      "form-action 'self'",
+    ].join('; ')
     return [
       {
         source: '/:path*',
         headers: [
           { key: 'X-Content-Type-Options', value: 'nosniff' },
-          { key: 'X-Frame-Options', value: 'SAMEORIGIN' }, // allow same-origin iframe preview, block clickjacking
+          { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
           { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
           { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
           { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
           { key: 'X-DNS-Prefetch-Control', value: 'on' },
-          // CSP disabled initially — enable after auditing inline scripts: { key: 'Content-Security-Policy', value: "default-src 'self'; script-src 'self' 'unsafe-inline' ..." }
+          { key: 'Cross-Origin-Opener-Policy', value: 'same-origin' },
+          { key: 'Cross-Origin-Resource-Policy', value: 'same-origin' },
+          { key: 'Content-Security-Policy', value: csp },
         ],
+      },
+      {
+        source: '/api/:path*',
+        headers: [{ key: 'Cache-Control', value: 'no-store, no-cache, must-revalidate' }],
+      },
+      {
+        source: '/assets/:path*',
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
       },
     ]
   },

@@ -1,28 +1,25 @@
 import { store, uid } from '@/lib/store'
 import { eventRegSchema } from '@/lib/validation'
-import { jsonError, jsonOk, parseJson, enforceRate, logAudit } from '@/lib/api-helpers'
+import { jsonError, jsonOk, parseJson, enforceRate, enforceCsrf, logAudit } from '@/lib/api-helpers'
 import { requireRole } from '@/lib/rbac'
+import { createEventReg } from '@/lib/dal'
 
 export async function POST(req: Request) {
-  const rl=enforceRate(req,'event-reg',30); if(rl) return rl
+  const csrf=enforceCsrf(req); if(csrf) return csrf
+  const rl=enforceRate(req,'event-reg'); if(rl) return rl
   const b=await req.json().catch(()=>null)
   const {error,data}=parseJson(b, eventRegSchema)
   if(error) return jsonError(error,400)
-  // validate event exists
   const { default: events } = await import('@/data/events.json')
   const ev = (events as any[]).find(e => e.slug === data.eventSlug)
   if (!ev) return jsonError('Event not found', 404)
-  // capacity guard (if capacity set)
   if (typeof ev.capacity === 'number') {
     const existing = (store.eventRegs as any[]).filter(x => x.eventSlug === data.eventSlug).reduce((s,v)=> s+ (Number(v.attendees)||1), 0)
     if (existing + Number(data.attendees||1) > ev.capacity) return jsonError(`Event full — capacity ${ev.capacity} reached`, 409)
   }
-  // dedupe: same phone+slug within 24h
   const dup = (store.eventRegs as any[]).find(x => x.eventSlug===data.eventSlug && x.phone === data.phone && Date.now() - new Date(x.createdAt).getTime() < 24*60*60*1000)
   if (dup) return jsonError('You already registered for this event (duplicate within 24h)', 409)
-  const r:any={ id: uid(), eventSlug: data.eventSlug, name: data.name, phone: data.phone, email: data.email, attendees: Number(data.attendees||1), member: data.member||'visitor', createdAt: new Date().toISOString(), ticket: `CC3-${uid().toUpperCase()}`, status:'confirmed' }
-  store.eventRegs.push(r)
-  try{require('@/lib/persist').scheduleFlush('eventRegs')}catch{}
+  const r:any= await createEventReg({ id: uid(), eventSlug: data.eventSlug, name: data.name, phone: data.phone, email: data.email, attendees: Number(data.attendees||1), member: data.member||'visitor', createdAt: new Date().toISOString(), ticket: `CC3-${uid().toUpperCase()}`, status:'confirmed' })
   await logAudit(req,'event.register','EventReg',r.id,{ slug: r.eventSlug })
   return jsonOk({ id: r.id, ticket: r.ticket })
 }

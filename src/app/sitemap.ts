@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const base = 'https://cc3.example.com'
+  const base = process.env.APP_URL || process.env.NEXT_PUBLIC_APP_URL || 'https://cecentralchurch3.org'
   const routes = [
     '', '/about', '/pastors', '/services', '/group', '/ministries', '/cells', '/events', '/media', '/testimonies', '/prayer', '/new-here', '/foundation-school', '/outreach', '/give', '/contact', '/online', '/gallery', '/resources',
     '/calendar', '/faq', '/safeguarding', '/impact', '/search',

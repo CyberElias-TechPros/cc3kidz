@@ -1,29 +1,29 @@
-import { jsonError, jsonOk, enforceRate } from '@/lib/api-helpers'
+import { jsonError, jsonOk, enforceRate, enforceCsrf } from '@/lib/api-helpers'
 import { findUserByEmail } from '@/lib/auth'
-import { uid } from '@/lib/store'
 
-// In-memory reset tokens (file-json fallback; in prod use DB + email)
 const g: any = globalThis as any
 g.__cc3 = g.__cc3 || {}
 g.__cc3.resetTokens = g.__cc3.resetTokens || {} as Record<string, { email:string, expires:string }>
 
 export async function POST(req: Request){
-  const rl = enforceRate(req,'forgot',10); if (rl) return rl
+  const csrf=enforceCsrf(req); if(csrf) return csrf
+  const rl = enforceRate(req,'forgotPassword'); if (rl) return rl
   const { email } = await req.json().catch(()=>({}))
   if (!email) return jsonError('Email required',400)
   const user = findUserByEmail(email)
-  // always return ok to prevent enumeration, but only create token if user exists
   if (user){
     const { randomBytes } = await import('node:crypto')
     const token = randomBytes(32).toString('hex')
-    g.__cc3.resetTokens[token]={ email: user.email, expires: new Date(Date.now()+15*60*1000).toISOString() } // 15m expiry
-    console.log(`[CC3] Password reset for ${user.email}: token=${token} — use POST /api/auth/reset-password {token, password}`)
+    g.__cc3.resetTokens[token]={ email: user.email, expires: new Date(Date.now()+60*60*1000).toISOString() }
+    const origin = req.headers.get('origin') || process.env.APP_URL || 'https://cc3.example.com'
+    console.log(`[CC3] Password reset for ${user.email}: token=${token}`)
     try{
-      if (process.env.RESEND_API_KEY){
-        // placeholder: would call Resend here
-        console.log(`[CC3] Would email reset link via Resend to ${user.email}`)
-      }
-    }catch{}
+      const { sendEmail, resetPasswordEmail } = await import('@/lib/email')
+      const tpl = resetPasswordEmail(user.email, token, origin)
+      await sendEmail({ to: user.email, ...tpl })
+    }catch(e:any){ console.warn('[forgot-password] email send failed', e?.message) }
+    // In production without DB, tokens are in-memory and lost on cold start — log warning
+    if (!process.env.DATABASE_URL && process.env.NODE_ENV==='production') console.warn('[forgot-password] DATABASE_URL not set — reset tokens in-memory only')
   }
   return jsonOk({ message: 'If that email exists, a reset link has been sent. Check your email or contact church office.' })
 }

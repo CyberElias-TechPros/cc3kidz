@@ -1,16 +1,16 @@
-import { store, uid } from '@/lib/store'
+import { store } from '@/lib/store'
 import { volunteerSchema } from '@/lib/validation'
-import { jsonError, jsonOk, parseJson, enforceRate, logAudit } from '@/lib/api-helpers'
+import { jsonError, jsonOk, parseJson, enforceRate, enforceCsrf, logAudit } from '@/lib/api-helpers'
 import { requireRole } from '@/lib/rbac'
+import { createVolunteer } from '@/lib/dal'
 
 export async function POST(req: Request) {
-  const rl = enforceRate(req, 'volunteer', 30); if (rl) return rl
+  const csrf=enforceCsrf(req); if(csrf) return csrf
+  const rl = enforceRate(req, 'volunteer'); if (rl) return rl
   const b = await req.json().catch(()=>null)
   const { error, data } = parseJson(b, volunteerSchema)
   if (error) return jsonError(error, 400)
-  const v: any = { id: uid(), name: data.name, phone: data.phone, email: data.email, memberStatus: data.memberStatus||'Member', department: data.department, skills: data.skills||[], availability: data.availability||'', note: data.note, status:'pending', createdAt: new Date().toISOString() }
-  store.volunteers.push(v)
-  try { require('@/lib/persist').scheduleFlush('volunteers') } catch {}
+  const v: any = await createVolunteer({ name: data.name, phone: data.phone, email: data.email, memberStatus: data.memberStatus||'Member', department: data.department, skills: data.skills||[], availability: data.availability||'', note: data.note, status:'pending', createdAt: new Date().toISOString() })
   await logAudit(req, 'volunteer.create', 'Volunteer', v.id, { dept: v.department })
   return jsonOk({ id: v.id })
 }

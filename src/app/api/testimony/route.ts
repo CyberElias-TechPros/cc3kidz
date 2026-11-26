@@ -1,16 +1,16 @@
-import { store, uid } from '@/lib/store'
+import { store } from '@/lib/store'
 import { testimonySchema } from '@/lib/validation'
-import { jsonError, jsonOk, parseJson, enforceRate, logAudit } from '@/lib/api-helpers'
+import { jsonError, jsonOk, parseJson, enforceRate, enforceCsrf, logAudit } from '@/lib/api-helpers'
 import { requireRole } from '@/lib/rbac'
+import { createTestimony } from '@/lib/dal'
 
 export async function POST(req: Request) {
-  const rl = enforceRate(req, 'testimony', 20); if (rl) return rl
+  const csrf=enforceCsrf(req); if(csrf) return csrf
+  const rl = enforceRate(req, 'testimony'); if (rl) return rl
   const b = await req.json().catch(()=>null)
   const { error, data } = parseJson(b, testimonySchema)
   if (error) return jsonError(error, 400)
-  const t: any = { id: uid(), name: data.name, title: data.title, category: data.category||'Other', body: data.body, consent: !!data.consent, status: 'pending' as const, createdAt: new Date().toISOString() }
-  store.testimonies.push(t)
-  try { require('@/lib/persist').scheduleFlush('testimonies') } catch {}
+  const t: any = await createTestimony({ name: data.name, title: data.title, category: data.category||'Other', body: data.body, consent: !!data.consent, status: 'pending' as const, createdAt: new Date().toISOString() })
   await logAudit(req, 'testimony.create', 'Testimony', t.id)
   return jsonOk({ id: t.id, status: t.status })
 }

@@ -1,9 +1,11 @@
-import { store, uid } from '@/lib/store'
+import { store } from '@/lib/store'
 import { newsletterSchema } from '@/lib/validation'
-import { jsonError, jsonOk, parseJson, enforceRate } from '@/lib/api-helpers'
+import { jsonError, jsonOk, parseJson, enforceRate, enforceCsrf } from '@/lib/api-helpers'
 import { requireRole } from '@/lib/rbac'
+import { createNewsletter } from '@/lib/dal'
 export async function POST(req: Request){
-  const rl=enforceRate(req,'newsletter',20); if(rl) return rl
+  const csrf=enforceCsrf(req); if(csrf) return csrf
+  const rl=enforceRate(req,'newsletter'); if(rl) return rl
   let email=''
   const ct=req.headers.get('content-type')||''
   let raw: any = {}
@@ -13,7 +15,7 @@ export async function POST(req: Request){
   if(error) return jsonError(error,400)
   email=data.email.trim().toLowerCase()
   const exists=store.newsletters.find(n=>n.email.toLowerCase()===email)
-  if(!exists) { store.newsletters.push({id:uid(),email,createdAt:new Date().toISOString()} as any); try{require('@/lib/persist').scheduleFlush('newsletters')}catch{} }
+  if(!exists) await createNewsletter(email)
   return jsonOk({ message:'Subscribed — welcome to CE Central Church 3 family!' })
 }
 export async function GET(req: Request){

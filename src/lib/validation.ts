@@ -77,6 +77,37 @@ export const authLoginSchema = z.object({
   password: z.string().min(1),
 })
 
+// Additional schemas that previously had inline zod — now centralized for reuse + validation parity
+export const attendanceSchema = z.object({
+  cellId: z.string().min(1),
+  date: z.string().min(4),
+  present: z.coerce.number().int().min(0).max(500),
+  visitors: z.coerce.number().int().min(0).max(500).optional(),
+  souls: z.coerce.number().int().min(0).max(500).optional(),
+  outreach: z.string().max(500).optional(),
+  topic: z.string().max(120).optional(),
+  note: z.string().max(1000).optional(),
+})
+export const deptAttendanceSchema = z.object({
+  departmentId: z.string().min(1),
+  date: z.string().min(4),
+  present: z.coerce.number().int().min(0).max(500),
+  late: z.coerce.number().int().min(0).max(500).optional().default(0),
+  absent: z.coerce.number().int().min(0).max(500).optional().default(0),
+  activity: z.string().max(200).optional(),
+  note: z.string().max(1000).optional(),
+})
+export const foundationProgressSchema = z.object({
+  moduleSlug: z.string().min(2).max(80),
+  completed: z.boolean().optional().default(false),
+  score: z.number().int().min(0).max(100).optional(),
+})
+export const givingVerifySchema = z.object({
+  id: z.string().min(1),
+  action: z.enum(['verify','reject']),
+  receiptNo: z.string().max(40).optional(),
+})
+
 export function formatZod(e: z.ZodError){
   return e.issues.map(i=> `${i.path.join('.')}: ${i.message}`).join('; ')
 }

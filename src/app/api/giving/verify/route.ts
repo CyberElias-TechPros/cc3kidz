@@ -1,15 +1,20 @@
 import { store, uid } from '@/lib/store'
 import { verifySessionCookie } from '@/lib/session'
 import { getUsers } from '@/lib/auth'
-import { jsonError, jsonOk, logAudit } from '@/lib/api-helpers'
+import { jsonError, jsonOk, logAudit, enforceCsrf } from '@/lib/api-helpers'
+import { givingVerifySchema } from '@/lib/validation'
 
 export async function POST(req: Request){
+  const csrf=enforceCsrf(req); if(csrf) return csrf
   const cookie = req.headers.get('cookie')||''
   const raw = cookie.match(/cc3_session=([^;]+)/)?.[1]
   const sid = raw ? verifySessionCookie(decodeURIComponent(raw)) : null
   const user = sid ? getUsers().find(u=>u.id===sid) : null
   if (!user || !['admin','superadmin'].includes(user.role)) return jsonError('Forbidden — admin only',403)
-  const { id, action, receiptNo } = await req.json().catch(()=> ({}))
+  const body = await req.json().catch(()=> ({}))
+  const parsed = givingVerifySchema.safeParse(body)
+  if (!parsed.success) return jsonError(parsed.error.issues.map(i=>i.message).join('; '),400)
+  const { id, action, receiptNo } = parsed.data
   const tx: any = (store.giving as any[]).find(g=>g.id===id)
   if (!tx) return jsonError('Not found',404)
   if (action==='verify'){

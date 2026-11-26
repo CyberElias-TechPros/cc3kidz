@@ -2,8 +2,8 @@ import { store, uid } from '@/lib/store'
 import cells from '@/data/cells.json'
 import { getUsers } from '@/lib/auth'
 import { verifySessionCookie } from '@/lib/session'
-import { jsonError, jsonOk, enforceRate } from '@/lib/api-helpers'
-import { z } from 'zod'
+import { jsonError, jsonOk, enforceRate, enforceCsrf } from '@/lib/api-helpers'
+import { attendanceSchema } from '@/lib/validation'
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url)
@@ -18,10 +18,9 @@ export async function GET(req: Request) {
   return Response.json({ attendance: list, count: list.length })
 }
 
-const schema = z.object({ cellId: z.string().min(1), date: z.string().min(4), present: z.number().int().min(0).max(500), visitors: z.number().int().min(0).max(500).optional(), souls: z.number().int().min(0).max(500).optional(), outreach: z.string().max(500).optional(), topic: z.string().max(120).optional(), note: z.string().max(1000).optional() })
-
 export async function POST(req: Request) {
-  const rl = enforceRate(req,'attendance',60); if(rl) return rl
+  const csrf=enforceCsrf(req); if(csrf) return csrf
+  const rl = enforceRate(req,'attendance'); if(rl) return rl
   const cookie = req.headers.get('cookie') || ''
   const sessionMatch = cookie.match(/cc3_session=([^;]+)/)
   const raw = sessionMatch?.[1] ? decodeURIComponent(sessionMatch[1]) : null
@@ -30,7 +29,7 @@ export async function POST(req: Request) {
   if (!user) return jsonError('Unauthorized — please sign in to record attendance', 401)
 
   const b = await req.json().catch(()=>null)
-  const parsed = schema.safeParse(b)
+  const parsed = attendanceSchema.safeParse(b)
   if (!parsed.success) return jsonError(parsed.error.issues.map(i=>i.message).join('; '), 400)
   const cell: any = (cells as any[]).find(c => c.id === parsed.data.cellId)
   if (!cell) return jsonError('Invalid cell', 400)

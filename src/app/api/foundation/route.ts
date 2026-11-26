@@ -1,15 +1,15 @@
-import { store, uid } from '@/lib/store'
+import { store } from '@/lib/store'
 import { foundationSchema } from '@/lib/validation'
-import { jsonError, jsonOk, parseJson, enforceRate, logAudit } from '@/lib/api-helpers'
+import { jsonError, jsonOk, parseJson, enforceRate, enforceCsrf, logAudit } from '@/lib/api-helpers'
 import { requireRole } from '@/lib/rbac'
+import { createFoundationReg } from '@/lib/dal'
 export async function POST(req: Request){
-  const rl=enforceRate(req,'foundation',20); if(rl) return rl
+  const csrf=enforceCsrf(req); if(csrf) return csrf
+  const rl=enforceRate(req,'foundation'); if(rl) return rl
   const b=await req.json().catch(()=>null)
   const {error,data}=parseJson(b, foundationSchema)
   if(error) return jsonError(error,400)
-  const r:any={id:uid(),name:data.name,phone:data.phone,pref:data.pref||'Weekday Evening',availability:data.availability||'',createdAt:new Date().toISOString(), status:'pending'}
-  store.foundationRegs.push(r)
-  try{require('@/lib/persist').scheduleFlush('foundationRegs')}catch{}
+  const r:any= await createFoundationReg({name:data.name,phone:data.phone,pref:data.pref||'Weekday Evening',availability:data.availability||'',createdAt:new Date().toISOString(), status:'pending'})
   await logAudit(req,'foundation.create','FoundationReg',r.id)
   return jsonOk({ id: r.id })
 }

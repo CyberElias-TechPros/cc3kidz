@@ -28,22 +28,36 @@ export async function GET(req: Request){
 }
 
 export async function POST(req: Request){
-  const rl=enforceRate(req,'foundation-progress',60); if(rl) return rl
+  const csrf=require('@/lib/api-helpers').enforceCsrf(req); if(csrf) return csrf
+  const rl=enforceRate(req,'foundation-progress'); if(rl) return rl
   const user = sessionFromReq(req)
   if (!user) return jsonError('Unauthorized',401)
   const b = await req.json().catch(()=>null)
-  if (!b?.moduleSlug) return jsonError('moduleSlug required',400)
-  let existing = store.foundationProgress.find(p=>p.userId===user.id && p.moduleSlug===b.moduleSlug)
+  const parsed = require('@/lib/validation').foundationProgressSchema.safeParse(b)
+  if (!parsed.success) return jsonError(parsed.error.issues.map((i:any)=>i.message).join('; '),400)
+  const { moduleSlug, completed, score } = parsed.data as any
+  let existing = store.foundationProgress.find(p=>p.userId===user.id && p.moduleSlug===moduleSlug)
   if (existing) {
-    existing.completed = !!b.completed
-    if (typeof b.score === 'number') existing.score = b.score
+    existing.completed = !!completed
+    if (typeof score === 'number') existing.score = score
     existing.updatedAt = new Date().toISOString()
     try{ require('@/lib/persist').scheduleFlush('foundationProgress') }catch{}
+    // Prisma mirror best-effort
+    try{
+      const { getPrisma } = await import('@/lib/prisma')
+      const prisma = getPrisma()
+      if (prisma) prisma.foundationProgress.upsert({ where:{ userId_moduleSlug:{ userId:user.id, moduleSlug } } as any, update:{ completed: !!completed, score }, create:{ userId:user.id, moduleSlug, completed: !!completed, score } }).catch(()=>{})
+    }catch{}
     return jsonOk({ progress: existing })
   } else {
-    const rec = { id: uid(), userId: user.id, moduleSlug: b.moduleSlug, completed: !!b.completed, score: b.score, updatedAt: new Date().toISOString() }
+    const rec = { id: uid(), userId: user.id, moduleSlug, completed: !!completed, score, updatedAt: new Date().toISOString() }
     store.foundationProgress.push(rec)
     try{ require('@/lib/persist').scheduleFlush('foundationProgress') }catch{}
+    try{
+      const { getPrisma } = await import('@/lib/prisma')
+      const prisma = getPrisma()
+      if (prisma) prisma.foundationProgress.create({ data:{ userId:user.id, moduleSlug, completed: !!completed, score } as any }).catch(()=>{})
+    }catch{}
     return jsonOk({ progress: rec })
   }
 }

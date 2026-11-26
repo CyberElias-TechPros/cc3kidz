@@ -2,7 +2,6 @@ const buckets = new Map<string, { count:number, reset:number }>()
 
 // periodic cleanup to avoid memory leak (every 5m)
 if (typeof setInterval !== 'undefined') {
-  // only in server runtime, not edge
   try {
     setInterval(() => {
       const now = Date.now()
@@ -25,6 +24,20 @@ export function rateLimit(key: string, limit = 20, windowMs = 60_000){
 export function clientIp(req: Request){
   return req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || req.headers.get('x-real-ip') || 'unknown'
 }
-// For prod scale, swap this file with a Redis implementation:
-//   export async function rateLimit(key,limit,windowMs){ return await redisRateLimit(key,limit,windowMs) }
-// See docs/deploy.md for Upstash example.
+
+// Production note: this is in-memory and won't share state across serverless instances.
+// For true distributed limiting, replace with Upstash Redis (examples in docs/deploy.md):
+//   import { Ratelimit } from "@upstash/ratelimit"; import { Redis } from "@upstash/redis";
+//   const ratelimit = new Ratelimit({ redis: Redis.fromEnv(), limiter: Ratelimit.slidingWindow(20, "60 s") })
+//   export async function rateLimit(key, limit){ const {success, remaining, reset} = await ratelimit.limit(key); return {ok: success, remaining, retryAfter: ...}}
+// Until Redis is provisioned, this still mitigates per-instance bursts.
+
+// Presets for sensitive endpoints — tighten over time and move to Redis.
+export const RATE_PRESETS = {
+  login: { limit: 8, windowMs: 60_000 },       // 8/min per IP
+  register: { limit: 5, windowMs: 60_000 },
+  forgotPassword: { limit: 3, windowMs: 60_000 },
+  contact: { limit: 10, windowMs: 60_000 },
+  giving: { limit: 10, windowMs: 60_000 },
+  prayer: { limit: 15, windowMs: 60_000 },
+} as const

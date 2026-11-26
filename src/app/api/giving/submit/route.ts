@@ -1,14 +1,13 @@
 import { store, uid } from '@/lib/store'
 import { givingSchema } from '@/lib/validation'
-import { jsonError, jsonOk, enforceRate, logAudit } from '@/lib/api-helpers'
+import { jsonError, jsonOk, enforceRate, enforceCsrf, logAudit } from '@/lib/api-helpers'
 import { verifySessionCookie } from '@/lib/session'
 import { getUsers } from '@/lib/auth'
 import { getFund } from '@/lib/giving'
-import fs from 'node:fs'
-import path from 'node:path'
 
 export async function POST(req: Request){
-  const rl = enforceRate(req,'giving',20); if (rl) return rl
+  const csrf = enforceCsrf(req); if (csrf) return csrf
+  const rl = enforceRate(req,'giving'); if (rl) return rl
   const ct = req.headers.get('content-type')||''
   let data:any = {}
   let popUrl: string | undefined
@@ -23,23 +22,10 @@ export async function POST(req: Request){
     data.note = fd.get('note') as string
     const file = fd.get('pop') as File | null
     if (file && file.size > 0){
-      const maxMb = Number(process.env.UPLOAD_MAX_MB || 8)
-      if (file.size > maxMb * 1024 * 1024) return jsonError(`POP file too large (max ${maxMb}MB)`,400)
-      const allowed = ['image/jpeg','image/png','image/webp','application/pdf']
-      if (file.type && !allowed.includes(file.type)) return jsonError('POP must be JPG, PNG, WEBP or PDF',400)
-      // sanitize extension — allow only safe list, fallback by mime
-      const rawExt = (file.name?.split('.').pop() || '').toLowerCase()
-      const extByMime: Record<string,string> = { 'image/jpeg':'jpg','image/png':'png','image/webp':'webp','application/pdf':'pdf' }
-      const safeExts = new Set(['jpg','jpeg','png','webp','pdf'])
-      let ext = safeExts.has(rawExt) ? rawExt : extByMime[file.type] || 'jpg'
-      if (ext === 'jpeg') ext = 'jpg'
-      const dir = path.join(process.cwd(), 'public','uploads','pop')
-      if (!fs.existsSync(dir)) fs.mkdirSync(dir,{recursive:true})
-      const fname = `${Date.now()}-${uid()}.${ext}`.replace(/[^a-zA-Z0-9._-]/g, '_')
-      const buf = Buffer.from(await file.arrayBuffer())
-      fs.writeFileSync(path.join(dir,fname), buf)
-      popUrl = `/uploads/pop/${fname}`
-      popMime = file.type || 'image/jpeg'
+      const { storePop } = await import('@/lib/uploads')
+      const stored = await storePop(file, uid)
+      popUrl = stored.url
+      popMime = stored.mime
     }
   } else {
     data = await req.json().catch(()=>null)

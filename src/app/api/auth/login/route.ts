@@ -1,10 +1,11 @@
 import { verifyUser, safeUser } from '@/lib/auth'
 import { authLoginSchema } from '@/lib/validation'
-import { jsonError, parseJson, enforceRate } from '@/lib/api-helpers'
+import { jsonError, parseJson, enforceRate, enforceCsrf } from '@/lib/api-helpers'
 import { sessionCookieHeader } from '@/lib/session'
 
 export async function POST(req: Request) {
-  const rl = enforceRate(req, 'login', 20); if (rl) return rl
+  const csrf = enforceCsrf(req); if (csrf) return csrf
+  const rl = enforceRate(req, 'login'); if (rl) return rl
   const body = await req.json().catch(()=>null)
   const { error, data } = parseJson(body, authLoginSchema)
   if (error) return jsonError(error, 400)
