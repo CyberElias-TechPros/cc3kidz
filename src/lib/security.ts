@@ -62,15 +62,15 @@ export function stripHtml(s: string, maxLen = 5000): string {
 }
 
 // Security headers applied both in next.config.mjs (static) and middleware (dynamic).
-// CSP kept report-only initially; tighten after auditing inline scripts/embeds.
+// CSP kept permissive initially; tighten after auditing inline scripts/embeds.
+// frame-ancestors allows Arena E2B preview iframe embedding
 export const SECURITY_HEADERS: Record<string,string> = {
   'X-Content-Type-Options': 'nosniff',
   'Referrer-Policy': 'strict-origin-when-cross-origin',
   'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
   'Strict-Transport-Security': 'max-age=63072000; includeSubDomains; preload',
   'X-DNS-Prefetch-Control': 'on',
-  'Cross-Origin-Opener-Policy': 'same-origin',
-  'Cross-Origin-Resource-Policy': 'same-origin',
+  'Cross-Origin-Opener-Policy': 'same-origin-allow-popups',
 }
 
 export const CSP = [
@@ -83,4 +83,5 @@ export const CSP = [
   "frame-src 'self' https://maps.google.com https://www.google.com https://www.youtube.com",
   "connect-src 'self' https:",
   "form-action 'self'",
+  "frame-ancestors 'self' https://*.e2b.app https://*.arena.ai",
 ].join('; ')

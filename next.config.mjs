@@ -46,19 +46,20 @@ const nextConfig = {
       "frame-src 'self' https://maps.google.com https://www.google.com https://www.youtube.com",
       "connect-src 'self' https:",
       "form-action 'self'",
+      // Allow Arena preview iframe embedding
+      "frame-ancestors 'self' https://*.e2b.app https://*.arena.ai",
     ].join('; ')
     return [
       {
         source: '/:path*',
         headers: [
           { key: 'X-Content-Type-Options', value: 'nosniff' },
-          { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+          // X-Frame-Options removed to allow Arena preview; CSP frame-ancestors controls embedding
           { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
           { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
           { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
           { key: 'X-DNS-Prefetch-Control', value: 'on' },
-          { key: 'Cross-Origin-Opener-Policy', value: 'same-origin' },
-          { key: 'Cross-Origin-Resource-Policy', value: 'same-origin' },
+          { key: 'Cross-Origin-Opener-Policy', value: 'same-origin-allow-popups' },
           { key: 'Content-Security-Policy', value: csp },
         ],
       },
