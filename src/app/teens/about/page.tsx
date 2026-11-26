@@ -41,11 +41,17 @@ export default function TeensAboutPage() {
               <Link href="/about#faith" className="mt-3 inline-flex btn btn--ghost !py-2 text-xs">Read Statement of Faith →</Link>
             </div>
             <div>
-              <h2 className="font-display font-extrabold text-xl text-navy">Leadership</h2>
-              <p className="text-sm text-muted">Serving under CC3 Group Pastor & PH Zone 3. Profiles published only with approval.</p>
-              <div className="mt-4 grid sm:grid-cols-2 gap-3">
+              <h2 className="font-display font-extrabold text-xl text-navy">Leadership — Pastor Binta Alex</h2>
+              <div className="card p-5 border-gold/20 bg-white flex gap-4">
+                <div className="h-14 w-14 shrink-0 rounded-full bg-[#172B76] grid place-items-center text-white font-black text-lg">BA</div>
+                <div>
+                  <div className="text-xs font-bold tracking-widest uppercase text-gold">Pastor, Teens Church · PH Zone 3</div>
+                  <div className="font-display font-extrabold text-navy text-lg">Pastor Binta Alex</div>
+                  <p className="text-sm leading-6 text-slate-600 mt-1">Pastor Binta Alex shepherds CC3 Teens Church — raising teenagers established in the Word, filled with the Spirit and equipped to influence their schools and generation. Appointed under CC3 Group Pastor & PH Zone 3 leadership.</p>
+                </div>
+              </div>
+              <div className="mt-4 grid sm:grid-cols-3 gap-3">
                 {[
-                  { role: 'Teens Church Pastor', note: 'Appointed by Group Pastor — oversight, teaching & care' },
                   { role: 'Assistant / Coordinator', note: 'Discipleship, programmes, school liaison' },
                   { role: 'Cell & Outreach Leaders', note: 'Fellowship & TITHE — trained, supervised' },
                   { role: 'Creative & Media', note: 'Music, drama, media, tech — youth-led, adult-guided' },

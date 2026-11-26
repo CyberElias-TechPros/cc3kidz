@@ -1,0 +1,18 @@
+{
+  "generatedAt": "2026-11-26T17:44:37.577Z",
+  "counts": {
+    "adults": 245,
+    "teens": 304,
+    "early-readers": 304
+  },
+  "latestByAudience": {
+    "adults": "2026-10-31",
+    "teens": "2026-10-31",
+    "early-readers": "2026-10-31"
+  },
+  "earliestByAudience": {
+    "adults": "2026-03-01",
+    "teens": "2026-01-01",
+    "early-readers": "2026-01-01"
+  }
+}

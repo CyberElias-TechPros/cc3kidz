@@ -1,11 +1,46 @@
 import Link from 'next/link'
+import { getTodayDevotional, getRecentByAudience } from '@/lib/rhapsody/store'
+import { RhapsodyCard } from '@/components/rhapsody/RhapsodyCard'
+import { GamificationBar } from '@/components/rhapsody/GamificationBar'
 export const metadata = { title: 'Grow in the Word — CC3 Teens | TeeVo & Bible Study' }
 export default function TeensWordPage(){
+  const today = getTodayDevotional('teens')
+  const recent = getRecentByAudience('teens', 4)
   return (<>
-    <section className="bg-haze border-b border-black/5"><div className="container-cc py-10"><div className="flex gap-4 max-w-4xl"><div className="hidden sm:block w-[3px] self-stretch rounded-full bg-gold" aria-hidden /><div><div className="text-xs font-semibold tracking-wide text-muted">Word · TeeVo · 13–19</div><h1 className="font-display font-extrabold text-[2.4rem] leading-none tracking-tight mt-2 text-navy">Grow in the Word</h1><p className="mt-3 text-[1.02rem] leading-7 text-slate-600 max-w-2xl">Daily TeeVo, Bible study, reading plans, messages, quizzes and Word challenges — not just information, transformation.</p></div></div></div></section>
+    <section className="bg-haze border-b border-black/5"><div className="container-cc py-10"><div className="flex gap-4 max-w-4xl"><div className="hidden sm:block w-[3px] self-stretch rounded-full bg-gold" aria-hidden /><div><div className="text-xs font-semibold tracking-wide text-muted">Word · TeeVo · 13–19 · Pastor Binta Alex</div><h1 className="font-display font-extrabold text-[2.4rem] leading-none tracking-tight mt-2 text-navy">Grow in the Word</h1><p className="mt-3 text-[1.02rem] leading-7 text-slate-600 max-w-2xl">Daily TeeVo, Bible study, reading plans, messages, quizzes and Word challenges — not just information, transformation. Pastored by Pastor Binta Alex.</p></div></div></div></section>
+    <div className="container-cc pt-6"><GamificationBar church="teens" /></div>
+    {today && (
+      <section className="container-cc py-6">
+        <div className="card p-6 border-gold/20 bg-white">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <div className="text-xs font-bold tracking-widest uppercase text-gold">TeeVo Today — {today.date} · {today.weekday}</div>
+              <h2 className="font-display font-extrabold text-xl mt-1 text-navy">{today.title}</h2>
+              {today.subtitle && <div className="text-sm text-muted italic">{today.subtitle}</div>}
+              <div className="text-xs text-muted mt-1">{today.scriptureReference} · {today.editionTitle}</div>
+              <p className="text-sm leading-6 text-slate-600 mt-2">“{today.scripture.slice(0, 160)}…”</p>
+              <p className="text-sm leading-6 text-slate-600 mt-2">{today.excerpt}</p>
+            </div>
+            <div className="hidden sm:block text-3xl">📖</div>
+          </div>
+          <div className="mt-4 flex flex-wrap gap-2">
+            <Link href={`/teens/rhapsody/${today.slug}`} className="btn btn--navy !py-2 text-xs">Read TeeVo Today →</Link>
+            <Link href={`/teens/rhapsody/quiz/${today.slug}`} className="btn btn--gold !py-2 text-xs">Take Quiz (+100 XP)</Link>
+            <Link href="/teens/rhapsody" className="btn btn--ghost !py-2 text-xs">All TeeVo →</Link>
+          </div>
+          <p className="text-xs text-muted mt-2">Source: {today.series} by Pastor Chris Oyakhilome · LoveWorld Publishing · Also at <a href="https://teevo.org" target="_blank" rel="noreferrer" className="underline text-navy">teevo.org</a></p>
+        </div>
+        <div className="mt-6">
+          <h3 className="font-display font-extrabold text-navy">Recent TeeVo</h3>
+          <div className="mt-3 grid md:grid-cols-2 gap-3">
+            {recent.map(d => <RhapsodyCard key={d.slug} d={d} href={`/teens/rhapsody/${d.slug}`} compact />)}
+          </div>
+        </div>
+      </section>
+    )}
     <section className="section bg-white"><div className="container-cc grid lg:grid-cols-[1.3fr_0.7fr] gap-8">
       <div className="space-y-6">
-        <div className="card p-6 border-gold/20"><div className="text-xs font-bold tracking-widest uppercase text-gold">TeeVo Today</div><h2 className="font-display font-extrabold text-xl mt-1 text-navy">Daily TeeVo</h2><p className="text-sm leading-6 text-slate-600 mt-2">The official LoveWorld devotional for teenagers — scripture, message, prayer and confession. We recommend reading it daily, not republishing it.</p><div className="mt-4 flex flex-wrap gap-2"><a href="https://teevo.org" target="_blank" rel="noreferrer" className="btn btn--gold">Open TeeVo →</a><Link href="/teens/resources" className="btn btn--ghost">Related Resources</Link></div><p className="text-xs text-muted mt-2">Source: <a href="https://teevo.org" target="_blank" rel="noreferrer" className="underline text-navy">teevo.org</a></p></div>
+        <div className="card p-6 border-gold/20"><div className="text-xs font-bold tracking-widest uppercase text-gold">TeeVo Today</div><h2 className="font-display font-extrabold text-xl mt-1 text-navy">Daily TeeVo</h2><p className="text-sm leading-6 text-slate-600 mt-2">The official LoveWorld devotional for teenagers — scripture, message, prayer and confession. Integrated here from Rhapsody of Realities for Teens with quiz & gamification. Live in CC3.</p><div className="mt-4 flex flex-wrap gap-2"><Link href="/teens/rhapsody" className="btn btn--gold">Open TeeVo →</Link><Link href="/teens/resources" className="btn btn--ghost">Related Resources</Link></div><p className="text-xs text-muted mt-2">Source: <a href="https://teevo.org" target="_blank" rel="noreferrer" className="underline text-navy">teevo.org</a> · Corpus: rhapsody-blog on GitHub (853 devotionals)</p></div>
         <div className="card p-6"><h3 className="font-display font-extrabold text-navy">Bible Study & Reading Plans</h3><div className="mt-4 grid sm:grid-cols-2 gap-3">
           {[
             {t:'30 Days in the Word', d:'Foundational reading through key scriptures — start here.'},

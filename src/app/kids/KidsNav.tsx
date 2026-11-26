@@ -6,13 +6,12 @@ import { useState } from 'react'
 const NAV = [
   { label: 'Home', href: '/kids', page: '/kids' },
   { label: 'About Us', href: '/kids/about', page: '/kids/about' },
+  { label: 'Kiddies Rhapsody', href: '/kids/rhapsody', page: '/kids/rhapsody' },
   { label: 'Bible Lessons', href: '/kids/lessons', page: '/kids/lessons' },
   { label: 'Events', href: '/kids/events', page: '/kids/events' },
   { label: 'Gallery', href: '/kids/gallery', page: '/kids/gallery' },
   { label: 'Kids Corner', href: '/kids/kids-corner', page: '/kids/kids-corner' },
   { label: 'Contact', href: '/kids/contact', page: '/kids/contact' },
-  { label: 'Teens →', href: '/teens', page: '/teens' },
-  { label: 'Youth →', href: '/youth', page: '/youth' },
 ]
 
 const MOBILE = [
@@ -20,6 +19,8 @@ const MOBILE = [
   { label: 'Our Classes', href: '/kids/classes', page: '/kids/classes' },
   { label: "Parents' Corner", href: '/kids/parents', page: '/kids/parents' },
   { label: 'Resources', href: '/kids/resources', page: '/kids/resources' },
+  { label: 'Teens →', href: '/teens', page: '/teens' },
+  { label: 'Youth →', href: '/youth', page: '/youth' },
 ]
 
 export default function KidsNav() {

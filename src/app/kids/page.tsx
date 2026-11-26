@@ -1,10 +1,12 @@
 import Link from 'next/link'
 import lessonsData from '../../../kids/data/lessons.json'
 import eventsData from '../../../kids/data/events.json'
+import { getTodayDevotional } from '@/lib/rhapsody/store'
 
 export default function KidsHome() {
   const featured = (lessonsData as any).lessons.find((l: any) => l.featured)
   const upcoming = (eventsData as any).upcoming.slice(0, 3)
+  const kiddiesToday = getTodayDevotional('early-readers')
 
   return (
     <>
@@ -130,14 +132,42 @@ export default function KidsHome() {
         </div>
       </section>
 
+      {kiddiesToday && (
+        <section className="section section--cream">
+          <div className="container">
+            <div className="lesson-feature">
+              <div className="lesson-feature__media" style={{ background: '#FFFBEB', display: 'grid', placeItems: 'center', minHeight: 220 }}>
+                <div style={{ textAlign: 'center', padding: '1.2rem' }}>
+                  <div style={{ fontSize: '2rem' }}>⭐</div>
+                  <div className="eyebrow eyebrow--yellow" style={{ marginTop: 8 }}>Kiddies Rhapsody — Today</div>
+                  <div style={{ fontWeight: 800, fontSize: '1.1rem', marginTop: 6 }}>{kiddiesToday.title}</div>
+                  <div style={{ fontSize: '.8rem', color: 'var(--ink-soft)', marginTop: 4 }}>{kiddiesToday.scriptureReference} · {kiddiesToday.date}</div>
+                </div>
+              </div>
+              <div className="lesson-feature__content">
+                <span className="eyebrow eyebrow--blue">From the Rhapsody for Early Readers</span>
+                <h2>{kiddiesToday.title}</h2>
+                <div className="lesson-feature__ref">{kiddiesToday.scriptureReference}</div>
+                <p className="lesson-feature__key">“{kiddiesToday.scripture.slice(0, 140)}…”</p>
+                <p style={{ fontSize: '.9rem', color: 'var(--ink-soft)', marginTop: '.6rem' }}>{kiddiesToday.excerpt.slice(0, 160)}…</p>
+                <div className="memory-card"><div className="memory-card__label">{kiddiesToday.prayerLabel}</div><blockquote>“{kiddiesToday.prayer.slice(0, 140)}…”</blockquote></div>
+                <div className="btn-row"><Link className="btn btn--yellow" href={`/kids/rhapsody/${kiddiesToday.slug}`}>Read Kiddies Rhapsody</Link><Link className="btn btn--ghost-light" href={`/kids/rhapsody/quiz/${kiddiesToday.slug}`}>Take Quiz +10 XP</Link><Link className="btn btn--secondary" href="/kids/rhapsody">All Kiddies</Link></div>
+              </div>
+            </div>
+            <div style={{ textAlign: 'center', marginTop: '0.8rem', fontSize: '.75rem', color: 'var(--ink-soft)' }}>Coordinator: Sister Christy Olajide Abiola · Ministry of Children’s Affairs · PH Zone 3</div>
+          </div>
+        </section>
+      )}
+
       <section className="section">
         <div className="container">
           <div className="kids-panel">
             <div className="kids-panel__content">
               <span className="eyebrow eyebrow--yellow">Kids Corner</span>
               <h2>Play, learn and grow!</h2>
-              <p>Our favourite corner — made for curious kids who love a good story and a tricky question.</p>
+              <p>Our favourite corner — made for curious kids who love a good story and a tricky question. Now with daily Kiddies Rhapsody + quiz + XP!</p>
               <div className="activity-list">
+                <Link href="/kids/rhapsody"><span className="ico accent-yellow">📖</span> Kiddies Rhapsody Daily</Link>
                 <Link href="/kids/kids-corner#quiz"><span className="ico accent-blue">🎯</span> Bible Quiz</Link>
                 <Link href="/kids/kids-corner#verse"><span className="ico accent-purple">⭐</span> Memory Verse</Link>
                 <Link href="/kids/kids-corner#whoami"><span className="ico accent-yellow">🔎</span> Who Am I?</Link>
@@ -145,7 +175,7 @@ export default function KidsHome() {
               </div>
               <Link className="btn btn--primary" href="/kids/kids-corner">Enter Kids Corner</Link>
             </div>
-            <div className="kids-panel__media"><img src="/kids/assets/images/kids-corner.webp" alt="Kids corner" loading="lazy" /><span className="sticker sticker--pink kids-panel__badge">🎉 5 games inside</span></div>
+            <div className="kids-panel__media"><img src="/kids/assets/images/kids-corner.webp" alt="Kids corner" loading="lazy" /><span className="sticker sticker--pink kids-panel__badge">🎉 Quiz + XP + Kiddies Rhapsody</span></div>
           </div>
         </div>
       </section>

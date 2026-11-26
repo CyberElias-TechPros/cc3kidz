@@ -1,11 +1,37 @@
 import Link from 'next/link'
+import { getTodayDevotional, getRecentByAudience } from '@/lib/rhapsody/store'
+import { RhapsodyCard } from '@/components/rhapsody/RhapsodyCard'
+import { GamificationBar } from '@/components/rhapsody/GamificationBar'
 export const metadata = { title: 'Word & Spiritual Growth — CC3 Youth | Rhapsody, Messages & Bible Study' }
 export default function YouthWordPage(){
+  const today = getTodayDevotional('adults')
+  const recent = getRecentByAudience('adults', 4)
   return (<>
-    <section className="bg-haze border-b border-black/5"><div className="container-cc py-10"><div className="flex gap-4 max-w-4xl"><div className="hidden sm:block w-[3px] self-stretch rounded-full bg-navy" aria-hidden /><div><div className="text-xs font-semibold tracking-wide text-muted">Word · Rhapsody · Prayer</div><h1 className="font-display font-extrabold text-[2.4rem] leading-none tracking-tight mt-2 text-navy">Word & Spiritual Growth</h1><p className="mt-3 text-[1.02rem] leading-7 text-slate-600 max-w-2xl">Rhapsody of Realities, messages, Bible study, prayer and growth pathways — your daily supply as a young adult.</p></div></div></div></section>
+    <section className="bg-haze border-b border-black/5"><div className="container-cc py-10"><div className="flex gap-4 max-w-4xl"><div className="hidden sm:block w-[3px] self-stretch rounded-full bg-navy" aria-hidden /><div><div className="text-xs font-semibold tracking-wide text-muted">Word · Rhapsody · Prayer · Youth 20–35</div><h1 className="font-display font-extrabold text-[2.4rem] leading-none tracking-tight mt-2 text-navy">Word & Spiritual Growth</h1><p className="mt-3 text-[1.02rem] leading-7 text-slate-600 max-w-2xl">Rhapsody of Realities, messages, Bible study, prayer and growth pathways — your daily supply as a young adult. Now with in-app Rhapsody, quiz & XP.</p></div></div></div></section>
+    <div className="container-cc pt-6"><GamificationBar church="youth" /></div>
+    {today && (
+      <section className="container-cc py-6">
+        <div className="card p-6 border-gold/20">
+          <div className="text-xs font-bold tracking-widest uppercase text-gold">Rhapsody Today — {today.date} · {today.weekday}</div>
+          <h2 className="font-display font-extrabold text-xl mt-1 text-navy">{today.title}</h2>
+          <div className="text-sm text-muted mt-1">{today.scriptureReference}</div>
+          <p className="text-sm leading-6 text-slate-600 mt-2">“{today.scripture.slice(0,160)}…”</p>
+          <p className="text-sm leading-6 text-slate-600 mt-2">{today.excerpt}</p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            <Link href={`/youth/rhapsody/${today.slug}`} className="btn btn--navy !py-2 text-xs">Read Today →</Link>
+            <Link href={`/youth/rhapsody/quiz/${today.slug}`} className="btn btn--gold !py-2 text-xs">Take Quiz (+100 XP)</Link>
+            <Link href="/youth/rhapsody" className="btn btn--ghost !py-2 text-xs">All Rhapsody →</Link>
+          </div>
+        </div>
+        <div className="mt-4">
+          <h3 className="font-display font-extrabold text-navy">Recent</h3>
+          <div className="mt-3 grid md:grid-cols-2 gap-3">{recent.map(d=> <RhapsodyCard key={d.slug} d={d} href={`/youth/rhapsody/${d.slug}`} compact />)}</div>
+        </div>
+      </section>
+    )}
     <section className="section bg-white"><div className="container-cc grid lg:grid-cols-[1.3fr_0.7fr] gap-8">
       <div className="space-y-6">
-        <div className="card p-6 border-gold/20"><div className="text-xs font-bold tracking-widest uppercase text-gold">Rhapsody of Realities — Daily</div><h2 className="font-display font-extrabold text-xl mt-1 text-navy">Your Daily Devotional</h2><p className="text-sm leading-6 text-slate-600 mt-2">Global devotional in 8,300+ languages. Read, confess, live it. Link — don&apos;t republish.</p><div className="mt-4 flex flex-wrap gap-2"><a href="https://rhapsodyofrealities.org" target="_blank" rel="noreferrer" className="btn btn--gold">Open Rhapsody →</a><Link href="/youth/word" className="btn btn--ghost">Reading Plans</Link></div></div>
+        <div className="card p-6 border-gold/20"><div className="text-xs font-bold tracking-widest uppercase text-gold">Rhapsody of Realities — Daily</div><h2 className="font-display font-extrabold text-xl mt-1 text-navy">Your Daily Devotional</h2><p className="text-sm leading-6 text-slate-600 mt-2">Global devotional in 8,300+ languages. Now integrated in CC3 — read, confess, live it + quiz & gamification.</p><div className="mt-4 flex flex-wrap gap-2"><Link href="/youth/rhapsody" className="btn btn--gold">Open Rhapsody →</Link><Link href="/youth/word" className="btn btn--ghost">Reading Plans</Link></div></div>
         <div className="card p-6"><h3 className="font-display font-extrabold text-navy">Message Library</h3><p className="text-sm leading-6 text-slate-600 mt-2">Sunday teachings, midweek, youth conferences, specials — audio, video, series & notes.</p><div className="mt-3 grid sm:grid-cols-2 gap-2 text-sm"><Link href="/media" className="rounded-xl bg-haze border border-black/5 p-3 hover:border-gold/30">Sermons →</Link><a href="https://pcdl.co" target="_blank" rel="noreferrer" className="rounded-xl bg-haze border border-black/5 p-3 hover:border-gold/30">PCDL →</a></div></div>
         <div className="card p-6"><h3 className="font-display font-extrabold text-navy">Bible Study</h3><div className="mt-4 grid sm:grid-cols-2 gap-3">
           {[

@@ -1,0 +1,29 @@
+/* Rhapsody shared — quiz, feedback, progress, used across Main/Teens/Youth/Kids */
+.quiz-options { display: grid; gap: 0.55rem; }
+.quiz-option {
+  display: flex; align-items: center; gap: 0.75rem; width: 100%;
+  padding: 0.8rem 0.95rem; text-align: left; background: #fff;
+  border: 1.5px solid #E5E7EB; border-radius: 12px; font-size: 0.88rem; font-weight: 500;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+.quiz-option:hover:not(:disabled) { border-color: #8B5CF6; background: #F5F3FF; transform: translateX(2px); }
+.quiz-option__letter {
+  width: 29px; height: 29px; display: grid; place-items: center; flex: none;
+  background: #F9FAFB; border: 1.5px solid #E5E7EB; border-radius: 9px; font-weight: 700; font-size: 0.78rem;
+}
+.quiz-option.is-correct { border-color: #16A34A; background: #DCFCE7; }
+.quiz-option.is-correct .quiz-option__letter { background: #16A34A; border-color: #16A34A; color: #fff; }
+.quiz-option.is-wrong { border-color: #EC4899; background: #FFE4E6; }
+.quiz-option.is-wrong .quiz-option__letter { background: #EC4899; border-color: #EC4899; color: #fff; }
+.quiz-option:disabled { cursor: default; }
+.quiz-feedback { display: none; margin-top: 0.9rem; padding: 0.8rem 0.95rem; border-radius: 12px; font-size: 0.83rem; line-height: 1.55; }
+.quiz-feedback.is-show { display: flex; gap: 0.6rem; }
+.quiz-feedback--correct { background: #DCFCE7; border: 1.5px solid rgba(22,163,74,.3); color: #14532D; }
+.quiz-feedback--wrong { background: #FFE4E6; border: 1.5px solid rgba(236,72,153,.3); color: #9C1C44; }
+.quiz-progress { height: 6px; background: #F3F4F6; border-radius: 999px; overflow: hidden; }
+.quiz-progress__bar { height: 100%; background: #0E1B33; border-radius: 999px; transition: width .3s; }
+.quiz-actions { display: flex; align-items: center; justify-content: space-between; margin-top: 1rem; gap: .6rem; }
+.quiz-score { font-size: .85rem; font-weight: 700; color: #0E1B33; }
+.game-panel { background: #fff; border: 1.5px solid #E5E7EB; border-radius: 16px; padding: 1.2rem; }
+.game-panel__head { display: flex; gap: .8rem; align-items: flex-start; }
+.game-panel__icon { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 10px; font-size: 1rem; }
