@@ -7,10 +7,10 @@ export default function KidsFooter() {
         <div className="footer-grid">
           <div className="footer-brand">
             <Link className="brand" href="/kids">
-              <img className="brand__mark" src="/kids/assets/images/logo.svg" alt="" width={46} height={46} />
+              <img className="brand__mark" src="/kids/assets/images/logo.png" alt="Ministry of Children's Affairs" width={80} height={62} style={{ height: 58, width: 'auto', objectFit: 'contain' }} />
               <span className="brand__text">
                 <span className="brand__name">CE Central Church 3 Children&apos;s Church</span>
-                <span className="brand__sub">Central Church 3 · PH Zone 3</span>
+                <span className="brand__sub">Ministry of Children&apos;s Affairs · PH Zone 3</span>
               </span>
             </Link>
             <p>Raising champions for Christ in Port Harcourt — a place where children discover God&apos;s Word, grow in faith and shine.</p>
