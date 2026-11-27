@@ -11,6 +11,15 @@ export default function YouthChurchPage(){
         <div className="card p-6"><h3 className="font-display font-extrabold text-navy">FAQ</h3><ul className="mt-3 space-y-2 text-sm leading-6 text-slate-600"><li><b className="text-navy">Youth vs Teens?</b> Teens 13–19, Youth 20–35 — different teaching, community & initiatives.</li><li><b className="text-navy">Do I need to register?</b> No — walk in; registration for specific conferences only.</li><li><b className="text-navy">Where do I serve?</b> <Link href="/youth/connect" className="underline">Tell us your gift</Link> — we place you, not pressure you.</li></ul></div>
       </div>
       <div className="space-y-4">
+        <div className="card p-5 border-gold/20 bg-white flex gap-4">
+          <div className="h-12 w-12 shrink-0 rounded-full bg-[#101A2B] grid place-items-center text-white font-black">BK</div>
+          <div>
+            <div className="text-xs font-bold tracking-widest uppercase text-gold">Leader, Youth Church</div>
+            <div className="font-display font-extrabold text-navy">Brother Kelvin</div>
+            <div className="text-xs text-muted">CC3 Youth Church · PH Zone 3 · 20–35</div>
+            <p className="text-xs leading-5 text-slate-600 mt-1">Leads Youth Church — worship, Word and fellowship for young adults, plus cells & YOU R.I.S.E.</p>
+          </div>
+        </div>
         <div className="bg-navy text-white rounded-xl p-6"><h3 className="font-display font-extrabold">Plan your visit</h3><p className="text-sm leading-6 text-white/80 mt-2">30B Rumuokwuta · PH Zone 3. Come expectant. Dress well, come ready to receive.</p><div className="mt-4 flex flex-col gap-2"><Link href="/new-here" className="btn bg-gold text-navy !py-2 text-xs w-full justify-center">Plan Your Visit →</Link><Link href="/youth/events" className="btn bg-white/10 border border-white/20 text-white !py-2 text-xs w-full justify-center">Upcoming Events</Link></div></div>
         <div className="card p-5"><h3 className="font-display font-extrabold text-navy">Quick links</h3><div className="mt-3 grid grid-cols-2 gap-2 text-xs"><Link href="/youth/word" className="rounded-xl border border-black/10 p-3 hover:border-gold/30">Word</Link><Link href="/youth/rise" className="rounded-xl border border-black/10 p-3 hover:border-gold/30">YOU R.I.S.E.</Link><Link href="/youth/growth" className="rounded-xl border border-black/10 p-3 hover:border-gold/30">Growth</Link><Link href="/youth/community" className="rounded-xl border border-black/10 p-3 hover:border-gold/30">Community</Link></div></div>
       </div>

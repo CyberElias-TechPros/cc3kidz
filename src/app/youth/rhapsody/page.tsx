@@ -15,10 +15,10 @@ export default function Page() {
           <div className="flex gap-4 max-w-4xl">
             <div className="hidden sm:block w-[3px] self-stretch rounded-full bg-gold" aria-hidden />
             <div>
-              <div className="text-xs font-semibold tracking-wide text-white/60">Youth Church · 20–35 · Rhapsody of Realities</div>
+              <div className="text-xs font-semibold tracking-wide text-white/60">Youth Church · 20–35 · Rhapsody of Realities · Led by Brother Kelvin</div>
               <h1 className="font-display font-extrabold text-[2.4rem] leading-none tracking-tight mt-2">Rhapsody — Youth Edition</h1>
               <p className="mt-3 text-[1.02rem] leading-7 text-white/85 max-w-2xl">
-                The same adult Rhapsody of Realities, curated for young adults — your daily supply for purpose, faith and leadership. Source: LoveWorld Publishing.
+                The same adult Rhapsody of Realities, curated for young adults — your daily supply for purpose, faith and leadership, under Brother Kelvin. Source: LoveWorld Publishing.
               </p>
               <div className="mt-4 flex flex-wrap gap-2 text-xs">
                 <a href="https://rhapsodyofrealities.org" target="_blank" rel="noreferrer" className="btn bg-gold text-navy !py-2">Open Official →</a>

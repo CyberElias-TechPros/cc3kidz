@@ -89,6 +89,13 @@ export const CHURCH_LEADERS = {
     image: '/assets/images/leaders/teens-pastor-binta-alex.jpg',
     bio: 'Pastor Binta Alex shepherds the Teens Church of Christ Embassy Central Church 3 — raising teenagers established in the Word, filled with the Spirit and empowered to influence their schools and generation.',
   },
+  youth: {
+    name: 'Brother Kelvin',
+    title: 'Leader, Youth Church',
+    church: 'CC3 Youth Church · PH Zone 3 · 20–35',
+    image: '/assets/images/leaders/youth-brother-kelvin.jpg',
+    bio: 'Brother Kelvin leads the Youth Church of Christ Embassy Central Church 3 — building young adults established in the Word, Spirit-empowered and positioned to influence their generation for Christ.',
+  },
   kids: {
     name: 'Sister Christy Olajide Abiola',
     title: "Coordinator, Children's Church",
