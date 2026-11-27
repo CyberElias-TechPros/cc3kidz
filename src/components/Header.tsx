@@ -67,11 +67,11 @@ export default function Header() {
   const navItems = isTeens ? teensNav : isYouth ? youthNav : site.nav
   const otherChurches = churches.filter(c => c.href !== current)
 
-  // branding
+  // branding — per user: CE Central Church 3 Youth / Teens
   const brand = isTeens
     ? {
         logo: '/assets/images/loveworld-teens-youth.png',
-        title: 'LoveWorld Teens',
+        title: 'CE Central Church 3 Teens',
         sub: 'Teens & Youth Ministry · PH Zone 3',
         sub2: 'Ages 13–19 · Giving your life a meaning',
         href: '/teens',
@@ -80,7 +80,7 @@ export default function Header() {
     : isYouth
     ? {
         logo: '/assets/images/loveworld-teens-youth.png',
-        title: 'LoveWorld Youth',
+        title: 'CE Central Church 3 Youth',
         sub: 'Teens & Youth Ministry · PH Zone 3',
         sub2: 'Ages 20–35 · Giving your life a meaning',
         href: '/youth',
@@ -121,8 +121,6 @@ export default function Header() {
         {/* Desktop nav — contextual */}
         <nav className="hidden lg:flex items-center gap-1 overflow-x-auto no-scrollbar">
           {navItems.map(l => {
-            const active = pathname === l.href || (l.href !== '/' && l.href !== '/teens' && l.href !== '/youth' && pathname?.startsWith(l.href)) || ( (l.href === '/teens' || l.href === '/youth') && pathname === l.href)
-            // for nested: if pathname startsWith nav href, mark active (except root home)
             const isActive = l.href === '/teens' || l.href === '/youth' || l.href === '/'
               ? pathname === l.href
               : pathname === l.href || pathname?.startsWith(l.href + '/') || pathname?.startsWith(l.href)

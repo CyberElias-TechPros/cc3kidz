@@ -1,22 +1,116 @@
+'use client'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { site } from '@/lib/site'
 
+function getChurch(pathname: string | null) {
+  if (!pathname) return '/'
+  if (pathname === '/teens' || pathname.startsWith('/teens/')) return '/teens'
+  if (pathname === '/youth' || pathname.startsWith('/youth/')) return '/youth'
+  if (pathname === '/kids' || pathname.startsWith('/kids/')) return '/kids'
+  return '/'
+}
+
+const teensFooter = {
+  church: [
+    { label: 'Teens Church', href: '/teens/church' },
+    { label: 'Word Centre', href: '/teens/word' },
+    { label: 'TeeVo Daily', href: '/teens/rhapsody' },
+    { label: 'About Us', href: '/teens/about' },
+    { label: 'Our Story', href: '/about' },
+  ],
+  connect: [
+    { label: 'Contact', href: '/teens/connect' },
+    { label: 'Cells & Groups', href: '/cells' },
+    { label: 'Foundation School', href: '/foundation-school' },
+    { label: 'Events', href: '/teens/events' },
+    { label: 'Prayer & Counselling', href: '/prayer' },
+  ],
+  ministry: [
+    { label: 'Ministry', href: '/teens/activities' },
+    { label: 'Gifts & Outreach', href: '/teens/gifts' },
+    { label: 'Media', href: '/teens/resources' },
+    { label: 'Testimonies', href: '/testimonies' },
+    { label: 'Give / Partnership', href: '/give' },
+  ],
+}
+
+const youthFooter = {
+  church: [
+    { label: 'Youth Church', href: '/youth/church' },
+    { label: 'Word & Spirit', href: '/youth/word' },
+    { label: 'Rhapsody Daily', href: '/youth/rhapsody' },
+    { label: 'About Us', href: '/youth/about' },
+    { label: 'Our Story', href: '/about' },
+  ],
+  connect: [
+    { label: 'Contact', href: '/youth/connect' },
+    { label: 'Community', href: '/youth/community' },
+    { label: 'Growth', href: '/youth/growth' },
+    { label: 'Outreach — R.I.S.E.', href: '/youth/rise' },
+    { label: 'Prayer & Counselling', href: '/prayer' },
+  ],
+  ministry: [
+    { label: 'Media', href: '/youth/media' },
+    { label: 'Events', href: '/youth/events' },
+    { label: 'Foundation School', href: '/foundation-school' },
+    { label: 'Testimonies', href: '/testimonies' },
+    { label: 'Give / Partnership', href: '/give' },
+  ],
+}
+
 export default function Footer() {
+  const pathname = usePathname()
+  const current = getChurch(pathname)
+  const isTeens = current === '/teens'
+  const isYouth = current === '/youth'
+  const isContextual = isTeens || isYouth
+
+  const brand = isTeens
+    ? {
+        logo: '/assets/images/loveworld-teens-youth.png',
+        title: 'CE Central Church 3 Teens',
+        sub: 'Teens & Youth Ministry',
+        zone: 'Port Harcourt Zone 3 · Ages 13–19',
+        desc: 'CE Central Church 3 Teens — LoveWorld Teens & Youth Ministry. Raising champions for Christ — Word, Spirit, and excellence.',
+        service: 'Sunday 8AM · Wednesday 6PM · First Sunday 3PM Communion',
+      }
+    : isYouth
+    ? {
+        logo: '/assets/images/loveworld-teens-youth.png',
+        title: 'CE Central Church 3 Youth',
+        sub: 'Teens & Youth Ministry',
+        zone: 'Port Harcourt Zone 3 · Ages 20–35',
+        desc: 'CE Central Church 3 Youth — LoveWorld Teens & Youth Ministry. A generation discovering Jesus, living with purpose and making impact.',
+        service: 'Sunday 8AM · Wednesday 5:30PM · Youth Community Nights',
+      }
+    : {
+        logo: '/assets/images/loveworld-logo.png?v=2',
+        title: 'Central Church 3',
+        sub: 'Christ Embassy Central Church 3',
+        zone: 'Port Harcourt Zone 3',
+        desc: `Christ Embassy Central Church 3 — a LoveWorld church family. ${site.tagline} We meet at ${site.addressShort}.`,
+        service: 'Sunday 8AM · Monday 6PM Prayer & Prophecy · Wednesday 5:30PM',
+      }
+
+  const links = isTeens ? teensFooter : isYouth ? youthFooter : site.footerLinks
+  const copyrightChurch = isTeens ? 'CE Central Church 3 Teens' : isYouth ? 'CE Central Church 3 Youth' : 'Christ Embassy Central Church 3'
+
   return (
     <footer className="bg-navy text-slate-200">
       <div className="container-cc py-12">
         <div className="grid lg:grid-cols-[1.2fr_1fr_1fr_1fr] gap-10">
           <div>
             <div className="flex items-center gap-3">
-              <img src="/assets/images/loveworld-logo.png?v=2" alt="Christ Embassy LoveWorld" width={56} height={56} className="h-12 w-12 md:h-14 md:w-14 object-contain flex-shrink-0" />
+              <img src={brand.logo} alt={isContextual ? 'LoveWorld Teens & Youth Ministry' : 'Christ Embassy LoveWorld'} width={56} height={56} className="h-12 w-12 md:h-14 md:w-14 object-contain flex-shrink-0" />
               <div>
-                <div className="font-display font-extrabold leading-none">Central Church 3</div>
-                <div className="text-xs tracking-widest uppercase text-gold">Port Harcourt Zone 3</div>
+                <div className="font-display font-extrabold leading-none">{brand.title}</div>
+                <div className="text-xs tracking-widest uppercase text-gold">{isContextual ? brand.sub : 'Port Harcourt Zone 3'}</div>
+                {isContextual && <div className="text-[0.6rem] tracking-widest uppercase text-white/60">{brand.zone}</div>}
               </div>
             </div>
             <p className="mt-4 text-sm leading-6 text-slate-300">
-              Christ Embassy Central Church 3 — a LoveWorld church family. {site.tagline} We meet at{' '}
-              {site.addressShort}.
+              {brand.desc}
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
               <a
@@ -57,10 +151,10 @@ export default function Footer() {
               <a href="/kids" className="inline-flex items-center rounded-lg bg-gold text-navy px-3 text-xs font-bold">
                 Kids
               </a>
-              <a href="/teens" className="inline-flex items-center rounded-lg bg-white text-navy px-3 text-xs font-bold">
+              <a href="/teens" className={`inline-flex items-center rounded-lg px-3 text-xs font-bold ${isTeens ? 'bg-white text-navy ring-2 ring-gold' : 'bg-white text-navy'}`}>
                 Teens
               </a>
-              <a href="/youth" className="inline-flex items-center rounded-lg bg-white text-navy px-3 text-xs font-bold">
+              <a href="/youth" className={`inline-flex items-center rounded-lg px-3 text-xs font-bold ${isYouth ? 'bg-white text-navy ring-2 ring-gold' : 'bg-white text-navy'}`}>
                 Youth
               </a>
             </div>
@@ -69,7 +163,7 @@ export default function Footer() {
           <div>
             <h4 className="font-bold tracking-wide text-sm">Church</h4>
             <ul className="mt-4 space-y-2 text-sm text-slate-300">
-              {site.footerLinks.church.map(l => (
+              {(links.church as any[]).map(l => (
                 <li key={l.href}>
                   <Link href={l.href} className="hover:text-white">
                     {l.label}
@@ -81,7 +175,7 @@ export default function Footer() {
           <div>
             <h4 className="font-bold tracking-wide text-sm">Connect</h4>
             <ul className="mt-4 space-y-2 text-sm text-slate-300">
-              {site.footerLinks.connect.map(l => (
+              {(links.connect as any[]).map(l => (
                 <li key={l.href}>
                   <Link href={l.href} className="hover:text-white">
                     {l.label}
@@ -93,7 +187,7 @@ export default function Footer() {
           <div>
             <h4 className="font-bold tracking-wide text-sm">Ministry</h4>
             <ul className="mt-4 space-y-2 text-sm text-slate-300">
-              {site.footerLinks.ministry.map(l => (
+              {(links.ministry as any[]).map(l => (
                 <li key={l.href}>
                   <Link href={l.href} className="hover:text-white">
                     {l.label}
@@ -112,7 +206,7 @@ export default function Footer() {
           </div>
           <div>
             <div className="font-semibold text-white">Service Times</div>
-            <div className="text-slate-300">Sunday 8AM · Monday 6PM Prayer & Prophecy · Wednesday 5:30PM</div>
+            <div className="text-slate-300">{brand.service}</div>
           </div>
           <div className="md:text-right">
             <div className="font-semibold text-white">Contact</div>
@@ -138,7 +232,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-slate-400 border-t border-white/10 pt-6">
-          <div>© {new Date().getFullYear()} Christ Embassy Central Church 3 · Port Harcourt Zone 3 · LoveWorld Nation — Giving your life a meaning</div>
+          <div>© {new Date().getFullYear()} {copyrightChurch} · Port Harcourt Zone 3 · LoveWorld Nation — Giving your life a meaning</div>
           <div className="flex gap-4">
             <Link href="/privacy" className="hover:text-white">
               Privacy
@@ -146,7 +240,7 @@ export default function Footer() {
             <Link href="/terms" className="hover:text-white">
               Terms
             </Link>
-            <Link href="/contact" className="hover:text-white">
+            <Link href={isTeens ? '/teens/connect' : isYouth ? '/youth/connect' : '/contact'} className="hover:text-white">
               Contact
             </Link>
           </div>
