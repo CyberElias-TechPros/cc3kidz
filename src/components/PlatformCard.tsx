@@ -12,7 +12,8 @@ export default function PlatformCard({ p, compact = false }: { p: Platform; comp
       aria-label={`${p.name} — opens the official LoveWorld platform in a new tab`}
     >
       <div className="pl-card__top">
-        <span className="pl-card__icon" aria-hidden>{p.icon}</span>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={p.image} alt="" width={38} height={38} loading="lazy" className="pl-card__img" />
         <span className="pl-card__name">{p.name}</span>
         {p.badge && <span className={badgeClass}>{p.badge}</span>}
       </div>

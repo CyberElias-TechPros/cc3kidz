@@ -13,6 +13,7 @@ export type PlatformAudience = 'main' | 'children' | 'teens' | 'youth'
 
 export type Platform = {
   id: string
+  image: string
   name: string
   url: string
   blurb: string
@@ -28,6 +29,7 @@ export const platforms: Platform[] = [
   // ─── MAIN (congregational maturity, healing, global vision, partnership) ───
   {
     id: 'rhapsody',
+    image: '/assets/images/platforms/rhapsody.jpg',
     name: 'Rhapsody of Realities',
     url: 'https://rhapsodyofrealities.org',
     blurb: 'The daily devotional by Pastor Chris Oyakhilome — over 8,000 languages, bringing the Word to every nation.',
@@ -39,6 +41,7 @@ export const platforms: Platform[] = [
   },
   {
     id: 'rhapsody-bible',
+    image: '/assets/images/platforms/rhapsody-bible.jpg',
     name: 'Rhapsody Bible',
     url: 'https://rhapsodyofrealities.org',
     blurb: 'Free Bible app with the Rhapsody devotional built in — study plans, audio and every translation.',
@@ -49,6 +52,7 @@ export const platforms: Platform[] = [
   },
   {
     id: 'healing-streams',
+    image: '/assets/images/platforms/healing-streams.jpg',
     name: 'Healing Streams TV',
     url: 'https://healingstreams.tv',
     blurb: 'Live healing services with Pastor Chris — millions connected worldwide receive miracles in real time.',
@@ -60,6 +64,7 @@ export const platforms: Platform[] = [
   },
   {
     id: 'healing-school',
+    image: '/assets/images/platforms/healing-school.jpg',
     name: 'Enter the Healing School',
     url: 'https://enterthehealingschool.org',
     blurb: 'Sessions, testimonies and ministry resources from the Healing School of Pastor Chris Oyakhilome.',
@@ -69,6 +74,7 @@ export const platforms: Platform[] = [
   },
   {
     id: 'pcdl',
+    image: '/assets/images/platforms/pcdl.jpg',
     name: 'PCDL — Pastor Chris Digital Library',
     url: 'https://pcdl.co',
     blurb: 'Sermons, teachings and messages from decades of Pastor Chris’s ministry — stream or download.',
@@ -79,6 +85,7 @@ export const platforms: Platform[] = [
   },
   {
     id: 'pastor-chris-online',
+    image: '/assets/images/platforms/pastor-chris-online.jpg',
     name: 'Pastor Chris Online',
     url: 'https://pastorchrisonline.org',
     blurb: 'The digital ministry hub — daily capsules, live streams, Q&A and specials with Pastor Chris.',
@@ -89,6 +96,7 @@ export const platforms: Platform[] = [
   },
   {
     id: 'kingschat',
+    image: '/assets/images/platforms/kingschat.jpg',
     name: 'KingsChat',
     url: 'https://kingschat.online',
     blurb: 'The LoveWorld social platform — chat, timelines, live events, and connection with the global community.',
@@ -99,6 +107,7 @@ export const platforms: Platform[] = [
   },
   {
     id: 'lw-tv',
+    image: '/assets/images/platforms/lw-tv.jpg',
     name: 'LoveWorld TV Ministry',
     url: 'https://loveworldtelevisionministry.org',
     blurb: 'LoveWorld networks — cutting-edge media evangelism broadcasting the Gospel to the nations 24/7.',
@@ -109,6 +118,7 @@ export const platforms: Platform[] = [
   },
   {
     id: 'lw-news',
+    image: '/assets/images/platforms/lw-news.jpg',
     name: 'LoveWorld News',
     url: 'https://loveworldnews.org',
     blurb: 'Ministry news, testimonies and impact stories from every zone of Believers’ LoveWorld.',
@@ -118,6 +128,7 @@ export const platforms: Platform[] = [
   },
   {
     id: 'reachout-world',
+    image: '/assets/images/platforms/reachout-world.jpg',
     name: 'ReachOut World',
     url: 'https://reachoutworld.org',
     blurb: 'The global campaign to take Rhapsody of Realities to every person alive, in every nation — join the movement.',
@@ -128,6 +139,7 @@ export const platforms: Platform[] = [
   },
   {
     id: 'innercity',
+    image: '/assets/images/platforms/innercity.jpg',
     name: 'InnerCity Mission',
     url: 'https://theinnermission.org',
     blurb: 'Ministry to children in inner cities and indigent communities — food, education, sponsorship and hope.',
@@ -137,6 +149,7 @@ export const platforms: Platform[] = [
   },
   {
     id: 'lw-books',
+    image: '/assets/images/platforms/lw-books.jpg',
     name: 'LoveWorld Books',
     url: 'https://loveworldbooks.org',
     blurb: 'Faith-building books and teaching resources from LoveWorld Publishing — for every stage of growth.',
@@ -148,6 +161,7 @@ export const platforms: Platform[] = [
   // ─── TEENS (identity, academics, daily Word habit, school clubs, partnership) ───
   {
     id: 'tap',
+    image: '/assets/images/platforms/tap.jpg',
     name: 'TAP — Teens Advance Partners',
     url: 'https://loveworldteensministry.ca',
     blurb: 'Partner with the LoveWorld Teens Ministry — advancing the Gospel among teenagers worldwide.',
@@ -158,6 +172,7 @@ export const platforms: Platform[] = [
   },
   {
     id: 'itplc',
+    image: '/assets/images/platforms/itplc.jpg',
     name: 'ITPLC',
     url: 'https://loveworldteensministry.ca',
     blurb: 'International Teens Pastors & Leaders’ Conference — training and inspiring teens’ leaders globally.',
@@ -168,6 +183,7 @@ export const platforms: Platform[] = [
   },
   {
     id: 'teens-hub',
+    image: '/assets/images/platforms/teens-hub.jpg',
     name: 'LoveWorld Teens Ministry',
     url: 'https://loveworldteensministry.ca',
     blurb: 'The global teens ministry hub — events, specials, and stories of teens taking their world for Jesus.',
@@ -177,6 +193,7 @@ export const platforms: Platform[] = [
   },
   {
     id: 'affirmation-train',
+    image: '/assets/images/platforms/affirmation-train.jpg',
     name: 'Affirmation Train',
     url: 'https://affirmation-train.org',
     blurb: 'Daily affirmations & talking sessions — say the same things God says about you, every day.',
@@ -189,6 +206,7 @@ export const platforms: Platform[] = [
   // ─── YOUTH (purpose & leadership, campus/career, evangelism) ───
   {
     id: 'gylf',
+    image: '/assets/images/platforms/gylf.jpg',
     name: 'Global Youth Leaders’ Forum',
     url: 'https://globalyouthleadersforum.org',
     blurb: 'GYLF — nurturing young people for global leadership: training, inspiration and impact projects worldwide.',
@@ -200,6 +218,7 @@ export const platforms: Platform[] = [
   },
   {
     id: 'campus',
+    image: '/assets/images/platforms/campus.jpg',
     name: 'GYLF Campus Ministry',
     url: 'https://globalyouthleadersforum.org',
     blurb: 'Campus evangelism and student cells through the Global Youth Leaders’ Forum — own your campus for Christ.',
@@ -212,6 +231,7 @@ export const platforms: Platform[] = [
   // ─── CHILDREN (foundations, Bible fun, parent trust) ───
   {
     id: 'early-readers',
+    image: '/assets/images/platforms/early-readers.jpg',
     name: 'Rhapsody for Early Readers',
     url: 'https://rhapsodyofrealities.org',
     blurb: 'The Rhapsody devotional written for beginner readers — colourful, simple stories of God’s Word for little ones.',
@@ -222,6 +242,7 @@ export const platforms: Platform[] = [
   },
   {
     id: 'childrens-tv',
+    image: '/assets/images/platforms/lovetoons.jpg',
     name: 'LoveWorld Children’s Ministry TV',
     url: 'https://loveworldtelevisionministry.org',
     blurb: 'Songs, Bible stories and programmes for children — safe, joyful screen time from LoveWorld TV.',

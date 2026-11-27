@@ -145,7 +145,8 @@ export default function TeensPage() {
               <span style={{ marginLeft: 'auto', fontWeight: 900 }}>→</span>
             </Link>
             <a href="https://affirmation-train.org" target="_blank" rel="noreferrer" className="lw-card" style={{ flexDirection: 'row', alignItems: 'center', gap: '.6rem', padding: '.7rem .8rem' }}>
-              <span className="lw-card__icon" style={{ background: 'var(--ce-gold)' }}>🚂</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/assets/images/platforms/affirmation-train.jpg" alt="Affirmation Train" width={36} height={36} loading="lazy" style={{ width: 36, height: 36, borderRadius: 10, objectFit: 'cover', border: '1px solid rgba(14,27,51,.08)', flexShrink: 0 }} />
               <div><b style={{ fontSize: '.82rem', color: 'var(--ce-navy)' }}>Affirmation Train</b><div style={{ fontSize: '.72rem', color: '#64748B' }}>Daily affirmations — say what God says about you</div></div>
               <span style={{ marginLeft: 'auto', fontWeight: 900 }}>↗</span>
             </a>

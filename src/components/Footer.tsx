@@ -207,7 +207,9 @@ export default function Footer() {
           <div className="pl-chips">
             {platformChips.map(p => (
               <a key={p.id} href={p.url} target="_blank" rel="noreferrer" className="pl-chip">
-                {p.icon} {p.name}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={p.image} alt="" width={16} height={16} loading="lazy" />
+                {p.name}
               </a>
             ))}
           </div>
