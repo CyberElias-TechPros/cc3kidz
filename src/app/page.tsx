@@ -39,7 +39,7 @@ export default function Home() {
   return (
     <>
       <div className="container-cc"><ZoneBreadcrumb /></div>
-      <MinistryFamilyBar />
+      <MinistryFamilyBar current="/" hideLabel hideAges excludeCurrent />
 
       {/* HERO — Pastor slider: Chris → Linda → Kelson (5s) */}
       <section className="kl-hero">
