@@ -76,3 +76,8 @@
 .lw-final{background:linear-gradient(135deg, #0E1B33 0%, #1C3166 55%, #2E4AA3 100%);color:#fff;border-radius:22px;padding:1.1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;box-shadow:0 18px 36px -20px rgba(0,0,0,.4)}
 .lw-final h3{font-family:var(--font-display), serif;font-weight:900;font-size:1.15rem;line-height:1}
 .lw-final p{color:rgba(255,255,255,.78);font-size:.82rem;margin-top:.2rem}
+
+/* In-pictures slider section */
+.lw-moments{position:relative;border-radius:20px;overflow:hidden;border:3px solid #fff;box-shadow:0 24px 48px -20px rgba(0,0,0,.4);aspect-ratio:16/7;background:#0e1b33}
+.lw-moments .church-slider__cap b{font-size:.9rem}
+@media(max-width:767px){.lw-moments{aspect-ratio:4/3;border-radius:14px}}

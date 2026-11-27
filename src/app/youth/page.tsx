@@ -3,9 +3,27 @@ import './youth.css'
 import { YouthAnnouncement } from '@/components/ministry/TeensSubNav'
 import { WebGLShader } from '@/components/effects/WebGLShader'
 import AnnouncementBar from '@/components/AnnouncementBar'
+import YouthHeroSlider from '@/components/YouthHeroSlider'
+import ChurchSlider, { type ChurchSlide } from '@/components/ChurchSlider'
 import { announcements } from '@/lib/site'
 
-export const metadata = { title: 'CC3 Youth Church — Made for Purpose | 20–35' }
+export const metadata = { title: 'CE Central Church 3 Youth — Made for Purpose • PH Zone 3' }
+
+/* Authentic Christ Embassy Youth photos (Nigeria — zonal & national events) */
+const youthHeroSlides: ChurchSlide[] = [
+  { src: '/assets/images/cc3/youth/youth-arena-crusade.jpg', alt: 'Youth crusade night — packed arena worship at a Christ Embassy event in Nigeria', caption: 'Crusade night — packed arena' },
+  { src: '/assets/images/cc3/youth/youth-zone3-auditorium.jpg', alt: 'Sunday service congregation — Christ Embassy Port Harcourt Zone 3 auditorium', caption: 'Sunday service — PH Zone 3 auditorium' },
+  { src: '/assets/images/cc3/youth/youth-iclc-worship.jpg', alt: 'Youth worship with hands raised — ICLC Exhibition, Christ Embassy Port Harcourt Zone 3', caption: 'Worship without limits — ICLC Zone 3' },
+]
+
+const youthMomentSlides: ChurchSlide[] = [
+  { src: '/assets/images/cc3/youth/youth-arena-crusade.jpg', alt: 'Arena crusade — thousands of young believers', caption: 'Arena nights — faith on another level', sub: 'Christ Embassy youth crusade, Nigeria' },
+  { src: '/assets/images/cc3/youth/youth-convention.jpg', alt: 'Youth convention crowd — Christ Embassy Nigeria', caption: 'Convention — a generation for more', sub: 'Christ Embassy national youth gathering' },
+  { src: '/assets/images/cc3/youth/youth-iclc-worship.jpg', alt: 'Worship — hands raised at ICLC Port Harcourt Zone 3', caption: 'Worship — ICLC Exhibition', sub: 'Christ Embassy Port Harcourt Zone 3' },
+  { src: '/assets/images/cc3/youth/youth-city-serve.jpg', alt: 'City Serve — Rhapsody and missionary outreach in the community', caption: 'City Serve — taking the Word to our world', sub: 'Rhapsody & missionary outreach' },
+  { src: '/assets/images/cc3/youth/youth-community.jpg', alt: 'Community groups — church family gathered midweek', caption: 'Community — real people, real faith', sub: 'Midweek groups & cell family' },
+  { src: '/assets/images/cc3/youth/youth-zone3-tent.jpg', alt: 'Zonal HQ auditorium — Jessy & Jenny Street, Peter Odili Road, Port Harcourt', caption: 'Zonal HQ — Peter Odili Road', sub: 'Jessy & Jenny Street, Port Harcourt Zone 3' },
+]
 
 export default function YouthPage() {
   return (
@@ -13,10 +31,7 @@ export default function YouthPage() {
       {/* ===== SWISS CINEMATIC HERO — Midnight Navy full-bleed ===== */}
       <section className="youth-swiss-hero" style={{ position: 'relative', overflow: 'hidden' }}>
         <WebGLShader className="absolute inset-0" intensity={1} opacity={0.12} />
-        <div className="youth-swiss-hero__bg" aria-hidden>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/images/main-family.webp" alt="" />
-        </div>
+        <YouthHeroSlider slides={youthHeroSlides} interval={6000} />
         <div className="youth-swiss-hero__overlay" />
         <div className="container-cc youth-swiss-hero__inner">
           <div className="youth-swiss-hero__left">
@@ -42,11 +57,6 @@ export default function YouthPage() {
             </div>
           </div>
         </div>
-        <div className="youth-swiss-hero__nav">
-          <button aria-label="Previous">‹</button>
-          <span>01 / 03</span>
-          <button aria-label="Next">›</button>
-        </div>
       </section>
 
       {/* ===== OUR HEART — More Than a Church. A Movement. ===== */}
@@ -54,7 +64,7 @@ export default function YouthPage() {
         <div className="container-cc youth-swiss-heart">
           <div className="youth-swiss-heart__img">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/images/main-family.webp" alt="Youth community — B&W placeholder" />
+            <img src="/assets/images/cc3/youth/youth-convention.jpg" alt="Youth convention crowd — Christ Embassy Nigeria" />
             <div className="caption">
               <div className="text-xs font-black">SAME<br />PEOPLE<br />A BRIGHTER<br />TOMORROW<br /><span style={{ color: '#C6A66B' }}>CC3</span></div>
             </div>
@@ -98,9 +108,9 @@ export default function YouthPage() {
           </div>
           <div className="mt-6 grid md:grid-cols-3 gap-4">
             {[
-              { m: 'OCT', d: '18', t: 'CC3 Night', sub: 'WORSHIP • WORD • COMMUNITY', img: '/assets/images/cc3/service-congregation.jpg' },
-              { m: 'OCT', d: '25', t: 'Community Groups', sub: 'REAL CONVERSATIONS • REAL CHANGE', img: '/assets/images/main-family.webp' },
-              { m: 'NOV', d: '08', t: 'City Serve', sub: 'LOVE OUR CITY • MAKE A DIFFERENCE', img: '/assets/images/main-sermon.webp' },
+              { m: 'OCT', d: '18', t: 'CC3 Night', sub: 'WORSHIP • WORD • COMMUNITY', img: '/assets/images/cc3/youth/youth-choir.jpg' },
+              { m: 'OCT', d: '25', t: 'Community Groups', sub: 'REAL CONVERSATIONS • REAL CHANGE', img: '/assets/images/cc3/youth/youth-community.jpg' },
+              { m: 'NOV', d: '08', t: 'City Serve', sub: 'LOVE OUR CITY • MAKE A DIFFERENCE', img: '/assets/images/cc3/youth/youth-city-serve.jpg' },
             ].map(e => (
               <article key={e.t} className="youth-swiss-event">
                 <div className="youth-swiss-event__img">
@@ -120,6 +130,22 @@ export default function YouthPage() {
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== IN PICTURES — authentic youth moments slider ===== */}
+      <section className="section bg-white" style={{ padding: '2.2rem 0' }}>
+        <div className="container-cc">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <div className="youth-swiss-eyebrow">IN PICTURES</div>
+              <h2 className="youth-swiss-h2">Youth Church.<br /><span className="gold">In Pictures.</span></h2>
+            </div>
+            <span className="hidden sm:inline text-xs text-black/40">Real people. Real faith. Real impact.</span>
+          </div>
+          <div className="youth-swiss-moments" style={{ marginTop: '1.2rem' }}>
+            <ChurchSlider slides={youthMomentSlides} eagerFirst interval={4800} />
           </div>
         </div>
       </section>

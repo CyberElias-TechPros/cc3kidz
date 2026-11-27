@@ -4,9 +4,27 @@ import './teens.css'
 import { TeensAnnouncement } from '@/components/ministry/TeensSubNav'
 import { WebGLShader } from '@/components/effects/WebGLShader'
 import AnnouncementBar from '@/components/AnnouncementBar'
+import ChurchSlider, { type ChurchSlide } from '@/components/ChurchSlider'
 import { announcements } from '@/lib/site'
 
-export const metadata = { title: 'LoveWorld Teens — Christ Embassy Teens Church | 13–19 • CC3 PH Zone 3' }
+export const metadata = { title: 'CE Central Church 3 Teens — Christ Embassy Teens Church • PH Zone 3' }
+
+/* Authentic Christ Embassy Teens Ministry photos (Nigeria — zonal & national events) */
+const teensHeroSlides: ChurchSlide[] = [
+  { src: '/assets/images/cc3/teens/teens-iclc-worship.jpg', alt: 'Teens worship with hands raised — ICLC Exhibition, Christ Embassy Port Harcourt Zone 3', caption: 'Teens worship — Port Harcourt Zone 3', sub: 'ICLC Exhibition — thousands of teens lifting hands to Jesus' },
+  { src: '/assets/images/cc3/teens/teens-fire-conference.jpg', alt: 'Teens Easter Eve Fire Conference — Christ Embassy Teens on stage podiums', caption: 'Teens Fire Conference', sub: 'Word, fire & fun — teens taking the mic' },
+  { src: '/assets/images/cc3/teens/teens-award-celebration.jpg', alt: 'Teens Church of the Year award celebration — Christ Embassy Teens Nigeria', caption: 'Celebrating excellence', sub: 'Teens Church of the Year — Christ Embassy Nigeria' },
+  { src: '/assets/images/cc3/teens/teens-group.jpg', alt: 'Teens Church pod — Christ Embassy teens in matching shirts', caption: 'Your squad in Christ', sub: 'Cells, clubs & community — no junior Holy Ghost' },
+]
+
+const teensMomentSlides: ChurchSlide[] = [
+  { src: '/assets/images/cc3/teens/teens-fire-conference.jpg', alt: 'Teens Easter Eve Fire Conference stage', caption: 'Fire Conference — teens on the mic', sub: 'Christ Embassy Teens Conference' },
+  { src: '/assets/images/cc3/teens/teens-award-celebration.jpg', alt: 'Award night celebration — teens running to the stage', caption: 'Award night — joy unspeakable', sub: 'Recognizing excellence in Teens Ministry' },
+  { src: '/assets/images/cc3/teens/teens-iclc-worship.jpg', alt: 'Teens hands raised in worship — ICLC Port Harcourt Zone 3', caption: 'Worship without limits', sub: 'ICLC Exhibition — Christ Embassy Port Harcourt Zone 3' },
+  { src: '/assets/images/cc3/teens/teens-itplc.jpg', alt: 'ITPLC — International Teens Pastors & Leaders Conference', caption: 'ITPLC — leaders&rsquo; conference', sub: 'International Teens Pastors & Leaders Conference — in your city' },
+  { src: '/assets/images/cc3/teens/teens-outreach.jpg', alt: 'TeeVo Club school outreach — teens in yellow shirts with banners', caption: 'TeeVo Club — school invasion', sub: 'Teens Impact — reaching every teenager' },
+  { src: '/assets/images/cc3/teens/teens-tap.jpg', alt: 'LoveWorld Teens Ministry — Teens Advance Partners (TAP) promo', caption: 'TAP — Teens Advance Partners', sub: 'Partnering for the advancement of LW Teens Ministry' },
+]
 
 export default function TeensPage() {
   return (
@@ -38,16 +56,15 @@ export default function TeensPage() {
             </div>
           </div>
 
-          <div className="lw-photoWrap">
-            <div className="lw-photo">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/images/main-family.webp" alt="CC3 Teens worship — vibrant teens church" />
-              <div className="lw-float">
-                <b>Today&apos;s teen,<br />tomorrow&apos;s impact.</b>
-                <p>You&apos;re not ordinary — you&apos;re set apart to effect change.</p>
+            <div className="lw-photoWrap">
+              <div className="lw-photo">
+                <ChurchSlider slides={teensHeroSlides} className="church-slider--fill" eagerFirst interval={5000} />
+                <div className="lw-float">
+                  <b>Today&apos;s teen,<br />tomorrow&apos;s impact.</b>
+                  <p>You&apos;re not ordinary — you&apos;re set apart to effect change.</p>
+                </div>
+                <div className="lw-badge">✦</div>
               </div>
-              <div className="lw-badge">✦</div>
-            </div>
             <div className="lw-trust">
               <div><b>In Christ <span>—</span> Excellence & Purpose</b><div style={{ fontSize: '.7rem', color: '#64748B' }}>Foundation School • Cell Ministry • Global Youth Leaders&apos; Forum</div></div>
               <span>★ ★ ★</span>
@@ -99,7 +116,7 @@ export default function TeensPage() {
             </div>
             <div className="lw-teevo__art">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=600&auto=format&fit=crop" alt="Teen reading TeeVo" />
+              <img src="/assets/images/cc3/teens/teens-tap.jpg" alt="LoveWorld Teens Ministry — Teens Advance Partners" />
               <div className="lw-teevo__caption">
                 <b>Wonders Conference</b> — annual Teens Rhapsody Wonders: miracles, Word &amp; joy. <a href="https://www.teevotogo.org/trwc/" target="_blank" rel="noreferrer" style={{ color: 'var(--ce-navy)', fontWeight: 800, textDecoration: 'underline' }}>teevotogo.org</a>
               </div>
@@ -142,9 +159,9 @@ export default function TeensPage() {
 
           <div style={{ marginTop: '.8rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: '.7rem' }}>
             {[
-              { cat: 'Global • Pastor Chris', t: 'Global Communion Service', d: 'First Sunday of every month — millions connected. Healing, Word & impartation.', img: 'https://images.unsplash.com/photo-15116327648-9bca21baa7a0?q=80&w=600&auto=format&fit=crop', href: '/pastors' },
-              { cat: 'Wonders • Annual', t: 'Rhapsody TeeVo Wonders', d: 'Day of miracles, music & Word — 2,000+ teens. Register via teevotogo.org.', img: 'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=600&auto=format&fit=crop', href: 'https://www.teevotogo.org/trwc/' },
-              { cat: 'Youth • Zonal', t: 'Teens Fire Conference', d: 'Youth Fellowship, campus invasion & GYLF — equipping global leaders.', img: 'https://images.unsplash.com/photo-1540574163026-643ea20ade25?q=80&w=600&auto=format&fit=crop', href: '/teens/events' },
+              { cat: 'Global • Pastor Chris', t: 'Global Communion Service', d: 'First Sunday of every month — millions connected. Healing, Word & impartation.', img: '/assets/images/cc3/youth/youth-zone3-auditorium.jpg', href: '/pastors' },
+              { cat: 'Wonders • Annual', t: 'Rhapsody TeeVo Wonders', d: 'Day of miracles, music & Word — 2,000+ teens. Register via teevotogo.org.', img: '/assets/images/cc3/teens/teens-wonders-banner.jpg', href: 'https://www.teevotogo.org/trwc/' },
+              { cat: 'Youth • Zonal', t: 'Teens Fire Conference', d: 'Youth Fellowship, campus invasion & GYLF — equipping global leaders.', img: '/assets/images/cc3/teens/teens-fire-conference.jpg', href: '/teens/events' },
             ].map(e => (
               <article key={e.t} className="lw-event">
                 <div className="lw-event__img">{/* eslint-disable-next-line @next/next/no-img-element */}<img src={e.img} alt={e.t} /></div>
@@ -158,6 +175,22 @@ export default function TeensPage() {
             ))}
           </div>
           <div style={{ marginTop: '.6rem', fontSize: '.68rem', color: '#64748B', textAlign: 'center' }}>Services: Sundays 10:00AM • Wednesdays 7:00PM • Nursery to Children (0–12) separate • Teens Church runs concurrently in every Christ Embassy location.</div>
+        </div>
+      </section>
+
+      {/* IN PICTURES — authentic Christ Embassy Teens Ministry moments (slider) */}
+      <section className="section bg-white" style={{ paddingTop: '1.2rem', paddingBottom: '1.2rem' }}>
+        <div className="container-cc">
+          <div style={{ display: 'flex', justifyContent: 'space-between', gap: '.8rem', flexWrap: 'wrap', alignItems: 'end' }}>
+            <div>
+              <span className="lw-pill">In pictures • Christ Embassy Teens</span>
+              <h2 className="lw-h2" style={{ fontSize: 'clamp(1.4rem,3vw,1.9rem)' }}>Teens Church — <span className="gold">in pictures.</span></h2>
+            </div>
+            <span style={{ fontSize: '.68rem', color: '#64748B' }}>Real teens. Real fire. Real Word — LoveWorld Teens Ministry.</span>
+          </div>
+          <div className="lw-moments" style={{ marginTop: '.8rem' }}>
+            <ChurchSlider slides={teensMomentSlides} eagerFirst interval={4800} />
+          </div>
         </div>
       </section>
 
@@ -178,7 +211,7 @@ export default function TeensPage() {
             </div>
             <div style={{ borderRadius: 16, overflow: 'hidden', background: '#fff', border: '1px solid rgba(14,27,51,.06)', padding: '.6rem' }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=700&auto=format&fit=crop" alt="Teens small group" style={{ width: '100%', height: 150, objectFit: 'cover', borderRadius: 12 }} />
+              <img src="/assets/images/cc3/teens/teens-group.jpg" alt="Teens small group — Christ Embassy Teens" style={{ width: '100%', height: 150, objectFit: 'cover', borderRadius: 12 }} />
               <div style={{ fontSize: '.72rem', color: '#64748B', marginTop: '.4rem', textAlign: 'center' }}>Ask Guest Services on Sunday — host will walk you to Teens Church (Dallas model, adapted for CC3).</div>
             </div>
           </div>

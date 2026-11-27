@@ -93,3 +93,12 @@
 .youth-swiss-heart__values .val .icon { width: 32px; height: 32px; border-radius: 50%; border: 1px solid #C6A66B; display: grid; place-items: center; font-size: 12px; color: #0F172A; flex-shrink: 0; }
 .youth-swiss-heart__values .val .t { font-size: 11px; font-weight: 800; letter-spacing: 0.06em; color: #0F172A; }
 .youth-swiss-heart__values .val .d { font-size: 11px; color: #64748B; margin-top: 2px; }
+
+/* Hero crossfade slides (YouthHeroSlider) */
+.youth-swiss-hero__bg img{position:absolute;inset:0;opacity:0;transition:opacity .9s ease}
+.youth-swiss-hero__bg img.on{opacity:.95}
+
+/* In-pictures slider section */
+.youth-swiss-moments{position:relative;border-radius:4px;overflow:hidden;aspect-ratio:16/7;background:#0F172A}
+.youth-swiss-moments .church-slider__cap b{font-size:.9rem}
+@media(max-width:767px){.youth-swiss-moments{aspect-ratio:4/3}}
