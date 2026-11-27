@@ -53,39 +53,6 @@ export default function TeensPage() {
           </div>
         </div>
       </section>
-      <TeensAnnouncement />
-
-      {/* UPCOMING — immediately after hero per request (was previously after TeeVo) */}
-      <section className="section bg-white" style={{ paddingTop: '1.2rem', paddingBottom: '1.2rem' }}>
-        <div className="container-cc">
-          <div style={{ display: 'flex', justifyContent: 'space-between', gap: '.8rem', flexWrap: 'wrap', alignItems: 'end' }}>
-            <div>
-              <span className="lw-pill" style={{ color: '#FF7A59', background: 'rgba(255,122,89,.08)', borderColor: 'rgba(255,122,89,.18)' }}>Upcoming • Global • Zonal</span>
-              <h2 className="lw-h2" style={{ fontSize: 'clamp(1.4rem,3vw,1.9rem)' }}>Gather. Grow. <span className="gold">Go.</span></h2>
-            </div>
-            <Link href="/teens/events" className="btn-lw" style={{ background: '#fff', border: '1px solid rgba(14,27,51,.08)', color: 'var(--ce-navy)', fontSize: '.74rem' }}>All events →</Link>
-          </div>
-
-          <div style={{ marginTop: '.8rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: '.7rem' }}>
-            {[
-              { cat: 'Global • Pastor Chris', t: 'Global Communion Service', d: 'First Sunday of every month — millions connected. Healing, Word & impartation.', img: 'https://images.unsplash.com/photo-15116327648-9bca21baa7a0?q=80&w=600&auto=format&fit=crop', href: '/pastors' },
-              { cat: 'Wonders • Annual', t: 'Rhapsody TeeVo Wonders', d: 'Day of miracles, music & Word — 2,000+ teens. Register via teevotogo.org.', img: 'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=600&auto=format&fit=crop', href: 'https://www.teevotogo.org/trwc/' },
-              { cat: 'Youth • Zonal', t: 'Teens Fire Conference', d: 'Youth Fellowship, campus invasion & GYLF — equipping global leaders.', img: 'https://images.unsplash.com/photo-1540574163026-643ea20ade25?q=80&w=600&auto=format&fit=crop', href: '/teens/events' },
-            ].map(e => (
-              <article key={e.t} className="lw-event">
-                <div className="lw-event__img">{/* eslint-disable-next-line @next/next/no-img-element */}<img src={e.img} alt={e.t} /></div>
-                <div className="lw-event__body">
-                  <div className="lw-event__meta">{e.cat}</div>
-                  <div className="lw-event__title">{e.t}</div>
-                  <div className="lw-event__sub">{e.d}</div>
-                  <a href={e.href} target={e.href.startsWith('http') ? '_blank' : undefined} rel={e.href.startsWith('http') ? 'noreferrer' : undefined} className="lw-event__cta">Details →</a>
-                </div>
-              </article>
-            ))}
-          </div>
-          <div style={{ marginTop: '.6rem', fontSize: '.68rem', color: '#64748B', textAlign: 'center' }}>Services: Sundays 10:00AM • Wednesdays 7:00PM • Nursery to Children (0–12) separate • Teens Church runs concurrently in every Christ Embassy location.</div>
-        </div>
-      </section>
 
       {/* WHAT WE DO — 4 pillars from Christ Embassy Teens offer */}
       <section className="section bg-white" style={{ paddingTop: '1.6rem', paddingBottom: '1.2rem' }}>
@@ -154,6 +121,39 @@ export default function TeensPage() {
               <span style={{ marginLeft: 'auto', fontWeight: 900 }}>→</span>
             </Link>
           </div>
+        </div>
+      </section>
+      <TeensAnnouncement />
+
+      {/* UPCOMING — moved 2-3 sections after hero for cleaner hero → value flow */}
+      <section className="section bg-white" style={{ paddingTop: '1.2rem', paddingBottom: '1.2rem' }}>
+        <div className="container-cc">
+          <div style={{ display: 'flex', justifyContent: 'space-between', gap: '.8rem', flexWrap: 'wrap', alignItems: 'end' }}>
+            <div>
+              <span className="lw-pill" style={{ color: '#FF7A59', background: 'rgba(255,122,89,.08)', borderColor: 'rgba(255,122,89,.18)' }}>Upcoming • Global • Zonal</span>
+              <h2 className="lw-h2" style={{ fontSize: 'clamp(1.4rem,3vw,1.9rem)' }}>Gather. Grow. <span className="gold">Go.</span></h2>
+            </div>
+            <Link href="/teens/events" className="btn-lw" style={{ background: '#fff', border: '1px solid rgba(14,27,51,.08)', color: 'var(--ce-navy)', fontSize: '.74rem' }}>All events →</Link>
+          </div>
+
+          <div style={{ marginTop: '.8rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: '.7rem' }}>
+            {[
+              { cat: 'Global • Pastor Chris', t: 'Global Communion Service', d: 'First Sunday of every month — millions connected. Healing, Word & impartation.', img: 'https://images.unsplash.com/photo-15116327648-9bca21baa7a0?q=80&w=600&auto=format&fit=crop', href: '/pastors' },
+              { cat: 'Wonders • Annual', t: 'Rhapsody TeeVo Wonders', d: 'Day of miracles, music & Word — 2,000+ teens. Register via teevotogo.org.', img: 'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=600&auto=format&fit=crop', href: 'https://www.teevotogo.org/trwc/' },
+              { cat: 'Youth • Zonal', t: 'Teens Fire Conference', d: 'Youth Fellowship, campus invasion & GYLF — equipping global leaders.', img: 'https://images.unsplash.com/photo-1540574163026-643ea20ade25?q=80&w=600&auto=format&fit=crop', href: '/teens/events' },
+            ].map(e => (
+              <article key={e.t} className="lw-event">
+                <div className="lw-event__img">{/* eslint-disable-next-line @next/next/no-img-element */}<img src={e.img} alt={e.t} /></div>
+                <div className="lw-event__body">
+                  <div className="lw-event__meta">{e.cat}</div>
+                  <div className="lw-event__title">{e.t}</div>
+                  <div className="lw-event__sub">{e.d}</div>
+                  <a href={e.href} target={e.href.startsWith('http') ? '_blank' : undefined} rel={e.href.startsWith('http') ? 'noreferrer' : undefined} className="lw-event__cta">Details →</a>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div style={{ marginTop: '.6rem', fontSize: '.68rem', color: '#64748B', textAlign: 'center' }}>Services: Sundays 10:00AM • Wednesdays 7:00PM • Nursery to Children (0–12) separate • Teens Church runs concurrently in every Christ Embassy location.</div>
         </div>
       </section>
 

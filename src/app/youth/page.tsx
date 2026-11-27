@@ -46,9 +46,43 @@ export default function YouthPage() {
           <button aria-label="Next">›</button>
         </div>
       </section>
+
+      {/* ===== OUR HEART — More Than a Church. A Movement. ===== */}
+      <section className="section bg-white" style={{ padding: '2.2rem 0' }}>
+        <div className="container-cc youth-swiss-heart">
+          <div className="youth-swiss-heart__img">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/assets/images/main-family.webp" alt="Youth community — B&W placeholder" />
+            <div className="caption">
+              <div className="text-xs font-black">SAME<br />PEOPLE<br />A BRIGHTER<br />TOMORROW<br /><span style={{ color: '#C6A66B' }}>CC3</span></div>
+            </div>
+          </div>
+          <div className="youth-swiss-heart__copy">
+            <div className="eyebrow">OUR HEART</div>
+            <h3>More Than a Church.<br /><span className="gold">A Movement.</span></h3>
+            <p>CC3 exists to see a generation know Jesus, live with purpose and bring hope to the world. We&apos;re a community of young adults (20–35) learning to follow, grow and make a difference together.</p>
+            <Link href="/youth/about" className="link">OUR STORY <span>→</span></Link>
+          </div>
+          <div className="youth-swiss-heart__values">
+            {[
+              { t: 'DEEPER WITH JESUS', d: 'Real faith for real life.', icon: '†' },
+              { t: 'STRONGER TOGETHER', d: 'Authentic community.', icon: '◐' },
+              { t: 'GREATER IMPACT', d: 'A generation that serves.', icon: '▦' },
+            ].map(v => (
+              <div key={v.t} className="val">
+                <div className="icon">{v.icon}</div>
+                <div>
+                  <div className="t">{v.t}</div>
+                  <div className="d">{v.d}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       <YouthAnnouncement />
 
-      {/* ===== UPCOMING EVENTS — Swiss grid ===== */}
+      {/* ===== UPCOMING EVENTS — Swiss grid — moved 2 sections after hero for cleaner hero → heart flow */}
       <section className="section youth-swiss-events">
         <div className="container-cc">
           <div className="flex items-start justify-between gap-4">
@@ -81,40 +115,6 @@ export default function YouthPage() {
                   <span className="arrow">→</span>
                 </div>
               </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===== OUR HEART — More Than a Church. A Movement. ===== */}
-      <section className="section bg-white" style={{ padding: '2.2rem 0' }}>
-        <div className="container-cc youth-swiss-heart">
-          <div className="youth-swiss-heart__img">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/images/main-family.webp" alt="Youth community — B&W placeholder" />
-            <div className="caption">
-              <div className="text-xs font-black">SAME<br />PEOPLE<br />A BRIGHTER<br />TOMORROW<br /><span style={{ color: '#C6A66B' }}>CC3</span></div>
-            </div>
-          </div>
-          <div className="youth-swiss-heart__copy">
-            <div className="eyebrow">OUR HEART</div>
-            <h3>More Than a Church.<br /><span className="gold">A Movement.</span></h3>
-            <p>CC3 exists to see a generation know Jesus, live with purpose and bring hope to the world. We&apos;re a community of young adults (20–35) learning to follow, grow and make a difference together.</p>
-            <Link href="/youth/about" className="link">OUR STORY <span>→</span></Link>
-          </div>
-          <div className="youth-swiss-heart__values">
-            {[
-              { t: 'DEEPER WITH JESUS', d: 'Real faith for real life.', icon: '†' },
-              { t: 'STRONGER TOGETHER', d: 'Authentic community.', icon: '◐' },
-              { t: 'GREATER IMPACT', d: 'A generation that serves.', icon: '▦' },
-            ].map(v => (
-              <div key={v.t} className="val">
-                <div className="icon">{v.icon}</div>
-                <div>
-                  <div className="t">{v.t}</div>
-                  <div className="d">{v.d}</div>
-                </div>
-              </div>
             ))}
           </div>
         </div>
