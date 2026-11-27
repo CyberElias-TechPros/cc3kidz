@@ -67,13 +67,13 @@ export default function Header() {
   const navItems = isTeens ? teensNav : isYouth ? youthNav : site.nav
   const otherChurches = churches.filter(c => c.href !== current)
 
-  // branding — per user: CE Central Church 3 Youth / Teens
+  // branding — per user: CE Central Church 3 Youth / Teens (no ages)
   const brand = isTeens
     ? {
         logo: '/assets/images/loveworld-teens-youth.png',
         title: 'CE Central Church 3 Teens',
         sub: 'Teens & Youth Ministry · PH Zone 3',
-        sub2: 'Ages 13–19 · Giving your life a meaning',
+        sub2: 'Giving your life a meaning',
         href: '/teens',
         alt: 'LoveWorld Teens & Youth Ministry',
       }
@@ -82,7 +82,7 @@ export default function Header() {
         logo: '/assets/images/loveworld-teens-youth.png',
         title: 'CE Central Church 3 Youth',
         sub: 'Teens & Youth Ministry · PH Zone 3',
-        sub2: 'Ages 20–35 · Giving your life a meaning',
+        sub2: 'Giving your life a meaning',
         href: '/youth',
         alt: 'LoveWorld Teens & Youth Ministry',
       }
