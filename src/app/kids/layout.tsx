@@ -5,6 +5,7 @@ import './kids-responsive.css'
 import KidsNav from './KidsNav'
 import KidsFooter from './KidsFooter'
 import FloatingHelpButton from '@/components/FloatingHelpButton'
+import { MasterclassProvider } from '@/components/effects/MasterclassProvider'
 
 export const metadata = {
   title: "CE Central Church 3 Children's Church | Christ Embassy Central Church 3",
@@ -12,7 +13,8 @@ export const metadata = {
 
 export default function KidsLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="kids-scope">
+    <MasterclassProvider>
+      <div className="kids-scope">
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       {/* eslint-disable-next-line @next/next/no-page-custom-font */}
@@ -24,6 +26,7 @@ export default function KidsLayout({ children }: { children: React.ReactNode }) 
       <main id="main">{children}</main>
       <KidsFooter />
       <FloatingHelpButton />
-    </div>
+      </div>
+    </MasterclassProvider>
   )
 }

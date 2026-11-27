@@ -2,6 +2,7 @@ import Link from 'next/link'
 import lessonsData from '../../../kids/data/lessons.json'
 import eventsData from '../../../kids/data/events.json'
 import { getTodayDevotional } from '@/lib/rhapsody/store'
+import { WebGLShader } from '@/components/effects/WebGLShader'
 
 export default function KidsHome() {
   const featured = (lessonsData as any).lessons.find((l: any) => l.featured)
@@ -10,8 +11,9 @@ export default function KidsHome() {
 
   return (
     <>
-      {/* HERO */}
-      <section className="hero">
+      {/* HERO — playful shader (child-friendly, design preserved) */}
+      <section className="hero" style={{ position: 'relative', overflow: 'hidden' }}>
+        <WebGLShader className="absolute inset-0" intensity={0.5} opacity={0.08} />
         <svg className="deco deco--sun" viewBox="0 0 200 200" aria-hidden="true">
           <g fill="none" stroke="#FFB703" strokeWidth={10} strokeLinecap="round">
             <circle cx={100} cy={100} r={44} fill="#FFD34D" />
