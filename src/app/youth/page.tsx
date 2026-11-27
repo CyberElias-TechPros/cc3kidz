@@ -5,6 +5,8 @@ import { WebGLShader } from '@/components/effects/WebGLShader'
 import AnnouncementBar from '@/components/AnnouncementBar'
 import YouthHeroSlider from '@/components/YouthHeroSlider'
 import ChurchSlider, { type ChurchSlide } from '@/components/ChurchSlider'
+import PlatformCard from '@/components/PlatformCard'
+import { platformsFor } from '@/data/loveworld-platforms'
 import { announcements } from '@/lib/site'
 
 export const metadata = { title: 'CE Central Church 3 Youth — Made for Purpose • PH Zone 3' }
@@ -24,6 +26,9 @@ const youthMomentSlides: ChurchSlide[] = [
   { src: '/assets/images/cc3/youth/youth-community.jpg', alt: 'Community groups — church family gathered midweek', caption: 'Community — real people, real faith', sub: 'Midweek groups & cell family' },
   { src: '/assets/images/cc3/youth/youth-zone3-tent.jpg', alt: 'Zonal HQ auditorium — Jessy & Jenny Street, Peter Odili Road, Port Harcourt', caption: 'Zonal HQ — Peter Odili Road', sub: 'Jessy & Jenny Street, Port Harcourt Zone 3' },
 ]
+
+/* LoveWorld platforms for youth — leadership & outreach hub (G.Y.L.F. featured first) */
+const youthPlatformItems = [...platformsFor('youth')].sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0))
 
 export default function YouthPage() {
   return (
@@ -146,6 +151,24 @@ export default function YouthPage() {
           </div>
           <div className="youth-swiss-moments" style={{ marginTop: '1.2rem' }}>
             <ChurchSlider slides={youthMomentSlides} eagerFirst interval={4800} />
+          </div>
+        </div>
+      </section>
+
+      {/* ===== LOVEWORLD YOUTH PLATFORMS — leadership & outreach ===== */}
+      <section className="section" style={{ background: '#F7F6F2', padding: '2.2rem 0' }}>
+        <div className="container-cc">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <div className="youth-swiss-eyebrow">LOVEWORLD PLATFORMS</div>
+              <h2 className="youth-swiss-h2">Lead. Reach.<br /><span className="gold">Rise Higher.</span></h2>
+            </div>
+            <span className="hidden sm:inline text-xs text-black/40">Official platforms — opens in a new tab ↗</span>
+          </div>
+          <div style={{ marginTop: '1.2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(230px,1fr))', gap: '0.7rem' }}>
+            {youthPlatformItems.map(p => (
+              <PlatformCard key={p.id} p={p} />
+            ))}
           </div>
         </div>
       </section>

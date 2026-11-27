@@ -24,5 +24,20 @@ export default function YouthRisePage(){
       ))}
     </div>
     </section>
+
+    {/* ReachOut World — global Rhapsody distribution campaign feeding the R.I.S.E. narrative */}
+    <section className="section" style={{ background: '#F8FAFC' }}>
+      <div className="container-cc">
+        <a href="https://reachoutworld.org" target="_blank" rel="noreferrer" className="card p-6 flex flex-col md:flex-row items-center gap-4 hover:border-gold/40" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <span style={{ fontSize: '2rem' }} aria-hidden>🌍</span>
+          <div className="flex-1">
+            <div className="text-xs font-bold tracking-widest uppercase text-gold">R.I.S.E. × ReachOut World</div>
+            <h3 className="font-display font-extrabold text-lg text-navy mt-1">Reach your world — every person alive, every nation</h3>
+            <p className="text-sm leading-6 text-slate-600 mt-1">Join the global campaign taking Rhapsody of Realities to everyone on earth. Distribute, sponsor and report your reach — Rhapsody in 8,000+ languages, from your street to the nations.</p>
+          </div>
+          <span className="btn btn--navy whitespace-nowrap">ReachOut World ↗</span>
+        </a>
+      </div>
+    </section>
   </>)
 }

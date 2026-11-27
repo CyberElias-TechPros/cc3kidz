@@ -22,6 +22,7 @@ export default function Page() {
               </p>
               <div className="mt-4 flex flex-wrap gap-2 text-xs">
                 <a href="https://rhapsodyofrealities.org" target="_blank" rel="noreferrer" className="btn bg-gold text-navy !py-2">Open Official →</a>
+                <a href="https://rhapsodyofrealities.org" target="_blank" rel="noreferrer" className="btn bg-white/10 border border-white/20 text-white !py-2">📱 Rhapsody Bible App</a>
                 <Link href="/youth/word" className="btn bg-white/10 border border-white/20 text-white !py-2">Word & Spirit</Link>
               </div>
             </div>

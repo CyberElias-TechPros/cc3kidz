@@ -16,6 +16,7 @@ import { WebGLShader } from '@/components/effects/WebGLShader'
 import { ScrollReveal, KineticHeading } from '@/components/effects/KineticText'
 import ServiceCountdown from '@/components/ServiceCountdown'
 import AnnouncementBar from '@/components/AnnouncementBar'
+import PlatformHub from '@/components/PlatformHub'
 import { announcements } from '@/lib/site'
 
 export default function Home() {
@@ -339,6 +340,16 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* LOVEWORLD PLATFORMS — ministry arms & resources for every member */}
+      <PlatformHub
+        eyebrow="LoveWorld Platforms"
+        title="One Church Family — Every Platform You Need"
+        sub="From the daily Rhapsody to Healing Streams, PCDL, KingsChat and ReachOut World — the official ministry platforms of Believers' LoveWorld, for your daily walk and global impact."
+        audience="main"
+        max={12}
+        style={{ background: '#F8FAFC' }}
+      />
 
       {/* FINAL CTA */}
       <section className="section" style={{background:'#fff'}}>

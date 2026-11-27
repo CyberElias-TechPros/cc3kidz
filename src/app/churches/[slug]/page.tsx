@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { getChurchBySlug, getPastorForChurch, getCellsForChurch, getChurchStats } from '@/lib/churches'
 import { ChurchBreadcrumb } from '@/components/church/ChurchNav'
 import { ChurchSiblings } from '@/components/church/ChurchHeader'
+import PlatformHub from '@/components/PlatformHub'
 import cells from '@/data/cells.json'
 import events from '@/data/events.json'
 
@@ -175,6 +176,16 @@ export default async function ChurchHome({ params }: { params: Promise<{ slug: s
           <ChurchSiblings currentSlug={slug} />
         </div>
       </section>
+
+      {/* LOVEWORLD PLATFORMS — shared across every group church (inherited from Main) */}
+      <PlatformHub
+        eyebrow="LoveWorld Platforms"
+        title="Ministry Platforms — for Every Member"
+        sub="Devotionals, healing, media, leadership and partnership — the official platforms of Believers' LoveWorld, available to every member of every CC3 church."
+        audience="main"
+        max={12}
+        style={{ background: '#F8FAFC' }}
+      />
     </>
   )
 }

@@ -9,6 +9,7 @@
     "lint": "next lint",
     "sync:kids": "node scripts/sync-kids.mjs",
     "sync:rhapsody": "node scripts/sync-rhapsody.mjs",
+    "check:links": "node scripts/check-platform-links.mjs",
     "db:generate": "prisma generate",
     "db:push": "prisma db push",
     "db:seed": "tsx prisma/seed.ts",

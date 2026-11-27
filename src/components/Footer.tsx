@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { site } from '@/lib/site'
+import { platformsFor } from '@/data/loveworld-platforms'
 
 function getChurch(pathname: string | null) {
   if (!pathname) return '/'
@@ -95,6 +96,8 @@ export default function Footer() {
 
   const links = isTeens ? teensFooter : isYouth ? youthFooter : site.footerLinks
   const copyrightChurch = isTeens ? 'CE Central Church 3 Teens' : isYouth ? 'CE Central Church 3 Youth' : 'Christ Embassy Central Church 3'
+  // LoveWorld platform chips — contextual per scope (max 6, no link soup)
+  const platformChips = platformsFor(isTeens ? 'teens' : isYouth ? 'youth' : 'main').slice(0, 6)
 
   return (
     <footer className="bg-navy text-slate-200">
@@ -198,7 +201,19 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-white/10 pt-6 grid md:grid-cols-3 gap-4 text-sm">
+        {/* LoveWorld Platforms — contextual chips */}
+        <div className="mt-10 border-t border-white/10 pt-6">
+          <div className="text-xs font-bold tracking-widest uppercase text-gold mb-3">LoveWorld Platforms</div>
+          <div className="pl-chips">
+            {platformChips.map(p => (
+              <a key={p.id} href={p.url} target="_blank" rel="noreferrer" className="pl-chip">
+                {p.icon} {p.name}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-8 border-t border-white/10 pt-6 grid md:grid-cols-3 gap-4 text-sm">
           <div>
             <div className="font-semibold text-white">{site.addressShort}</div>
             <div className="text-slate-300">{site.address}</div>

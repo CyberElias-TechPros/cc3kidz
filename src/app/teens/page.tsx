@@ -5,6 +5,8 @@ import { TeensAnnouncement } from '@/components/ministry/TeensSubNav'
 import { WebGLShader } from '@/components/effects/WebGLShader'
 import AnnouncementBar from '@/components/AnnouncementBar'
 import ChurchSlider, { type ChurchSlide } from '@/components/ChurchSlider'
+import PlatformStrip from '@/components/PlatformStrip'
+import { platformsFor } from '@/data/loveworld-platforms'
 import { announcements } from '@/lib/site'
 
 export const metadata = { title: 'CE Central Church 3 Teens — Christ Embassy Teens Church • PH Zone 3' }
@@ -25,6 +27,9 @@ const teensMomentSlides: ChurchSlide[] = [
   { src: '/assets/images/cc3/teens/teens-outreach.jpg', alt: 'TeeVo Club school outreach — teens in yellow shirts with banners', caption: 'TeeVo Club — school invasion', sub: 'Teens Impact — reaching every teenager' },
   { src: '/assets/images/cc3/teens/teens-tap.jpg', alt: 'LoveWorld Teens Ministry — Teens Advance Partners (TAP) promo', caption: 'TAP — Teens Advance Partners', sub: 'Partnering for the advancement of LW Teens Ministry' },
 ]
+
+/* LoveWorld platforms for teens — strip after In Pictures */
+const teensPlatformItems = platformsFor('teens').filter(p => p.id !== 'affirmation-train')
 
 export default function TeensPage() {
   return (
@@ -139,6 +144,11 @@ export default function TeensPage() {
               <div><b style={{ fontSize: '.82rem', color: 'var(--ce-navy)' }}>Foundation School (6 weeks)</b><div style={{ fontSize: '.72rem', color: '#64748B' }}>New Creation • Holy Spirit • Cell Ministry • Graduation</div></div>
               <span style={{ marginLeft: 'auto', fontWeight: 900 }}>→</span>
             </Link>
+            <a href="https://affirmation-train.org" target="_blank" rel="noreferrer" className="lw-card" style={{ flexDirection: 'row', alignItems: 'center', gap: '.6rem', padding: '.7rem .8rem' }}>
+              <span className="lw-card__icon" style={{ background: 'var(--ce-gold)' }}>🚂</span>
+              <div><b style={{ fontSize: '.82rem', color: 'var(--ce-navy)' }}>Affirmation Train</b><div style={{ fontSize: '.72rem', color: '#64748B' }}>Daily affirmations — say what God says about you</div></div>
+              <span style={{ marginLeft: 'auto', fontWeight: 900 }}>↗</span>
+            </a>
           </div>
         </div>
       </section>
@@ -191,6 +201,18 @@ export default function TeensPage() {
           <div className="lw-moments" style={{ marginTop: '.8rem' }}>
             <ChurchSlider slides={teensMomentSlides} eagerFirst interval={4800} />
           </div>
+        </div>
+      </section>
+
+      {/* LOVEWORLD TEENS PLATFORMS — TAP, ITPLC, ministry hub */}
+      <section className="section" style={{ background: '#F8FAFF', paddingTop: '1.2rem', paddingBottom: '1.2rem' }}>
+        <div className="container-cc">
+          <PlatformStrip
+            title="LoveWorld Teens platforms — beyond Sunday"
+            sub="Partner, lead, and connect with the global teens ministry of Believers' LoveWorld. Official platforms — open in a new tab."
+            items={teensPlatformItems}
+            columns="repeat(auto-fit,minmax(220px,1fr))"
+          />
         </div>
       </section>
 

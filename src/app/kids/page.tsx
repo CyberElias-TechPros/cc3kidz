@@ -154,6 +154,9 @@ export default function KidsHome() {
                 <p style={{ fontSize: '.9rem', color: 'var(--ink-soft)', marginTop: '.6rem', textAlign: 'center', maxWidth: 600 }}>{kiddiesToday.excerpt.slice(0, 160)}…</p>
                 <div className="memory-card" style={{ textAlign: 'left', maxWidth: 560, width: '100%' }}><div className="memory-card__label">{kiddiesToday.prayerLabel}</div><blockquote>“{kiddiesToday.prayer.slice(0, 140)}…”</blockquote></div>
                 <div className="btn-row" style={{ justifyContent: 'center' }}><Link className="btn btn--yellow" href={`/kids/rhapsody/${kiddiesToday.slug}`}>Read Kiddies Rhapsody</Link><Link className="btn btn--ghost-light" href={`/kids/rhapsody/quiz/${kiddiesToday.slug}`}>Take Quiz +10 XP</Link><Link className="btn btn--secondary" href="/kids/rhapsody">All Kiddies</Link></div>
+                <div style={{ marginTop: '0.5rem', fontSize: '.78rem', color: 'var(--ink-soft)', textAlign: 'center' }}>
+                  Love this? The official <a href="https://rhapsodyofrealities.org" target="_blank" rel="noreferrer" style={{ fontWeight: 800, color: 'var(--ink)' }}>Rhapsody for Early Readers</a> has more stories for little readers ↗
+                </div>
               </div>
             </div>
             <div style={{ textAlign: 'center', marginTop: '0.8rem', fontSize: '.75rem', color: 'var(--ink-soft)' }}>Coordinator: Sister Christy Olajide Abiola · Ministry of Children’s Affairs · PH Zone 3</div>
@@ -200,7 +203,7 @@ export default function KidsHome() {
         <div className="container">
           <div className="parents-panel">
             <div><span className="eyebrow eyebrow--pink">Parents, you&apos;re welcome</span><h2>Dear Parents, You&apos;re Welcome!</h2><p>Find everything you need to know about classes, service times and how we keep your children safe.</p><div className="btn-row"><Link className="btn btn--primary" href="/kids/parents">Visit Parents&apos; Corner</Link><Link className="btn btn--secondary" href="/kids/contact">Ask a question</Link></div></div>
-            <div className="parents-note"><h3>📌 What you&apos;ll find</h3><ul><li>Children&apos;s church guidelines</li><li>Service schedules</li><li>Registration</li><li>FAQs</li></ul></div>
+            <div className="parents-note"><h3>📌 What you&apos;ll find</h3><ul><li>Children&apos;s church guidelines</li><li>Service schedules</li><li>Registration</li><li>FAQs</li><li>Safe screen time: <a href="https://loveworldtelevisionministry.org" target="_blank" rel="noreferrer" style={{ fontWeight: 800, color: 'var(--ink)' }}>LoveWorld Children&apos;s Ministry TV</a> ↗ — songs &amp; Bible stories</li></ul></div>
           </div>
         </div>
       </section>
