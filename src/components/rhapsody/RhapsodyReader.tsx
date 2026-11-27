@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import type { Devotional } from '@/lib/rhapsody/types'
 import { recordRead } from '@/lib/gamification/engine'
+import { VoiceReader } from './VoiceReader'
 
 export function RhapsodyReader({ d, church }: { d: Devotional; church: 'main'|'youth'|'teens'|'kids' }) {
   const [completed, setCompleted] = useState(false)
@@ -29,6 +30,19 @@ export function RhapsodyReader({ d, church }: { d: Devotional; church: 'main'|'y
     return d.body.split('\n\n')
   }, [d.body])
 
+  const voiceText = useMemo(() => {
+    const parts = [
+      d.title,
+      d.subtitle || '',
+      `Scripture: ${d.scripture}. ${d.scriptureReference}.`,
+      d.body.replace(/## /g, '').replace(/\n\n/g, '. '),
+      d.prayer ? `${d.prayerLabel}: ${d.prayer}` : '',
+      d.extras?.map(e => `${e.label}: ${e.text}`).join('. ') || '',
+      d.furtherStudy ? `Further study: ${d.furtherStudy}` : '',
+    ]
+    return parts.filter(Boolean).join('. ')
+  }, [d])
+
   return (
     <article className="card overflow-hidden">
       {/* header */}
@@ -48,6 +62,11 @@ export function RhapsodyReader({ d, church }: { d: Devotional; church: 'main'|'y
           <span className="rounded-full bg-white/10 border border-white/20 px-3 py-1">{d.words ?? '—'} words</span>
           <Link href={quizHref} className="rounded-full bg-gold text-navy px-3 py-1 font-bold">Take Quiz →</Link>
         </div>
+      </div>
+
+      {/* Voice reading - mobile minimized */}
+      <div className="p-4 bg-white border-b border-black/5">
+        <VoiceReader text={voiceText} title={d.title} />
       </div>
 
       {/* body */}

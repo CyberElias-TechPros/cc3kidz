@@ -146,7 +146,7 @@ export default function Header() {
               </div>
               <div className="mt-1">
                 <a href="/kids" className="font-semibold text-navy underline">
-                  Kids Church
+                  Children Church
                 </a>
               </div>
             </div>

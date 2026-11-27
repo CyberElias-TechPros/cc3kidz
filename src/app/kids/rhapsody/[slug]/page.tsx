@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getDevotionalBySlug, getAdjacent } from '@/lib/rhapsody/store'
 import { CHURCH_LEADERS } from '@/lib/rhapsody/audiences'
+import { VoiceReader } from '@/components/rhapsody/VoiceReader'
 
 export async function generateStaticParams() {
   const { getDevotionals } = await import('@/lib/rhapsody/store')
@@ -28,6 +29,9 @@ export default function Page({ params }: { params: { slug: string } }) {
 
       <section className="section section--white">
         <div className="container" style={{ maxWidth: '42rem' }}>
+          <div style={{ marginBottom: '1rem' }}>
+            <VoiceReader text={`${d.title}. ${d.subtitle || ''}. Scripture: ${d.scripture}. ${d.scriptureReference}. ${d.body.replace(/## /g, '').replace(/\n\n/g, '. ')} ${d.prayer ? `${d.prayerLabel}: ${d.prayer}` : ''} ${d.extras?.map(e => `${e.label}: ${e.text}`).join('. ') || ''}`} title={d.title} />
+          </div>
           <div className="memory-card" style={{ marginBottom: '1.2rem' }}>
             <div className="memory-card__label">Opening Scripture</div>
             <blockquote>“{d.scripture}”</blockquote>

@@ -6,6 +6,7 @@ import Footer from '@/components/Footer'
 import AnnouncementBar from '@/components/AnnouncementBar'
 import CookieConsent from '@/components/CookieConsent'
 import FloatingHelpButton from '@/components/FloatingHelpButton'
+import { MasterclassProvider } from '@/components/effects/MasterclassProvider'
 import { announcements } from '@/lib/site'
 
 // Routes that have their own chrome — do NOT show main AnnouncementBar/Header/Footer
@@ -74,19 +75,21 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
   const showTopBar = mounted ? !isHome : true
 
   return (
-    <div suppressHydrationWarning>
-      <a
-        href="#main"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 z-[100] bg-white text-navy px-4 py-2 rounded-full border shadow"
-      >
-        Skip to content
-      </a>
-      {showTopBar && <AnnouncementBar items={announcements as any} />}
-      <Header />
-      <main id="main">{children}</main>
-      <Footer />
-      <FloatingHelpButton />
-      <CookieConsent />
-    </div>
+    <MasterclassProvider>
+      <div suppressHydrationWarning>
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 z-[100] bg-white text-navy px-4 py-2 rounded-full border shadow"
+        >
+          Skip to content
+        </a>
+        {showTopBar && <AnnouncementBar items={announcements as any} />}
+        <Header />
+        <main id="main">{children}</main>
+        <Footer />
+        <FloatingHelpButton />
+        <CookieConsent />
+      </div>
+    </MasterclassProvider>
   )
 }

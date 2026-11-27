@@ -12,6 +12,8 @@ import cc3Photos from '@/data/cc3Photos.json'
 import { ZoneBreadcrumb } from '@/components/group/ZoneBreadcrumb'
 import HeroSlider from '@/components/HeroSlider'
 import { MinistryFamilyBar } from '@/components/ministry/MinistryFamilyBar'
+import { WebGLShader } from '@/components/effects/WebGLShader'
+import { ScrollReveal, KineticHeading } from '@/components/effects/KineticText'
 import ServiceCountdown from '@/components/ServiceCountdown'
 import AnnouncementBar from '@/components/AnnouncementBar'
 import { announcements } from '@/lib/site'
@@ -41,9 +43,11 @@ export default function Home() {
       <div className="container-cc"><ZoneBreadcrumb /></div>
       <MinistryFamilyBar current="/" hideLabel hideAges excludeCurrent />
 
-      {/* HERO — Pastor slider: Chris → Linda → Kelson (5s) */}
-      <section className="kl-hero">
-        <div className="container-cc kl-hero__inner">
+      {/* HERO — Pastor slider: Chris → Linda → Kelson (5s) — Masterclass shader */}
+      <section className="kl-hero" style={{ position: 'relative', overflow: 'hidden' }}>
+        <WebGLShader className="absolute inset-0" intensity={0.8} opacity={0.15} />
+        <div className="absolute inset-0" style={{ background: 'radial-gradient(600px 400px at 80% 20%, rgba(198,160,74,0.08), transparent 60%)' }} aria-hidden />
+        <div className="container-cc kl-hero__inner" style={{ position: 'relative' }}>
           <div>
             <span className="kl-hero__kicker"><i /> Port Harcourt · 30B Rumuokwuta · Sunday 8AM</span>
             <h1 className="kl-hero__title" style={{marginTop:'1.4rem'}}>

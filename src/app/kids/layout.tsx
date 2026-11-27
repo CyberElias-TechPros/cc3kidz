@@ -4,6 +4,7 @@ import './kids-animations.css'
 import './kids-responsive.css'
 import KidsNav from './KidsNav'
 import KidsFooter from './KidsFooter'
+import FloatingHelpButton from '@/components/FloatingHelpButton'
 
 export const metadata = {
   title: "CE Central Church 3 Children's Church | Christ Embassy Central Church 3",
@@ -22,6 +23,7 @@ export default function KidsLayout({ children }: { children: React.ReactNode }) 
       <KidsNav />
       <main id="main">{children}</main>
       <KidsFooter />
+      <FloatingHelpButton />
     </div>
   )
 }

@@ -7,7 +7,7 @@ const FAQS = [
   { q: 'Can I attend if I’m not a member?', a: 'Yes — all are welcome. No membership required. Plan Your Visit for a hosted welcome.', cat: 'Visiting' },
   { q: 'What happens during a service?', a: 'Vibrant worship, prayer, teaching of the Word, testimonies, and fellowship. First-time visitors are hosted personally.', cat: 'Visiting' },
   { q: 'Is there a dress code?', a: 'Come as you are — modest and comfortable. No strict dress code.', cat: 'Visiting' },
-  { q: 'Is there a children’s ministry?', a: 'Yes — Champions for Christ 0–12 during main service. See Kids Church.', cat: 'Visiting' },
+  { q: 'Is there a children’s ministry?', a: 'Yes — Champions for Christ 0–12 during main service. See Children Church.', cat: 'Visiting' },
   { q: 'How do I join a cell?', a: 'Use Cell Finder by area/neighbourhood, view meeting days, contact leader. Or request connection via Cells page.', cat: 'Membership' },
   { q: 'How do I join a department?', a: 'Visit Ministries directory, view purpose/activities/schedule, submit volunteer application — Review → Training → Assignment.', cat: 'Membership' },
   { q: 'How do I attend Foundation School?', a: 'Register on Foundation School page — 6-week curriculum covering salvation, new creation, Word, faith, prayer, Holy Spirit, evangelism.', cat: 'Spiritual Growth' },

@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 const items = [
   { href: '/', label: 'Main Church', sub: 'Central Church 3', accent: 'navy' },
-  { href: '/kids', label: 'Kids Church', sub: 'Ages 4–12', accent: 'gold' },
+  { href: '/kids', label: 'Children Church', sub: 'Ages 4–12', accent: 'gold' },
   { href: '/teens', label: 'Teens Church', sub: 'Ages 13–19', accent: 'vermilion' },
   { href: '/youth', label: 'Youth Church', sub: 'Ages 20–35', accent: 'navy' },
 ]

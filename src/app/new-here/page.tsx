@@ -30,7 +30,7 @@ export default function NewHerePage() {
                 <li>Life-transforming ministry of the Word — the infallible, efficacious Word that builds you and causes you to reign.</li>
                 <li>No dress code — come comfortably and modestly; decency and excellence unto the Lord.</li>
                 <li>
-                  Champions for Christ — Children &amp; Teens programmes run during main service — <a href="/kids" className="underline underline-offset-4 text-navy">Kids Church</a>.
+                  Champions for Christ — Children &amp; Teens programmes run during main service — <a href="/kids" className="underline underline-offset-4 text-navy">Children Church</a>.
                 </li>
                 <li>Find parking near NTA Road entrance; landmark: Opposite Patcoin Filling Station.</li>
               </ol>

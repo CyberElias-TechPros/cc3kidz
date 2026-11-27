@@ -26,7 +26,7 @@ export default function SafeguardingPage() {
           </div>
           <div className="card p-6">
             <h2 className="text-xl">Related</h2>
-            <p className="text-sm"><a href="/kids" className="underline">Kids Church</a> · <a href="/privacy" className="underline">Privacy Policy</a> · <a href="/contact" className="underline">Contact</a></p>
+            <p className="text-sm"><a href="/kids" className="underline">Children Church</a> · <a href="/privacy" className="underline">Privacy Policy</a> · <a href="/contact" className="underline">Contact</a></p>
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import './youth.css'
 import { YouthAnnouncement } from '@/components/ministry/TeensSubNav'
+import { WebGLShader } from '@/components/effects/WebGLShader'
 
 export const metadata = { title: 'CC3 Youth Church — Made for Purpose | 20–35' }
 
@@ -8,7 +9,8 @@ export default function YouthPage() {
   return (
     <div className="youth-scope">
       {/* ===== SWISS CINEMATIC HERO — Midnight Navy full-bleed ===== */}
-      <section className="youth-swiss-hero">
+      <section className="youth-swiss-hero" style={{ position: 'relative', overflow: 'hidden' }}>
+        <WebGLShader className="absolute inset-0" intensity={1} opacity={0.12} />
         <div className="youth-swiss-hero__bg" aria-hidden>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/assets/images/main-family.webp" alt="" />

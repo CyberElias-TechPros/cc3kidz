@@ -232,7 +232,7 @@ export default function AboutPage() {
                   <span className="font-semibold text-navy">Online?</span> <Link href="/online" className="text-navy underline underline-offset-4">LoveWorld Live TV</Link> 24/7.
                 </li>
                 <li>
-                  <span className="font-semibold text-navy">Children?</span> <Link href="/kids" className="text-navy underline underline-offset-4">Kids Church</Link> during service.
+                  <span className="font-semibold text-navy">Children?</span> <Link href="/kids" className="text-navy underline underline-offset-4">Children Church</Link> during service.
                 </li>
               </ul>
             </div>

@@ -182,7 +182,7 @@ export default function FloatingHelpButton() {
         onClick={() => setOpen(v => !v)}
         aria-expanded={open}
         aria-label={open ? 'Close help' : 'Ask a question — contact help'}
-        className={`group inline-flex items-center gap-3 rounded-full border shadow-[0_12px_32px_-12px_rgba(14,27,51,0.35)] transition-all duration-300 ${
+        className={`group inline-flex items-center gap-3 rounded-full border shadow-[0_12px_32px_-12px_rgba(14,27,51,0.35)] transition-all duration-300 ${!open ? 'bouncy-help' : ''} ${
           open ? 'bg-white border-black/10 text-navy px-5 py-3' : isOverNavy ? 'bg-white border-black/10 text-navy px-5 py-3 shadow-[0_12px_32px_-12px_rgba(14,27,51,0.22)]' : 'bg-navy border-navy text-white px-5 py-3 hover:bg-navy-800'
         }`}
       >
@@ -200,4 +200,29 @@ export default function FloatingHelpButton() {
       </button>
     </div>
   )
+}
+
+// Add bouncy attention via global style injection (only once)
+if (typeof document !== 'undefined' && !document.getElementById('bouncy-help-style')) {
+  const style = document.createElement('style')
+  style.id = 'bouncy-help-style'
+  style.textContent = `
+    @keyframes bounce-attention {
+      0%, 80%, 100% { transform: translateY(0) scale(1); }
+      10% { transform: translateY(-6px) scale(1.02); }
+      20% { transform: translateY(0) scale(1); }
+      30% { transform: translateY(-3px) scale(1.01); }
+      40% { transform: translateY(0) scale(1); }
+    }
+    .bouncy-help {
+      animation: bounce-attention 3s ease-in-out infinite;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .bouncy-help { animation: none; }
+    }
+    @media (max-width: 768px) {
+      .bouncy-help { animation: bounce-attention 4s ease-in-out infinite; }
+    }
+  `
+  document.head.appendChild(style)
 }

@@ -134,24 +134,24 @@ export default function KidsHome() {
 
       {kiddiesToday && (
         <section className="section section--cream">
-          <div className="container">
-            <div className="lesson-feature">
-              <div className="lesson-feature__media" style={{ background: 'transparent', display: 'grid', placeItems: 'center', minHeight: 220, border: '1.5px solid var(--border)', borderRadius: 'var(--radius-md)' }}>
-                <div style={{ textAlign: 'center', padding: '1.2rem' }}>
+          <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <div className="lesson-feature" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '1.2rem', maxWidth: 760, margin: '0 auto', padding: '2rem 1.5rem' }}>
+              <div className="lesson-feature__media" style={{ background: 'transparent', display: 'grid', placeItems: 'center', minHeight: 0, width: '100%', maxWidth: 520, border: '1.5px solid var(--border)', borderRadius: 'var(--radius-md)', padding: '1.2rem' }}>
+                <div style={{ textAlign: 'center', padding: '0.4rem' }}>
                   <div style={{ fontSize: '2rem' }}>⭐</div>
                   <div className="eyebrow eyebrow--yellow" style={{ marginTop: 8 }}>Kiddies Rhapsody — Today</div>
                   <div style={{ fontWeight: 800, fontSize: '1.1rem', marginTop: 6 }}>{kiddiesToday.title}</div>
                   <div style={{ fontSize: '.8rem', color: 'var(--ink-soft)', marginTop: 4 }}>{kiddiesToday.scriptureReference} · {kiddiesToday.date}</div>
                 </div>
               </div>
-              <div className="lesson-feature__content">
+              <div className="lesson-feature__content" style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
                 <span className="eyebrow eyebrow--blue">From the Rhapsody for Early Readers</span>
-                <h2>{kiddiesToday.title}</h2>
-                <div className="lesson-feature__ref">{kiddiesToday.scriptureReference}</div>
-                <p className="lesson-feature__key">“{kiddiesToday.scripture.slice(0, 140)}…”</p>
-                <p style={{ fontSize: '.9rem', color: 'var(--ink-soft)', marginTop: '.6rem' }}>{kiddiesToday.excerpt.slice(0, 160)}…</p>
-                <div className="memory-card"><div className="memory-card__label">{kiddiesToday.prayerLabel}</div><blockquote>“{kiddiesToday.prayer.slice(0, 140)}…”</blockquote></div>
-                <div className="btn-row"><Link className="btn btn--yellow" href={`/kids/rhapsody/${kiddiesToday.slug}`}>Read Kiddies Rhapsody</Link><Link className="btn btn--ghost-light" href={`/kids/rhapsody/quiz/${kiddiesToday.slug}`}>Take Quiz +10 XP</Link><Link className="btn btn--secondary" href="/kids/rhapsody">All Kiddies</Link></div>
+                <h2 style={{ textAlign: 'center', marginTop: '0.6rem' }}>{kiddiesToday.title}</h2>
+                <div className="lesson-feature__ref" style={{ justifyContent: 'center' }}>{kiddiesToday.scriptureReference}</div>
+                <p className="lesson-feature__key" style={{ textAlign: 'center' }}>“{kiddiesToday.scripture.slice(0, 140)}…”</p>
+                <p style={{ fontSize: '.9rem', color: 'var(--ink-soft)', marginTop: '.6rem', textAlign: 'center', maxWidth: 600 }}>{kiddiesToday.excerpt.slice(0, 160)}…</p>
+                <div className="memory-card" style={{ textAlign: 'left', maxWidth: 560, width: '100%' }}><div className="memory-card__label">{kiddiesToday.prayerLabel}</div><blockquote>“{kiddiesToday.prayer.slice(0, 140)}…”</blockquote></div>
+                <div className="btn-row" style={{ justifyContent: 'center' }}><Link className="btn btn--yellow" href={`/kids/rhapsody/${kiddiesToday.slug}`}>Read Kiddies Rhapsody</Link><Link className="btn btn--ghost-light" href={`/kids/rhapsody/quiz/${kiddiesToday.slug}`}>Take Quiz +10 XP</Link><Link className="btn btn--secondary" href="/kids/rhapsody">All Kiddies</Link></div>
               </div>
             </div>
             <div style={{ textAlign: 'center', marginTop: '0.8rem', fontSize: '.75rem', color: 'var(--ink-soft)' }}>Coordinator: Sister Christy Olajide Abiola · Ministry of Children’s Affairs · PH Zone 3</div>

@@ -13,7 +13,7 @@ const INDEX = [
   ...(messages as any[]).map((m: any) => ({ title: m.title, href: `/media/${m.slug}`, cat: 'Media', excerpt: m.excerpt })),
   { title: 'Plan Your Visit', href: '/new-here', cat: 'New Here', excerpt: 'What to expect, directions, parking' },
   { title: 'Cell Finder', href: '/cells', cat: 'Cells', excerpt: 'Find a cell near you' },
-  { title: 'Kids Church', href: '/kids', cat: 'Kids', excerpt: 'Ages 0–12' },
+  { title: 'Children Church', href: '/kids', cat: 'Kids', excerpt: 'Ages 0–12' },
 ]
 
 export default function SearchPage() {

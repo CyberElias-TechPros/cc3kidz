@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import './teens.css'
 import { TeensAnnouncement } from '@/components/ministry/TeensSubNav'
+import { WebGLShader } from '@/components/effects/WebGLShader'
 
 export const metadata = { title: 'LoveWorld Teens — Christ Embassy Teens Church | 13–19 • CC3 PH Zone 3' }
 
@@ -9,8 +10,9 @@ export default function TeensPage() {
   return (
     <div className="teens-scope">
       {/* HERO — Christ Embassy: LoveWorld Teens, effect change */}
-      <section className="lw-hero">
-        <div className="container-cc lw-hero__inner">
+      <section className="lw-hero" style={{ position: 'relative', overflow: 'hidden' }}>
+        <WebGLShader className="absolute inset-0" intensity={0.6} opacity={0.1} />
+        <div className="container-cc lw-hero__inner" style={{ position: 'relative' }}>
           <div>
             <span className="lw-kicker"><i /> LoveWorld Teens • Christ Embassy • CC3 Group • PH Zone 3</span>
             <h1 className="lw-title">EQUIPPED<br />TO <span className="gold">EFFECT</span><br />CHANGE.</h1>
