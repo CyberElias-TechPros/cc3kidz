@@ -1,5 +1,9 @@
+function safeBase(){
+  const raw = (process.env.APP_URL || process.env.NEXT_PUBLIC_APP_URL || 'https://cecentralchurch3.org').trim()
+  try { new URL(raw); return raw } catch { return 'https://cecentralchurch3.org' }
+}
 export default function sitemap() {
-  const base = process.env.APP_URL || process.env.NEXT_PUBLIC_APP_URL || 'https://cecentralchurch3.org'
+  const base = safeBase()
   const routes = [
     '', '/about', '/pastors', '/services', '/group', '/ministries', '/cells', '/events', '/media', '/testimonies', '/prayer', '/new-here', '/foundation-school', '/outreach', '/give', '/contact', '/online', '/gallery', '/resources',
     '/calendar', '/faq', '/safeguarding', '/impact', '/search',

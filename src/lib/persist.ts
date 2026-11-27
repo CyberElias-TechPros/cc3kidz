@@ -7,7 +7,7 @@ const FILE = path.join(DATA_DIR, 'db.json')
 type PersistShape = Record<string, any>
 
 function ensureDir(){
-  if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true })
+  try { if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true }) } catch {}
 }
 export function loadPersist(): PersistShape {
   try {
@@ -16,10 +16,12 @@ export function loadPersist(): PersistShape {
   } catch { return {} }
 }
 export function savePersist(data: PersistShape){
-  ensureDir()
-  const tmp = FILE + '.tmp'
-  fs.writeFileSync(tmp, JSON.stringify(data, null, 2), 'utf8')
-  fs.renameSync(tmp, FILE)
+  try {
+    ensureDir()
+    const tmp = FILE + '.tmp'
+    fs.writeFileSync(tmp, JSON.stringify(data, null, 2), 'utf8')
+    fs.renameSync(tmp, FILE)
+  } catch { /* read-only FS in production — ignore */ }
 }
 export function mergeIntoGlobal(key: string, fallback: any[]){
   const g: any = globalThis as any

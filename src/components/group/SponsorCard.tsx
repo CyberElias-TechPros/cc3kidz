@@ -31,7 +31,7 @@ export function SponsorCard({ item }: { item: any }) {
             <Link href={`/give#${item.slug}`} className="btn btn--ghost">Details</Link>
           )}
         </div>
-        <div className="mt-2 text-xs text-muted">{ext ? new URL(item.link).hostname.replace('www.','') + ' · ' : ''}Bank Transfer + POP</div>
+        <div className="mt-2 text-xs text-muted">{(() => { try { return ext ? new URL(item.link).hostname.replace('www.','') + ' · ' : '' } catch { return '' } })()}Bank Transfer + POP</div>
       </div>
     </div>
   )
@@ -51,7 +51,7 @@ export function PartnershipArmCard({ arm }: { arm: any }) {
         <Link href={`/give#${arm.slug}`} className="btn btn--navy flex-1 justify-center text-sm">{arm.cta}</Link>
         {ext && <a href={arm.link} target="_blank" rel="noreferrer" className="btn btn--ghost text-sm">Visit ↗</a>}
       </div>
-      {ext && <div className="mt-2 text-xs text-muted truncate">{new URL(arm.link).hostname}</div>}
+      {ext && <div className="mt-2 text-xs text-muted truncate">{(() => { try { return new URL(arm.link).hostname } catch { return arm.link } })()}</div>}
     </div>
   )
 }

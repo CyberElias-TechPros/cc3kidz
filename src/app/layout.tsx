@@ -4,7 +4,11 @@ import SiteShell from '@/components/SiteShell'
 import { site } from '@/lib/site'
 import { ChurchJsonLd } from '@/components/JsonLd'
 
-const BASE = process.env.APP_URL || process.env.NEXT_PUBLIC_APP_URL || 'https://cecentralchurch3.org'
+function safeBase(): string {
+  const raw = (process.env.APP_URL || process.env.NEXT_PUBLIC_APP_URL || 'https://cecentralchurch3.org').trim()
+  try { new URL(raw); return raw } catch { return 'https://cecentralchurch3.org' }
+}
+const BASE = safeBase()
 
 export const metadata: Metadata = {
   title: {

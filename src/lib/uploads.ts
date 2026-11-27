@@ -40,8 +40,13 @@ export async function storePop(file: File, uid: () => string): Promise<StoredFil
 
   // Local fallback (dev + vercel ephemeral)
   const dir = path.join(process.cwd(), 'public','uploads','pop')
-  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive:true })
-  fs.writeFileSync(path.join(dir, fname), buf)
+  try {
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive:true })
+    fs.writeFileSync(path.join(dir, fname), buf)
+  } catch (e:any) {
+    // read-only FS in prod without blob — still succeed with ephemeral URL, warn once
+    console.warn('[uploads] local write failed (read-only FS without BLOB token):', e?.message)
+  }
   if (blobToken === undefined && process.env.NODE_ENV === 'production') {
     console.warn('[uploads] No BLOB_READ_WRITE_TOKEN — POP stored ephemerally on Vercel, will be lost. Set token in Vercel env.')
   }

@@ -13,14 +13,35 @@ let cache: Record<string, Devotional[]> | null = null
 let kidsCache: KidsIssue[] | null = null
 
 function dataDir() {
-  return path.join(process.cwd(), 'src', 'data', 'rhapsody')
+  // Vercel output may relocate files; try multiple locations
+  const candidates = [
+    path.join(process.cwd(), 'src', 'data', 'rhapsody'),
+    path.join(process.cwd(), '.next', 'server', 'src', 'data', 'rhapsody'),
+    path.join(__dirname, '..', '..', '..', 'src', 'data', 'rhapsody'),
+  ]
+  for (const c of candidates) try { if (fs.existsSync(c)) return c } catch {}
+  return candidates[0]
 }
 
 function loadAudience(audience: AudienceId): Devotional[] {
   if (cache && cache[audience]) return cache[audience]
   try {
-    const file = path.join(dataDir(), `${audience}.json`)
-    if (!fs.existsSync(file)) return []
+    const dir = dataDir()
+    const file = path.join(dir, `${audience}.json`)
+    if (!fs.existsSync(file)) {
+      // try alternative: look for file in any candidate dir
+      for (const cand of [path.join(process.cwd(), 'src', 'data', 'rhapsody'), path.join(process.cwd(), '.next', 'server', 'src', 'data', 'rhapsody')]) {
+        const alt = path.join(cand, `${audience}.json`)
+        if (fs.existsSync(alt)) {
+          const raw2 = fs.readFileSync(alt, 'utf8')
+          const arr2 = JSON.parse(raw2) as Devotional[]
+          if (!cache) cache = {} as any
+          cache[audience] = arr2
+          return arr2
+        }
+      }
+      return []
+    }
     const raw = fs.readFileSync(file, 'utf8')
     const arr = JSON.parse(raw) as Devotional[]
     if (!cache) cache = {} as any
