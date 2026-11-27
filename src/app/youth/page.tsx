@@ -2,6 +2,8 @@ import Link from 'next/link'
 import './youth.css'
 import { YouthAnnouncement } from '@/components/ministry/TeensSubNav'
 import { WebGLShader } from '@/components/effects/WebGLShader'
+import AnnouncementBar from '@/components/AnnouncementBar'
+import { announcements } from '@/lib/site'
 
 export const metadata = { title: 'CC3 Youth Church — Made for Purpose | 20–35' }
 
@@ -80,6 +82,8 @@ export default function YouthPage() {
           </div>
         </div>
       </section>
+      {/* Global announcement — moved down from above-navbar to here (2 sections after hero) */}
+      <AnnouncementBar items={announcements as any} />
       <YouthAnnouncement />
 
       {/* ===== UPCOMING EVENTS — Swiss grid — moved 2 sections after hero for cleaner hero → heart flow */}

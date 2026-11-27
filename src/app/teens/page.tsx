@@ -3,6 +3,8 @@ import Image from 'next/image'
 import './teens.css'
 import { TeensAnnouncement } from '@/components/ministry/TeensSubNav'
 import { WebGLShader } from '@/components/effects/WebGLShader'
+import AnnouncementBar from '@/components/AnnouncementBar'
+import { announcements } from '@/lib/site'
 
 export const metadata = { title: 'LoveWorld Teens — Christ Embassy Teens Church | 13–19 • CC3 PH Zone 3' }
 
@@ -123,6 +125,8 @@ export default function TeensPage() {
           </div>
         </div>
       </section>
+      {/* Global announcement — moved down from above-navbar to here (2-3 sections after hero) */}
+      <AnnouncementBar items={announcements as any} />
       <TeensAnnouncement />
 
       {/* UPCOMING — moved 2-3 sections after hero for cleaner hero → value flow */}

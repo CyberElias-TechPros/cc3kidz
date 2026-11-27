@@ -70,9 +70,10 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
   }
 
   const isHome = pathname === '/'
-  // Hydration-safe: render the same on server + first client paint; hide
-  // top bar on home only after mount so server HTML matches initial client HTML.
-  const showTopBar = mounted ? !isHome : true
+  const isTeensOrYouth = pathname?.startsWith('/teens') || pathname?.startsWith('/youth')
+  // Teens/Youth: announcement should not sit above navbar — it is rendered
+  // 2-3 sections after hero inside their pages. Hide top bar there (server + client).
+  const showTopBar = isTeensOrYouth ? false : mounted ? !isHome : true
 
   return (
     <MasterclassProvider>
