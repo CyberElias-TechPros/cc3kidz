@@ -136,7 +136,7 @@ export default function KidsHome() {
         <section className="section section--cream">
           <div className="container">
             <div className="lesson-feature">
-              <div className="lesson-feature__media" style={{ background: '#FFFBEB', display: 'grid', placeItems: 'center', minHeight: 220 }}>
+              <div className="lesson-feature__media" style={{ background: 'transparent', display: 'grid', placeItems: 'center', minHeight: 220, border: '1.5px solid var(--border)', borderRadius: 'var(--radius-md)' }}>
                 <div style={{ textAlign: 'center', padding: '1.2rem' }}>
                   <div style={{ fontSize: '2rem' }}>⭐</div>
                   <div className="eyebrow eyebrow--yellow" style={{ marginTop: 8 }}>Kiddies Rhapsody — Today</div>
