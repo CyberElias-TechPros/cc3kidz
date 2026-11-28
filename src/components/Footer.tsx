@@ -72,7 +72,7 @@ export default function Footer() {
 
   const brand = isTeens
     ? {
-        logo: '/assets/images/loveworld-teens-youth.png',
+        logo: '/assets/images/loveworld-teens-youth-light.png',
         title: 'CE Central Church 3 Teens',
         sub: 'Teens & Youth Ministry',
         zone: 'Port Harcourt Zone 3 · Ages 13–19',
@@ -81,7 +81,7 @@ export default function Footer() {
       }
     : isYouth
     ? {
-        logo: '/assets/images/loveworld-teens-youth.png',
+        logo: '/assets/images/loveworld-teens-youth-light.png',
         title: 'CE Central Church 3 Youth',
         sub: 'Teens & Youth Ministry',
         zone: 'Port Harcourt Zone 3 · Ages 20–35',
