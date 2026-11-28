@@ -181,7 +181,7 @@ export default function Home() {
               <>
                 {current && (
                   <Link href={`/events/${current.slug}`} style={{textDecoration:'none',display:'block',marginBottom:'1.2rem'}}>
-                    <div style={{display:'grid',gridTemplateColumns:'1.2fr 0.8fr',gap:'1.2rem',background:'#0E1B33',border:'1.5px solid #080f1f',borderRadius:'24px',overflow:'hidden',boxShadow:'6px 6px 0 #080f1f'}}>
+                    <div className='kl-event-split' style={{background:'#0E1B33',border:'1.5px solid #080f1f',borderRadius:'24px',overflow:'hidden',boxShadow:'6px 6px 0 #080f1f'}}>
                       <div style={{padding:'1.6rem'}}>
                         <div style={{display:'inline-flex',gap:'0.5rem',alignItems:'center'}}>
                           <span style={{background:'#C6A04A',color:'#0E1B33',borderRadius:'999px',padding:'0.25rem 0.6rem',fontSize:'0.62rem',fontWeight:800,letterSpacing:'0.08em',textTransform:'uppercase'}}>Current</span>
@@ -274,7 +274,7 @@ export default function Home() {
               </span>
               <h2 style={{fontFamily:'var(--font-display),serif',fontWeight:800,color:'#0E1B33',fontSize:'1.9rem',lineHeight:1,marginTop:'0.6rem'}}>Be Nurtured. Serve. Shine.</h2>
               <p style={{color:'#64748B',fontSize:'0.9rem',marginTop:'0.5rem'}}>From first visit to family — a pathway where you are nurtured in the Word, perfected for ministry, and established in righteousness to shine ever brighter.</p>
-              <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'0.5rem',margin:'1rem 0'}}>
+              <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(min(140px,100%),1fr))',gap:'0.5rem',margin:'1rem 0'}}>
                 {[
                   {l:'Plan a visit',h:'/new-here',c:'#fff',i:'◼'},
                   {l:'Join a cell',h:'/cells',c:'#fff',i:'⬢'},
@@ -332,7 +332,7 @@ export default function Home() {
               <Link href="/testimonies#submit" className="btn" style={{background:'#fff',border:'1.5px solid #0E1B33',borderRadius:'999px'}}>Share yours</Link>
             </div>
           </div>
-          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(260px,1fr))',gap:'0.8rem'}}>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(min(260px,100%),1fr))',gap:'0.8rem'}}>
             {[
               {q:'I had struggled with back pain for two years. During prayer meeting, hands were laid on me and the pain left instantly.',w:'Sister Grace E.',c:'Healing',d:'10 Nov 2026'},
               {q:'We joined CC3 after moving to Port Harcourt with no family here. Our cell became our family within one month.',w:'The Adeyemi family',c:'New Members',d:'26 Oct 2026'},
@@ -376,7 +376,7 @@ export default function Home() {
       </section>
 
       <section className="section" style={{background:'#fff'}}>
-        <div className="container-cc" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'1.8rem'}}>
+        <div className="container-cc kl-contact-grid">
           <div>
             <div style={{fontSize:'0.62rem',fontWeight:700,letterSpacing:'0.12em',textTransform:'uppercase',color:'#C6A04A'}}>Contact & Location</div>
             <h2 style={{fontFamily:'var(--font-display),serif',fontWeight:800,color:'#0E1B33',fontSize:'1.6rem',marginTop:'0.4rem'}}>Find us in Port Harcourt</h2>

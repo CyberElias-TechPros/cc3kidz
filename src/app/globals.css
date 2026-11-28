@@ -282,3 +282,12 @@ strong, b { font-weight: 700; }
     scroll-behavior: auto !important;
   }
 }
+
+/* P2 responsive safety: never let a rogue element widen the page */
+html, body { overflow-x: clip; }
+
+/* Header brand at very small screens — keep one-line title, drop sub */
+@media (max-width: 400px) {
+  .brand-title { font-size: 0.82rem !important; }
+  .brand-sub { display: none; }
+}

@@ -178,7 +178,7 @@ export default function YouthPage() {
         <div className="container-cc">
           <div className="youth-swiss-eyebrow">YOUR NEXT STEP</div>
           <h2 className="youth-swiss-h2" style={{ fontSize: 'clamp(1.6rem,3vw,2.1rem)' }}>Two pathways for<br /><span className="gold">gifted &amp; growing</span> young adults.</h2>
-          <div style={{ marginTop: '1.2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: '0.7rem' }}>
+          <div style={{ marginTop: '1.2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(280px,100%),1fr))', gap: '0.7rem' }}>
             <Link href="/youth/creators-connect" className="youth-swiss-event" style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
               <div className="youth-swiss-event__img">
                 {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -122,3 +122,10 @@
   .youth-swiss-cta .btn-gold, .youth-swiss-cta .btn-ghost { text-align: center; }
   .youth-swiss-meta { grid-template-columns: 1fr; gap: 8px; }
 }
+
+/* 320px refinements */
+@media (max-width: 400px) {
+  .youth-swiss-heart__img .caption { width: 46%; padding: 8px; }
+  .youth-swiss-heart__img .caption .text-xs { font-size: 9px; }
+  .youth-swiss-event__body { grid-template-columns: auto 1fr 18px; padding: 8px 10px; }
+}

@@ -18,14 +18,14 @@ export default function TeensConnectPage(){
             <Link href="/contact" className="rounded-full border border-black/10 px-3 py-1">Contact Main Church →</Link>
           </div>
         </div>
-        <div className="card p-6"><h3 className="font-display font-extrabold text-navy">Find a TeeVo Club</h3><p className="text-sm leading-6 text-slate-600 mt-2">Clubs meet in schools & neighbourhoods — authorised coordinators, approved schedules.</p><div className="mt-3 rounded-xl border border-black/5 overflow-hidden">
-            <div className="grid grid-cols-3 bg-navy text-white text-xs font-bold px-4 py-2"><span>School</span><span>Area</span><span>Status</span></div>
+        <div className="card p-6"><h3 className="font-display font-extrabold text-navy">Find a TeeVo Club</h3><p className="text-sm leading-6 text-slate-600 mt-2">Clubs meet in schools & neighbourhoods — authorised coordinators, approved schedules.</p><div className="mt-3 rounded-xl border border-black/5 overflow-x-auto">
+            <div className="grid grid-cols-3 bg-navy text-white text-xs font-bold px-4 py-2 min-w-[440px]"><span>School</span><span>Area</span><span>Status</span></div>
             {[
               {s:'Community Secondary School', a:'Rumuokwuta', st:'Active — contact coordinator'},
               {s:'Federal Girls College', a:'Abuloma', st:'Pending authorisation'},
               {s:'Enquiries welcome', a:'Across PH', st:'Ask about your school'},
             ].map(r=>(
-              <div key={r.s} className="grid grid-cols-3 text-xs px-4 py-3 border-t border-black/5"><span className="font-semibold text-navy">{r.s}</span><span className="text-slate-600">{r.a}</span><span className="text-muted">{r.st}</span></div>
+              <div key={r.s} className="grid grid-cols-3 text-xs px-4 py-3 border-t border-black/5 min-w-[440px]"><span className="font-semibold text-navy">{r.s}</span><span className="text-slate-600">{r.a}</span><span className="text-muted">{r.st}</span></div>
             ))}
           </div><p className="text-xs text-muted mt-2">No student member lists published. Contact via authorised channels only.</p></div>
         <div className="card p-6"><h3 className="font-display font-extrabold text-navy">Parent Information</h3><ul className="mt-3 space-y-2 text-sm leading-6 text-slate-600"><li>• <b>What we teach:</b> New Creation realities, faith, Holy Spirit, character, purpose — via TeeVo & Bible.</li><li>• <b>Who leads:</b> CC3 Group-appointed coordinators under Zonal oversight.</li><li>• <b>When/where:</b> Sundays 8AM during Main Service; midweek as announced.</li><li>• <b>Media/events:</b> Photos/videos of minors used only with consent; events require parental awareness.</li><li>• <b>Safeguarding:</b> Supervised rooms, vetted volunteers, no private DM, concerns → Group Pastor / Zonal office.</li></ul><Link href="/safeguarding" className="mt-3 inline-flex text-xs font-bold text-gold">Safeguarding →</Link></div>

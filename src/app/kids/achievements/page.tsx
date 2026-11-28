@@ -15,7 +15,7 @@ export default function KidsAchievementsPage() {
           </p>
         </div>
       </section>
-      <div className="container" style={{ padding: '1.5rem', display: 'grid', gap: '1.5rem', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))' }}>
+      <div className="container" style={{ padding: '1.5rem', display: 'grid', gap: '1.5rem', gridTemplateColumns: 'repeat(auto-fit,minmax(min(300px,100%),1fr))' }}>
         <div>
           <h2 style={{ color: 'var(--ink)' }}>Your badges</h2>
           <p style={{ fontSize: '.8rem', color: 'var(--ink-soft)' }}>Saved on this device — sign in later to keep them forever.</p>
