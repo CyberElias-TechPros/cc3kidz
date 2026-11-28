@@ -23,6 +23,7 @@ const teensFooter = {
   ],
   connect: [
     { label: 'Contact', href: '/teens/connect' },
+    { label: 'Parents & Consent', href: '/teens/parents' },
     { label: 'Cells & Groups', href: '/cells' },
     { label: 'Foundation School', href: '/foundation-school' },
     { label: 'Events', href: '/teens/events' },
@@ -48,9 +49,10 @@ const youthFooter = {
   connect: [
     { label: 'Contact', href: '/youth/connect' },
     { label: 'Community', href: '/youth/community' },
+    { label: 'Creators Connect', href: '/youth/creators-connect' },
+    { label: 'Graduate Network', href: '/youth/graduate-network' },
     { label: 'Growth', href: '/youth/growth' },
     { label: 'Outreach — R.I.S.E.', href: '/youth/rise' },
-    { label: 'Prayer & Counselling', href: '/prayer' },
   ],
   ministry: [
     { label: 'Media', href: '/youth/media' },
@@ -258,6 +260,9 @@ export default function Footer() {
         <div className="mt-8 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-slate-400 border-t border-white/10 pt-6">
           <div>© {new Date().getFullYear()} {copyrightChurch} · Port Harcourt Zone 3 · LoveWorld Nation — Giving your life a meaning</div>
           <div className="flex gap-4">
+            <Link href="/search" className="hover:text-white">
+              Search
+            </Link>
             <Link href="/privacy" className="hover:text-white">
               Privacy
             </Link>

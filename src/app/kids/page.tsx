@@ -150,9 +150,9 @@ export default function KidsHome() {
                 <span className="eyebrow eyebrow--blue">From the Rhapsody for Early Readers</span>
                 <h2 style={{ textAlign: 'center', marginTop: '0.6rem' }}>{kiddiesToday.title}</h2>
                 <div className="lesson-feature__ref" style={{ justifyContent: 'center' }}>{kiddiesToday.scriptureReference}</div>
-                <p className="lesson-feature__key" style={{ textAlign: 'center' }}>“{kiddiesToday.scripture.slice(0, 140)}…”</p>
-                <p style={{ fontSize: '.9rem', color: 'var(--ink-soft)', marginTop: '.6rem', textAlign: 'center', maxWidth: 600 }}>{kiddiesToday.excerpt.slice(0, 160)}…</p>
-                <div className="memory-card" style={{ textAlign: 'left', maxWidth: 560, width: '100%' }}><div className="memory-card__label">{kiddiesToday.prayerLabel}</div><blockquote>“{kiddiesToday.prayer.slice(0, 140)}…”</blockquote></div>
+                <p className="lesson-feature__key" style={{ textAlign: 'center' }}>“{kiddiesToday.scripture.slice(0, 240).replace(/\s+\S*$/, kiddiesToday.scripture.length > 240 ? '…' : '')}”</p>
+                <p style={{ fontSize: '.9rem', color: 'var(--ink-soft)', marginTop: '.6rem', textAlign: 'center', maxWidth: 600 }}>{kiddiesToday.excerpt.slice(0, 260).replace(/\s+\S*$/, kiddiesToday.excerpt.length > 260 ? '…' : '')}</p>
+                <div className="memory-card" style={{ textAlign: 'left', maxWidth: 560, width: '100%' }}><div className="memory-card__label">{kiddiesToday.prayerLabel}</div><blockquote>“{kiddiesToday.prayer.slice(0, 200).replace(/\s+\S*$/, kiddiesToday.prayer.length > 200 ? '…' : '')}”</blockquote></div>
                 <div className="btn-row" style={{ justifyContent: 'center' }}><Link className="btn btn--yellow" href={`/kids/rhapsody/${kiddiesToday.slug}`}>Read Kiddies Rhapsody</Link><Link className="btn btn--ghost-light" href={`/kids/rhapsody/quiz/${kiddiesToday.slug}`}>Take Quiz +10 XP</Link><Link className="btn btn--secondary" href="/kids/rhapsody">All Kiddies</Link></div>
                 <div style={{ marginTop: '0.5rem', fontSize: '.78rem', color: 'var(--ink-soft)', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, flexWrap: 'wrap' }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}

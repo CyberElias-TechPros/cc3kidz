@@ -20,6 +20,7 @@ const teensNav = [
   { href: '/teens/activities', label: 'Ministry' },
   { href: '/teens/events', label: 'Events' },
   { href: '/teens/resources', label: 'Media' },
+  { href: '/teens/parents', label: 'Parents' },
   { href: '/teens/connect', label: 'Contact' },
 ]
 
@@ -30,6 +31,8 @@ const youthNav = [
   { href: '/youth/rhapsody', label: 'Rhapsody Daily' },
   { href: '/youth/word', label: 'Word & Spirit' },
   { href: '/youth/rise', label: 'Outreach' },
+  { href: '/youth/creators-connect', label: 'Creators' },
+  { href: '/youth/graduate-network', label: 'Graduates' },
   { href: '/youth/growth', label: 'Growth' },
   { href: '/youth/community', label: 'Community' },
   { href: '/youth/media', label: 'Media' },

@@ -71,7 +71,7 @@ export default function YouthPage() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/assets/images/cc3/youth/youth-convention.jpg" alt="Youth convention crowd — Christ Embassy Nigeria" />
             <div className="caption">
-              <div className="text-xs font-black">SAME<br />PEOPLE<br />A BRIGHTER<br />TOMORROW<br /><span style={{ color: '#C6A66B' }}>CC3</span></div>
+              <div className="text-xs font-black">SAME<br />PEOPLE<br />A BRIGHTER<br />TOMORROW<br /><span style={{ color: 'var(--gold)' }}>CC3</span></div>
             </div>
           </div>
           <div className="youth-swiss-heart__copy">
@@ -173,15 +173,47 @@ export default function YouthPage() {
         </div>
       </section>
 
+      {/* ===== PATHWAYS — Creators Connect & Graduate Network ===== */}
+      <section className="section" style={{ background: '#fff', padding: '2rem 0' }}>
+        <div className="container-cc">
+          <div className="youth-swiss-eyebrow">YOUR NEXT STEP</div>
+          <h2 className="youth-swiss-h2" style={{ fontSize: 'clamp(1.6rem,3vw,2.1rem)' }}>Two pathways for<br /><span className="gold">gifted &amp; growing</span> young adults.</h2>
+          <div style={{ marginTop: '1.2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: '0.7rem' }}>
+            <Link href="/youth/creators-connect" className="youth-swiss-event" style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
+              <div className="youth-swiss-event__img">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/assets/images/platforms/creators-connect.jpg" alt="Creators Connect — creative and digital tracks" loading="lazy" />
+              </div>
+              <div className="youth-swiss-event__body">
+                <div className="date"><span className="m">CREATE</span><span className="d">🎬</span></div>
+                <div className="meta"><div className="t">Creators Connect</div><div className="sub">DESIGN • FILM • MUSIC • TECH — YOUR GIFT IS MINISTRY</div></div>
+                <span className="arrow">→</span>
+              </div>
+            </Link>
+            <Link href="/youth/graduate-network" className="youth-swiss-event" style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
+              <div className="youth-swiss-event__img">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/assets/images/platforms/graduate-network.jpg" alt="LoveWorld Graduate Network — mentorship after campus" loading="lazy" />
+              </div>
+              <div className="youth-swiss-event__body">
+                <div className="date"><span className="m">GROW</span><span className="d">🎓</span></div>
+                <div className="meta"><div className="t">Graduate Network</div><div className="sub">MENTORSHIP • CAREER PURPOSE • GLOBAL IMPACT</div></div>
+                <span className="arrow">→</span>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ===== VISIT ===== */}
-      <section className="section" style={{ background: '#0F172A', color: '#fff', padding: '2rem 0' }}>
+      <section className="section" style={{ background: 'var(--navy)', color: '#fff', padding: '2rem 0' }}>
         <div className="container-cc flex flex-col md:flex-row items-center justify-between gap-4">
           <div>
             <h3 className="text-lg font-black">Find your community — 20 to 35 · Led by Brother Kelvin</h3>
             <p className="text-sm text-white/70">30B Rumuokwuta / NTA Road • Sunday Service + midweek cells · Youth Leader: Brother Kelvin</p>
           </div>
           <div className="flex gap-2">
-            <Link href="/youth/connect" className="rounded-full bg-[#C6A66B] text-[#0F172A] px-5 py-2.5 text-sm font-black">Plan a Visit →</Link>
+            <Link href="/youth/connect" className="rounded-full bg-[#C6A04A] text-[#0E1B33] px-5 py-2.5 text-sm font-black">Plan a Visit →</Link>
             <Link href="/youth/rise" className="rounded-full border border-white/20 text-white px-5 py-2.5 text-sm font-bold">YOU R.I.S.E.</Link>
           </div>
         </div>

@@ -38,7 +38,7 @@ export function LeaderboardMock({ audience }: { audience?: string }) {
   return (
     <div className="card overflow-hidden p-0">
       <div className="p-4 bg-navy text-white flex items-center justify-between">
-        <h3 className="font-display font-extrabold">Leaderboard {audience ? `· ${audience}` : ''}</h3>
+        <h3 className="font-display font-extrabold">Leaderboard {audience ? `· ${audience}` : ''} <span className="ml-1 text-[10px] font-bold uppercase tracking-wide bg-white/10 border border-white/20 rounded-full px-1.5 py-0.5 align-middle">Sample</span></h3>
         <span className="text-xs bg-white/10 border border-white/20 rounded-full px-2 py-1">Weekly</span>
       </div>
       <div className="divide-y divide-black/5">

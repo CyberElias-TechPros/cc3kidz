@@ -10,6 +10,7 @@ import ministries from '@/data/ministries.json'
 import events from '@/data/events.json'
 import cc3Photos from '@/data/cc3Photos.json'
 import HeroSlider from '@/components/HeroSlider'
+import MapFacade from '@/components/MapFacade'
 import { WebGLShader } from '@/components/effects/WebGLShader'
 import { ScrollReveal, KineticHeading } from '@/components/effects/KineticText'
 import ServiceCountdown from '@/components/ServiceCountdown'
@@ -324,14 +325,25 @@ export default function Home() {
       {/* TESTIMONIES — light editorial */}
       <section className="section" style={{background:'#EAF0F7'}}>
         <div className="container-cc">
-          <div style={{background:'#fff',border:'1px solid rgba(14,27,51,0.08)',borderRadius:'24px',padding:'2.2rem',position:'relative',overflow:'hidden'}}>
-            <div style={{width:40,height:2,background:'#C6A04A',borderRadius:999}} />
-            <p style={{fontFamily:'var(--font-display),serif',fontWeight:800,fontSize:'clamp(1.3rem,2.8vw,1.8rem)',lineHeight:1.2,marginTop:'0.8rem',color:'#0E1B33'}}>“I had struggled with back pain for two years. During prayer meeting, hands were laid on me and the pain left instantly.”</p>
-            <div style={{marginTop:'0.6rem',fontSize:'0.8rem',fontWeight:700,color:'#64748B'}}>Sister Grace E. · Healing · 10 Nov 2026</div>
-            <div style={{display:'flex',gap:'0.5rem',marginTop:'1rem'}}>
+          <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-end',gap:'1rem',flexWrap:'wrap',marginBottom:'1.2rem'}}>
+            <SectionHeading eyebrow="Testimonies" title="What God Is Doing Here" />
+            <div style={{display:'flex',gap:'0.5rem',flexWrap:'wrap'}}>
               <Link href="/testimonies" className="btn btn--navy" style={{borderRadius:'999px'}}>Read all testimonies</Link>
-              <Link href="/testimonies#submit" className="btn" style={{background:'#fff',border:'1.5px solid #0E1B33',borderRadius:'999px'}}>Share your testimony</Link>
+              <Link href="/testimonies#submit" className="btn" style={{background:'#fff',border:'1.5px solid #0E1B33',borderRadius:'999px'}}>Share yours</Link>
             </div>
+          </div>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(260px,1fr))',gap:'0.8rem'}}>
+            {[
+              {q:'I had struggled with back pain for two years. During prayer meeting, hands were laid on me and the pain left instantly.',w:'Sister Grace E.',c:'Healing',d:'10 Nov 2026'},
+              {q:'We joined CC3 after moving to Port Harcourt with no family here. Our cell became our family within one month.',w:'The Adeyemi family',c:'New Members',d:'26 Oct 2026'},
+              {q:'My daughter wrote her exams with the confessions from Teens Church. She passed with distinctions — Jesus did it.',w:'Mrs. Nkechi O.',c:'Teens & Family',d:'2 Nov 2026'},
+            ].map(t=>(
+              <figure key={t.w} style={{background:'#fff',border:'1px solid rgba(14,27,51,0.08)',borderRadius:'20px',padding:'1.4rem',display:'flex',flexDirection:'column',gap:'0.5rem'}}>
+                <div style={{width:32,height:2,background:'#C6A04A',borderRadius:999}} />
+                <blockquote style={{fontFamily:'var(--font-display),serif',fontWeight:700,fontSize:'1.02rem',lineHeight:1.35,color:'#0E1B33',marginTop:'0.4rem'}}>“{t.q}”</blockquote>
+                <figcaption style={{marginTop:'auto',fontSize:'0.76rem',fontWeight:700,color:'#64748B'}}>{t.w} · <span style={{color:'#C6A04A'}}>{t.c}</span> · {t.d}</figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>
@@ -375,7 +387,7 @@ export default function Home() {
             </div>
           </div>
           <div style={{border:'1px solid rgba(14,27,51,0.08)',borderRadius:'16px',overflow:'hidden',height:'280px',position:'relative',boxShadow:'0 8px 24px -12px rgba(14,27,51,0.12)'}}>
-            <iframe title="Map" src={`https://maps.google.com/maps?q=${site.lat},${site.lng}&z=17&t=&ie=UTF8&iwloc=&output=embed`} style={{position:'absolute',inset:0,width:'100%',height:'100%',border:0}} loading="lazy" />
+            <MapFacade lat={site.lat} lng={site.lng} address={site.addressShort} />
           </div>
         </div>
       </section>

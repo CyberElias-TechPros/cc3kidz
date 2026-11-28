@@ -1,7 +1,7 @@
 /* Youth Swiss — Midnight Navy editorial, restrained gold, Swiss grid */
 .youth-scope {
-  --youth-navy: #0F172A;
-  --youth-gold: #C6A66B;
+  --youth-navy: #0E1B33;
+  --youth-gold: #C6A04A;
   --youth-ivory: #F7F6F2;
   font-family: var(--font-text), system-ui, sans-serif;
   background: var(--youth-ivory);
@@ -10,7 +10,7 @@
 /* Swiss Hero */
 .youth-swiss-hero {
   position: relative;
-  background: #0F172A;
+  background: #0E1B33;
   color: #fff;
   overflow: hidden;
   min-height: 460px;
@@ -24,7 +24,7 @@
 }
 .youth-swiss-hero__overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(90deg, #0F172A 0%, #0F172A 38%, rgba(15,23,42,0.15) 70%, transparent 100%);
+  background: linear-gradient(90deg, #0E1B33 0%, #0E1B33 38%, rgba(15,23,42,0.15) 70%, transparent 100%);
 }
 .youth-swiss-hero__inner {
   position: relative; z-index: 1;
@@ -39,10 +39,10 @@
   font-size: clamp(2.8rem, 6vw, 4.4rem);
 }
 .youth-swiss-title span { display: block; }
-.youth-swiss-title .gold { color: #C6A66B; font-style: italic; }
+.youth-swiss-title .gold { color: #C6A04A; font-style: italic; }
 .youth-swiss-sub { margin-top: 0.7rem; font-size: 0.85rem; line-height: 1.6; color: rgba(255,255,255,0.75); max-width: 36ch; }
 .youth-swiss-cta { display: flex; gap: 10px; margin-top: 1.2rem; }
-.youth-swiss-cta .btn-gold { background: #C6A66B; color: #0F172A; border-radius: 6px; padding: 10px 16px; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; }
+.youth-swiss-cta .btn-gold { background: #C6A04A; color: #0E1B33; border-radius: 6px; padding: 10px 16px; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; }
 .youth-swiss-cta .btn-ghost { border: 1px solid rgba(255,255,255,0.3); color: #fff; border-radius: 6px; padding: 10px 16px; font-size: 11px; font-weight: 700; }
 .youth-swiss-meta {
   display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 1.6rem;
@@ -62,7 +62,7 @@
 /* Events */
 .youth-swiss-events { background: #F7F6F2; }
 .youth-swiss-eyebrow { font-size: 10px; letter-spacing: 0.16em; font-weight: 700; color: var(--gold-ink, #8F6E2A); }
-.youth-swiss-h2 { font-family: 'DM Serif Display', Georgia, serif; font-size: 2rem; line-height: 0.95; color: #0F172A; margin-top: 6px; }
+.youth-swiss-h2 { font-family: 'DM Serif Display', Georgia, serif; font-size: 2rem; line-height: 0.95; color: #0E1B33; margin-top: 6px; }
 .youth-swiss-h2 .gold { color: var(--gold-ink, #8F6E2A); font-style: italic; } /* on light — AA */
 .youth-swiss-event { background: #fff; border: 1px solid rgba(0,0,0,0.06); border-radius: 4px; overflow: hidden; }
 .youth-swiss-event__img { aspect-ratio: 16 / 9; background: #E9E4DA; overflow: hidden; }
@@ -70,10 +70,10 @@
 .youth-swiss-event__body { display: grid; grid-template-columns: auto 1fr 24px; gap: 10px; padding: 10px 12px; align-items: center; }
 .youth-swiss-event__body .date { text-align: center; border-right: 1px solid #E2E8F0; padding-right: 10px; white-space: nowrap; }
 .youth-swiss-event__body .date .m { font-size: 8px; font-weight: 800; letter-spacing: 0.06em; color: var(--gold-ink, #8F6E2A); display: block; }
-.youth-swiss-event__body .date .d { font-size: 14px; font-weight: 900; color: #0F172A; line-height: 1; }
-.youth-swiss-event__body .meta .t { font-size: 12px; font-weight: 800; color: #0F172A; }
+.youth-swiss-event__body .date .d { font-size: 14px; font-weight: 900; color: #0E1B33; line-height: 1; }
+.youth-swiss-event__body .meta .t { font-size: 12px; font-weight: 800; color: #0E1B33; }
 .youth-swiss-event__body .meta .sub { font-size: 9px; letter-spacing: 0.06em; color: #94A3B8; margin-top: 2px; }
-.youth-swiss-event__body .arrow { color: #0F172A; font-size: 14px; }
+.youth-swiss-event__body .arrow { color: #0E1B33; font-size: 14px; }
 
 /* Heart */
 .youth-swiss-heart {
@@ -83,15 +83,15 @@
 .youth-swiss-heart__img { position: relative; border-radius: 4px; overflow: hidden; aspect-ratio: 4/3; background: #000; }
 .youth-swiss-heart__img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.05); opacity: 0.9; }
 .youth-swiss-heart__img .caption { position: absolute; left: 0; top: 0; bottom: 0; width: 36%; background: rgba(255,255,255,0.96); display: grid; place-items: center; padding: 12px; }
-.youth-swiss-heart__copy .eyebrow { font-size: 10px; letter-spacing: 0.16em; font-weight: 700; color: #C6A66B; }
-.youth-swiss-heart__copy h3 { font-family: 'DM Serif Display', Georgia, serif; font-size: 1.6rem; line-height: 1; color: #0F172A; margin-top: 6px; }
+.youth-swiss-heart__copy .eyebrow { font-size: 10px; letter-spacing: 0.16em; font-weight: 700; color: #C6A04A; }
+.youth-swiss-heart__copy h3 { font-family: 'DM Serif Display', Georgia, serif; font-size: 1.6rem; line-height: 1; color: #0E1B33; margin-top: 6px; }
 .youth-swiss-heart__copy h3 .gold { color: var(--gold-ink, #8F6E2A); font-style: italic; } /* on light — AA */
 .youth-swiss-heart__copy p { font-size: 0.85rem; line-height: 1.6; color: #475569; margin-top: 10px; }
-.youth-swiss-heart__copy .link { display: inline-flex; gap: 6px; margin-top: 10px; font-size: 11px; font-weight: 800; letter-spacing: 0.08em; border-bottom: 1px solid #0F172A; padding-bottom: 2px; }
+.youth-swiss-heart__copy .link { display: inline-flex; gap: 6px; margin-top: 10px; font-size: 11px; font-weight: 800; letter-spacing: 0.08em; border-bottom: 1px solid #0E1B33; padding-bottom: 2px; }
 .youth-swiss-heart__values { border-left: 1px solid #E2E8F0; padding-left: 20px; display: flex; flex-direction: column; gap: 18px; }
 .youth-swiss-heart__values .val { display: flex; gap: 12px; align-items: center; border-bottom: 1px solid #F1F5F9; padding-bottom: 14px; }
-.youth-swiss-heart__values .val .icon { width: 32px; height: 32px; border-radius: 50%; border: 1px solid #C6A66B; display: grid; place-items: center; font-size: 12px; color: #0F172A; flex-shrink: 0; }
-.youth-swiss-heart__values .val .t { font-size: 11px; font-weight: 800; letter-spacing: 0.06em; color: #0F172A; }
+.youth-swiss-heart__values .val .icon { width: 32px; height: 32px; border-radius: 50%; border: 1px solid #C6A04A; display: grid; place-items: center; font-size: 12px; color: #0E1B33; flex-shrink: 0; }
+.youth-swiss-heart__values .val .t { font-size: 11px; font-weight: 800; letter-spacing: 0.06em; color: #0E1B33; }
 .youth-swiss-heart__values .val .d { font-size: 11px; color: #64748B; margin-top: 2px; }
 
 /* Hero crossfade slides (YouthHeroSlider) */
@@ -99,6 +99,26 @@
 .youth-swiss-hero__bg img.on{opacity:.95}
 
 /* In-pictures slider section */
-.youth-swiss-moments{position:relative;border-radius:4px;overflow:hidden;aspect-ratio:16/7;background:#0F172A}
+.youth-swiss-moments{position:relative;border-radius:4px;overflow:hidden;aspect-ratio:16/7;background:#0E1B33}
 .youth-swiss-moments .church-slider__cap b{font-size:.9rem}
 @media(max-width:767px){.youth-swiss-moments{aspect-ratio:4/3}}
+
+/* P2 mobile hero plan — previously desktop-only by neglect */
+@media (max-width: 860px) {
+  .youth-swiss-hero__inner {
+    grid-template-columns: 1fr; /* vertical rail hidden — it ate 80px on phones */
+    padding: 2.2rem 0 2.4rem;
+  }
+  .youth-swiss-hero__right { display: none; }
+  .youth-swiss-hero__overlay {
+    background: linear-gradient(90deg, rgba(14,27,51,0.92) 0%, rgba(14,27,51,0.55) 55%, rgba(14,27,51,0.25) 100%);
+  }
+  .youth-swiss-hero__nav { right: 12px; bottom: 10px; }
+}
+@media (max-width: 480px) {
+  .youth-swiss-title { font-size: clamp(2.2rem, 10vw, 2.8rem); }
+  .youth-swiss-sub { max-width: 100%; }
+  .youth-swiss-cta { flex-direction: column; }
+  .youth-swiss-cta .btn-gold, .youth-swiss-cta .btn-ghost { text-align: center; }
+  .youth-swiss-meta { grid-template-columns: 1fr; gap: 8px; }
+}

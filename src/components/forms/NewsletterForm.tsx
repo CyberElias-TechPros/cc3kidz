@@ -20,7 +20,7 @@ export default function NewsletterForm(){
     <form onSubmit={submit} className="flex flex-col sm:flex-row gap-2 w-full">
       <input required type="email" placeholder="Your email" value={email} onChange={e=>setEmail(e.target.value)} className="flex-1 rounded-full border border-white/20 bg-white/10 backdrop-blur px-5 py-3 text-sm text-white placeholder:text-white/60" />
       <button disabled={loading} className="btn btn--gold whitespace-nowrap">{loading?'Subscribing…':'Subscribe'}</button>
-      {status && <span className={`text-xs mt-1 ${status.ok?'text-emerald-300':'text-red-300'}`}>{status.msg}</span>}
+      {status && <span role="status" aria-live="polite" className={`text-xs mt-1 w-full ${status.ok?'text-emerald-300':'text-red-300'}`}>{status.msg}</span>}
     </form>
   )
 }

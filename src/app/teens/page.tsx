@@ -250,6 +250,7 @@ export default function TeensPage() {
               <p>Supervised, pastoral oversight, transparent. Teens Church runs during the Sunday 8AM service and the Wednesday 6PM midweek — same building, dedicated teens hall, vetted leaders.</p>
             </div>
             <div style={{ display: 'flex', gap: '.5rem', flexWrap: 'wrap' }}>
+              <Link href="/teens/parents" className="btn-lw" style={{ background: '#fff', color: 'var(--ce-navy)' }}>Parents &amp; safeguarding →</Link>
               <Link href="/teens/connect" className="btn-lw" style={{ background: '#fff', color: 'var(--ce-navy)' }}>Talk to youth pastor →</Link>
               <Link href="/teens/about" className="btn-lw btn-ghost" style={{ borderColor: 'rgba(255,255,255,.2)' }}>About Teens Ministry</Link>
             </div>
