@@ -140,7 +140,7 @@ export default function FloatingHelpButton() {
             <p className="text-[0.68rem] text-muted text-center">Tap to start a conversation — we reply same day</p>
 
             <div className="border-t border-black/5 pt-3">
-              <div className="text-[0.62rem] font-bold tracking-[0.1em] uppercase text-muted mb-2">Contact lines</div>
+              <div className="text-[0.68rem] font-bold tracking-[0.1em] uppercase text-muted mb-2">Contact lines</div>
               <div className="grid gap-2">
                 {numbers.map((num) => (
                   <div key={num} className="flex items-center justify-between gap-2 bg-haze border border-black/5 rounded-full px-2 py-1.5">
@@ -193,7 +193,7 @@ export default function FloatingHelpButton() {
           <span className={`block text-[0.82rem] font-extrabold tracking-tight ${open || isOverNavy ? 'text-navy' : 'text-white'}`}>
             {open ? 'Close' : 'Ask a Question'}
           </span>
-          <span className={`block text-[0.62rem] font-semibold tracking-wide uppercase ${open || isOverNavy ? 'text-muted' : 'text-white/75'}`}>
+          <span className={`block text-[0.68rem] font-semibold tracking-wide uppercase ${open || isOverNavy ? 'text-muted' : 'text-white/75'}`}>
             {open ? 'Hide contacts' : 'Need help? Chat with us'}
           </span>
         </span>

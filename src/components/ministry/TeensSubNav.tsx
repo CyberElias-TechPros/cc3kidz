@@ -63,7 +63,7 @@ export function TeensSubNav() {
       {!isHome && <TeensAnnouncement />}
       <div className="sticky top-[64px] z-30 border-b border-black/5 bg-white/95 backdrop-blur-xl">
         <div className="container-cc flex items-center gap-1 overflow-x-auto no-scrollbar py-2">
-          <Link href="/teens" className="shrink-0 hidden sm:inline-flex items-center gap-2 mr-2 rounded-full px-3 py-1 text-[0.62rem] font-black tracking-widest uppercase text-white" style={{ background: '#172B76' }}>
+          <Link href="/teens" className="shrink-0 hidden sm:inline-flex items-center gap-2 mr-2 rounded-full px-3 py-1 text-[0.68rem] font-black tracking-widest uppercase text-white" style={{ background: '#172B76' }}>
             <span className="h-2 w-2 rounded-full" style={{ background: '#FF8C70' }} /> TEENS 13–19
           </Link>
           {teensNav.map(n => {
@@ -90,7 +90,7 @@ export function YouthSubNav() {
       {!isHome && <YouthAnnouncement />}
       <div className="sticky top-[64px] z-30 border-b border-black/5 bg-white/95 backdrop-blur-xl">
         <div className="container-cc flex items-center gap-1 overflow-x-auto no-scrollbar py-2">
-          <Link href="/youth" className="shrink-0 hidden sm:inline-flex items-center gap-2 mr-2 rounded-full bg-[#101A2B] text-white px-3 py-1 text-[0.62rem] font-black tracking-widest uppercase">
+          <Link href="/youth" className="shrink-0 hidden sm:inline-flex items-center gap-2 mr-2 rounded-full bg-[#101A2B] text-white px-3 py-1 text-[0.68rem] font-black tracking-widest uppercase">
             YOUTH 20–35
           </Link>
           {youthNav.map(n => {

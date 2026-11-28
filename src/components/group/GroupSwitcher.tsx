@@ -12,7 +12,7 @@ export function GroupSwitcher({ activeSlug }: { activeSlug?: string }) {
       <div className="mt-6 grid md:grid-cols-3 lg:grid-cols-4 gap-4">
         {(churches as any[]).map(c => (
           <Link key={c.id} href={`/group/${c.slug}`} className={`card p-5 hover:shadow-card transition ${activeSlug === c.slug ? 'ring-2 ring-gold' : ''}`}>
-            {c.isHeadquarters && <span className="inline-flex rounded-full bg-gold text-navy px-2.5 py-1 text-[0.60rem] font-bold tracking-widest uppercase">Headquarters</span>}
+            {c.isHeadquarters && <span className="inline-flex rounded-full bg-gold text-navy px-2.5 py-1 text-[0.66rem] font-bold tracking-widest uppercase">Headquarters</span>}
             <h3 className="font-display font-extrabold leading-tight mt-2">{c.name}</h3>
             <div className="text-xs font-semibold text-gold mt-1">{c.pastor} · {c.title}</div>
             <div className="text-xs text-muted mt-2 line-clamp-2">{c.address}</div>

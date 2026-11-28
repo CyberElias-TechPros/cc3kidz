@@ -129,3 +129,7 @@
   .youth-swiss-heart__img .caption .text-xs { font-size: 9px; }
   .youth-swiss-event__body { grid-template-columns: auto 1fr 18px; padding: 8px 10px; }
 }
+
+/* small-text breathing room in youth cards */
+.youth-swiss-event__body, .youth-swiss-heart__img .caption { word-spacing: 0.06em; line-height: 1.5; }
+.youth-swiss-event__body .meta .s { word-spacing: 0.06em; }

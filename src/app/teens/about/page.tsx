@@ -56,7 +56,7 @@ export default function TeensAboutPage() {
                   { role: 'Cell & Outreach Leaders', note: 'Fellowship & TITHE — trained, supervised' },
                   { role: 'Creative & Media', note: 'Music, drama, media, tech — youth-led, adult-guided' },
                 ].map(c=>(
-                  <div key={c.role} className="border border-black/5 rounded-xl p-4 bg-haze"><div className="text-xs font-bold tracking-wide text-navy">{c.role}</div><div className="text-xs leading-5 text-slate-600 mt-1">{c.note}</div><div className="text-[0.62rem] font-bold text-muted mt-2">CONTACT VIA AUTHORISED CHANNELS ONLY</div></div>
+                  <div key={c.role} className="border border-black/5 rounded-xl p-4 bg-haze"><div className="text-xs font-bold tracking-wide text-navy">{c.role}</div><div className="text-xs leading-5 text-slate-600 mt-1">{c.note}</div><div className="text-[0.68rem] font-bold text-muted mt-2">CONTACT VIA AUTHORISED CHANNELS ONLY</div></div>
                 ))}
               </div>
               <Link href="/teens/connect" className="mt-4 inline-flex btn btn--navy !py-2 text-xs">Contact Teens Leaders</Link>

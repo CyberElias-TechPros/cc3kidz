@@ -82,3 +82,7 @@
 .lw-moments{position:relative;border-radius:20px;overflow:hidden;border:3px solid #fff;box-shadow:0 24px 48px -20px rgba(0,0,0,.4);aspect-ratio:16/7;background:#0e1b33}
 .lw-moments .church-slider__cap b{font-size:.9rem}
 @media(max-width:767px){.lw-moments{aspect-ratio:4/3;border-radius:14px}}
+
+/* small-text breathing room in teen cards */
+.lw-card p { word-spacing: 0.05em; line-height: 1.65; }
+.lw-proof, .lw-event__meta, .lw-pill, .lw-teevo__badge { word-spacing: 0.06em; }

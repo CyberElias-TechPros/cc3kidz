@@ -116,8 +116,8 @@ export default function Header() {
           />
           <div className="leading-tight">
             <div className="brand-title font-display font-extrabold text-[0.95rem] tracking-tight text-navy">{brand.title}</div>
-            <div className="brand-sub text-[0.64rem] font-semibold tracking-[0.12em] uppercase text-muted">{brand.sub}</div>
-            <div className="hidden md:block text-[0.55rem] font-bold tracking-[0.14em] uppercase text-gold leading-none mt-0.5">{brand.sub2}</div>
+            <div className="brand-sub text-[0.70rem] font-semibold tracking-[0.12em] uppercase text-muted">{brand.sub}</div>
+            <div className="hidden md:block text-[0.62rem] font-bold tracking-[0.14em] uppercase text-gold leading-none mt-0.5">{brand.sub2}</div>
           </div>
         </Link>
 

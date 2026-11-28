@@ -6,7 +6,7 @@ export function SponsorCard({ item }: { item: any }) {
     <div className="card overflow-hidden flex flex-col">
       <div className="h-36 bg-navy relative">
         <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent" />
-        <div className="absolute top-3 left-3 rounded-full bg-white text-navy px-2.5 py-1 text-[0.60rem] font-bold tracking-widest uppercase">{item.category}</div>
+        <div className="absolute top-3 left-3 rounded-full bg-white text-navy px-2.5 py-1 text-[0.66rem] font-bold tracking-widest uppercase">{item.category}</div>
         {item.icon && <div className="absolute top-3 right-3 h-7 w-7 grid place-items-center rounded-full bg-white/15 text-white text-sm">{item.icon}</div>}
         <div className="absolute bottom-3 left-3 right-3">
           <div className="flex justify-between text-xs text-white/90 font-semibold"><span>Funded</span><span>{item.percent}%</span></div>
@@ -43,7 +43,7 @@ export function PartnershipArmCard({ arm }: { arm: any }) {
     <div className="card p-5 flex flex-col">
       <div className="flex items-center gap-2">
         <span className="grid h-8 w-8 place-items-center rounded-full bg-gold/15 text-sm">{arm.icon}</span>
-        <span className="rounded-full bg-navy text-white px-2.5 py-1 text-[0.60rem] font-bold tracking-widest uppercase">{arm.category}</span>
+        <span className="rounded-full bg-navy text-white px-2.5 py-1 text-[0.66rem] font-bold tracking-widest uppercase">{arm.category}</span>
       </div>
       <h3 className="font-display font-extrabold mt-3 leading-tight">{arm.name}</h3>
       <p className="text-sm text-muted mt-2 line-clamp-3">{arm.desc}</p>

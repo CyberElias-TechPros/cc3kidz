@@ -29,7 +29,7 @@ export default function Countdown({ target, onDoneLabel = 'Live now', variant = 
         }`}
       >
         <span className={`font-display font-extrabold text-lg leading-none ${isDark ? 'text-white' : 'text-navy'}`}>--</span>
-        <span className={`text-[0.64rem] tracking-widest uppercase font-bold ${isDark ? 'text-gold/90' : 'text-navy/60'}`}>{l}</span>
+        <span className={`text-[0.70rem] tracking-widest uppercase font-bold ${isDark ? 'text-gold/90' : 'text-navy/60'}`}>{l}</span>
       </span>
     )
     return (
@@ -51,7 +51,7 @@ export default function Countdown({ target, onDoneLabel = 'Live now', variant = 
       }`}
     >
       <span className={`font-display font-extrabold text-lg leading-none ${isDark ? 'text-white' : 'text-navy'}`}>{String(v).padStart(2, '0')}</span>
-      <span className={`text-[0.64rem] tracking-widest uppercase font-bold ${isDark ? 'text-gold/90' : 'text-navy/60'}`}>{l}</span>
+      <span className={`text-[0.70rem] tracking-widest uppercase font-bold ${isDark ? 'text-gold/90' : 'text-navy/60'}`}>{l}</span>
     </span>
   )
   return (

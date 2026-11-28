@@ -112,7 +112,7 @@ export function MagneticCursor() {
         aria-hidden
       >
         {label && (
-          <span className="text-[0.60rem] font-bold tracking-widest uppercase bg-navy text-white px-2 py-1 rounded-full">
+          <span className="text-[0.66rem] font-bold tracking-widest uppercase bg-navy text-white px-2 py-1 rounded-full">
             {label}
           </span>
         )}

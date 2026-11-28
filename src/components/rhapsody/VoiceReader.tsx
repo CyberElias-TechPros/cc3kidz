@@ -158,11 +158,11 @@ export function VoiceReader({ text, title, lang = 'en-US' }: Props) {
           <label className="flex flex-col gap-1">
             <span className="font-bold text-navy">Speed: {rate.toFixed(1)}x</span>
             <input type="range" min={0.8} max={1.2} step={0.1} value={rate} onChange={e => setRate(parseFloat(e.target.value))} />
-            <span className="text-[0.62rem] text-muted">Slower on mobile for clarity · Minimal processing</span>
+            <span className="text-[0.68rem] text-muted">Slower on mobile for clarity · Minimal processing</span>
           </label>
         </div>
       )}
-      <div className="px-3 pb-2 text-[0.62rem] text-muted">🔒 Private — uses your device's voice engine. No audio sent to server.</div>
+      <div className="px-3 pb-2 text-[0.68rem] text-muted">🔒 Private — uses your device's voice engine. No audio sent to server.</div>
     </div>
   )
 }

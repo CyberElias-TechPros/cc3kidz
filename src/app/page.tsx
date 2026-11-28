@@ -102,7 +102,7 @@ export default function Home() {
             {[{n:'6',l:'churches · one group'},{n:'3',l:'weekly services'},{n:'100%',l:'LoveWorld family'}].map(s=>(
               <div key={s.l} style={{textAlign:'center',padding:'0.3rem',borderRight:'1px solid rgba(255,255,255,0.1)'}}>
                 <div style={{fontFamily:'var(--font-display),serif',fontWeight:800,color:'#C6A04A',fontSize:'1.5rem'}}>{s.n}</div>
-                <div style={{fontSize:'0.58rem',fontWeight:700,letterSpacing:'0.08em',textTransform:'uppercase',color:'rgba(255,255,255,0.6)'}}>{s.l}</div>
+                <div style={{fontSize:'0.66rem',fontWeight:700,letterSpacing:'0.08em',textTransform:'uppercase',color:'rgba(255,255,255,0.6)'}}>{s.l}</div>
               </div>
             ))}
           </div>
@@ -150,7 +150,7 @@ export default function Home() {
               <h2 style={{fontFamily:'var(--font-display),serif',fontWeight:800,color:'#fff',fontSize:'clamp(1.6rem,3vw,2.3rem)',lineHeight:1,marginTop:'0.7rem'}}>Faith That Prevails</h2>
               <p style={{color:'rgba(255,255,255,0.78)',marginTop:'0.5rem',fontSize:'0.9rem'}}>Faith is not a mystery — it is the lifestyle of the new creation. Learn how the Word builds prevailing, ever-increasing faith that reigns. Glory!</p>
               <div style={{background:'rgba(255,255,255,0.1)',border:'1px solid rgba(255,255,255,0.15)',borderRadius:'14px',padding:'0.8rem 0.9rem',marginTop:'0.9rem'}}>
-                <div style={{fontSize:'0.58rem',fontWeight:700,letterSpacing:'0.1em',textTransform:'uppercase',color:'#C6A04A'}}>Scripture</div>
+                <div style={{fontSize:'0.66rem',fontWeight:700,letterSpacing:'0.1em',textTransform:'uppercase',color:'#C6A04A'}}>Scripture</div>
                 <blockquote style={{fontFamily:'var(--font-display),serif',fontWeight:700,marginTop:'0.2rem'}}>“Now faith is the substance of things hoped for…”</blockquote>
                 <cite style={{fontStyle:'normal',fontSize:'0.66rem',color:'rgba(255,255,255,0.6)'}}>Hebrews 11:1 · Romans 10:17</cite>
               </div>
@@ -184,8 +184,8 @@ export default function Home() {
                     <div className='kl-event-split' style={{background:'#0E1B33',border:'1.5px solid #080f1f',borderRadius:'24px',overflow:'hidden',boxShadow:'6px 6px 0 #080f1f'}}>
                       <div style={{padding:'1.6rem'}}>
                         <div style={{display:'inline-flex',gap:'0.5rem',alignItems:'center'}}>
-                          <span style={{background:'#C6A04A',color:'#0E1B33',borderRadius:'999px',padding:'0.25rem 0.6rem',fontSize:'0.62rem',fontWeight:800,letterSpacing:'0.08em',textTransform:'uppercase'}}>Current</span>
-                          <span style={{background:'rgba(255,255,255,0.1)',color:'#fff',border:'1px solid rgba(255,255,255,0.15)',borderRadius:'999px',padding:'0.25rem 0.6rem',fontSize:'0.62rem',fontWeight:700}}>{current.category}</span>
+                          <span style={{background:'#C6A04A',color:'#0E1B33',borderRadius:'999px',padding:'0.25rem 0.6rem',fontSize:'0.7rem',fontWeight:800,letterSpacing:'0.08em',textTransform:'uppercase'}}>Current</span>
+                          <span style={{background:'rgba(255,255,255,0.1)',color:'#fff',border:'1px solid rgba(255,255,255,0.15)',borderRadius:'999px',padding:'0.25rem 0.6rem',fontSize:'0.7rem',fontWeight:700}}>{current.category}</span>
                         </div>
                         <h3 style={{fontFamily:'var(--font-display),serif',fontWeight:800,color:'#fff',fontSize:'clamp(1.4rem,2.5vw,1.9rem)',lineHeight:1.05,marginTop:'0.8rem'}}>{current.title}</h3>
                         <p style={{color:'rgba(255,255,255,0.78)',fontSize:'0.88rem',marginTop:'0.5rem',lineHeight:1.6}}>{current.excerpt}</p>
@@ -241,7 +241,7 @@ export default function Home() {
                 <Link key={m.id} href={m.href} className="kl-class-card" style={{textDecoration:'none'}}>
                   <div className="kl-class-card__media"><Image src={m.image} alt={m.name} width={400} height={300} style={{width:'100%',height:'100%',objectFit:'cover'}} /></div>
                   <div className="kl-class-card__body">
-                    <div style={{fontSize:'0.58rem',fontWeight:700,letterSpacing:'0.08em',textTransform:'uppercase',color:'#64748B'}}>{m.group}</div>
+                    <div style={{fontSize:'0.66rem',fontWeight:700,letterSpacing:'0.08em',textTransform:'uppercase',color:'#64748B'}}>{m.group}</div>
                     <h3>{m.name}</h3>
                     <p style={{fontSize:'0.78rem',color:'#64748B'}}>{m.purpose}</p>
                   </div>
@@ -378,7 +378,7 @@ export default function Home() {
       <section className="section" style={{background:'#fff'}}>
         <div className="container-cc kl-contact-grid">
           <div>
-            <div style={{fontSize:'0.62rem',fontWeight:700,letterSpacing:'0.12em',textTransform:'uppercase',color:'#C6A04A'}}>Contact & Location</div>
+            <div style={{fontSize:'0.7rem',fontWeight:700,letterSpacing:'0.12em',textTransform:'uppercase',color:'#C6A04A'}}>Contact & Location</div>
             <h2 style={{fontFamily:'var(--font-display),serif',fontWeight:800,color:'#0E1B33',fontSize:'1.6rem',marginTop:'0.4rem'}}>Find us in Port Harcourt</h2>
             <p style={{color:'#64748B',marginTop:'0.4rem',fontSize:'0.9rem'}}>{site.address}</p>
             <div style={{display:'flex',gap:'0.5rem',marginTop:'0.9rem'}}>

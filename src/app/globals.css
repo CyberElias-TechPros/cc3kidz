@@ -291,3 +291,18 @@ html, body { overflow-x: clip; }
   .brand-title { font-size: 0.82rem !important; }
   .brand-sub { display: none; }
 }
+
+/* ===== Micro-typography: small text needs word separation =====
+   Tiny sizes (0.6-0.75rem) rendered with default word-spacing look
+   merged; give small text air and a taller line box. */
+.text-xs {
+  line-height: 1.55;
+  word-spacing: 0.06em;
+  letter-spacing: 0.015em;
+}
+.text-sm {
+  word-spacing: 0.05em;
+  letter-spacing: 0.012em;
+}
+p { word-spacing: 0.03em; }
+.card p, .card li { line-height: 1.65; }

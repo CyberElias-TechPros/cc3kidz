@@ -26,7 +26,7 @@ export default function MyEvents() {
               <div className="text-xs text-muted">{r.status||'confirmed'}</div>
             </div>
             <div className="flex gap-2">
-              <div className="hidden sm:grid h-12 w-12 place-items-center rounded-lg border bg-white text-[0.55rem]">QR<br/>{r.ticket.slice(0,6)}</div>
+              <div className="hidden sm:grid h-12 w-12 place-items-center rounded-lg border bg-white text-[0.62rem]">QR<br/>{r.ticket.slice(0,6)}</div>
               <Link href={`/events/${r.eventSlug}`} className="text-xs rounded-full bg-navy text-white px-3 py-1 self-center">Details →</Link>
             </div>
           </div>

@@ -118,7 +118,7 @@ export default function Footer() {
               <div>
                 <div className="font-display font-extrabold leading-none">{brand.title}</div>
                 <div className="text-xs tracking-widest uppercase text-gold">{isContextual ? brand.sub : 'Port Harcourt Zone 3'}</div>
-                {isContextual && <div className="text-[0.6rem] tracking-widest uppercase text-white/60">{brand.zone}</div>}
+                {isContextual && <div className="text-[0.66rem] tracking-widest uppercase text-white/60">{brand.zone}</div>}
               </div>
             </div>
             <p className="mt-4 text-sm leading-6 text-slate-300">
