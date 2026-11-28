@@ -9,9 +9,7 @@ import services from '@/data/services.json'
 import ministries from '@/data/ministries.json'
 import events from '@/data/events.json'
 import cc3Photos from '@/data/cc3Photos.json'
-import { ZoneBreadcrumb } from '@/components/group/ZoneBreadcrumb'
 import HeroSlider from '@/components/HeroSlider'
-import { MinistryFamilyBar } from '@/components/ministry/MinistryFamilyBar'
 import { WebGLShader } from '@/components/effects/WebGLShader'
 import { ScrollReveal, KineticHeading } from '@/components/effects/KineticText'
 import ServiceCountdown from '@/components/ServiceCountdown'
@@ -41,9 +39,6 @@ export default function Home() {
 
   return (
     <>
-      <div className="container-cc"><ZoneBreadcrumb /></div>
-      <MinistryFamilyBar current="/" hideLabel hideAges excludeCurrent />
-
       {/* HERO — Pastor slider: Chris → Linda → Kelson (5s) — Masterclass shader */}
       <section className="kl-hero" style={{ position: 'relative', overflow: 'hidden' }}>
         <WebGLShader className="absolute inset-0" intensity={0.8} opacity={0.15} />
