@@ -342,7 +342,7 @@ export default function Home() {
         title="One Church Family — Every Platform You Need"
         sub="From the daily Rhapsody to Healing Streams, PCDL, KingsChat and ReachOut World — the official ministry platforms of Believers' LoveWorld, for your daily walk and global impact."
         audience="main"
-        max={12}
+        max={15}
         style={{ background: '#F8FAFC' }}
       />
 

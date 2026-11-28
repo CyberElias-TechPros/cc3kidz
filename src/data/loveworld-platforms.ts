@@ -23,12 +23,15 @@ export type Platform = {
   badge?: 'LIVE' | 'PARTNER' | 'FREE APP' | 'GLOBAL' | 'CONFERENCE'
   cta?: string
   urlVerified?: boolean
+  /** footer-chip priority for this platform's primary scope (1 = first) */
+  chip?: number
 }
 
 export const platforms: Platform[] = [
   // ─── MAIN (congregational maturity, healing, global vision, partnership) ───
   {
     id: 'rhapsody',
+    chip: 1,
     image: '/assets/images/platforms/rhapsody.jpg',
     name: 'Rhapsody of Realities',
     url: 'https://rhapsodyofrealities.org',
@@ -39,7 +42,19 @@ export const platforms: Platform[] = [
     cta: 'Read today’s devotional',
     urlVerified: true,
   },
+
   {
+    id: 'ceflix',
+    chip: 2,
+    image: '/assets/images/platforms/ceflix.jpg',
+    name: 'CeFlix',
+    url: 'https://ceflix.org',
+    blurb: 'Live streaming and on-demand ministry video — church services, conferences, specials and teaching, any time.',
+    icon: '▶',
+    audience: ['main', 'teens', 'youth'],
+    badge: 'LIVE',
+    cta: 'Watch on CeFlix',
+  },  {
     id: 'rhapsody-bible',
     image: '/assets/images/platforms/rhapsody-bible.jpg',
     name: 'Rhapsody Bible',
@@ -52,6 +67,7 @@ export const platforms: Platform[] = [
   },
   {
     id: 'healing-streams',
+    chip: 3,
     image: '/assets/images/platforms/healing-streams.jpg',
     name: 'Healing Streams TV',
     url: 'https://healingstreams.tv',
@@ -74,6 +90,7 @@ export const platforms: Platform[] = [
   },
   {
     id: 'pcdl',
+    chip: 4,
     image: '/assets/images/platforms/pcdl.jpg',
     name: 'PCDL — Pastor Chris Digital Library',
     url: 'https://pcdl.co',
@@ -96,6 +113,7 @@ export const platforms: Platform[] = [
   },
   {
     id: 'kingschat',
+    chip: 5,
     image: '/assets/images/platforms/kingschat.jpg',
     name: 'KingsChat',
     url: 'https://kingschat.online',
@@ -107,6 +125,7 @@ export const platforms: Platform[] = [
   },
   {
     id: 'lw-tv',
+    chip: 6,
     image: '/assets/images/platforms/lw-tv.jpg',
     name: 'LoveWorld TV Ministry',
     url: 'https://loveworldtelevisionministry.org',
@@ -116,6 +135,9 @@ export const platforms: Platform[] = [
     cta: 'Watch & partner',
     urlVerified: true,
   },
+
+
+
   {
     id: 'lw-news',
     image: '/assets/images/platforms/lw-news.jpg',
@@ -158,9 +180,47 @@ export const platforms: Platform[] = [
     cta: 'Browse books',
   },
 
+
+
+
+  {
+    id: 'lw-radio',
+    image: '/assets/images/platforms/lw-radio.jpg',
+    name: 'LoveWorld Radio',
+    url: 'https://christembassy.org/loveworld-apps/',
+    blurb: 'Ministry radio — worship, teaching and programmes streaming 24/7 from LoveWorld stations.',
+    icon: '📻',
+    audience: ['main'],
+    cta: 'Listen live',
+  },
+  {
+    id: 'lw-appstore',
+    image: '/assets/images/platforms/rhapsody-bible.jpg',
+    name: 'LoveWorld App Store',
+    url: 'https://lwappstore.com',
+    blurb: 'Every official LoveWorld app in one place — devotionals, Radio, KingsChat, CeFlix and more, for every device.',
+    icon: '📱',
+    audience: ['main'],
+    cta: 'Browse apps',
+  },
+
   // ─── TEENS (identity, academics, daily Word habit, school clubs, partnership) ───
   {
+    id: 'ministry-hub',
+    chip: 1,
+    image: '/assets/images/platforms/ministry-hub.jpg',
+    name: 'Ministry of Teens & Youth',
+    url: 'https://ministryofteensandyouth.org',
+    blurb: 'The official LoveWorld Ministry of Teens & Youth — teens churches, youth churches, initiatives and resources worldwide.',
+    icon: '🔥',
+    audience: ['teens', 'youth'],
+    featured: true,
+    cta: 'Visit the ministry',
+    urlVerified: true,
+  },
+  {
     id: 'tap',
+    chip: 2,
     image: '/assets/images/platforms/tap.jpg',
     name: 'TAP — Teens Advance Partners',
     url: 'https://loveworldteensministry.ca',
@@ -182,6 +242,42 @@ export const platforms: Platform[] = [
     cta: 'About ITPLC',
   },
   {
+    id: 'teens-club',
+    chip: 3,
+    image: '/assets/images/platforms/teens-outreach.jpg',
+    name: 'TeeVo Clubs',
+    url: 'https://ministryofteensandyouth.org/teevo-clubs/',
+    blurb: 'Teen-led evangelism clubs in schools and communities — how to join, how to lead, how to reach every teenager.',
+    icon: '◉',
+    audience: ['teens'],
+    badge: 'GLOBAL',
+    cta: 'TeeVo Clubs info',
+  },
+  {
+    id: 'tithe',
+    chip: 5,
+    image: '/assets/images/platforms/tap.jpg',
+    name: 'T.I.T.H.E.',
+    url: 'https://ministryofteensandyouth.org',
+    blurb: 'Teens In The Hood Evangelical Special — teens taking the Gospel to their streets, schools and neighbourhoods.',
+    icon: '✦',
+    audience: ['teens'],
+    badge: 'OUTREACH',
+    cta: 'About T.I.T.H.E.',
+  },
+  {
+    id: 'trumpets',
+    chip: 4,
+    image: '/assets/images/platforms/trumpets.jpg',
+    name: 'Trumpets Conference',
+    url: 'https://ministryofteensandyouth.org',
+    blurb: 'Training, Reach Out, Upgrade, Missions, Partnership, Empowerment — the conference equipping teens’ structures worldwide.',
+    icon: '🎺',
+    audience: ['teens'],
+    badge: 'CONFERENCE',
+    cta: 'About Trumpets',
+  },
+  {
     id: 'teens-hub',
     image: '/assets/images/platforms/teens-hub.jpg',
     name: 'LoveWorld Teens Ministry',
@@ -193,6 +289,7 @@ export const platforms: Platform[] = [
   },
   {
     id: 'affirmation-train',
+    chip: 6,
     image: '/assets/images/platforms/affirmation-train.jpg',
     name: 'Affirmation Train',
     url: 'https://affirmation-train.org',
@@ -206,6 +303,7 @@ export const platforms: Platform[] = [
   // ─── YOUTH (purpose & leadership, campus/career, evangelism) ───
   {
     id: 'gylf',
+    chip: 1,
     image: '/assets/images/platforms/gylf.jpg',
     name: 'Global Youth Leaders’ Forum',
     url: 'https://globalyouthleadersforum.org',
@@ -218,6 +316,7 @@ export const platforms: Platform[] = [
   },
   {
     id: 'campus',
+    chip: 5,
     image: '/assets/images/platforms/campus.jpg',
     name: 'GYLF Campus Ministry',
     url: 'https://globalyouthleadersforum.org',
@@ -226,6 +325,41 @@ export const platforms: Platform[] = [
     audience: ['youth'],
     cta: 'Campus outreach',
     urlVerified: true,
+  },
+  {
+    id: 'creators-connect',
+    chip: 2,
+    image: '/assets/images/platforms/creators-connect.jpg',
+    name: 'Creators Connect',
+    url: 'https://ministryofteensandyouth.org/creators-connect/',
+    blurb: 'For creatively and digitally gifted young people — design, photography, video, film, animation, writing, music, technology.',
+    icon: '🎬',
+    audience: ['youth'],
+    badge: 'GLOBAL',
+    cta: 'Join Creators Connect',
+  },
+  {
+    id: 'graduate-network',
+    chip: 3,
+    image: '/assets/images/platforms/graduate-network.jpg',
+    name: 'LoveWorld Graduate Network',
+    url: 'https://blwgraduatenetwork.org',
+    blurb: 'Stay connected after school — mentorship, career purpose and global impact for graduates and young professionals.',
+    icon: '🎓',
+    audience: ['youth'],
+    cta: 'Join the network',
+  },
+  {
+    id: 'you-rise',
+    chip: 4,
+    image: '/assets/images/platforms/reachout-world.jpg',
+    name: 'Y.O.U-Rise',
+    url: 'https://ministryofteensandyouth.org',
+    blurb: 'Youth Reaching Individuals, Streets, Every City & Nation — the youth evangelism thrust, locally expressed through CC3.',
+    icon: '🌍',
+    audience: ['youth'],
+    badge: 'OUTREACH',
+    cta: 'Rise with us',
   },
 
   // ─── CHILDREN (foundations, Bible fun, parent trust) ───
@@ -255,4 +389,12 @@ export const platforms: Platform[] = [
 
 export function platformsFor(audience: PlatformAudience): Platform[] {
   return platforms.filter(p => p.audience.includes(audience))
+}
+
+/* Footer chip priority per scope (explicit, curated — avoids link soup) */
+export const footerChipOrder: Record<PlatformAudience, string[]> = {
+  main: ['rhapsody', 'ceflix', 'healing-streams', 'pcdl', 'kingschat', 'lw-tv'],
+  teens: ['ministry-hub', 'tap', 'teens-club', 'trumpets', 'tithe', 'affirmation-train'],
+  youth: ['gylf', 'creators-connect', 'graduate-network', 'you-rise', 'ministry-hub', 'campus'],
+  children: ['early-readers', 'childrens-tv'],
 }

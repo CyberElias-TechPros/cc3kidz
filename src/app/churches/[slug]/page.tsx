@@ -183,7 +183,7 @@ export default async function ChurchHome({ params }: { params: Promise<{ slug: s
         title="Ministry Platforms — for Every Member"
         sub="Devotionals, healing, media, leadership and partnership — the official platforms of Believers' LoveWorld, available to every member of every CC3 church."
         audience="main"
-        max={12}
+        max={15}
         style={{ background: '#F8FAFC' }}
       />
     </>

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { site } from '@/lib/site'
 import { serviceTimes } from '@/lib/site'
-import { platformsFor } from '@/data/loveworld-platforms'
+import { platformsFor, footerChipOrder } from '@/data/loveworld-platforms'
 
 function getChurch(pathname: string | null) {
   if (!pathname) return '/'
@@ -97,8 +97,14 @@ export default function Footer() {
 
   const links = isTeens ? teensFooter : isYouth ? youthFooter : site.footerLinks
   const copyrightChurch = isTeens ? 'CE Central Church 3 Teens' : isYouth ? 'CE Central Church 3 Youth' : 'Christ Embassy Central Church 3'
-  // LoveWorld platform chips — contextual per scope (max 6, no link soup)
-  const platformChips = platformsFor(isTeens ? 'teens' : isYouth ? 'youth' : 'main').slice(0, 6)
+  // LoveWorld platform chips — contextual per scope, curated order (max 6, no link soup)
+  const scope = isTeens ? 'teens' : isYouth ? 'youth' : 'main'
+  const scopePlatforms = platformsFor(scope)
+  const order = footerChipOrder[scope]
+  const platformChips = [
+    ...order.map(id => scopePlatforms.find(p => p.id === id)).filter((p): p is NonNullable<typeof p> => Boolean(p)),
+    ...scopePlatforms.filter(p => !order.includes(p.id)),
+  ].slice(0, 6)
 
   return (
     <footer className="bg-navy text-slate-200">
