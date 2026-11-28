@@ -113,14 +113,14 @@ export default function YouthPage() {
           </div>
           <div className="mt-6 grid md:grid-cols-3 gap-4">
             {[
-              { m: 'OCT', d: '18', t: 'CC3 Night', sub: 'WORSHIP • WORD • COMMUNITY', img: '/assets/images/cc3/youth/youth-choir.jpg' },
-              { m: 'OCT', d: '25', t: 'Community Groups', sub: 'REAL CONVERSATIONS • REAL CHANGE', img: '/assets/images/cc3/youth/youth-community.jpg' },
-              { m: 'NOV', d: '08', t: 'City Serve', sub: 'LOVE OUR CITY • MAKE A DIFFERENCE', img: '/assets/images/cc3/youth/youth-city-serve.jpg' },
+              { m: 'MONTHLY', d: 'FRI', t: 'CC3 Night', sub: 'WORSHIP • WORD • COMMUNITY', img: '/assets/images/cc3/youth/youth-choir.jpg', alt: 'Youth worship choir leading CC3 Night' },
+              { m: 'WEEKLY', d: 'SUN', t: 'Community Groups', sub: 'REAL CONVERSATIONS • REAL CHANGE', img: '/assets/images/cc3/youth/youth-community.jpg', alt: 'Youth community group gathered midweek' },
+              { m: 'QUARTERLY', d: 'SAT', t: 'City Serve', sub: 'LOVE OUR CITY • MAKE A DIFFERENCE', img: '/assets/images/cc3/youth/youth-city-serve.jpg', alt: 'Youth City Serve outreach in the community' },
             ].map(e => (
-              <article key={e.t} className="youth-swiss-event">
+              <Link key={e.t} href="/youth/events" className="youth-swiss-event" style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
                 <div className="youth-swiss-event__img">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={e.img} alt={e.t} />
+                  <img src={e.img} alt={e.alt} loading="lazy" />
                 </div>
                 <div className="youth-swiss-event__body">
                   <div className="date">
@@ -133,7 +133,7 @@ export default function YouthPage() {
                   </div>
                   <span className="arrow">→</span>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>

@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { site } from '@/lib/site'
+import { serviceTimes } from '@/lib/site'
 import { platformsFor } from '@/data/loveworld-platforms'
 
 function getChurch(pathname: string | null) {
@@ -74,7 +75,7 @@ export default function Footer() {
         sub: 'Teens & Youth Ministry',
         zone: 'Port Harcourt Zone 3 · Ages 13–19',
         desc: 'CE Central Church 3 Teens — LoveWorld Teens & Youth Ministry. Raising champions for Christ — Word, Spirit, and excellence.',
-        service: 'Sunday 8AM · Wednesday 6PM · First Sunday 3PM Communion',
+        service: serviceTimes.teens.footer,
       }
     : isYouth
     ? {
@@ -83,7 +84,7 @@ export default function Footer() {
         sub: 'Teens & Youth Ministry',
         zone: 'Port Harcourt Zone 3 · Ages 20–35',
         desc: 'CE Central Church 3 Youth — LoveWorld Teens & Youth Ministry. A generation discovering Jesus, living with purpose and making impact.',
-        service: 'Sunday 8AM · Wednesday 5:30PM · Youth Community Nights',
+        service: serviceTimes.youth.footer,
       }
     : {
         logo: '/assets/images/loveworld-logo.png?v=2',
@@ -91,7 +92,7 @@ export default function Footer() {
         sub: 'Christ Embassy Central Church 3',
         zone: 'Port Harcourt Zone 3',
         desc: `Christ Embassy Central Church 3 — a LoveWorld church family. ${site.tagline} We meet at ${site.addressShort}.`,
-        service: 'Sunday 8AM · Monday 6PM Prayer & Prophecy · Wednesday 5:30PM',
+        service: serviceTimes.main,
       }
 
   const links = isTeens ? teensFooter : isYouth ? youthFooter : site.footerLinks

@@ -263,3 +263,22 @@ strong, b { font-weight: 700; }
 .animate-fadeUp {
   animation: fadeUp 0.6s ease both;
 }
+
+/* P0 contrast fix: ink-gold for TEXT on white/light backgrounds (4.74:1 — passes AA).
+   --gold (#C6A04A) stays for text on navy/dark and for backgrounds. */
+:root {
+  --gold-ink: #8f6e2a;
+}
+
+/* P0 accessibility: honour vestibular/motion preferences across ALL scopes
+   (kids already had a scoped guard; this is the global backstop). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

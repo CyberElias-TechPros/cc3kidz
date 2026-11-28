@@ -39,13 +39,23 @@ export default function ChurchSlider({
   const isMobile = useIsMobile()
   const [i, setI] = useState(0)
   const [paused, setPaused] = useState(false)
+  const [reducedMotion, setReducedMotion] = useState(false)
   const n = slides.length
 
+  // P0 accessibility: autoplay off when the OS requests reduced motion
   useEffect(() => {
-    if (!autoplay || isMobile || paused || n < 2) return
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const update = () => setReducedMotion(mq.matches)
+    update()
+    mq.addEventListener('change', update)
+    return () => mq.removeEventListener('change', update)
+  }, [])
+
+  useEffect(() => {
+    if (!autoplay || isMobile || paused || reducedMotion || n < 2) return
     const t = setInterval(() => setI(v => (v + 1) % n), interval)
     return () => clearInterval(t)
-  }, [autoplay, isMobile, paused, n, interval])
+  }, [autoplay, isMobile, paused, reducedMotion, n, interval])
 
   const go = useCallback((k: number) => setI(((k % n) + n) % n), [n])
   const active = slides[i]
@@ -87,6 +97,16 @@ export default function ChurchSlider({
           <button className="church-slider__arrow right" aria-label="Next slide" onClick={() => go(i + 1)}>
             ›
           </button>
+          {autoplay && !reducedMotion && (
+            <button
+              className="church-slider__pause"
+              aria-pressed={paused}
+              aria-label={paused ? 'Resume slideshow' : 'Pause slideshow'}
+              onClick={() => setPaused(v => !v)}
+            >
+              {paused ? '▶' : '⏸'}
+            </button>
+          )}
         </>
       )}
 

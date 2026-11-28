@@ -17,13 +17,23 @@ export default function YouthHeroSlider({
 }) {
   const isMobile = useIsMobile()
   const [i, setI] = useState(0)
+  const [reducedMotion, setReducedMotion] = useState(false)
   const n = slides.length
 
+  // P0 accessibility: autoplay off under prefers-reduced-motion
   useEffect(() => {
-    if (isMobile || n < 2) return
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const update = () => setReducedMotion(mq.matches)
+    update()
+    mq.addEventListener('change', update)
+    return () => mq.removeEventListener('change', update)
+  }, [])
+
+  useEffect(() => {
+    if (isMobile || reducedMotion || n < 2) return
     const t = setInterval(() => setI(v => (v + 1) % n), interval)
     return () => clearInterval(t)
-  }, [isMobile, n, interval])
+  }, [isMobile, reducedMotion, n, interval])
 
   const go = (k: number) => setI(((k % n) + n) % n)
 

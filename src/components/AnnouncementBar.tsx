@@ -4,6 +4,9 @@ import Link from 'next/link'
 
 type Ann = { id: string; badge: string; title: string; href: string; expiresAt: string }
 
+const DISMISS_KEY = 'cc3-ann-dismissed'
+const DISMISS_TTL = 7 * 24 * 60 * 60 * 1000 // 7 days — dismissal survives navigation, not forever
+
 export default function AnnouncementBar({ items }: { items: Ann[] }) {
   const [dismissed, setDismissed] = useState<string | null>(null)
   const [idx, setIdx] = useState(0)
@@ -13,6 +16,29 @@ export default function AnnouncementBar({ items }: { items: Ann[] }) {
   useEffect(() => {
     setNow(new Date().toISOString().slice(0, 10))
   }, [])
+
+  // Restore persisted dismissal (P0 fix: was useState-only, came back on every navigation)
+  useEffect(() => {
+    try {
+      const raw = JSON.parse(localStorage.getItem(DISMISS_KEY) || 'null') as { id: string; at: number } | null
+      if (raw && typeof raw.id === 'string' && Date.now() - raw.at < DISMISS_TTL) {
+        setDismissed(raw.id)
+      } else {
+        localStorage.removeItem(DISMISS_KEY)
+      }
+    } catch {
+      /* private mode / storage disabled — dismiss session-only */
+    }
+  }, [])
+
+  const dismiss = (id: string) => {
+    setDismissed(id)
+    try {
+      localStorage.setItem(DISMISS_KEY, JSON.stringify({ id, at: Date.now() }))
+    } catch {
+      /* ignore */
+    }
+  }
 
   const active = useMemo(() => {
     if (!now) return items.filter(a => a.id !== dismissed)
@@ -57,7 +83,7 @@ export default function AnnouncementBar({ items }: { items: Ann[] }) {
             </div>
           )}
           <button
-            onClick={() => setDismissed(current.id)}
+            onClick={() => dismiss(current.id)}
             aria-label="Dismiss announcement"
             className="h-7 w-7 grid place-items-center rounded-full bg-white/10 hover:bg-white/15 border border-white/15"
           >

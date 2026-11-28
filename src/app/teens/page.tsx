@@ -7,7 +7,7 @@ import AnnouncementBar from '@/components/AnnouncementBar'
 import ChurchSlider, { type ChurchSlide } from '@/components/ChurchSlider'
 import PlatformStrip from '@/components/PlatformStrip'
 import { platformsFor } from '@/data/loveworld-platforms'
-import { announcements } from '@/lib/site'
+import { announcements, serviceTimes } from '@/lib/site'
 
 export const metadata = { title: 'CE Central Church 3 Teens — Christ Embassy Teens Church • PH Zone 3' }
 
@@ -55,9 +55,9 @@ export default function TeensPage() {
               <span><b>TeeVo</b> by Pastor Chris Oyakhilome DSC DSC DD • President — Loveworld Inc.</span>
             </div>
             <div style={{ marginTop: '0.8rem', display: 'flex', gap: '.4rem', flexWrap: 'wrap' }}>
-              <span style={{ fontSize: '.62rem', fontWeight: 800, letterSpacing: '.08em', textTransform: 'uppercase', background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.14)', padding: '.32rem .55rem', borderRadius: 999, color: '#fff' }}>Sundays 8AM</span>
-              <span style={{ fontSize: '.62rem', fontWeight: 800, letterSpacing: '.08em', textTransform: 'uppercase', background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.14)', padding: '.32rem .55rem', borderRadius: 999, color: '#fff' }}>Wednesdays 6PM</span>
-              <span style={{ fontSize: '.62rem', fontWeight: 800, letterSpacing: '.08em', textTransform: 'uppercase', background: 'var(--ce-gold)', color: 'var(--ce-navy)', padding: '.32rem .55rem', borderRadius: 999 }}>Global Communion • 1st Sunday</span>
+              <span style={{ fontSize: '.62rem', fontWeight: 800, letterSpacing: '.08em', textTransform: 'uppercase', background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.14)', padding: '.32rem .55rem', borderRadius: 999, color: '#fff' }}>{serviceTimes.teens.pill1}</span>
+              <span style={{ fontSize: '.62rem', fontWeight: 800, letterSpacing: '.08em', textTransform: 'uppercase', background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.14)', padding: '.32rem .55rem', borderRadius: 999, color: '#fff' }}>{serviceTimes.teens.pill2}</span>
+              <span style={{ fontSize: '.62rem', fontWeight: 800, letterSpacing: '.08em', textTransform: 'uppercase', background: 'var(--ce-gold)', color: 'var(--ce-navy)', padding: '.32rem .55rem', borderRadius: 999 }}>{serviceTimes.teens.pill3}</span>
             </div>
           </div>
 
@@ -162,7 +162,7 @@ export default function TeensPage() {
         <div className="container-cc">
           <div style={{ display: 'flex', justifyContent: 'space-between', gap: '.8rem', flexWrap: 'wrap', alignItems: 'end' }}>
             <div>
-              <span className="lw-pill" style={{ color: '#FF7A59', background: 'rgba(255,122,89,.08)', borderColor: 'rgba(255,122,89,.18)' }}>Upcoming • Global • Zonal</span>
+              <span className="lw-pill" style={{ color: 'var(--ce-coral-ink)', background: 'rgba(255,122,89,.08)', borderColor: 'rgba(255,122,89,.18)' }}>Upcoming • Global • Zonal</span>
               <h2 className="lw-h2" style={{ fontSize: 'clamp(1.4rem,3vw,1.9rem)' }}>Gather. Grow. <span className="gold">Go.</span></h2>
             </div>
             <Link href="/teens/events" className="btn-lw" style={{ background: '#fff', border: '1px solid rgba(14,27,51,.08)', color: 'var(--ce-navy)', fontSize: '.74rem' }}>All events →</Link>
@@ -185,7 +185,7 @@ export default function TeensPage() {
               </article>
             ))}
           </div>
-          <div style={{ marginTop: '.6rem', fontSize: '.68rem', color: '#64748B', textAlign: 'center' }}>Services: Sundays 10:00AM • Wednesdays 7:00PM • Nursery to Children (0–12) separate • Teens Church runs concurrently in every Christ Embassy location.</div>
+          <div style={{ marginTop: '.6rem', fontSize: '.68rem', color: '#64748B', textAlign: 'center' }}>Services: {serviceTimes.teens.line} • Teens Church meets in its dedicated hall during both services.</div>
         </div>
       </section>
 
@@ -247,7 +247,7 @@ export default function TeensPage() {
           <div className="lw-final">
             <div>
               <h3>Welcome, Parents — we take Teens seriously</h3>
-              <p>Supervised, pastoral oversight, transparent. Wednesdays 7PM Fellowship Hall • Sundays during main service. Spanish &amp; Russian available in some zones.</p>
+              <p>Supervised, pastoral oversight, transparent. Teens Church runs during the Sunday 8AM service and the Wednesday 6PM midweek — same building, dedicated teens hall, vetted leaders.</p>
             </div>
             <div style={{ display: 'flex', gap: '.5rem', flexWrap: 'wrap' }}>
               <Link href="/teens/connect" className="btn-lw" style={{ background: '#fff', color: 'var(--ce-navy)' }}>Talk to youth pastor →</Link>

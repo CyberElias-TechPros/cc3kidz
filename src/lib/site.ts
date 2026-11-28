@@ -96,3 +96,20 @@ export const announcements = [
     expiresAt: '2026-12-31'
   }
 ]
+
+/* Canonical service times — single source of truth (P0 fix: teens page contradicted itself 4x).
+   Every display of teens/youth/main service times must reference these. */
+export const serviceTimes = {
+  main: 'Sunday 8AM · Monday 6PM Prayer & Prophecy · Wednesday 5:30PM · First Sunday 3PM Communion',
+  teens: {
+    pill1: 'Sundays 8AM',
+    pill2: 'Wednesdays 6PM',
+    pill3: 'Global Communion — 1st Sunday 3PM',
+    footer: 'Sunday 8AM · Wednesday 6PM · First Sunday 3PM Communion',
+    line: 'Sundays 8:00AM · Wednesdays 6:00PM · Global Communion — First Sunday 3:00PM',
+  },
+  youth: {
+    footer: 'Sunday 8AM · Wednesday 5:30PM · Youth Community Nights',
+    line: 'Sundays 8:00AM · Wednesdays 5:30PM · Youth Community Nights (monthly — see Community)',
+  },
+} as const
