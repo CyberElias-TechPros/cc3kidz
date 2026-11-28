@@ -1,0 +1,62 @@
+[
+  {
+    "id": "msg-1",
+    "slug": "faith-that-prevails",
+    "title": "Faith That Prevails",
+    "minister": "Pastor — CE Central Church 3",
+    "date": "2026-11-16",
+    "service": "Sunday Service",
+    "scripture": "Hebrews 11:1, Romans 10:17",
+    "excerpt": "Faith is not a mystery — it’s a lifestyle. Learn how the Word builds prevailing faith.",
+    "youtubeId": "dQw4w9WgXcQ",
+    "audioUrl": null,
+    "duration": "62:14",
+    "series": "Faith",
+    "tags": ["Faith", "The Word"]
+  },
+  {
+    "id": "msg-2",
+    "slug": "prayer-that-works",
+    "title": "Prayer That Works",
+    "minister": "Pastor — CE Central Church 3",
+    "date": "2026-11-12",
+    "service": "Midweek Service",
+    "scripture": "James 5:16, John 15:7",
+    "excerpt": "Effective prayer is learned. Discover principles that make prayer productive.",
+    "youtubeId": "dQw4w9WgXcQ",
+    "audioUrl": null,
+    "duration": "54:08",
+    "series": "Prayer",
+    "tags": ["Prayer", "Spiritual Growth"]
+  },
+  {
+    "id": "msg-3",
+    "slug": "new-creation-realities",
+    "title": "New Creation Realities",
+    "minister": "Guest Minister — LoveWorld",
+    "date": "2026-11-02",
+    "service": "Special Programme",
+    "scripture": "2 Corinthians 5:17, Ephesians 4:24",
+    "excerpt": "Who you are in Christ determines what you experience. Walk in your new-creation identity.",
+    "youtubeId": "dQw4w9WgXcQ",
+    "audioUrl": null,
+    "duration": "71:02",
+    "series": "New Creation",
+    "tags": ["New Creation", "Identity"]
+  },
+  {
+    "id": "msg-4",
+    "slug": "power-of-the-holy-spirit",
+    "title": "The Ministry of the Holy Spirit",
+    "minister": "Pastor — CE Central Church 3",
+    "date": "2026-10-26",
+    "service": "Sunday Service",
+    "scripture": "Acts 1:8, John 14:16",
+    "excerpt": "The Holy Spirit is not a symbol — He is a person and your advantage.",
+    "youtubeId": "dQw4w9WgXcQ",
+    "audioUrl": null,
+    "duration": "58:44",
+    "series": "Holy Spirit",
+    "tags": ["Holy Spirit", "Christian Living"]
+  }
+]

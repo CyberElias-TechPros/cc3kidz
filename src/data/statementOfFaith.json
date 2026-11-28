@@ -1,0 +1,13 @@
+[
+  { "id": 1, "title": "The Bible", "verse": "2 Tim 3:16; 2 Pet 1:20-21", "text": "The Bible contains the inspired and infallible Word of God." },
+  { "id": 2, "title": "One God — Trinity", "verse": "Eph 4:5-6; Gen 1:26; Matt 3:16-17", "text": "One God eternally existent in three Persons: Father, Son and Holy Ghost." },
+  { "id": 3, "title": "Deity of Christ", "verse": "Matt 1:23; Rom 8:11", "text": "Jesus was born of a virgin, conceived of the Holy Ghost, died, rose bodily, ascended bodily." },
+  { "id": 4, "title": "Rapture & Second Coming", "verse": "1 Thess 4:16-17; Matt 24:29-30", "text": "We believe in the rapture of the Church and the Second Coming of Christ." },
+  { "id": 5, "title": "Cleansing from Sin", "verse": "Acts 3:19; Luke 24:47; Eph 1:7", "text": "Only through repentance and faith in the precious blood of Jesus." },
+  { "id": 6, "title": "Regeneration", "verse": "Titus 2:5; John 3:3-5; Eph 5:27", "text": "By the power of the Holy Spirit through the Word — essential for salvation." },
+  { "id": 7, "title": "Divine Healing", "verse": "1 Pet 2:24; Acts 3:16; 9:32-35", "text": "The redemptive work on the cross provides healing for the body and salvation for the soul." },
+  { "id": 8, "title": "Holy Ghost Enablement", "verse": "Acts 1:8; 2:4", "text": "Receiving the Holy Ghost gives power for Christian service and witness." },
+  { "id": 9, "title": "Sanctifying Power", "verse": "Rom 15:16; 1 Cor 6:11", "text": "We believe in the sanctifying power of the Holy Ghost." },
+  { "id": 10, "title": "Final Resurrection", "verse": "Rev 20:11-15; 1 Cor 15:12-23", "text": "Resurrection of saved to eternal life and lost to eternal judgement." },
+  { "id": 11, "title": "Prosperity & Success", "verse": "2 Cor 8:9; 3 John 1:2", "text": "We believe divine life includes righteousness, health, prosperity and victory through the Word." }
+]

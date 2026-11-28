@@ -1,0 +1,37 @@
+import Link from 'next/link'
+export const metadata = { title: 'About — CC3 Youth Church | 20–35' }
+export default function YouthAboutPage(){
+  return (<>
+    <section className="bg-haze border-b border-black/5"><div className="container-cc py-10"><div className="flex gap-4 max-w-4xl"><div className="hidden sm:block w-[3px] self-stretch rounded-full bg-navy" aria-hidden /><div><div className="text-xs font-semibold tracking-wide text-muted">Youth Ministry · LoveWorld Nation · PH Zone 3</div><h1 className="font-display font-extrabold text-[2.4rem] leading-none tracking-tight mt-2 text-navy">About CC3 Youth Church</h1><p className="mt-3 text-[1.02rem] leading-7 text-slate-600 max-w-2xl">Raised for purpose, equipped for impact — 20–35 years building young adults who are Word-established, Spirit-empowered and positioned for influence. <em>Giving your life a meaning.</em></p></div></div></div></section>
+    <section className="section bg-white"><div className="container-cc grid lg:grid-cols-[1.3fr_0.7fr] gap-8">
+      <div className="space-y-10">
+        <div><div className="eyebrow">Vision & Mission</div><div className="mt-4 grid sm:grid-cols-2 gap-4"><div className="border-l-2 border-gold pl-4 py-1"><div className="text-xs font-bold tracking-widest uppercase text-gold">Vision</div><p className="text-sm font-medium text-navy mt-1 leading-6">To raise a generation of Spirit-filled, Word-established young adults who discover their inheritance in Christ, fulfill divine purpose and influence their generation with the Gospel.</p></div><div className="border-l-2 border-navy pl-4 py-1"><div className="text-xs font-bold tracking-widest uppercase text-navy">Mission</div><p className="text-sm font-medium text-navy mt-1 leading-6">To build young adults through the Word, fellowship, prayer, mentorship, leadership, purposeful service and strategic evangelism — equipping them for Church, society and the nations.</p></div></div><p className="text-xs text-muted mt-3">Proposed statements — awaiting leadership approval. Aligned to Christ Embassy Vision/Mission: <em>Taking the divine presence… raising generations into their inheritance.</em></p></div>
+        <div><h2 className="font-display font-extrabold text-xl text-navy">Our Identity</h2><p className="text-sm leading-7 text-slate-600 mt-2">CC3 Youth Church is the young-adult expression of Christ Embassy Central Church 3 — not a parallel church, one family. We meet as Youth Church, fellowship in youth cells, serve in departments and extend via YOU R.I.S.E. outreaches, all under CC3 Group & PH Zone 3.</p><div className="mt-4 grid sm:grid-cols-3 gap-3 text-sm"><div className="card p-4"><div className="text-xs font-bold text-gold">20–35</div><div className="font-semibold text-navy">Young Adults</div><div className="text-xs text-muted">Students · Professionals · Creatives · Entrepreneurs</div></div><div className="card p-4"><div className="text-xs font-bold text-gold">Youth Church</div><div className="font-semibold text-navy">Sundays + Midweek</div><div className="text-xs text-muted">Service times via <Link href="/youth/church" className="underline">Youth Church</Link></div></div><div className="card p-4"><div className="text-xs font-bold text-gold">Outreach</div><div className="font-semibold text-navy">YOU R.I.S.E.</div><div className="text-xs text-muted">Reaching streets, cities & nations — see <Link href="/youth/rise" className="underline">YOU R.I.S.E.</Link></div></div></div></div>
+        <div><h2 className="font-display font-extrabold text-xl text-navy">Our Beliefs</h2><p className="text-sm text-muted">Anchored in Christ Embassy Statement of Faith — same doctrine, applied to young-adult reality.</p><Link href="/about#faith" className="mt-3 inline-flex btn btn--ghost !py-2 text-xs">Statement of Faith →</Link></div>
+        <div><h2 className="font-display font-extrabold text-xl text-navy">Leadership — Brother Kelvin</h2>
+        <div className="card p-5 border-gold/20 bg-white flex gap-4">
+          <div className="h-14 w-14 shrink-0 rounded-full bg-[#101A2B] grid place-items-center text-white font-black text-lg">BK</div>
+          <div>
+            <div className="text-xs font-bold tracking-widest uppercase text-gold">Leader, Youth Church · PH Zone 3 · 20–35</div>
+            <div className="font-display font-extrabold text-navy text-lg">Brother Kelvin</div>
+            <p className="text-sm leading-6 text-slate-600 mt-1">Brother Kelvin leads CC3 Youth Church — building young adults established in the Word, Spirit-empowered and equipped to take their world for Christ, under CC3 Group Pastor & PH Zone 3.</p>
+          </div>
+        </div>
+        <div className="mt-4 grid sm:grid-cols-3 gap-3">
+          {[
+            {role:'Assistant / Coordinator', note:'Programmes, cells, outreach & follow-up'},
+            {role:'Cell & Fellowship Leaders', note:'Youth cells — mentorship, not hierarchy'},
+            {role:'Worship / Media / Evangelism', note:'Department leads — excellence, creativity, outreach'},
+          ].map(c=>(
+            <div key={c.role} className="border border-black/5 rounded-xl p-4 bg-haze"><div className="text-xs font-bold text-navy">{c.role}</div><div className="text-xs leading-5 text-slate-600 mt-1">{c.note}</div></div>
+          ))}
+        </div><Link href="/youth/connect" className="mt-4 inline-flex btn btn--navy !py-2 text-xs">Contact Youth Leaders</Link></div>
+        <div><h2 className="font-display font-extrabold text-xl text-navy">LoveWorld Connection</h2><p className="text-sm leading-7 text-slate-600 mt-2">LoveWorld Nation → PH Zone 3 → CC3 Group → Youth Church; aligned to <a href="https://ministryofteensandyouth.org" target="_blank" rel="noreferrer" className="underline text-navy">Global Ministry of Teens & Youth</a> for Youth directorate, YOU R.I.S.E., Rhapsody, PCDL & Creators Connect.</p></div>
+      </div>
+      <div className="space-y-4">
+        <div className="card p-5"><h3 className="font-display font-extrabold text-navy">At a glance</h3><ul className="mt-3 space-y-2 text-sm text-slate-600"><li>• <b>Age:</b> 20–35</li><li>• <b>Meets:</b> Sundays & midweek (confirm)</li><li>• <b>Venue:</b> CC3 Group Church / as announced</li><li>• <b>Resources:</b> Rhapsody, Bible, PCDL, Messages</li><li>• <b>Initiative:</b> YOU R.I.S.E.</li></ul><Link href="/youth/church" className="mt-4 btn btn--navy w-full justify-center">Youth Church Info →</Link></div>
+        <div className="card p-5 bg-navy text-white"><h3 className="font-display font-extrabold">Start strong</h3><p className="text-sm text-white/80 mt-1">New? Visit, grab Rhapsody, join a cell — your purpose is next.</p><Link href="/youth/connect" className="mt-3 btn bg-white text-navy w-full justify-center !py-2 text-xs">Join Youth Church →</Link></div>
+      </div>
+    </div></section>
+  </>)
+}

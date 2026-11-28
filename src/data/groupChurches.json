@@ -1,0 +1,119 @@
+[
+  {
+    "id": "central-church-3",
+    "slug": "central-church-3",
+    "name": "Christ Embassy Central Church 3",
+    "shortName": "Central Church 3",
+    "pastor": "Pastor Kelson Onoriode",
+    "title": "Group Pastor & Pastor, Central Church 3",
+    "address": "30B Rumuokwuta/NTA Road, Opposite Patcoin Filling Station",
+    "area": "Rumuokwuta · NTA Road — Group Headquarters",
+    "city": "Port Harcourt",
+    "phone": "+234 905 862 8386",
+    "whatsapp": "+2349058628386",
+    "serviceTimes": [
+      { "day": "Sunday", "time": "8:00 AM", "label": "Sunday Service" },
+      { "day": "Monday", "time": "6:00 PM", "label": "Prayer & Prophecy Service" },
+      { "day": "Wednesday", "time": "5:30 PM", "label": "Midweek Service" }
+    ],
+    "cells": 28,
+    "featured": true,
+    "isHeadquarters": true,
+    "coords": { "lat": 4.8427161194266155, "lng": 6.984262611031861 }
+  },
+  {
+    "id": "ozuoba",
+    "slug": "ozuoba-church",
+    "name": "Christ Embassy Ozuoba",
+    "shortName": "Ozuoba",
+    "pastor": "Bro. Prince Precious",
+    "title": "Church Leader, Ozuoba",
+    "address": "Ozuoba Town, Along NTA Road, Port Harcourt",
+    "area": "Ozuoba · NTA Road",
+    "city": "Port Harcourt",
+    "phone": "",
+    "whatsapp": "",
+    "serviceTimes": [
+      { "day": "Sunday", "time": "8:00 AM", "label": "Sunday Service" },
+      { "day": "Wednesday", "time": "5:30 PM", "label": "Midweek Service" }
+    ],
+    "cells": 14,
+    "coords": { "lat": 4.868, "lng": 6.955 }
+  },
+  {
+    "id": "rumuekini",
+    "slug": "rumuekini-church",
+    "name": "Christ Embassy Rumuekini",
+    "shortName": "Rumuekini",
+    "pastor": "Bro. Jerry Uvo",
+    "title": "Church Leader, Rumuekini",
+    "address": "Rumuekini Junction, East-West Road, Port Harcourt",
+    "area": "Rumuekini · East-West Road",
+    "city": "Port Harcourt",
+    "phone": "",
+    "whatsapp": "",
+    "serviceTimes": [
+      { "day": "Sunday", "time": "8:00 AM", "label": "Sunday Service" },
+      { "day": "Wednesday", "time": "5:30 PM", "label": "Midweek Service" }
+    ],
+    "cells": 12,
+    "coords": { "lat": 4.875, "lng": 6.92 }
+  },
+  {
+    "id": "rumuosi",
+    "slug": "rumuosi-church",
+    "name": "Christ Embassy Rumuosi",
+    "shortName": "Rumuosi",
+    "pastor": "Bro. Cyril Kelechukwu",
+    "title": "Church Leader, Rumuosi",
+    "address": "Rumuosi Town, East-West Road, Port Harcourt",
+    "area": "Rumuosi · East-West Road",
+    "city": "Port Harcourt",
+    "phone": "",
+    "whatsapp": "",
+    "serviceTimes": [
+      { "day": "Sunday", "time": "8:00 AM", "label": "Sunday Service" },
+      { "day": "Wednesday", "time": "5:30 PM", "label": "Midweek Service" }
+    ],
+    "cells": 10,
+    "coords": { "lat": 4.883, "lng": 6.945 }
+  },
+  {
+    "id": "higherlife",
+    "slug": "higherlife-church",
+    "name": "Christ Embassy HigherLife",
+    "shortName": "HigherLife",
+    "pastor": "Bro. Tonye Charles",
+    "title": "Church Leader, HigherLife",
+    "address": "Rumuokoro / HigherLife Axis, Port Harcourt",
+    "area": "Rumuokoro · HigherLife",
+    "city": "Port Harcourt",
+    "phone": "",
+    "whatsapp": "",
+    "serviceTimes": [
+      { "day": "Sunday", "time": "8:00 AM", "label": "Sunday Service" },
+      { "day": "Wednesday", "time": "5:30 PM", "label": "Midweek Service" }
+    ],
+    "cells": 9,
+    "coords": { "lat": 4.87, "lng": 6.985 }
+  },
+  {
+    "id": "east-west-central",
+    "slug": "east-west-central-church",
+    "name": "Christ Embassy East-West Central",
+    "shortName": "East-West Central",
+    "pastor": "Bro. Sam Onobun",
+    "title": "Church Leader, East-West Central",
+    "address": "East-West Road, Nkpolu — Rumuigbo Axis, Port Harcourt",
+    "area": "East-West · Nkpolu-Rumuigbo",
+    "city": "Port Harcourt",
+    "phone": "",
+    "whatsapp": "",
+    "serviceTimes": [
+      { "day": "Sunday", "time": "8:00 AM", "label": "Sunday Service" },
+      { "day": "Wednesday", "time": "5:30 PM", "label": "Midweek Service" }
+    ],
+    "cells": 11,
+    "coords": { "lat": 4.86, "lng": 6.96 }
+  }
+]

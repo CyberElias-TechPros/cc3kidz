@@ -1,0 +1,8 @@
+[
+  { "slug": "salvation", "title": "Salvation & New Creation", "desc": "What happened at new birth — righteousness, eternal life", "duration": "Week 1", "order": 1 },
+  { "slug": "word", "title": "The Word of God", "desc": "Study, meditation, confession — building faith", "duration": "Week 2", "order": 2 },
+  { "slug": "faith", "title": "Faith", "desc": "Principles of faith — how faith works", "duration": "Week 3", "order": 3 },
+  { "slug": "prayer", "title": "Prayer", "desc": "Types, principles, and practice of prayer", "duration": "Week 4", "order": 4 },
+  { "slug": "holyspirit", "title": "The Holy Spirit", "desc": "Person, ministry, gifts, and fellowship", "duration": "Week 5", "order": 5 },
+  { "slug": "evangelism", "title": "Evangelism & Church Life", "desc": "Soul-winning, cells, partnerships, service", "duration": "Week 6", "order": 6 }
+]

@@ -1,0 +1,88 @@
+/* LoveWorld Teens — CE Teens Church CC3 • Christ Embassy focused */
+.teens-scope{
+  --ce-navy:#0E1B33;
+  --ce-navy2:#122a55;
+  --ce-ink:#080F1F;
+  --ce-gold:#C6A04A;
+  --ce-goldSoft:#FFF3D1;
+  --ce-haze:#EAF0F7;
+  --ce-teal:#00B6A0;
+  --ce-coral:#FF7A59;
+  --ce-coral-ink:#B4533B; /* coral text on light — passes AA (4.95:1) */
+  --ce-violet:#6B5BFF;
+}
+/* HERO — cathedral minimal but teens energy */
+.lw-hero{position:relative;overflow:hidden;background:linear-gradient(180deg, #0E1B33 0%, #0E1B33 62%, #fff 62%);padding:0}
+.lw-hero__inner{position:relative;z-index:1;display:grid;grid-template-columns:1.08fr .92fr;gap:2rem;align-items:center;padding:1.6rem 0 1.2rem}
+@media(max-width:900px){.lw-hero__inner{grid-template-columns:1fr; padding-bottom:0}.lw-hero{background:linear-gradient(180deg, #0E1B33 0%, #0E1B33 55%, #fff 55%)}}
+.lw-kicker{display:inline-flex;align-items:center;gap:.5rem;font-size:.62rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.85);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:.35rem .6rem;border-radius:999px}
+.lw-kicker i{width:7px;height:7px;border-radius:50%;background:var(--ce-gold);box-shadow:0 0 0 4px rgba(198,160,74,.2)}
+.lw-title{margin-top:.9rem;font-family:var(--font-display), serif;font-weight:900;line-height:.88;letter-spacing:-.04em;color:#fff;font-size:clamp(2.4rem,6vw,3.9rem)}
+.lw-title .gold{color:var(--ce-gold)}
+.lw-sub{color:rgba(255,255,255,.78);font-size:.92rem;line-height:1.6;margin-top:.7rem;max-width:52ch}
+.lw-cta{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
+.btn-lw{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;font-weight:800;font-size:.82rem;line-height:1;padding:.72rem 1.1rem;border-radius:999px;text-decoration:none;transition:transform .15s,box-shadow .15s}
+.btn-lw:active{transform:translateY(1px)}
+.btn-gold{background:var(--ce-gold);color:var(--ce-navy);box-shadow:0 6px 18px rgba(198,160,74,.35)}
+.btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(6px)}
+.lw-proof{display:flex;align-items:center;gap:.7rem;margin-top:1rem;color:rgba(255,255,255,.72);font-size:.76rem}
+.lw-proof img{width:28px;height:28px;border-radius:999px;border:2px solid rgba(255,255,255,.9);object-fit:cover}
+.lw-photoWrap{position:relative;display:grid;place-items:center;padding:.8rem 0}
+.lw-photo{position:relative;width:100%;max-width:520px;aspect-ratio:1.15;border-radius:22px;overflow:hidden;background:#fff;border:3px solid #fff;box-shadow:0 24px 48px -18px rgba(0,0,0,.45);transform:rotate(.6deg)}
+.lw-photo img{width:100%;height:100%;object-fit:cover}
+.lw-float{position:absolute;left:-8px;bottom:10%;background:#fff;border-radius:16px;padding:.8rem .9rem;width:180px;box-shadow:0 14px 32px -14px rgba(0,0,0,.25);border:1px solid rgba(14,27,51,.06);color:var(--ce-navy)}
+.lw-float b{font-size:.84rem;line-height:1.05;color:var(--ce-navy)}
+.lw-float p{font-size:.7rem;color:#64748B;line-height:1.4;margin-top:.25rem}
+.lw-badge{position:absolute;right:6%;top:14%;background:var(--ce-gold);color:var(--ce-navy);width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:1.1rem;font-weight:900;border:3px solid #fff;box-shadow:0 10px 24px rgba(0,0,0,.22)}
+/* TRUST STRIP */
+.lw-trust{display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap;background:#fff;border:1px solid rgba(14,27,51,.06);border-radius:16px;padding:.7rem .8rem;box-shadow:0 8px 24px -16px rgba(0,0,0,.12);margin-top:.8rem}
+.lw-trust b{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ce-navy)}
+.lw-trust span{color:var(--gold-ink)}
+/* FEATURE GRID — What We Do */
+.lw-pill{display:inline-flex;align-items:center;gap:.4rem;font-size:.62rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ce-navy);background:rgba(107,91,255,.08);border:1px solid rgba(107,91,255,.14);padding:.32rem .55rem;border-radius:999px} /* navy text on violet tint — violet text was marginal on tinted bg */
+.lw-h2{margin-top:.6rem;font-family:var(--font-display), serif;font-weight:900;line-height:.9;letter-spacing:-.03em;color:var(--ce-navy);font-size:clamp(1.6rem,4vw,2.2rem)}
+.lw-h2 .gold{color:var(--gold-ink)} /* gold text sits on white sections — ink variant passes AA */
+.lw-card{background:#fff;border:1px solid rgba(14,27,51,.06);border-radius:18px;padding:1rem;display:flex;flex-direction:column;gap:.6rem;box-shadow:0 10px 24px -18px rgba(0,0,0,.12);transition:transform .2s,box-shadow .2s}
+.lw-card:hover{transform:translateY(-2px);box-shadow:0 16px 32px -18px rgba(0,0,0,.16)}
+.lw-card__icon{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--ce-navy);color:var(--ce-gold);font-size:.9rem}
+.lw-card h3{font-size:.88rem;font-weight:900;color:var(--ce-navy)}
+.lw-card p{font-size:.82rem;color:#64748B;line-height:1.6}
+.lw-link{margin-top:auto;font-size:.78rem;font-weight:800;color:var(--ce-navy);display:inline-flex;gap:.3rem;align-items:center}
+.lw-link i{color:var(--gold-ink)}
+/* TEEVO DAILY */
+.lw-teevo{background:linear-gradient(135deg, #0F1D3A 0%, #1A2E6A 60%, #2B3EAA 100%);color:#fff;border-radius:20px;overflow:hidden;padding:1rem;display:grid;grid-template-columns:1.1fr .9fr;gap:1rem;align-items:center;box-shadow:0 18px 40px -18px rgba(12,22,62,.5)}
+@media(max-width:800px){.lw-teevo{grid-template-columns:1fr}}
+.lw-teevo__badge{display:inline-flex;align-items:center;gap:.4rem;font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);padding:.3rem .5rem;border-radius:999px}
+.lw-teevo h3{margin-top:.5rem;font-family:var(--font-display), serif;font-weight:900;font-size:1.3rem;line-height:1}
+.lw-teevo p{color:rgba(255,255,255,.78);font-size:.84rem;margin-top:.4rem;line-height:1.5}
+.lw-teevo__art{position:relative;border-radius:16px;overflow:hidden;background:var(--ce-gold);display:grid;place-items:center;aspect-ratio:1.15}
+.lw-teevo__art img{width:100%;height:100%;object-fit:cover}
+.lw-teevo__caption{position:absolute;left:.6rem;right:.6rem;bottom:.6rem;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);border-radius:12px;padding:.55rem .6rem;color:var(--ce-navy);font-size:.72rem;line-height:1.4;border:1px solid rgba(255,255,255,.9)}
+/* UPCOMING */
+.lw-event{position:relative;border-radius:18px;overflow:hidden;background:#fff;border:1px solid rgba(14,27,51,.06);display:flex;flex-direction:column;box-shadow:0 12px 28px -18px rgba(0,0,0,.12)}
+.lw-event__img{height:120px;background:var(--ce-haze);overflow:hidden}
+.lw-event__img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.lw-event:hover .lw-event__img img{transform:scale(1.04)}
+.lw-event__body{padding:.75rem .8rem}
+.lw-event__meta{font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ce-violet)}
+.lw-event__title{font-weight:900;color:var(--ce-navy);margin-top:.2rem}
+.lw-event__sub{font-size:.78rem;color:#64748B;margin-top:.15rem;line-height:1.4}
+.lw-event__cta{margin-top:.5rem;display:inline-flex;align-items:center;gap:.3rem;font-size:.72rem;font-weight:800;color:var(--ce-navy);background:#fff;border:1px solid rgba(14,27,51,.08);padding:.35rem .6rem;border-radius:999px}
+/* CAMPUSES / CLUBS */
+.lw-clubs{background:linear-gradient(180deg, #fff 0%, #F5F7FF 100%);border:1px solid rgba(107,91,255,.08);border-radius:18px;padding:1rem;display:grid;grid-template-columns:1.1fr .9fr;gap:1rem;align-items:center}
+@media(max-width:800px){.lw-clubs{grid-template-columns:1fr}}
+.lw-clubs__list{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}
+.lw-chip{font-size:.68rem;font-weight:700;background:#fff;border:1px solid rgba(14,27,51,.06);padding:.32rem .5rem;border-radius:999px}
+/* CTA */
+.lw-final{background:linear-gradient(135deg, #0E1B33 0%, #1C3166 55%, #2E4AA3 100%);color:#fff;border-radius:22px;padding:1.1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;box-shadow:0 18px 36px -20px rgba(0,0,0,.4)}
+.lw-final h3{font-family:var(--font-display), serif;font-weight:900;font-size:1.15rem;line-height:1}
+.lw-final p{color:rgba(255,255,255,.78);font-size:.82rem;margin-top:.2rem}
+
+/* In-pictures slider section */
+.lw-moments{position:relative;border-radius:20px;overflow:hidden;border:3px solid #fff;box-shadow:0 24px 48px -20px rgba(0,0,0,.4);aspect-ratio:16/7;background:#0e1b33}
+.lw-moments .church-slider__cap b{font-size:.9rem}
+@media(max-width:767px){.lw-moments{aspect-ratio:4/3;border-radius:14px}}
+
+/* small-text breathing room in teen cards */
+.lw-card p { word-spacing: 0.05em; line-height: 1.65; }
+.lw-proof, .lw-event__meta, .lw-pill, .lw-teevo__badge { word-spacing: 0.06em; }

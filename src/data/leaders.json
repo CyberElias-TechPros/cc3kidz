@@ -1,0 +1,27 @@
+[
+  {
+    "id": "president",
+    "name": "Rev. Dr. Chris Oyakhilome DSc DSc DD",
+    "title": "President — LoveWorld Inc.",
+    "zone": "LoveWorld Nation",
+    "bio": "Born Dec 7, 1963 Edo State — Founder of Youth For Christ (1987), Christ Embassy (1989/1990), LoveWorldSAT (first 24/7 Christian TV from Africa), Rhapsody of Realities (8,300+ languages), Healing School, International School of Ministry & InnerCity Mission. Our Man of God.",
+    "image": "/assets/images/leaders/pastor-chris-oyakhilome.jpg"
+  },
+  {
+    "id": "zonal",
+    "name": "Pastor Linda Okocha",
+    "title": "Zonal Pastor — Port Harcourt Zone 3",
+    "zone": "Port Harcourt Zone 3",
+    "bio": "Zonal Pastor, Christ Embassy Port Harcourt Zone 3. Providing spiritual oversight, vision and excellence for 32+ churches across the zone, with a passion for soul-winning and leadership development.",
+    "image": "/assets/images/leaders/pastor-linda-okocha.jpg"
+  },
+  {
+    "id": "group",
+    "name": "Pastor Kelson Onoriode",
+    "title": "Group Pastor & Pastor, Central Church 3",
+    "group": "CC3 Group (Central Church 3 Group Headquarters)",
+    "church": "Christ Embassy Central Church 3 — 30B Rumuokwuta/NTA Road",
+    "bio": "Group Pastor, CC3 Group and Pastor of Christ Embassy Central Church 3 (Group Headquarters) at 30B Rumuokwuta/NTA Road. Providing pastoral oversight for the Group family of 6 churches while shepherding the Central Church 3 congregation — the only Pastor at the Group Church — with excellence, love and the Word.",
+    "image": "/assets/images/leaders/pastor-kelson-onoriode.jpg"
+  }
+]

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LoveWorld Teens — Christ Embassy Teens Church | CC3 PH Zone 3 Mockup</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,600;0,700;0,800;1,700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0E1B33;--navy-ink:#080F1F;--gold:#C6A04A;--gold-2:#E8C86A;--teal:#00D1B3;--coral:#FF6B6B;--haze:#EAF0F7}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#08101f;color:#fff}
+a{color:inherit;text-decoration:none}
+/* TOP NAV */
+.topnav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0.9rem 1rem;background:var(--navy-ink);border-bottom:1px solid rgba(255,255,255,.08);position:sticky;top:0;z-index:20}
+.brand{display:flex;align-items:center;gap:.6rem;font-weight:800;letter-spacing:.02em}
+.brand small{display:block;font-weight:600;opacity:.7;font-size:.62rem;letter-spacing:.12em}
+.navlinks{display:flex;gap:1rem;flex-wrap:wrap;font-size:.72rem;font-weight:700;opacity:.9}
+.navlinks a.active{color:var(--gold);border-bottom:2px solid var(--gold);padding-bottom:2px}
+.loveBadge{font-weight:800;font-size:.7rem;opacity:.9}
+.loveBadge span{color:var(--gold)}
+/* HERO */
+.hero{position:relative;display:grid;grid-template-columns:1.05fr .95fr;min-height:420px;overflow:hidden;background:#0E1B33}
+.hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.95;filter:saturate(1.05) contrast(1.05)}
+.hero__wash{position:absolute;inset:0;background:linear-gradient(90deg, rgba(8,16,31,.92) 0%, rgba(8,16,31,.55) 46%, rgba(8,16,31,.12) 70%, rgba(0,209,179,.18) 100%)}
+.hero__text{position:relative;z-index:2;padding:2.2rem 1.4rem 1.6rem;display:flex;flex-direction:column;justify-content:center;gap:.6rem}
+.eyebrow{font-size:.62rem;letter-spacing:.14em;font-weight:700;opacity:.8}
+.hero h1{font-family:'Bebas Neue', sans-serif;letter-spacing:.02em;line-height:.92;font-size:clamp(2.2rem,6vw,4.2rem);text-shadow:0 2px 18px rgba(0,0,0,.4)}
+.hero h1 .gold{color:var(--gold)}
+.script{font-style:italic;opacity:.85;font-size:.95rem;margin-top:.2rem}
+.script em{border-bottom:2px solid var(--gold);padding-bottom:2px}
+.hero__right{position:relative;z-index:2;display:grid;place-items:center}
+.hero__right img{width:min(92%,520px);height:auto;border-radius:18px;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:3}
+.dot{width:8px;height:8px;border-radius:999px;background:rgba(255,255,255,.5);border:1px solid #fff}
+.dot.on{width:18px;background:var(--gold);border-color:var(--gold)}
+/* CARDS ROW */
+.cards{position:relative;z-index:4;margin-top:-18px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:.9rem;padding:1rem;background:linear-gradient(180deg, rgba(0,209,179,.35), rgba(255,107,107,.0) 40%, #EAF0F7)}
+.card{background:var(--navy);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:1rem;box-shadow:0 8px 24px rgba(0,0,0,.2);min-height:200px;position:relative;overflow:hidden}
+.card.teevo{display:flex;gap:.8rem;align-items:center;background:linear-gradient(135deg, #0E1B33 60%, #1a2a55);border-color:var(--gold)}
+.card.what{background:var(--navy)}
+.card.upcoming{background:linear-gradient(135deg,#FF8A6B,#7B5CFF);color:#0E1B33;border:none}
+.card h3{font-size:.95rem;font-weight:800;display:flex;align-items:center;gap:.5rem}
+.card p{font-size:.78rem;opacity:.85;line-height:1.5;margin-top:.4rem}
+.btn{margin-top:.7rem;display:inline-flex;align-items:center;gap:.4rem;background:var(--gold);color:var(--navy);font-weight:800;font-size:.72rem;padding:.45rem .75rem;border-radius:999px;border:1px solid rgba(0,0,0,.1)}
+.list{margin-top:.6rem;display:grid;gap:.4rem;font-size:.78rem}
+.list li{display:flex;gap:.5rem;align-items:center}
+.check{width:16px;height:16px;border-radius:999px;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-size:.6rem;font-weight:900}
+.script2{font-style:italic;opacity:.9;margin-top:.6rem;text-align:right}
+.upcoming .pill{font-size:.62rem;font-weight:800;letter-spacing:.08em;background:rgba(255,255,255,.2);padding:.2rem .5rem;border-radius:999px}
+.evt{display:flex;gap:.6rem;background:rgba(14,27,51,.92);color:#fff;border-radius:12px;padding:.6rem .7rem;align-items:center;margin-top:.6rem}
+.evt .date{background:var(--gold);color:var(--navy);border-radius:10px;padding:.4rem .5rem;text-align:center;font-weight:900;line-height:1}
+.evt .ttl{font-weight:800;font-size:.8rem}
+.evt .sub{font-size:.62rem;opacity:.8}
+/* LOWER */
+.lower{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;padding:0 1rem 1rem;background:#EAF0F7}
+.lower .card{background:var(--navy)}
+.map{margin-top:.5rem;background:#0b1830;border-radius:12px;padding:.5rem;display:flex;align-items:center;gap:.6rem}
+.map svg{width:100%;height:90px}
+/* FOOTER */
+.footer{display:flex;align-items:center;justify-content:space-between;gap:.8rem;padding:.8rem 1rem;background:var(--navy-ink);border-top:3px solid var(--gold);font-size:.72rem;flex-wrap:wrap}
+.socials{display:flex;gap:.5rem}
+.socials span{width:22px;height:22px;border-radius:999px;background:rgba(255,255,255,.12);display:grid;place-items:center;font-size:.7rem}
+.tagline{color:var(--gold);font-style:italic;font-weight:700}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.lower{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="topnav">
+  <div class="brand">
+    <span style="width:28px;height:28px;border-radius:999px;background:var(--gold);display:grid;place-items:center;color:var(--navy);font-weight:900">♡</span>
+    <div>CHRIST EMBASSY <small>Central Church 3 • PH Zone 3</small></div>
+  </div>
+  <nav class="navlinks">
+    <a class="active" href="#">Teens</a><a href="#">Word (TeeVo)</a><a href="#">Cells</a><a href="#">TeeVo Club</a><a href="#">Events</a><a href="#">Parents</a>
+  </nav>
+  <div class="loveBadge">LoveWorld <span>Nation</span> ♡</div>
+</header>
+
+<section class="hero">
+  <img class="hero__img" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1600&auto=format&fit=crop" alt="Teens worship">
+  <div class="hero__wash"></div>
+  <div class="hero__text">
+    <div class="eyebrow">LOVEWORLD TEENS • AGES 13–19</div>
+    <h1>EQUIPPED<br>TO <span class="gold">EFFECT</span><br>CHANGE</h1>
+    <div class="script"><em>LoveWorld Teens</em> — A divine vision to raise exceptional teenagers for global leadership.</div>
+    <div style="margin-top:.8rem;display:flex;gap:.6rem;flex-wrap:wrap">
+      <a class="btn" href="#teevo">TeeVo Daily →</a>
+      <a class="btn" style="background:#fff" href="#join">Join a Cell →</a>
+    </div>
+  </div>
+  <div class="hero__right">
+    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=900&auto=format&fit=crop" alt="Teens community">
+  </div>
+  <div class="dots"><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+</section>
+
+<section class="cards" aria-label="Highlights">
+  <article id="teevo" class="card teevo">
+    <div style="flex:1">
+      <h3>▶ TeeVo Daily <small style="font-weight:600;opacity:.7">with Pastor Chris</small></h3>
+      <p>Walk in divine excellence, and impact your world! <br><small>TeeVo — Rhapsody of Realities for Teenagers</small></p>
+      <a class="btn" href="#">Watch Today ▶</a>
+    </div>
+    <img src="https://images.unsplash.com/photo-1556157388-97ed4d1a3a19?q=80&w=300&auto=format&fit=crop" alt="Pastor Chris" style="width:92px;height:92px;border-radius:12px;object-fit:cover;border:2px solid var(--gold)">
+  </article>
+
+  <article class="card what">
+    <h3>👥 What We Do</h3>
+    <ul class="list">
+      <li><span class="check">✓</span> Authentic Worship</li>
+      <li><span class="check">✓</span> Relevant Teaching (TeeVo-based)</li>
+      <li><span class="check">✓</span> Thriving Community</li>
+      <li><span class="check">✓</span> Mentorship & Fun</li>
+    </ul>
+    <div class="script2">Grow. Belong.<br>Impact. <span style="border-bottom:2px solid var(--gold)">— TLW</span></div>
+  </article>
+
+  <article class="card upcoming">
+    <h3 style="color:#0E1B33">📅 Upcoming</h3>
+    <div class="evt">
+      <div class="date">JUL<br>25-27</div>
+      <div><div class="ttl">Teens Fire Conference</div><div class="sub">#IgniteChange • Zonal</div></div>
+      <span style="margin-left:auto">›</span>
+    </div>
+    <div class="evt">
+      <div class="date" style="background:#fff;color:var(--navy)">AUG<br>16</div>
+      <div><div class="ttl">TeeVo Wonders</div><div class="sub">Day of Miracles & Fun</div></div>
+      <span style="margin-left:auto">›</span>
+    </div>
+  </article>
+</section>
+
+<section class="lower">
+  <article class="card">
+    <h3>📍 TeeVo Clubs in Schools</h3>
+    <p>Across Nigeria and beyond! Teen-led outreach clubs in secondary schools — headed by a teenager, guided by a Pastor.</p>
+    <a class="btn" href="#">Find a Club ▶</a>
+    <div class="map">
+      <div style="flex:1">
+        <svg viewBox="0 0 200 90" aria-hidden><path d="M40 20 L60 12 L85 18 L110 10 L130 14 L150 22 L160 40 L145 60 L120 72 L85 78 L50 70 L35 45 Z" fill="none" stroke="#C6A04A" stroke-width="1.2"/><circle cx="55" cy="30" r="3" fill="var(--gold)"/><circle cx="90" cy="24" r="3" fill="var(--gold)"/><circle cx="125" cy="28" r="3" fill="var(--gold)"/><circle cx="110" cy="55" r="3" fill="var(--gold)"/></svg>
+      </div>
+      <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=400&auto=format&fit=crop" alt="TeeVo club" style="width:90px;height:70px;border-radius:10px;object-fit:cover">
+    </div>
+  </article>
+  <article class="card">
+    <h3>👥 Leaders</h3>
+    <p>Guided by love. Dedicated to you. Our vibrant Teens Church runs Sundays 10am & Wednesdays 7pm — 2hrs of prayer, worship, Rhapsody, Word.</p>
+    <a class="btn" href="#">Meet Our Leaders ▶</a>
+    <div style="margin-top:.6rem;display:flex;gap:.5rem">
+      <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop" style="width:48%;height:78px;border-radius:10px;object-fit:cover" alt=""><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=200&auto=format&fit=crop" style="width:48%;height:78px;border-radius:10px;object-fit:cover" alt="">
+    </div>
+  </article>
+</section>
+
+<footer class="footer">
+  <div class="socials"><span>▶</span><span>◎</span><span>f</span><span>𝕏</span><span>♪</span></div>
+  <div>📍 Christ Embassy Central Church 3, PH Zone 3</div>
+  <div class="tagline">…Raising a Generation of Change!</div>
+  <div style="font-weight:800;background:var(--gold);color:var(--navy);padding:.3rem .6rem;border-radius:999px">LoveWorld Teens ♡</div>
+</footer>
+
+</body>
+</html>

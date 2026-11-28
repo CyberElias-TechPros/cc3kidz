@@ -1,0 +1,35 @@
+[
+  {
+    "id": "t-1",
+    "name": "Sister Grace E.",
+    "category": "Healing",
+    "title": "Healed of chronic back pain during prayer meeting",
+    "body": "I had struggled with back pain for two years. During our Prayer & Prophecy Service, hands were laid on me and the pain left instantly. I am whole — glory to God!",
+    "date": "2026-11-10",
+    "image": null,
+    "approved": true,
+    "featured": true
+  },
+  {
+    "id": "t-2",
+    "name": "Bro. Samuel K.",
+    "category": "Career",
+    "title": "Promotion after 4 years of stagnation",
+    "body": "After sowing a seed and consistent prayer with my cell, I received a promotion with relocation benefits. God is faithful.",
+    "date": "2026-10-28",
+    "image": null,
+    "approved": true,
+    "featured": true
+  },
+  {
+    "id": "t-3",
+    "name": "Mrs. Blessing A.",
+    "category": "Family",
+    "title": "Restoration in my marriage",
+    "body": "Through counselling and the Word shared in Foundation School, my home is at peace. We serve together now.",
+    "date": "2026-11-02",
+    "image": null,
+    "approved": true,
+    "featured": false
+  }
+]

@@ -1,0 +1,73 @@
+[
+  {
+    "id": "sunday-service",
+    "name": "Sunday Service",
+    "slug": "sunday-service",
+    "day": "Sunday",
+    "time": "8:00 AM",
+    "duration": "3 hours",
+    "venue": "30B Rumuokwuta/NTA Road, Port Harcourt",
+    "type": "physical",
+    "description": "Our main weekly service — vibrant worship with joy unspeakable, the Word in demonstration, and glorious fellowship. Come early for prevailing intercession and function in dominion.",
+    "isOnline": true,
+    "onlineUrl": "/online",
+    "sortOrder": 1
+  },
+  {
+    "id": "prayer-prophecy-monday",
+    "name": "Prayer & Prophecy Service",
+    "slug": "prayer-prophecy-service",
+    "day": "Monday",
+    "time": "6:00 PM",
+    "duration": "1 hour",
+    "venue": "30B Rumuokwuta/NTA Road, Port Harcourt",
+    "type": "physical",
+    "description": "Mondays we pray, prophesy and prevail — an hour of fervent intercession, prophetic utterance and impartation to chart your week in ever-increasing glory. Glory!",
+    "isOnline": true,
+    "onlineUrl": "/online",
+    "sortOrder": 2
+  },
+  {
+    "id": "midweek",
+    "name": "Midweek Service",
+    "slug": "midweek-service",
+    "day": "Wednesday",
+    "time": "5:30 PM",
+    "duration": "2 hours",
+    "venue": "30B Rumuokwuta/NTA Road, Port Harcourt",
+    "type": "physical",
+    "description": "Refuelled in the Word, refreshed by the Spirit — deep teaching, prevailing prayer and impartation for the triumphant, ever-winning life in Christ.",
+    "isOnline": true,
+    "onlineUrl": "/online",
+    "sortOrder": 3
+  },
+  {
+    "id": "communion",
+    "name": "Communion Service",
+    "slug": "communion-service",
+    "day": "First Sunday",
+    "time": "3:00 PM",
+    "duration": "3 hours",
+    "venue": "30B Rumuokwuta/NTA Road",
+    "type": "physical",
+    "description": "Holy Communion — in remembrance of the Lord, we proclaim divine health, superabundant prosperity and covenant blessings in Christ. Hallelujah!",
+    "isOnline": true,
+    "onlineUrl": "/online",
+    "sortOrder": 4
+  },
+  {
+    "id": "childrens",
+    "name": "Children's Church",
+    "slug": "childrens-church",
+    "day": "Sunday",
+    "time": "8:00 AM",
+    "duration": "During main service",
+    "venue": "Children's Auditorium",
+    "type": "physical",
+    "description": "Champions for Christ — raising children established in the Word and the love of the Spirit, bold, excellent and ever-joyous.",
+    "isOnline": false,
+    "onlineUrl": "/kids/index.html",
+    "sortOrder": 5,
+    "href": "/kids/index.html"
+  }
+]

@@ -1,0 +1,39 @@
+# deps
+node_modules
+.pnp
+.pnp.js
+
+# next
+.next
+out
+build
+dist
+
+# vercel
+.vercel
+
+# env
+.env
+.env.local
+.env.*.local
+
+# data persistence (file-json fallback when no DATABASE_URL)
+.data
+public/uploads
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# os
+.DS_Store
+Thumbs.db
+
+# kids build copy is generated — keep source kids/ only
+public/kids
+
+# turbo
+.turbo
+tsconfig.tsbuildinfo
+image-search/

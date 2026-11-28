@@ -1,0 +1,8 @@
+[
+  { "id": "rhapsody", "label": "Rhapsody of Realities", "sub": "8,300+ languages", "count": "2.4k", "href": "https://rhapsodyofrealities.org", "external": true, "icon": "📖" },
+  { "id": "pcdl", "label": "Pastor Chris Digital Library", "sub": "Teachings & Messages", "count": "1.8k", "href": "https://pcdl.co", "external": true, "icon": "🎧" },
+  { "id": "kingschat", "label": "KingsChat", "sub": "Prayer & Community", "count": "925", "href": "https://kingschat.online", "external": true, "icon": "💬" },
+  { "id": "ceflix", "label": "CEFlix / LiveTV", "sub": "Loveworld Networks", "count": "412", "href": "https://loveworldtelevisionministry.org", "external": true, "icon": "📺" },
+  { "id": "healing", "label": "Healing School", "sub": "Healing Streams Testimonies", "count": "1.2k", "href": "https://healingstreams.tv", "external": true, "icon": "✦" },
+  { "id": "innercity", "label": "InnerCity Mission", "sub": "Philanthropy", "count": "1M+", "href": "https://theinnercitymission.ngo", "external": true, "icon": "❤" }
+]

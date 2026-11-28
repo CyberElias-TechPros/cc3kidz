@@ -1,0 +1,45 @@
+import { store, uid } from '@/lib/store'
+import { verifySessionCookie } from '@/lib/session'
+import { getUsers } from '@/lib/auth'
+import { jsonError, jsonOk, logAudit, enforceCsrf } from '@/lib/api-helpers'
+import { givingVerifySchema } from '@/lib/validation'
+
+export async function POST(req: Request){
+  const csrf=enforceCsrf(req); if(csrf) return csrf
+  const cookie = req.headers.get('cookie')||''
+  const raw = cookie.match(/cc3_session=([^;]+)/)?.[1]
+  const sid = raw ? verifySessionCookie(decodeURIComponent(raw)) : null
+  const user = sid ? getUsers().find(u=>u.id===sid) : null
+  if (!user || !['admin','superadmin'].includes(user.role)) return jsonError('Forbidden — admin only',403)
+  const body = await req.json().catch(()=> ({}))
+  const parsed = givingVerifySchema.safeParse(body)
+  if (!parsed.success) return jsonError(parsed.error.issues.map(i=>i.message).join('; '),400)
+  const { id, action, receiptNo } = parsed.data
+  const tx: any = (store.giving as any[]).find(g=>g.id===id)
+  if (!tx) return jsonError('Not found',404)
+  if (action==='verify'){
+    if (receiptNo) {
+      const dup = (store.giving as any[]).find(g=>g.receiptNo===receiptNo && g.id!==tx.id)
+      if (dup) return jsonError('Receipt number already used',409)
+    }
+    tx.status = 'verified'
+    tx.verifiedAt = new Date().toISOString()
+    let rn = receiptNo || `RCPT-${Date.now().toString().slice(-6)}-${Math.random().toString(36).slice(2,4).toUpperCase()}`
+    // ensure uniqueness loop
+    while ((store.giving as any[]).some(g=>g.receiptNo===rn)) rn = `RCPT-${Date.now().toString().slice(-6)}-${Math.random().toString(36).slice(2,4).toUpperCase()}`
+    tx.receiptNo = rn
+    tx.verifiedBy = user.id
+    // notify member who gave
+    if (tx.userId){
+      store.notifications.push({ id: uid(), userId: tx.userId, title: `Giving verified — ${tx.fundName} receipt ${tx.receiptNo}`, body: `Your ${tx.fundName} giving of ₦${Number(tx.amount).toLocaleString()} has been verified. Receipt: ${tx.receiptNo}`, href:'/member', read:false, createdAt:new Date().toISOString() })
+    }
+  } else if (action==='reject'){
+    tx.status='rejected'
+    if (tx.userId){
+      store.notifications.push({ id: uid(), userId: tx.userId, title: `Giving needs attention — ${tx.fundName}`, body: `Your submission for ${tx.fundName} was flagged. Please contact finance or resubmit with clearer POP.`, href:'/member', read:false, createdAt:new Date().toISOString() })
+    }
+  } else return jsonError('action must be verify|reject',400)
+  try{ require('@/lib/persist').scheduleFlush('giving'); require('@/lib/persist').scheduleFlush('notifications') }catch{}
+  await logAudit(req,'giving.verify','Giving',tx.id,{ action, receiptNo: tx.receiptNo })
+  return jsonOk({ giving: tx })
+}

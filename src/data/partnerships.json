@@ -1,0 +1,80 @@
+[
+  {
+    "id": "praise-night",
+    "slug": "praise-night-sponsorship",
+    "title": "Praise Night Global Broadcast Sponsorship",
+    "category": "Airtime Partnership",
+    "excerpt": "Sponsor Loveworld SAT airtime for the Zonal Praise Night — beamed to 100+ nations. Your seed takes the Gospel on air.",
+    "image": "/assets/images/main-sermon.webp",
+    "goal": 2500000,
+    "raised": 1300000,
+    "percent": 52,
+    "slots": ["30 mins — ₦500,000", "15 mins — ₦250,000", "5 mins — ₦100,000"],
+    "cta": "Sponsor Airtime"
+  },
+  {
+    "id": "global-service",
+    "slug": "global-communion-sponsorship",
+    "title": "Global Communion Service — LoveWorld Networks",
+    "category": "LoveWorld TV",
+    "excerpt": "Sponsor Pastor Chris Live on LoveWorld SAT. Every minute on air is souls reached across Africa, Europe & Asia.",
+    "image": "/assets/images/hero-main.webp",
+    "goal": 5000000,
+    "raised": 4550000,
+    "percent": 91,
+    "slots": ["30 mins — ₦750,000", "15 mins — ₦400,000", "5 mins — ₦150,000"],
+    "cta": "Sponsor Now"
+  },
+  {
+    "id": "healing-streams",
+    "slug": "healing-streams-partnership",
+    "title": "Healing Streams — Translation & Outreach",
+    "category": "Missions & Translation",
+    "excerpt": "Translate Healing Streams into Ikwerre, Kalabari & Igbo — and sponsor viewing centres across Rivers State.",
+    "image": "/assets/images/main-family.webp",
+    "goal": 1800000,
+    "raised": 1224000,
+    "percent": 68,
+    "slots": ["Language: ₦120,000", "Centre: ₦80,000", "Soul: ₦2,000"],
+    "cta": "Sponsor Translation"
+  },
+  {
+    "id": "rhapsody",
+    "slug": "rhapsody-outreach",
+    "title": "ReachOut World — Rhapsody Sponsorship",
+    "category": "Rhapsody of Realities",
+    "excerpt": "Sponsor 1,000 copies of Rhapsody for schools, cells & prisons. 391 languages — eternal impact.",
+    "image": "/assets/images/hero-main.webp",
+    "goal": 1200000,
+    "raised": 540000,
+    "percent": 45,
+    "slots": ["1,000 copies — ₦60,000", "500 copies — ₦30,000", "ReachOut Cell — ₦15,000"],
+    "cta": "Sponsor Copies"
+  },
+  {
+    "id": "loveworld-schools",
+    "slug": "innercity-ngo",
+    "title": "InnerCity Mission — Loveworld Schools",
+    "category": "InnerCity Mission",
+    "excerpt": "1M+ households, 13B+ meals, Loveworld Schools in 100+ countries. Sponsor a child’s education for a year.",
+    "image": "/assets/images/main-family.webp",
+    "goal": 3000000,
+    "raised": 2100000,
+    "percent": 70,
+    "slots": ["Child/Yr — ₦50,000", "Class — ₦250,000", "School — ₦1,200,000"],
+    "cta": "Give to ICM"
+  },
+  {
+    "id": "church-planting",
+    "slug": "church-planting",
+    "title": "Philippines & Rural Rivers — Church Planting",
+    "category": "Missions",
+    "excerpt": "PH Zone 3 Missions: 2 churches planted (Cavite & Pampanga) + 1,250 souls — now Trans-Amadi extension. Seed into the harvest.",
+    "image": "/assets/images/main-sermon.webp",
+    "goal": 4000000,
+    "raised": 1680000,
+    "percent": 42,
+    "slots": ["Choir — ₦500,000", "Projector — ₦150,000", "Pew — ₦25,000"],
+    "cta": "Plant a Church"
+  }
+]
